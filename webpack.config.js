@@ -2,29 +2,24 @@ var path = require('path');
 const webpack = require('webpack');
 const publicPath = './public/dist/build/';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-  //Content 
-  entry: './front/index.js',
-  // A SourceMap without column-mappings ignoring loaded Source Maps. 
+  entry: './front/index.js', 
   devtool: 'cheap-module-source-map',
   plugins: [
-    //simplifies creation of HTML files to serve your webpack bundles. This is especially useful for webpack bundles that include a hash in the filename which changes every compilation. You can either let the plugin generate an HTML file for you, supply your own template using lodash templates or use your own loader.
     new HtmlWebpackPlugin({
       title: 'Hot Module Replacement'
     }),
-    //Auto replacement of page when i save some file, even css
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new ExtractTextPlugin('./front/src/assets/css/style.css')
   ],
-
   output: {
     path: path.join(__dirname, publicPath),
     filename: '[name].bundle.js',
     publicPath: publicPath,
     sourceMapFilename: '[name].map',
   },
-
   devServer: {
     port: 3000,
     host: 'localhost',
@@ -39,19 +34,31 @@ module.exports = {
   },
   module: {
     rules: [
-     { 
-       test: /\.css$/, use: ['style-loader', 'css-loader'], 
-       // include: /flexboxgrid/
-       //Follow instructions at https://github.com/roylee0704/react-flexbox-grid
-     },
+      {
+        test: /\.scss$/,
+        use: [{
+            loader: "style-loader"
+        }, 
+        {
+          loader: "css-loader"
+        },
+        {
+          loader: "sass-loader"
+        }],
+      },
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: ['file-loader']
       },
       {
+        test: /\.(eot|svg|ttf|otf|woff|woff2)$/,
+        use: 'file-loader?name=fonts/[name].[ext]'
+      },
+      {
         test: /\.js|.jsx?$/,
         exclude: /(node_modules)/,
         loaders: ["babel-loader"]
-      }]
+      }
+    ]
   },
 }
