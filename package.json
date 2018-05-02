@@ -22,6 +22,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "bootstrap": "^4.1.1",
     "css-loader": "^0.28.11",
     "eslint": "^3.12.2",
@@ -39,18 +40,23 @@
     "webpack-cli": "^2.1.2"
   },
   "dependencies": {
+    "history": "^4.7.2",
     "lodash": "^4.17.10",
     "mysql": "2.15.0",
+    "pg": "^7.4.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-hot-loader": "^4.0.0",
     "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "redux": "^4.0.0",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
     "strapi": "3.0.0-alpha.12.0.1",
     "strapi-bookshelf": "3.0.0-alpha.12.0.1",
-    "styled-components": "^3.2.6"
+    "styled-components": "^3.2.6",
+    "whatwg-fetch": "^2.0.4"
   },
   "author": {
     "name": "A Strapi developer",

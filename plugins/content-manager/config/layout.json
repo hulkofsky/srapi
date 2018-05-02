@@ -1,1 +1,15 @@
-{}
+{
+  "location": {
+    "attributes": {
+      "Name": {
+        "appearance": ""
+      },
+      "order": {
+        "appearance": ""
+      },
+      "url": {
+        "appearance": ""
+      }
+    }
+  }
+}

@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-  entry: './front/index.js', 
+  entry: './front/src/index.js', 
   devtool: 'cheap-module-source-map',
   plugins: [
     new HtmlWebpackPlugin({
@@ -23,21 +23,21 @@ module.exports = {
   devServer: {
     port: 3000,
     host: 'localhost',
-    //Be possible go back pressing the "back" button at chrome
     historyApiFallback: true,
     noInfo: false,
     stats: 'minimal',
     publicPath: publicPath,
     contentBase: path.join(__dirname, publicPath),
-    //hotmodulereplacementeplugin
     hot: true
   },
+  watch: true,
+  devtool: 'source-map',
   module: {
     rules: [
       {
         test: /\.scss$/,
         use: [{
-            loader: "style-loader"
+          loader: "style-loader"
         }, 
         {
           loader: "css-loader"

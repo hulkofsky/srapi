@@ -4,12 +4,12 @@
     "default": {
       "connector": "strapi-bookshelf",
       "settings": {
-        "client": "mysql",
+        "client": "postgres",
         "host": "127.0.0.1",
-        "port": 3306,
-        "database": "future_generation",
-        "username": "root",
-        "password": "q"
+        "port": 5432,
+        "database": "fg_db",
+        "username": "fg_db_user",
+        "password": "fg"
       },
       "options": {}
     }

@@ -1,0 +1,28 @@
+{
+  "connection": "default",
+  "collectionName": "location",
+  "info": {
+    "name": "location",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "name": {
+      "multiple": false,
+      "type": "string",
+      "required": true
+    },
+    "order": {
+      "multiple": false,
+      "type": "integer"
+    },
+    "url": {
+      "multiple": false,
+      "type": "string"
+    }
+  }
+}
