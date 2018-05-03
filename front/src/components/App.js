@@ -6,7 +6,7 @@ import LocationPage from './LocationPage';
 const App = ({ store }) => (
     <div>
 	  <Route exact path="/" component={HomePage} />
-	  <Route path="/:location" component={LocationPage} />
+	  <Route path="/location/:locationID" component={LocationPage} />
 	</div>
 )
 export default App

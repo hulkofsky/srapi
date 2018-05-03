@@ -18,7 +18,7 @@ class HomePage extends React.Component {
 
 		    	{locations.map((location) => (
 		    		<div>
-			    		<Link to={location.url}>
+			    		<Link to={`/location/${location.id}`}>
 			    		    {location.name}
 			    		</Link>
 			    	</div>	
@@ -30,23 +30,15 @@ class HomePage extends React.Component {
 
 HomePage.propTypes = {
   locations: PropTypes.shape({
+  	id: PropTypes.number,
   	name: PropTypes.string,
   	url: PropTypes.string,
   })
 }
 
 const mapStateToProps = (state, ownProps) => {
-	console.log(state);
   return {
     locations: state.locations.items
-  }
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchLocations: () => {
-    	dispatch(fetchLocations());
-    }
   }
 }
 
