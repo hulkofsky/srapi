@@ -1,2 +1,0 @@
-webpackHotUpdate(0,{63:function(e,t,r){"use strict";(function(e){s(r(62));var t,a=s(r(1)),n=r(57),o=s(r(46)),u=r(27),d=s(r(43)),l=s(r(38));function s(e){return e&&e.__esModule?e:{default:e}}(t=r(4).enterModule)&&t(e);var f,c,i=(0,u.createStore)(l.default,(0,u.applyMiddleware)(o.default));(0,n.render)(a.default.createElement(d.default,{store:i}),document.getElementById("root")),f=r(4).default,c=r(4).leaveModule,f&&(f.register(i,"store","C:/Users/venom/Desktop/future_generation/front/src/index.js"),c(e))}).call(this,r(8)(e))}});
-//# sourceMappingURL=main.map
