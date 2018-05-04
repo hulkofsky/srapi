@@ -1,0 +1,27 @@
+{
+  "connection": "default",
+  "collectionName": "page",
+  "info": {
+    "name": "page",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "name": {
+      "multiple": false,
+      "type": "string"
+    },
+    "url": {
+      "multiple": false,
+      "type": "string"
+    },
+    "ID": {
+      "model": "contentblock",
+      "via": "Page ID"
+    }
+  }
+}

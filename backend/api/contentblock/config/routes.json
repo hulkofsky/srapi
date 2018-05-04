@@ -1,0 +1,68 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/contentblock",
+      "handler": "Contentblock.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/contentblock/:id",
+      "handler": "Contentblock.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/contentblock",
+      "handler": "Contentblock.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/contentblock/:id",
+      "handler": "Contentblock.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/contentblock/:id",
+      "handler": "Contentblock.destroy",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/contentblock/:id/relationships/:relation",
+      "handler": "Contentblock.createRelation",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/contentblock/:id/relationships/:relation",
+      "handler": "Contentblock.updateRelation",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/contentblock/:id/relationships/:relation",
+      "handler": "Contentblock.destroyRelation",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

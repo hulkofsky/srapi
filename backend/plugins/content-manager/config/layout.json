@@ -1,0 +1,25 @@
+{
+  "location": {
+    "attributes": {
+      "Name": {
+        "appearance": ""
+      },
+      "order": {
+        "appearance": ""
+      },
+      "url": {
+        "appearance": ""
+      }
+    }
+  },
+  "page": {
+    "attributes": {
+      "name": {
+        "appearance": ""
+      },
+      "url": {
+        "appearance": ""
+      }
+    }
+  }
+}
