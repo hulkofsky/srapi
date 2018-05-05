@@ -1,6 +1,8 @@
 import React from 'react'
 import { bindActionCreators } from 'redux'
-import { fetchLocations } from '../actions'
+import {
+  fetchLocations,
+} from '../actions'
 import { initStore } from '../store'
 import withRedux from '../utils/withRedux'
 import HomePageContainer from '../components/HomePage'
@@ -26,6 +28,7 @@ class HomePage extends React.Component {
     )
   }
 }
+
 
 const mapDispatchToProps = (dispatch) => {
   return {

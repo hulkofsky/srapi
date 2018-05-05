@@ -6,7 +6,15 @@ import reducers from './reducers'
 
 const initialState = {
   locations: [],
-  currentLocation: null
+  currentLocation: null,
+  authDialog: {
+  	isVisible: false,
+  	isSubmitting: false,
+  	identifier: '',
+  	password: '',
+  	auth: null,
+  	error: null,
+  }
 }
 
 export const initStore = () => {
