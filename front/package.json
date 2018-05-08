@@ -9,6 +9,7 @@
   "dependencies": {
     "next": "latest",
     "react": "^16.0.0",
+    "react-bootstrap": "^0.32.1",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.1",
     "redux": "^3.6.0",

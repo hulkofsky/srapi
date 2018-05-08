@@ -3,9 +3,11 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import {
   showAuthDialog,
+  hideAuthDialog,
   submitAuthDialog,
   processAuthDialog
 } from '../actions'
+import { Button, Modal } from 'react-bootstrap';
 
 class Header extends React.Component {
   handleAuthDialogSubmit(event) {
@@ -24,39 +26,29 @@ class Header extends React.Component {
           <title>{this.props.title}</title> 
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta charSet="utf-8" />
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-          <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossOrigin="anonymous" />
         </Head>
 
-        <button data-toggle="modal" data-target="#exampleModal">Show auth dialog</button>
+        <Button bsStyle="primary" bsSize="large" onClick={this.props.showAuthDialog}>Show auth dialog</Button>
 
-        <div className="modal" id="exampleModal">
-          <div className="modal-dialog" role="document">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title">Authentication required</h5>
-                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
+        <Modal show={authDialog.isVisible} onHide={this.props.hideAuthDialog}>
+          <Modal.Header closeButton>
+            <Modal.Title>Authentication required</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <form>
+              <div className="form-group">
+                <label htmlFor="identifierInput">Username or email</label>
+                <input type="text" name="identifier" className="form-control" id="identifierInput" />
               </div>
-              <div className="modal-body">
-                <form>
-                  <div className="form-group">
-                    <label htmlFor="identifierInput">Username or email</label>
-                    <input type="text" name="identifier" className="form-control" id="identifierInput" />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="passwordInput">Password</label>
-                    <input type="password" name="password" className="form-control" id="passwordInput" />
-                  </div>
-                  <button type="submit" className="btn btn-primary">Submit</button>
-                </form>
+              <div className="form-group">
+                <label htmlFor="passwordInput">Password</label>
+                <input type="password" name="password" className="form-control" id="passwordInput" />
               </div>
-            </div>
-          </div>
-        </div>
+              <button type="submit" className="btn btn-primary">Submit</button>
+            </form>
+          </Modal.Body>
+        </Modal>    
       </div>
     )
   }
@@ -71,6 +63,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     showAuthDialog: bindActionCreators(showAuthDialog, dispatch),
+    hideAuthDialog: bindActionCreators(hideAuthDialog, dispatch),
     submitAuthDialog: bindActionCreators(submitAuthDialog, dispatch),
     processAuthDialog: bindActionCreators(processAuthDialog, dispatch),
   }
