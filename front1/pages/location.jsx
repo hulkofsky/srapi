@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
 import {
-  fetchLocations,
   fetchCurrentLocation,
 } from '../actions'
 import { initStore } from '../store'
@@ -12,8 +11,7 @@ import Header from '../components/Header'
 
 class LocationPage extends React.Component {
   static async getInitialProps ({store, pathname, query}) {
-    console.log(query)
-    return await Promise.all([store.dispatch(fetchCurrentLocation()), store.dispatch(fetchLocations())]);
+    await store.dispatch(fetchCurrentLocation(query.id))
   }
 
   componentDidMount () {
@@ -24,7 +22,6 @@ class LocationPage extends React.Component {
 
   render () {
     const { location } = this.props
-    console.log(this.props)
 
     return (
       <div>

@@ -11,7 +11,7 @@ import Header from '../components/Header'
 
 class HomePage extends React.Component {
   static async getInitialProps ({store, pathname, query}) {
-    return await store.dispatch(fetchLocations())
+    await store.dispatch(fetchLocations())
   }
 
   componentDidMount () {
@@ -22,7 +22,6 @@ class HomePage extends React.Component {
 
   render () {
     const { locations } = this.props
-    console.log(this.props)
 
     return (
       <div>

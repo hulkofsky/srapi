@@ -16,12 +16,12 @@ webpackHotUpdate(1,{
 /* unused harmony export requestLocations */
 /* unused harmony export receiveCurrentLocation */
 /* unused harmony export receiveLocations */
-/* unused harmony export fetchCurrentLocation */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return fetchLocations; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return showAuthDialog; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return hideAuthDialog; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return submitAuthDialog; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return processAuthDialog; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return fetchCurrentLocation; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return fetchLocations; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return showAuthDialog; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return hideAuthDialog; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return submitAuthDialog; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return processAuthDialog; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch__ = __webpack_require__("./node_modules/isomorphic-unfetch/browser.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch__);
 (function () {

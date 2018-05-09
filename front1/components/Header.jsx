@@ -27,6 +27,7 @@ class Header extends React.Component {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta charSet="utf-8" />
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossOrigin="anonymous" />
+          <link rel="stylesheet" href="/static/style.css" />
         </Head>
 
         <Button bsStyle="primary" bsSize="large" onClick={this.props.showAuthDialog}>Show auth dialog</Button>
@@ -36,7 +37,7 @@ class Header extends React.Component {
             <Modal.Title>Authentication required</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <form>
+            <form onSubmit={this.handleAuthDialogSubmit.bind(this)}>
               <div className="form-group">
                 <label htmlFor="identifierInput">Username or email</label>
                 <input type="text" name="identifier" className="form-control" id="identifierInput" />

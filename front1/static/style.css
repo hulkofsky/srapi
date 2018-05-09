@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: #D9D9D2; }
+
+.btn {
+  display: inline-block;
+  outline: none;
+  text-decoration: none;
+  padding: 15px 70px; }
+
+.btn-dark {
+  background: #191714;
+  color: #FF9C5F;
+  text-transform: uppercase;
+  text-align: center; }
+  .btn-dark:after {
+    border: 1px solid #FF9C5F; }
+
+.homepage .top-section {
+  background: url("/images/hero-video.jpg") center 35% no-repeat;
+  height: 700px;
+  position: relative; }
+  .homepage .top-section .btn-container {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    text-align: center;
+    width: 100%; }

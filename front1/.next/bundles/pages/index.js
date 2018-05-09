@@ -2,7 +2,7 @@ module.exports =
 
         __NEXT_REGISTER_PAGE('/', function() {
           var comp = 
-      webpackJsonp([4],{
+      webpackJsonp([5],{
 
 /***/ "./actions/index.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -275,53 +275,61 @@ function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 29
         }
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("link", {
+        rel: "stylesheet",
+        href: "/static/style.css",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 30
+        }
       })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_react_bootstrap__["a" /* Button */], {
         bsStyle: "primary",
         bsSize: "large",
         onClick: this.props.showAuthDialog,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32
+          lineNumber: 33
         }
       }, "Show auth dialog"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_react_bootstrap__["b" /* Modal */], {
         show: authDialog.isVisible,
         onHide: this.props.hideAuthDialog,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 34
+          lineNumber: 35
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_react_bootstrap__["b" /* Modal */].Header, {
         closeButton: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 35
+          lineNumber: 36
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_react_bootstrap__["b" /* Modal */].Title, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 36
+          lineNumber: 37
         }
       }, "Authentication required")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_react_bootstrap__["b" /* Modal */].Body, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 38
+          lineNumber: 39
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("form", {
+        onSubmit: this.handleAuthDialogSubmit.bind(this),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 40
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "form-group",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 40
+          lineNumber: 41
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("label", {
         htmlFor: "identifierInput",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 41
+          lineNumber: 42
         }
       }, "Username or email"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
         type: "text",
@@ -330,19 +338,19 @@ function (_React$Component) {
         id: "identifierInput",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 42
+          lineNumber: 43
         }
       })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "form-group",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 45
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("label", {
         htmlFor: "passwordInput",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 46
         }
       }, "Password"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
         type: "password",
@@ -351,14 +359,14 @@ function (_React$Component) {
         id: "passwordInput",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 47
         }
       })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
         type: "submit",
         className: "btn btn-primary",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 49
         }
       }, "Submit")))));
     }
@@ -21977,29 +21985,28 @@ function (_React$Component) {
     key: "render",
     value: function render() {
       var locations = this.props.locations;
-      console.log(this.props);
       return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 28
+          lineNumber: 27
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__components_Header__["a" /* default */], {
         title: "home page",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 29
+          lineNumber: 28
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("h1", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 30
+          lineNumber: 29
         }
       }, "Home page"), locations && locations.map(function (location) {
         return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
           key: location.id,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 33
+            lineNumber: 32
           }
         }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7_next_link___default.a, {
           href: {
@@ -22010,12 +22017,12 @@ function (_React$Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 34
+            lineNumber: 33
           }
         }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("a", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 35
+            lineNumber: 34
           }
         }, location.name)));
       }));
@@ -22041,9 +22048,6 @@ function (_React$Component) {
                 return store.dispatch(Object(__WEBPACK_IMPORTED_MODULE_4__actions__["j" /* fetchLocations */])());
 
               case 3:
-                return _context.abrupt("return", _context.sent);
-
-              case 4:
               case "end":
                 return _context.stop();
             }
@@ -22320,7 +22324,7 @@ var initStore = function initStore() {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/index.jsx");
@@ -22328,7 +22332,7 @@ module.exports = __webpack_require__("./pages/index.jsx");
 
 /***/ })
 
-},[3])
+},[4])
           return { page: comp.default }
         })
       ;
