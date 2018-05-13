@@ -1,0 +1,124 @@
+@font-face {
+  font-family: 'ProximaNovaRegular';
+  src: url("/static/fonts/ProximaNovaRegular.eot");
+  src: url("/static/fonts/ProximaNovaRegular.eot") format("embedded-opentype"), url("/static/fonts/ProximaNovaRegular.woff2") format("woff2"), url("/static/fonts/ProximaNovaRegular.woff") format("woff"), url("/static/fonts/ProximaNovaRegular.ttf") format("truetype"), url("/static/fonts/ProximaNovaRegular.svg#ProximaNovaRegular") format("svg"); }
+
+@font-face {
+  font-family: 'MarkSimonsonProximaNovaBold';
+  src: url("/static/fonts/MarkSimonsonProximaNovaBold.eot");
+  src: url("/static/fonts/MarkSimonsonProximaNovaBold.eot") format("embedded-opentype"), url("/static/fonts/MarkSimonsonProximaNovaBold.woff2") format("woff2"), url("/static/fonts/MarkSimonsonProximaNovaBold.woff") format("woff"), url("/static/fonts/MarkSimonsonProximaNovaBold.ttf") format("truetype"), url("/static/fonts/MarkSimonsonProximaNovaBold.svg#MarkSimonsonProximaNovaBold") format("svg"); }
+
+@font-face {
+  font-family: 'MarkSimonsonProximaNovaSemibold';
+  src: url("/static/fonts/MarkSimonsonProximaNovaSemibold.eot");
+  src: url("/static/fonts/MarkSimonsonProximaNovaSemibold.eot") format("embedded-opentype"), url("/static/fonts/MarkSimonsonProximaNovaSemibold.woff2") format("woff2"), url("/static/fonts/MarkSimonsonProximaNovaSemibold.woff") format("woff"), url("/static/fonts/MarkSimonsonProximaNovaSemibold.ttf") format("truetype"), url("/static/fonts/MarkSimonsonProximaNovaSemibold.svg#MarkSimonsonProximaNovaSemibold") format("svg"); }
+
+@font-face {
+  font-family: 'SixCaps';
+  src: url("/static/fonts/SixCaps.eot");
+  src: url("/static/fonts/SixCaps.eot") format("embedded-opentype"), url("/static/fonts/SixCaps.woff2") format("woff2"), url("/static/fonts/SixCaps.woff") format("woff"), url("/static/fonts/SixCaps.ttf") format("truetype"), url("/static/fonts/SixCaps.svg#SixCaps") format("svg"); }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: #D9D9D2; }
+
+.btn {
+  display: inline-block;
+  outline: none;
+  text-decoration: none;
+  padding: 15px 100px;
+  font-family: 'ProximaNovaRegular';
+  font-size: 16px; }
+
+.btn-dark {
+  background: #191714;
+  color: #FF9C5F;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative; }
+  .btn-dark:hover {
+    color: #ffad7a; }
+  .btn-dark:after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    width: 100%;
+    top: 3px;
+    height: 100%;
+    border: 1px solid #CC8011; }
+
+.homepage .top-section {
+  background: url("/static/images/FG_UI01_assets_home_hero.jpg") center top no-repeat;
+  height: 830px;
+  position: relative; }
+  .homepage .top-section .btn-container {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    text-align: center;
+    width: 100%; }
+
+.homepage .section-2 {
+  padding: 10% 7% 15% 7%;
+  position: relative; }
+  .homepage .section-2 .caption {
+    font-family: 'ProximaNovaRegular';
+    font-size: 90px;
+    text-transform: uppercase;
+    color: #191714;
+    width: 60%; }
+  .homepage .section-2:after {
+    content: "";
+    border-top: 2px solid #9E9D8F;
+    position: absolute;
+    width: 80%;
+    bottom: 0;
+    left: 10%;
+    transform: rotate(13deg); }
+
+.homepage .section-3 {
+  padding: 10% 7% 10% 7%;
+  background: #191714;
+  display: flex; }
+  .homepage .section-3 .left {
+    width: 40%; }
+    .homepage .section-3 .left .image-container {
+      border-left: 2px dashed #D9D9D2;
+      border-right: 2px dashed #D9D9D2;
+      padding-bottom: 50%;
+      filter: grayscale(100%);
+      opacity: 0.1;
+      transition: 0.5s; }
+      .homepage .section-3 .left .image-container img {
+        width: 100%; }
+      .homepage .section-3 .left .image-container:hover {
+        filter: grayscale(0);
+        opacity: 1; }
+    .homepage .section-3 .left .caption {
+      margin-top: 30px;
+      font-family: 'ProximaNovaRegular';
+      font-size: 16px;
+      color: #D9D9D2;
+      text-align: justify; }
+  .homepage .section-3 .right {
+    width: 70%; }
+    .homepage .section-3 .right .caption {
+      font-family: 'SixCaps';
+      font-size: 260px;
+      line-height: 0.83;
+      color: #D9D9D2;
+      text-align: right;
+      position: relative;
+      margin-left: 5%;
+      padding-bottom: 12%; }
+      .homepage .section-3 .right .caption:after {
+        content: "";
+        border-top: 2px solid #D9D9D2;
+        position: absolute;
+        width: 80%;
+        bottom: 0;
+        left: 10%;
+        transform: rotate(13deg); }

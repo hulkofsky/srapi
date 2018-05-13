@@ -1,4 +1,4 @@
-import 'whatwg-fetch'
+import fetch from 'isomorphic-unfetch'
 
 const backendUrl = 'http://desktop-9pqed1r:1337'
 const authUrl = backendUrl + '/auth'

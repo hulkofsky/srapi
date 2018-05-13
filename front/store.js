@@ -4,7 +4,7 @@ import thunkMiddleware from 'redux-thunk'
 import actions from './actions'
 import reducers from './reducers'
 
-const initialState = {
+const appInitialState = {
   locations: [],
   currentLocation: null,
   authDialog: {
@@ -17,6 +17,6 @@ const initialState = {
   }
 }
 
-export const initStore = () => {
+export const initStore = (initialState = appInitialState) => {
   return createStore(reducers, initialState, composeWithDevTools(applyMiddleware(thunkMiddleware)))
 }

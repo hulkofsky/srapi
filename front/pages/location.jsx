@@ -1,47 +1,54 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
-import { fetchCurrentLocation } from '../actions'
+import {
+  fetchCurrentLocation,
+} from '../actions'
 import { initStore } from '../store'
-import withRedux from '../utils/withRedux'
-import LocationPageContainer from '../components/LocationPage'
+import { connect } from 'react-redux'
+import Link from 'next/link'
 import Header from '../components/Header'
 
 class LocationPage extends React.Component {
-  static getInitialProps ({query}) {
-    return {
-      currentLocationID: query.id
-    };
+  static async getInitialProps ({store, pathname, query}) {
+    await store.dispatch(fetchCurrentLocation(query.id))
   }
 
   componentDidMount () {
-    this.props.fetchCurrentLocation(this.props.currentLocationID)
   }
 
   componentWillUnmount () {
   }
 
   render () {
-    const { currentLocation } = this.props;
+    const { location } = this.props
 
     return (
       <div>
-        <Header title={currentLocation && currentLocation.item && currentLocation.item.name} />
-        <LocationPageContainer />
+        <Header title="home page" />
+        <h1>{location && location.item && location.item.name} page</h1>
+
+        <Link href={{ pathname: '/' }}>
+          <a>go home</a>
+        </Link>
       </div>
     )
   }
 }
 
+LocationPage.propTypes = {
+  location: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    url: PropTypes.string,
+  })
+}
+
 const mapStateToProps = (state) => {
   return {
-    currentLocation: state.currentLocation
+    location: state.currentLocation
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchCurrentLocation: bindActionCreators(fetchCurrentLocation, dispatch)
-  }
-}
 
-export default withRedux(initStore, mapStateToProps, mapDispatchToProps)(LocationPage)
+export default connect(mapStateToProps, null)(LocationPage)
