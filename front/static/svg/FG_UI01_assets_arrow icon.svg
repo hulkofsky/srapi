@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10.1 18.4">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #cc8011;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <title>FG_UI01_assets</title>
+  <g id="menu">
+    <polyline class="cls-1" points="0.73 0.69 8.73 9.2 0.73 17.72"/>
+  </g>
+</svg>

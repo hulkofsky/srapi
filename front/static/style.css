@@ -9,6 +9,11 @@
   src: url("/static/fonts/MarkSimonsonProximaNovaBold.eot") format("embedded-opentype"), url("/static/fonts/MarkSimonsonProximaNovaBold.woff2") format("woff2"), url("/static/fonts/MarkSimonsonProximaNovaBold.woff") format("woff"), url("/static/fonts/MarkSimonsonProximaNovaBold.ttf") format("truetype"), url("/static/fonts/MarkSimonsonProximaNovaBold.svg#MarkSimonsonProximaNovaBold") format("svg"); }
 
 @font-face {
+  font-family: 'ProximaNovaBlack';
+  src: url("/static/fonts/ProximaNovaBlack.eot");
+  src: url("/static/fonts/ProximaNovaBlack.eot") format("embedded-opentype"), url("/static/fonts/ProximaNovaBlack.woff2") format("woff2"), url("/static/fonts/ProximaNovaBlack.woff") format("woff"), url("/static/fonts/ProximaNovaBlack.ttf") format("truetype"), url("/static/fonts/ProximaNovaBlack.svg#ProximaNovaBlack") format("svg"); }
+
+@font-face {
   font-family: 'MarkSimonsonProximaNovaSemibold';
   src: url("/static/fonts/MarkSimonsonProximaNovaSemibold.eot");
   src: url("/static/fonts/MarkSimonsonProximaNovaSemibold.eot") format("embedded-opentype"), url("/static/fonts/MarkSimonsonProximaNovaSemibold.woff2") format("woff2"), url("/static/fonts/MarkSimonsonProximaNovaSemibold.woff") format("woff"), url("/static/fonts/MarkSimonsonProximaNovaSemibold.ttf") format("truetype"), url("/static/fonts/MarkSimonsonProximaNovaSemibold.svg#MarkSimonsonProximaNovaSemibold") format("svg"); }
@@ -29,19 +34,33 @@ body {
   display: inline-block;
   outline: none;
   text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
   padding: 15px 100px;
   font-family: 'ProximaNovaRegular';
   font-size: 16px; }
 
 .btn-dark {
   background: #191714;
-  color: #FF9C5F;
-  text-transform: uppercase;
-  text-align: center;
-  position: relative; }
+  color: #FF9C5F; }
   .btn-dark:hover {
     color: #ffad7a; }
   .btn-dark:after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    width: 100%;
+    top: 3px;
+    height: 100%;
+    border: 1px solid #CC8011; }
+
+.btn-light {
+  background: #D9D9D2;
+  color: #CC8011; }
+  .btn-light:hover {
+    color: #FF9C5F; }
+  .btn-light:after {
     content: "";
     position: absolute;
     left: 3px;
@@ -65,7 +84,7 @@ body {
   padding: 10% 7% 15% 7%;
   position: relative; }
   .homepage .section-2 .caption {
-    font-family: 'ProximaNovaRegular';
+    font-family: 'ProximaNovaBlack';
     font-size: 90px;
     text-transform: uppercase;
     color: #191714;
@@ -84,7 +103,7 @@ body {
   background: #191714;
   display: flex; }
   .homepage .section-3 .left {
-    width: 40%; }
+    width: 30%; }
     .homepage .section-3 .left .image-container {
       border-left: 2px dashed #D9D9D2;
       border-right: 2px dashed #D9D9D2;
@@ -101,8 +120,11 @@ body {
       margin-top: 30px;
       font-family: 'ProximaNovaRegular';
       font-size: 16px;
+      line-height: 1.8;
       color: #D9D9D2;
       text-align: justify; }
+    .homepage .section-3 .left .btn-container {
+      margin-top: 35px; }
   .homepage .section-3 .right {
     width: 70%; }
     .homepage .section-3 .right .caption {
@@ -122,3 +144,47 @@ body {
         bottom: 0;
         left: 10%;
         transform: rotate(13deg); }
+
+footer {
+  height: 565px;
+  background: url(/static/images/footer-bg.png);
+  background-size: cover;
+  padding-right: 7%;
+  padding-left: 16%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-family: 'ProximaNovaRegular'; }
+  footer .footer-logo {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 125px; }
+  footer .footer-menu {
+    border-top: 1px solid #d9d9d2;
+    padding-top: 25px;
+    text-align: right;
+    padding-bottom: 125px; }
+  footer .menu-item {
+    color: #d9d9d2;
+    border-right: 1px solid #d9d9d2;
+    padding: 0 10px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    letter-spacing: -.3px;
+    line-height: 1;
+    text-decoration: none; }
+  footer .menu-item:first-child {
+    padding-left: 0; }
+  footer .menu-item:nth-child(4) {
+    border-right: none;
+    padding-right: 0; }
+  footer .dev {
+    padding-top: 15px;
+    color: #d9d9d2; }

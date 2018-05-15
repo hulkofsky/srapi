@@ -23,7 +23,8 @@ class Header extends React.Component {
     return (
       <div>
         <Head>
-          <title>{this.props.title}</title> 
+          <title>{this.props.title}</title>
+          <link rel="shortcut icon" href="/static/favicon.ico" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta charSet="utf-8" />
           <link rel="stylesheet" href="/static/style.css" />

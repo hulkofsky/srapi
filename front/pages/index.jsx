@@ -8,6 +8,7 @@ import { initStore } from '../store'
 import { connect } from 'react-redux'
 import Link from 'next/link'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 class HomePage extends React.Component {
   static async getInitialProps ({store, pathname, query}) {
@@ -33,7 +34,7 @@ class HomePage extends React.Component {
           </div>
         </section> 
         <section className="section-2">
-          <div class="caption">
+          <div className="caption">
             The status quo doesn’t make great leaders or change<br/> the world.
           </div>
         </section>
@@ -45,6 +46,9 @@ class HomePage extends React.Component {
             <div className="caption">
               We do things differently. We help you become who you want to be, not just through university but by providing a place which respects you. Encourages you to network, collaborate and relax for your hard work.<br/><br/>
               This is more than your first, second or third year of Uni, this is the beginning of your success story and adult liffe. So reject the status quo, and rebuild it.
+            </div>
+            <div className="btn-container">
+              <a href="#" className="btn btn-light">keep talking</a>
             </div>
           </div>
           <div className="right">
@@ -59,6 +63,8 @@ class HomePage extends React.Component {
             </Link>
           </div>  
         ))*/}
+
+        <Footer></Footer> 
       </div>
     )
   }

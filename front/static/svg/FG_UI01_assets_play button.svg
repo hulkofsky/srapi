@@ -1,0 +1,33 @@
+<svg id="home" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 107.24 110.43">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        font-size: 28.13px;
+        font-family: ProximaNova-Bold, Proxima Nova;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <title>FG_UI01_assets</title>
+  <g>
+    <rect class="cls-1" y="3.19" width="21.45" height="21.45"/>
+    <rect class="cls-1" x="42.9" y="3.19" width="21.45" height="21.45"/>
+    <rect class="cls-2" y="88.99" width="107.24" height="21.45"/>
+    <rect class="cls-2" x="85.79" y="3.19" width="21.45" height="21.45"/>
+    <rect class="cls-2" y="46.09" width="21.45" height="21.45"/>
+    <rect class="cls-1" x="42.9" y="46.09" width="21.45" height="21.45"/>
+    <rect class="cls-1" x="85.79" y="46.09" width="21.45" height="21.45"/>
+    <text class="cls-3" transform="translate(1.95 23.43)">P</text>
+    <text class="cls-3" transform="translate(46.27 23.43)">L</text>
+    <text class="cls-3" transform="translate(44 66.17)">A</text>
+    <text class="cls-3" transform="translate(87.45 66.17)">Y</text>
+  </g>
+</svg>

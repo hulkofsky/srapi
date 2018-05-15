@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.13 49.57">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        font-size: 12.63px;
+        font-family: ProximaNova-Bold, Proxima Nova;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <title>FG_UI01_assets</title>
+  <g id="menu">
+    <g>
+      <g>
+        <rect class="cls-1" y="1.43" width="9.63" height="9.63"/>
+        <rect class="cls-1" x="19.25" y="1.43" width="9.63" height="9.63"/>
+        <rect class="cls-2" x="4.81" y="39.94" width="43.32" height="9.63"/>
+        <rect class="cls-2" x="4.81" y="20.69" width="4.81" height="9.63"/>
+        <rect class="cls-2" x="1.41" y="41.35" width="6.81" height="6.81" transform="translate(-30.24 16.51) rotate(-45)"/>
+        <rect class="cls-2" x="1.41" y="22.1" width="6.81" height="6.81" transform="translate(-16.62 10.87) rotate(-45)"/>
+        <rect class="cls-1" x="19.25" y="20.69" width="9.63" height="9.63"/>
+        <rect class="cls-1" x="38.51" y="20.69" width="9.63" height="9.63"/>
+        <text class="cls-3" transform="translate(0.62 10.52)">B</text>
+        <text class="cls-3" transform="translate(19.74 10.52)">A</text>
+        <text class="cls-3" transform="translate(19.72 29.7)">C</text>
+        <text class="cls-3" transform="translate(39.3 29.7)">K</text>
+      </g>
+      <rect class="cls-2" x="43.32" y="1.43" width="4.81" height="9.63"/>
+      <rect class="cls-2" x="39.91" y="2.84" width="6.81" height="6.81" transform="translate(8.27 32.46) rotate(-45)"/>
+    </g>
+  </g>
+</svg>

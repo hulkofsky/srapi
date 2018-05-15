@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.4 48.4">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <title>FG_UI01_assets</title>
+  <g id="menu">
+    <g>
+      <rect class="cls-1" y="40.52" width="48.4" height="7.88"/>
+      <rect class="cls-1" width="48.4" height="7.88"/>
+      <rect class="cls-1" y="20.26" width="48.4" height="7.88"/>
+    </g>
+  </g>
+</svg>

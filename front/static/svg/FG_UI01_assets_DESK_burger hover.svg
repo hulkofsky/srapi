@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.93 30.45">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        font-size: 7.76px;
+        font-family: ProximaNova-Bold, Proxima Nova;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <title>FG_UI01_assets</title>
+  <g id="menu">
+    <g>
+      <rect class="cls-1" x="0.36" y="0.88" width="5.91" height="5.91"/>
+      <rect class="cls-1" x="12.19" y="0.88" width="5.91" height="5.91"/>
+      <rect class="cls-2" x="0.36" y="24.54" width="29.57" height="5.91"/>
+      <rect class="cls-2" x="24.02" y="0.88" width="5.91" height="5.91"/>
+      <rect class="cls-2" x="0.36" y="12.71" width="5.91" height="5.91"/>
+      <rect class="cls-1" x="12.19" y="12.71" width="5.91" height="5.91"/>
+      <rect class="cls-1" x="24.02" y="12.71" width="5.91" height="5.91"/>
+      <text class="cls-3" transform="translate(0 6.46)">M</text>
+      <text class="cls-3" transform="translate(12.89 6.46)">E</text>
+      <text class="cls-3" transform="translate(12.32 18.25)">N</text>
+      <text class="cls-3" transform="translate(24.15 18.25)">U</text>
+    </g>
+  </g>
+</svg>
