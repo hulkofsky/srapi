@@ -27,6 +27,9 @@
   margin: 0;
   padding: 0; }
 
+img {
+  max-width: 100%; }
+
 body {
   background: #D9D9D2; }
 
@@ -144,6 +147,72 @@ body {
         bottom: 0;
         left: 10%;
         transform: rotate(13deg); }
+
+.homepage .section-4 {
+  background-color: #191714;
+  padding: 10% 12% 16% 12%; }
+
+.homepage .section-5 {
+  padding: 10% 5% 16% 5%;
+  background: url("/static/images/section-5-bg.png") no-repeat;
+  background-size: cover; }
+  .homepage .section-5 .content-container {
+    width: 70%;
+    margin-left: 15%; }
+  .homepage .section-5 .top-caption {
+    font-family: 'ProximaNovaBlack';
+    font-size: 100px;
+    line-height: 0.95;
+    color: #D9D9D2;
+    text-align: left;
+    text-transform: uppercase; }
+  .homepage .section-5 .bars-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px; }
+    .homepage .section-5 .bars-container .left-bar {
+      width: 48%;
+      border-left: 2px dashed rgba(217, 217, 210, 0.15);
+      border-right: 2px dashed rgba(217, 217, 210, 0.15);
+      position: relative;
+      height: 250px;
+      margin-top: 125px; }
+      .homepage .section-5 .bars-container .left-bar:before {
+        content: "";
+        border-top: 2px solid #D9D9D2;
+        transform: rotate(10deg);
+        width: 80%;
+        margin: 10% 0;
+        display: block;
+        position: absolute;
+        top: -125px;
+        left: 10%; }
+    .homepage .section-5 .bars-container .right-bar {
+      width: 48%;
+      border-left: 2px dashed rgba(217, 217, 210, 0.15);
+      border-right: 2px dashed rgba(217, 217, 210, 0.15);
+      height: 250px;
+      margin-top: 125px;
+      position: relative; }
+      .homepage .section-5 .bars-container .right-bar .caption {
+        font-family: 'ProximaNovaRegular';
+        font-size: 16px;
+        line-height: 1.8;
+        color: #D9D9D2;
+        position: absolute;
+        top: -125px; }
+
+.homepage .section-6 {
+  position: relative;
+  padding-bottom: 100px; }
+  .homepage .section-6:after {
+    content: "";
+    position: absolute;
+    border-top: 2px solid #BABAB0;
+    transform: rotate(12deg);
+    left: 0;
+    bottom: 50px;
+    width: 100%; }
 
 footer {
   height: 565px;

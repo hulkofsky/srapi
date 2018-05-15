@@ -48,10 +48,13 @@
 		 url('/static/fonts/SixCaps.svg#SixCaps') format('svg');
 }
 
-
 * {
 	margin: 0;
 	padding: 0;
+}
+
+img {
+	max-width: 100%;
 }
 
 body {
@@ -191,6 +194,198 @@ body {
 					transform: rotate(13deg);
 				}
 			}
+		}
+	}
+	.section-4 {
+		background-color: #191714;
+		padding: 10% 12% 16% 12%;
+	}
+	.section-5 {
+		padding: 10% 5% 16% 5%;
+		background: url('/static/images/section-5-bg.png') no-repeat;
+		background-size: cover;
+		.content-container {
+			width: 70%;
+			margin-left: 15%;
+		}
+		.top-caption {
+			font-family: 'ProximaNovaBlack';
+			font-size: 100px;
+			line-height: 0.95;
+			color: #D9D9D2;
+			text-align: left;
+			text-transform: uppercase;
+		}
+		.bars-container {
+			display: flex;
+			justify-content: space-between;
+			margin-top: 50px;
+			.left-bar {
+				width: 48%;
+				border-left: 2px dashed rgba(217, 217, 210, 0.15);
+				border-right: 2px dashed rgba(217, 217, 210, 0.15);
+				position: relative;
+				height: 250px;
+				margin-top: 125px;
+				&:before {
+					content: "";
+					border-top: 2px solid #D9D9D2;
+					transform: rotate(10deg);
+					width: 80%;
+					margin: 10% 0;
+					display: block;
+					position: absolute;
+					top: -125px;
+					left: 10%;
+				}
+			}
+			.right-bar {
+				width: 48%;
+				border-left: 2px dashed rgba(217, 217, 210, 0.15);
+				border-right: 2px dashed rgba(217, 217, 210, 0.15);
+				height: 250px;
+				margin-top: 125px;
+				position: relative;
+				.caption {
+					font-family: 'ProximaNovaRegular';
+					font-size: 16px;
+					line-height: 1.8;
+					color: #D9D9D2;
+					position: absolute;
+					top: -125px;
+				}
+			}
+		}
+	}
+	.section-6 {
+		position: relative;
+		padding-bottom: 100px;
+		&:after {
+			content: "";
+			position: absolute;
+			border-top: 2px solid #BABAB0;
+			transform: rotate(12deg);
+			left: 0;
+			bottom: 50px;
+			width: 100%;
+		}
+		.content-container {
+			.left {
+				.image-block {
+
+				}
+			}
+		}
+	}
+	.section-7 {
+		.just-living-block {
+			padding: 140px 0 0;
+			.football {
+				letter-spacing: -.6px;
+				color: #191714;
+				margin-bottom: 25px;
+			}
+			.left,
+			.football {
+				padding-left: 9.75%
+			}
+			.right {
+				padding-right: 0;
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-pack: end;
+				-ms-flex-pack: end;
+				justify-content: flex-end;
+				-webkit-box-align: end;
+				-ms-flex-align: end;
+				align-items: flex-end;
+			}
+			.roof {
+				background: url(../img/football.png);
+				width: 290px;
+				height: 650px;
+				background-size: cover;
+				opacity: .2;
+			}
+			.horizontal-line {
+				height: 12px;
+				width: 100%;
+				background-color: #9e9d8f;
+				position: absolute;
+				bottom: 100px;
+			}
+		}
+		.roof-block {
+			padding-top: 130px;
+			.row {
+				margin: 0;
+				position: relative;
+			}
+			.background-quote {
+			margin-left: -120px;
+			position: absolute;
+		}
+		.col-md-6 {
+			padding: 0;
+			margin-left: 10%;
+		}
+		.quote {
+			opacity: .05;
+		}
+		.full-football {
+			height: 650px;
+			background: url(../img/full-football.jpg) 45% 45%;
+			background-size: 185%;
+			margin-bottom: 130px;
+			opacity: .9;
+		}
+		.advantages {
+			font-size: 80px;
+			font-weight: 900;
+			color: #191714;
+			position: absolute;
+			right: 3.7%;
+			line-height: 1.1;
+			width: 50%;
+			text-align: right;
+		}
+		.svg-advantages-wrapper {
+			margin-top: 15px;
+			text-align: right;
+			margin-bottom: 40px;
+		}
+		.svg-advantages {
+			height: 250px;
+		}
+		.line {
+			height: 95px;
+			position: static;
+			-webkit-transform: none;
+			transform: none;
+			background: linear-gradient(to top right,transparent calc(50% - 1px),#babab0,transparent calc(50% + 1px));
+			margin: 0 0 0 36%;
+			width: 53%;
+		}
+		.available {
+			font-size: 16px;
+			font-weight: 400;
+			margin-top: 20px;
+			text-align: left;
+			width: 53%;
+			margin-left: 36%;
+			line-height: 1.81;
+		}
+		.available .available-title {
+			font-style: italic;
+			margin-bottom: 15px;
+		}
+		.lines {
+			width: 53%;
+			margin-left: 36%;
+			height: 140px;
+			background: url(../img/lines.png);
+			background-size: cover;
 		}
 	}
 }
