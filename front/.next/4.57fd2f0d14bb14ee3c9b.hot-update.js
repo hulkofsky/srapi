@@ -189,7 +189,7 @@ function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 55
         }
-      }, "we don\u2019t give a fuck about the status quo"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, "we don\u2019t give a fuck about the status quo"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("section", {
         className: "section-4",
         __source: {
           fileName: _jsxFileName,
@@ -202,7 +202,7 @@ function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 68
         }
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("section", {
         className: "section-5",
         __source: {
           fileName: _jsxFileName,
@@ -254,7 +254,7 @@ function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 81
         }
-      }), "Housing. Nothing more. We\u2019re creating the more."))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }), "Housing. Nothing more. We\u2019re creating the more."))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("section", {
         className: "section-6",
         __source: {
           fileName: _jsxFileName,
@@ -353,68 +353,29 @@ function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 109
         }
-      }, "A home from home, right down to the bathrooms")))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "section-7",
+      }, "A home from home, right down to the bathrooms"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "divider",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 116
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "just-living-block",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 117
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "football",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 118
-        }
-      }, "We put a football pitch on your roof and a cinema in your basement."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "left",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 122
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "quote",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 123
-        }
-      }, "THIS ISN\u2019T ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 124
-        }
-      }), "STUDENT LIVING. ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 125
-        }
-      }), "IT\u2019S JUST LIVING.")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "className",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 129
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "horizontal-line",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 130
+          lineNumber: 112
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "roof",
+        className: "caption",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 132
+          lineNumber: 113
         }
-      })))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__components_Footer__["a" /* default */], {
+      }, "This is more than your first, second or third year of Uni, this is the beginning of your success story and adult liffe. So reject the status quo, and rebuild it.with us."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("a", {
+        href: "#",
+        className: "btn btn-dark",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 138
+          lineNumber: 114
+        }
+      }, "take a tour")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__components_Footer__["a" /* default */], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 170
         }
       }));
     }
@@ -520,4 +481,4 @@ var _default = Object(__WEBPACK_IMPORTED_MODULE_6_react_redux__["b" /* connect *
 /***/ })
 
 })
-//# sourceMappingURL=4.7e6c681c46c40fbbd36b.hot-update.js.map
+//# sourceMappingURL=4.57fd2f0d14bb14ee3c9b.hot-update.js.map

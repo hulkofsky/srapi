@@ -189,7 +189,7 @@ function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 55
         }
-      }, "we don\u2019t give a fuck about the status quo"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, "we don\u2019t give a fuck about the status quo"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("section", {
         className: "section-4",
         __source: {
           fileName: _jsxFileName,
@@ -202,7 +202,7 @@ function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 68
         }
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("section", {
         className: "section-5",
         __source: {
           fileName: _jsxFileName,
@@ -254,7 +254,7 @@ function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 81
         }
-      }), "Housing. Nothing more. We\u2019re creating the more."))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }), "Housing. Nothing more. We\u2019re creating the more."))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("section", {
         className: "section-6",
         __source: {
           fileName: _jsxFileName,
@@ -353,68 +353,183 @@ function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 109
         }
-      }, "A home from home, right down to the bathrooms")))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, "A home from home, right down to the bathrooms"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "divider",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 112
+        }
+      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "caption",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 113
+        }
+      }, "This is more than your first, second or third year of Uni, this is the beginning of your success story and adult liffe. So reject the status quo, and rebuild it.with us."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        "class": "btn-container",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 114
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("a", {
+        href: "#",
+        className: "btn btn-dark",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 115
+        }
+      }, "take a tour"))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("section", {
         className: "section-7",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 116
+          lineNumber: 121
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "just-living-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 117
+          lineNumber: 122
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "football",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 118
+          lineNumber: 123
         }
       }, "We put a football pitch on your roof and a cinema in your basement."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "left",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 122
+          lineNumber: 127
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "quote",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 123
+          lineNumber: 128
         }
       }, "THIS ISN\u2019T ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 124
+          lineNumber: 129
         }
       }), "STUDENT LIVING. ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 125
+          lineNumber: 130
         }
       }), "IT\u2019S JUST LIVING.")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        "class": "className",
+        className: "className",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 129
+          lineNumber: 134
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "horizontal-line",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 130
+          lineNumber: 135
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "roof",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 132
+          lineNumber: 137
         }
-      })))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__components_Footer__["a" /* default */], {
+      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "roof-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 138
+          lineNumber: 141
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "background-quote",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 142
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "quote",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 143
+        }
+      }, "THIS ISN\u2019T ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 144
+        }
+      }), "STUDENT LIVING. ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 145
+        }
+      }), "IT\u2019S JUST LIVING.")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 150
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "col-md-6",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 151
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "full-football",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 152
+        }
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "advantages",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 154
+        }
+      }, "ROOFTOP SPORT", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "svg-advantages-wrapper",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 156
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
+        src: "assets/svg/text.svg",
+        alt: "Advantages",
+        className: "svg-advantages",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 157
+        }
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "line",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 159
+        }
+      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "available",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 161
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "available-title",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 162
+        }
+      }, "Available at Loughborough, Bristol and Manchester"), "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cum dolore nulla quidem repellat tenetur. Cumque distinctio dolor dolorum expedita fugiat."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "lines",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 166
+        }
+      }))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__components_Footer__["a" /* default */], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 172
         }
       }));
     }
@@ -520,4 +635,4 @@ var _default = Object(__WEBPACK_IMPORTED_MODULE_6_react_redux__["b" /* connect *
 /***/ })
 
 })
-//# sourceMappingURL=4.f3481bc9095477c4bb08.hot-update.js.map
+//# sourceMappingURL=4.147009b805a5c4c9d89a.hot-update.js.map

@@ -48,7 +48,7 @@ body {
   background: #191714;
   color: #FF9C5F; }
   .btn-dark:hover {
-    color: #ffad7a; }
+    color: #F89B61; }
   .btn-dark:after {
     content: "";
     position: absolute;
@@ -62,7 +62,7 @@ body {
   background: #D9D9D2;
   color: #CC8011; }
   .btn-light:hover {
-    color: #FF9C5F; }
+    color: #F89B61; }
   .btn-light:after {
     content: "";
     position: absolute;
@@ -204,19 +204,163 @@ body {
 
 .homepage .section-6 {
   position: relative;
-  padding-bottom: 100px; }
+  padding-bottom: 100px;
+  padding: 0 7% 10% 7%; }
   .homepage .section-6:after {
     content: "";
     position: absolute;
     border-top: 2px solid #BABAB0;
     transform: rotate(12deg);
-    left: 0;
+    left: 7%;
     bottom: 50px;
-    width: 100%; }
+    width: 86%; }
+  .homepage .section-6 .content-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -250px; }
+    .homepage .section-6 .content-container .image-block {
+      margin-bottom: 80px; }
+      .homepage .section-6 .content-container .image-block img {
+        opacity: 0.9;
+        width: 100%; }
+      .homepage .section-6 .content-container .image-block .bottom {
+        margin-top: 10px;
+        position: relative; }
+        .homepage .section-6 .content-container .image-block .bottom .text {
+          color: #9E9D8F;
+          font-family: 'ProximaNovaRegular';
+          text-align: left; }
+        .homepage .section-6 .content-container .image-block .bottom:after {
+          content: "";
+          position: absolute;
+          width: 80px;
+          top: 10px;
+          right: 0;
+          border-top: 2px solid #9E9D8F; }
+    .homepage .section-6 .content-container .left {
+      width: 45%;
+      text-align: center; }
+    .homepage .section-6 .content-container .right {
+      width: 45%;
+      text-align: center;
+      margin-top: 20%; }
+      .homepage .section-6 .content-container .right .divider {
+        content: "";
+        border-top: 2px solid #BABAB0;
+        transform: rotate(12deg);
+        margin: 150px 10%;
+        width: 80%; }
+      .homepage .section-6 .content-container .right .caption {
+        color: #191714;
+        font-family: 'ProximaNovaRegular';
+        font-size: 16px;
+        line-height: 1.81;
+        text-align: justify;
+        margin: 0 10%;
+        width: 80%; }
+      .homepage .section-6 .content-container .right .btn-container {
+        margin: 50px 10%;
+        width: 80%;
+        text-align: left; }
+
+.homepage .section-7 {
+  position: relative;
+  margin-top: 100px; }
+  .homepage .section-7 .just-living-block {
+    padding: 140px 0 0; }
+    .homepage .section-7 .just-living-block .football {
+      letter-spacing: -.6px;
+      color: #191714;
+      margin-bottom: 25px; }
+    .homepage .section-7 .just-living-block .left,
+    .homepage .section-7 .just-living-block .football {
+      padding-left: 9.75%; }
+    .homepage .section-7 .just-living-block .right {
+      padding-right: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+      -webkit-box-align: end;
+      -ms-flex-align: end;
+      align-items: flex-end; }
+    .homepage .section-7 .just-living-block .roof {
+      background: url(../img/football.png);
+      width: 290px;
+      height: 650px;
+      background-size: cover;
+      opacity: .2; }
+    .homepage .section-7 .just-living-block .horizontal-line {
+      height: 12px;
+      width: 100%;
+      background-color: #9e9d8f;
+      position: absolute;
+      bottom: 100px; }
+  .homepage .section-7 .roof-block {
+    padding-top: 130px; }
+    .homepage .section-7 .roof-block .row {
+      margin: 0;
+      position: relative; }
+    .homepage .section-7 .roof-block .background-quote {
+      margin-left: -120px;
+      position: absolute; }
+  .homepage .section-7 .col-md-6 {
+    padding: 0;
+    margin-left: 10%; }
+  .homepage .section-7 .quote {
+    opacity: .05; }
+  .homepage .section-7 .full-football {
+    height: 650px;
+    background: url(../img/full-football.jpg) 45% 45%;
+    background-size: 185%;
+    margin-bottom: 130px;
+    opacity: .9; }
+  .homepage .section-7 .advantages {
+    font-size: 80px;
+    font-weight: 900;
+    color: #191714;
+    position: absolute;
+    right: 3.7%;
+    line-height: 1.1;
+    width: 50%;
+    text-align: right; }
+  .homepage .section-7 .svg-advantages-wrapper {
+    margin-top: 15px;
+    text-align: right;
+    margin-bottom: 40px; }
+  .homepage .section-7 .svg-advantages {
+    height: 250px; }
+  .homepage .section-7 .line {
+    height: 95px;
+    position: static;
+    -webkit-transform: none;
+    transform: none;
+    background: linear-gradient(to top right, transparent calc(50% - 1px), #babab0, transparent calc(50% + 1px));
+    margin: 0 0 0 36%;
+    width: 53%; }
+  .homepage .section-7 .available {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 20px;
+    text-align: left;
+    width: 53%;
+    margin-left: 36%;
+    line-height: 1.81; }
+  .homepage .section-7 .available .available-title {
+    font-style: italic;
+    margin-bottom: 15px; }
+  .homepage .section-7 .lines {
+    width: 53%;
+    margin-left: 36%;
+    height: 140px;
+    background: url(../img/lines.png);
+    background-size: cover; }
 
 footer {
   height: 565px;
-  background: url(/static/images/footer-bg.png);
+  background: url("/static/images/footer-bg.png");
   background-size: cover;
   padding-right: 7%;
   padding-left: 16%;

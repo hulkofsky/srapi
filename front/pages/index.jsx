@@ -64,11 +64,11 @@ class HomePage extends React.Component {
           </div>  
         ))*/}
 
-        <div className="section-4">
+        <section className="section-4">
           <img src="/static/images/escalator.png" alt="" />
-        </div>
+        </section>
 
-        <div className="section-5">
+        <section className="section-5">
           <div className="content-container">
             <div className="top-caption">
               raising the standards of student living
@@ -84,9 +84,9 @@ class HomePage extends React.Component {
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div className="section-6">
+        <section className="section-6">
           <div className="content-container">
             <div className="left">
               <div className="image-block">
@@ -109,11 +109,16 @@ class HomePage extends React.Component {
                   <div className="text">A home from home, right down to the bathrooms</div>
                 </div>
               </div>
+              <div className="divider"></div>
+              <div className="caption">This is more than your first, second or third year of Uni, this is the beginning of your success story and adult liffe. So reject the status quo, and rebuild it.with us.</div>
+              <div class="btn-container">
+                <a href="#" className="btn btn-dark">take a tour</a>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <div className="section-7">
+        <section className="section-7">
           <div className="just-living-block">
             <div className="football">
               We put a football pitch on your roof and a cinema in your basement.
@@ -136,8 +141,8 @@ class HomePage extends React.Component {
           <div className="roof-block">
             <div className="background-quote">
               <div className="quote">
-                THIS ISN’T <br>
-                STUDENT LIVING. <br>
+                THIS ISN’T <br/>
+                STUDENT LIVING. <br/>
                 IT’S JUST LIVING.
               </div>
             </div>
@@ -149,7 +154,7 @@ class HomePage extends React.Component {
               <div className="advantages">
                 ROOFTOP SPORT
                 <div className="svg-advantages-wrapper">
-                  <img src="assets/svg/text.svg" alt="Advantages" className="svg-advantages">
+                  <img src="assets/svg/text.svg" alt="Advantages" className="svg-advantages" />
                 </div>
                 <div className="line">
                 </div>
@@ -162,7 +167,7 @@ class HomePage extends React.Component {
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         <Footer></Footer> 
       </div>
