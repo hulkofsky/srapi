@@ -1,8 +1,11 @@
 import fetch from 'isomorphic-unfetch'
 
-const backendUrl = 'http://desktop-9pqed1r:1337'
+const backendUrl = process.env.BACKEND_URL
+console.log(backendUrl)
 const authUrl = backendUrl + '/auth'
 const baseApiUrl = backendUrl + '/api'
+
+console.log(baseApiUrl)
 
 export const REQUEST_CURRENT_LOCATION = 'REQUEST_CURRENT_LOCATION'
 export const REQUEST_LOCATIONS = 'REQUEST_LOCATIONS'

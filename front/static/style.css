@@ -74,7 +74,8 @@ body {
 
 .homepage .top-section {
   background: url("/static/images/FG_UI01_assets_home_hero.jpg") center top no-repeat;
-  height: 830px;
+  background-size: cover;
+  height: 100vh;
   position: relative; }
   .homepage .top-section .btn-container {
     position: absolute;
@@ -265,98 +266,32 @@ body {
 
 .homepage .section-7 {
   position: relative;
-  margin-top: 100px; }
-  .homepage .section-7 .just-living-block {
-    padding: 140px 0 0; }
-    .homepage .section-7 .just-living-block .football {
-      letter-spacing: -.6px;
-      color: #191714;
-      margin-bottom: 25px; }
-    .homepage .section-7 .just-living-block .left,
-    .homepage .section-7 .just-living-block .football {
-      padding-left: 9.75%; }
-    .homepage .section-7 .just-living-block .right {
-      padding-right: 0;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: end;
-      -ms-flex-pack: end;
-      justify-content: flex-end;
-      -webkit-box-align: end;
-      -ms-flex-align: end;
-      align-items: flex-end; }
-    .homepage .section-7 .just-living-block .roof {
-      background: url(../img/football.png);
-      width: 290px;
-      height: 650px;
-      background-size: cover;
-      opacity: .2; }
-    .homepage .section-7 .just-living-block .horizontal-line {
-      height: 12px;
-      width: 100%;
-      background-color: #9e9d8f;
-      position: absolute;
-      bottom: 100px; }
-  .homepage .section-7 .roof-block {
-    padding-top: 130px; }
-    .homepage .section-7 .roof-block .row {
-      margin: 0;
-      position: relative; }
-    .homepage .section-7 .roof-block .background-quote {
-      margin-left: -120px;
-      position: absolute; }
-  .homepage .section-7 .col-md-6 {
-    padding: 0;
-    margin-left: 10%; }
-  .homepage .section-7 .quote {
-    opacity: .05; }
-  .homepage .section-7 .full-football {
-    height: 650px;
-    background: url(../img/full-football.jpg) 45% 45%;
-    background-size: 185%;
-    margin-bottom: 130px;
-    opacity: .9; }
-  .homepage .section-7 .advantages {
-    font-size: 80px;
-    font-weight: 900;
-    color: #191714;
-    position: absolute;
-    right: 3.7%;
-    line-height: 1.1;
-    width: 50%;
-    text-align: right; }
-  .homepage .section-7 .svg-advantages-wrapper {
-    margin-top: 15px;
-    text-align: right;
-    margin-bottom: 40px; }
-  .homepage .section-7 .svg-advantages {
-    height: 250px; }
-  .homepage .section-7 .line {
-    height: 95px;
-    position: static;
-    -webkit-transform: none;
-    transform: none;
-    background: linear-gradient(to top right, transparent calc(50% - 1px), #babab0, transparent calc(50% + 1px));
-    margin: 0 0 0 36%;
-    width: 53%; }
-  .homepage .section-7 .available {
-    font-size: 16px;
-    font-weight: 400;
-    margin-top: 20px;
-    text-align: left;
-    width: 53%;
-    margin-left: 36%;
-    line-height: 1.81; }
-  .homepage .section-7 .available .available-title {
-    font-style: italic;
-    margin-bottom: 15px; }
-  .homepage .section-7 .lines {
-    width: 53%;
-    margin-left: 36%;
-    height: 140px;
-    background: url(../img/lines.png);
-    background-size: cover; }
+  margin-top: 100px;
+  padding: 0 7% 10% 7%; }
+  .homepage .section-7 .just-living-block .football {
+    letter-spacing: -.6px;
+    color: #131828;
+    font-family: 'MarkSimonsonProximaNovaBold';
+    margin-bottom: 25px; }
+  .homepage .section-7 .just-living-block .contant-container {
+    display: flex; }
+    .homepage .section-7 .just-living-block .contant-container .left {
+      width: 75%; }
+      .homepage .section-7 .just-living-block .contant-container .left .quote {
+        font-family: 'SixCaps';
+        font-size: 260px;
+        line-height: 0.95;
+        color: #131828; }
+    .homepage .section-7 .just-living-block .contant-container .right {
+      position: relative;
+      width: 25%; }
+      .homepage .section-7 .just-living-block .contant-container .right .roof {
+        position: absolute;
+        background: url("/static/images/football.png");
+        width: 290px;
+        height: 650px;
+        background-size: cover;
+        opacity: .2; }
 
 footer {
   height: 565px;

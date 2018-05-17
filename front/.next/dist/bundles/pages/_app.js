@@ -97,9 +97,11 @@ module.exports =
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch__ = __webpack_require__("isomorphic-unfetch");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch__);
 
-var backendUrl = 'http://desktop-9pqed1r:1337';
+var backendUrl = process.env.BACKEND_URL;
+console.log(backendUrl);
 var authUrl = backendUrl + '/auth';
 var baseApiUrl = backendUrl + '/api';
+console.log(baseApiUrl);
 var REQUEST_CURRENT_LOCATION = 'REQUEST_CURRENT_LOCATION';
 var REQUEST_LOCATIONS = 'REQUEST_LOCATIONS';
 var RECEIVE_CURRENT_LOCATION = 'RECEIVE_CURRENT_LOCATION';

@@ -111,30 +111,30 @@ class HomePage extends React.Component {
               </div>
               <div className="divider"></div>
               <div className="caption">This is more than your first, second or third year of Uni, this is the beginning of your success story and adult liffe. So reject the status quo, and rebuild it.with us.</div>
-              <div class="btn-container">
+              <div className="btn-container">
                 <a href="#" className="btn btn-dark">take a tour</a>
               </div>
             </div>
           </div>
         </section>
-
         <section className="section-7">
           <div className="just-living-block">
             <div className="football">
               We put a football pitch on your roof and a cinema in your basement.
             </div>
-
-            <div className="left">
-              <div className="quote">
-                THIS ISN’T <br/>
-                STUDENT LIVING. <br/>
-                IT’S JUST LIVING.
+            <div className="contant-container">
+              <div className="left">
+                <div className="quote">
+                  THIS ISN’T <br/>
+                  STUDENT LIVING. <br/>
+                  IT’S JUST LIVING.
+                </div>
               </div>
-            </div>
-            <div className="className"> 
-              <div className="horizontal-line">
-              </div>
-              <div className="roof">
+              <div className="right"> 
+                <div className="horizontal-line">
+                </div>
+                <div className="roof">
+                </div>
               </div>
             </div>
           </div>
@@ -146,7 +146,6 @@ class HomePage extends React.Component {
                 IT’S JUST LIVING.
               </div>
             </div>
-
             <div className="row">
               <div className="col-md-6">
                 <div className="full-football"></div>
@@ -168,7 +167,6 @@ class HomePage extends React.Component {
             </div>
           </div>
         </section>
-
         <Footer></Footer> 
       </div>
     )
