@@ -28,34 +28,6 @@ class HomePage extends React.Component {
       <div className="homepage">
         <Header title="home page" />
 
-        <section className="top-section">
-          <div className="btn-container">
-            <a href="#" className="btn btn-dark">future generation</a>
-          </div>
-        </section> 
-        <section className="section-2">
-          <div className="caption">
-            The status quo doesn’t make great leaders or change<br/> the world.
-          </div>
-        </section>
-        <section className="section-3">
-          <div className="left">
-            <div className="image-container">
-              <img src="/static/images/FG_UI01_assets_home_faded teture.jpg" alt="" />
-            </div>
-            <div className="caption">
-              We do things differently. We help you become who you want to be, not just through university but by providing a place which respects you. Encourages you to network, collaborate and relax for your hard work.<br/><br/>
-              This is more than your first, second or third year of Uni, this is the beginning of your success story and adult liffe. So reject the status quo, and rebuild it.
-            </div>
-            <div className="btn-container">
-              <a href="#" className="btn btn-light">keep talking</a>
-            </div>
-          </div>
-          <div className="right">
-            <div className="caption">we don’t give a fuck about the status quo</div>
-          </div>
-        </section>
-
         {/*locations && locations.map((location) => (
           <div key={location.id}>
             <Link href={{ pathname: '/location', query: { id: location.id } }}>
@@ -64,109 +36,274 @@ class HomePage extends React.Component {
           </div>  
         ))*/}
 
-        <section className="section-4">
-          <img src="/static/images/escalator.png" alt="" />
-        </section>
+        <nav className="nav">
+          <img className="logo" src="/static/svg/logo.svg" alt="logo" />
+          <img className="burger" src="/static/svg/burger.svg" alt="burger" />
+        </nav>
 
-        <section className="section-5">
-          <div className="content-container">
-            <div className="top-caption">
-              raising the standards of student living
-            </div>
-            <div className="bars-container">
-              <div className="left-bar"></div>
-              <div className="right-bar">
-                <div className="caption">
-                  Every standard starts with a problem that needs solving. <br/>
-                  Ours was that student housing is exactly that. <br/>
-                  Housing. Nothing more. We’re creating the more.
-                </div>
-              </div>
+        <div className="skateboard-block">
+          <div className="btn-container">
+            <div className="btn">future generation</div>
+            <div className="btn btn-border"></div>
+          </div>
+        </div>
+
+        <div className="status-quo-block">
+          <div className="row">
+            <div className="col-md-9">
+              The status quo doesn't make great leaders <br/> or change <br/> the world.
             </div>
           </div>
-        </section>
+        </div>
 
-        <section className="section-6">
-          <div className="content-container">
-            <div className="left">
-              <div className="image-block">
-                <img src="/static/images/FG_UI01_assets_home_bedroom.jpg" alt="" />
-                <div className="bottom">
-                  <div className="text">Refined personal bedrooms for whatever you get up to</div>
-                </div>
-              </div>
-              <div className="image-block">
-                <img src="/static/images/FG_UI01_assets_home_kitchen.jpg" alt="" />
-                <div className="bottom">
-                  <div className="text">Takeaway slaying, sleek looking, party space kitchens</div>
-                </div>
-              </div>
+        <div className="line">
+
+        </div>
+
+        <div className="give-a-fuck-block">
+          <div className="row">
+            <div className="col-md-4 image">
             </div>
-            <div className="right">
-              <div className="image-block">
-                <img src="/static/images/FG_UI01_assets_home_bathroom.jpg" alt="" />
-                <div className="bottom">
-                  <div className="text">A home from home, right down to the bathrooms</div>
-                </div>
-              </div>
-              <div className="divider"></div>
-              <div className="caption">This is more than your first, second or third year of Uni, this is the beginning of your success story and adult liffe. So reject the status quo, and rebuild it.with us.</div>
+            <div className="col-md-8 quote">
+              we don’t give a fuck about the status quo
+            </div>
+          </div>
+        </div>
+
+        <div className="keep-talking-block">
+          <div className="row">
+            <div className="col-md-4">
+              <p className="paragraph">
+                We do things differently. We help you become who you want to be, not just through university but by providing a
+                place which respects you. Encourages you to network, collaborate and relax for your hard work.
+              </p>
+              <p className="paragraph">
+                This is more than your first, second or third year of Uni, this is the beginning of your success story and adult
+                life. So reject the status quo, and rebuild it.
+              </p>
+
               <div className="btn-container">
-                <a href="#" className="btn btn-dark">take a tour</a>
+                <div className="btn">Keep talking</div>
+                <div className="btn btn-border"></div>
+              </div>
+
+            </div>
+            <div className="col-md-8">
+              <div className="line line2">
+
               </div>
             </div>
           </div>
-        </section>
-        <section className="section-7">
-          <div className="just-living-block">
-            <div className="football">
-              We put a football pitch on your roof and a cinema in your basement.
+        </div>
+
+        <div className="escalator-block">
+          <div className="row">
+            <div className="escalator-image">
+
             </div>
-            <div className="contant-container">
-              <div className="left">
+          </div>
+        </div>
+
+        <div className="rising-standarts-block">
+          <div className="quote">
+            RAISING THE STANDARDS OF STUDENT LIVING
+          </div>
+
+          <div className="text">
+            Every standard starts with a problem that needs solving. <br/>
+            Ours was that student housing is exactly that. <br/>
+            Housing. Nothing more. We’re creating the more.
+          </div>
+        </div>
+
+        <div className="tour-block">
+          <div className="row">
+            <div className="col-md-6">
+              <div className="bedroom-block">
+                <img src="/static/images/bedroom.jpg" alt="bedroom" className="bedroom" />
+
+                <div className="text-block">
+                  <div className="text">
+                    Refined personal bedrooms for whatever you get up to
+                  </div>
+                  <div className="horizontal-line">
+
+                  </div>
+                </div>
+              </div>
+
+              <div className="kitchen-block">
+                <img src="/static/images/kitchen.jpg" alt="kitchen" className="kitchen" />
+
+                <div className="text-block">
+                  <div className="text">
+                    Takeaway slaying, sleek looking, party space kitchens
+                  </div>
+                  <div className="horizontal-line">
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div className="col-md-6">
+              <div className="bathroom-block">
+                <img src="/static/images/bathroom.jpg" alt="bathroom" className="bathroom" />
+
+                <div className="text-block">
+                  <div className="text">
+                    A home from home, right down to the bathrooms
+                  </div>
+                  <div className="horizontal-line">
+
+                  </div>
+                </div>
+              </div>
+
+              <div className="quote-block">
+                <div className="line">
+
+                </div>
                 <div className="quote">
-                  THIS ISN’T <br/>
-                  STUDENT LIVING. <br/>
-                  IT’S JUST LIVING.
+                  This is more than your first, second or third year of Uni,
+                  this is the beginning of your success story and adult life.
+                  So reject the status quo, and rebuild it. With us.
                 </div>
-              </div>
-              <div className="right"> 
-                <div className="horizontal-line">
-                </div>
-                <div className="roof">
+
+                <div className="btn-container">
+                  <div className="btn tour">Take a tour</div>
+                  <div className="btn btn-border"></div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="roof-block">
-            <div className="background-quote">
+        </div>
+
+        <div className="line line3">
+
+        </div>
+
+        <div className="just-living-block">
+          <div className="football">
+            We put a football pitch on your roof and a cinema in your basement.
+          </div>
+
+          <div className="row">
+            <div className="col-md-9">
               <div className="quote">
                 THIS ISN’T <br/>
                 STUDENT LIVING. <br/>
                 IT’S JUST LIVING.
               </div>
             </div>
-            <div className="row">
-              <div className="col-md-6">
-                <div className="full-football"></div>
+            <div className="col-md-3">
+              <div className="horizontal-line">
+
               </div>
-              <div className="advantages">
-                ROOFTOP SPORT
-                <div className="svg-advantages-wrapper">
-                  <img src="assets/svg/text.svg" alt="Advantages" className="svg-advantages" />
-                </div>
-                <div className="line">
-                </div>
-                <div className="available">
-                  <div className="available-title">Available at Loughborough, Bristol and Manchester</div>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cum dolore nulla quidem repellat tenetur. Cumque
-                  distinctio dolor dolorum expedita fugiat.
-                </div>
-                <div className="lines"></div>
+
+              <div className="roof">
+
               </div>
             </div>
           </div>
-        </section>
+        </div>
+
+        <div className="roof-block">
+          <div className="background-quote">
+            <div className="quote">
+              THIS ISN’T <br/>
+              STUDENT LIVING. <br/>
+              IT’S JUST LIVING.
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-md-6">
+              <div className="full-football"></div>
+            </div>
+            <div className="advantages">
+              ROOFTOP SPORT
+
+              <div className="svg-advantages-wrapper">
+                <img src="/static/svg/text.svg" alt="Advantages" className="svg-advantages" />
+              </div>
+
+              <div className="line">
+
+              </div>
+
+              <div className="available">
+                <div className="available-title">Available at Loughborough, Bristol and Manchester</div>
+
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cum dolore nulla quidem repellat tenetur. Cumque
+                distinctio dolor dolorum expedita fugiat.
+              </div>
+
+              <div className="lines"></div>
+            </div>
+          </div>
+        </div>
+
+        <div className="partner-block">
+          <div className="ellipse-bg">
+
+          </div>
+          <div className="title">
+            YOU’LL GET 25% OFF OUR PARTNER’S TECH
+          </div>
+
+          <div className="wrapper">
+            <img src="/static/svg/samsung-logo.svg" alt="Samsung logo" className="samsung-logo" />
+
+            <p className="paragraph">
+              This is more than your ﬁrst, second or third year of Uni, <br/>
+              this is the beginning of your success story and adult life. <br/>
+              So reject the status quo, and rebuild it. With us.
+            </p>
+
+            <div className="btn-container">
+              <div className="btn discount">Get 25% off</div>
+              <div className="btn btn-border"></div>
+            </div>
+
+            <img src="/static/images/small-bedroom.jpg" alt="bedroom" className="partner-block-image" />
+
+            <div className="text-block">
+              <div className="text">
+                Pixel perfect TVs and other tech integration in your spaces
+              </div>
+              <div className="horizontal-line">
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="leap-block">
+          <div className="quote-line quote-line-one">
+            TAKE THIS STEP
+          </div>
+          <div className="quote-line quote-line-two">
+            TO MAKE YOUR LEAP
+          </div>
+        </div>
+
+        <div className="colechester">
+          <p className="paragraph col-md-4">
+            This is more than your ﬁrst, second or third year of Uni, <br/>
+            this is the beginning of your success story and adult life.
+            So reject the status quo, and rebuild it. With us.
+          </p>
+
+          <div className="places">
+            <div className="place">COLECHESTER</div>
+            <div className="place">SHEFFIELD</div>
+            <div className="place">GUILDFORD</div>
+            <div className="place">NOTTINGHAM</div>
+            <div className="place">LOUGHBOROUGH</div>
+          </div>
+        </div>
+
         <Footer></Footer> 
       </div>
     )

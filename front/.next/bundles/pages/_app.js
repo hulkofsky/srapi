@@ -8,7 +8,7 @@ module.exports =
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(module, process) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return REQUEST_CURRENT_LOCATION; });
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return REQUEST_CURRENT_LOCATION; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return REQUEST_LOCATIONS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return RECEIVE_CURRENT_LOCATION; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return RECEIVE_LOCATIONS; });
@@ -35,11 +35,9 @@ module.exports =
 })();
 
 
-var backendUrl = process.env.BACKEND_URL;
-console.log(backendUrl);
+var backendUrl = 'http://localhost:1337';
 var authUrl = backendUrl + '/auth';
 var baseApiUrl = backendUrl + '/api';
-console.log(baseApiUrl);
 var REQUEST_CURRENT_LOCATION = 'REQUEST_CURRENT_LOCATION';
 var REQUEST_LOCATIONS = 'REQUEST_LOCATIONS';
 var RECEIVE_CURRENT_LOCATION = 'RECEIVE_CURRENT_LOCATION';
@@ -173,7 +171,7 @@ var processAuthDialog = function processAuthDialog(auth) {
 })();
 
 ;
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module), __webpack_require__("./node_modules/node-libs-browser/node_modules/process/browser.js")))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module)))
 
 /***/ }),
 

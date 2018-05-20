@@ -57,7 +57,7 @@ class Header extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    authDialog: state.authDialog
+    authDialog: state.authDialog,
   }
 }
 
