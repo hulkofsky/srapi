@@ -288,20 +288,67 @@ class HomePage extends React.Component {
           </div>
         </div>
 
-        <div className="colechester">
-          <p className="paragraph col-md-4">
-            This is more than your ﬁrst, second or third year of Uni, <br/>
-            this is the beginning of your success story and adult life.
-            So reject the status quo, and rebuild it. With us.
-          </p>
-
-          <div className="places">
-            <div className="place">COLECHESTER</div>
-            <div className="place">SHEFFIELD</div>
-            <div className="place">GUILDFORD</div>
-            <div className="place">NOTTINGHAM</div>
-            <div className="place">LOUGHBOROUGH</div>
+        <div className="locations-block">
+          <div className="row">
+            <div className="paragraph col-md-4">
+              With over 30 locations across the country, we want there to be a location especially for you. Once you’ve found the best fit, view it’s bespoke page full of local trivia, recommendations and flat details to get you going in your new city.
+            </div>
+            <div className="region-selector-container col-md-4 offset-4 justify-content-end align-items-end d-flex">
+              <div className="region-selector-prefix">Region:</div>
+              <div className="region-selector">
+                <div className="selected-region">Northern England</div>
+              </div>
+            </div>
           </div>
+
+          <div className="locations-list">
+            <div className="location-item d-flex align-items-center justify-content-center type-1">
+              <div className="left">
+                <div className="image">
+                  <img src="/static/images/FG_UI01_assets_home_location 1 main.jpg" alt="" />
+                </div>
+                <div className="caption">featuring the UKs first LED cinema on site</div>
+              </div>
+              <div className="right">
+                <div className="image">
+                  <img src="/static/images/FG_UI01_assets_home_location 1 detail.jpg" alt="" />
+                </div>
+              </div>
+              <div className="location-name">Guildford</div>
+            </div>
+            <div className="location-item d-flex align-items-center justify-content-center type-2">
+              <div className="left">
+                <div className="image">
+                  <img src="/static/images/FG_UI01_assets_home_location 2 detail.jpg" alt="" />
+                </div>
+              </div>
+              <div className="right">
+                <div className="image">
+                  <img src="/static/images/FG_UI01_assets_home_location 2 main.jpg" alt="" />
+                </div>
+                <div className="caption">featuring the UKs first LED cinema on site</div>
+              </div>
+              <div className="location-name">colechester</div>
+            </div>
+            <div className="location-item d-flex align-items-center justify-content-center type-1">
+              <div className="left">
+                <div className="image">
+                  <img src="/static/images/FG_UI01_assets_home_location 1 main.jpg" alt="" />
+                </div>
+                <div className="caption">featuring the UKs first LED cinema on site</div>
+              </div>
+              <div className="right">
+                <div className="image">
+                  <img src="/static/images/FG_UI01_assets_home_location 1 detail.jpg" alt="" />
+                </div>
+              </div>
+              <div className="location-name">Guildford</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mailing-block text-center">
+          <div className="caption">sign up to our mailing</div>
         </div>
 
         <Footer></Footer> 

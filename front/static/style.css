@@ -7279,19 +7279,81 @@ body {
   text-align: right;
   border-right: none; }
 
-.colechester {
-  padding-left: 7%;
+.locations-block {
+  padding: 0 7%;
   padding-top: 50px; }
+  .locations-block .region-selector-container .region-selector-prefix {
+    font-size: 25px;
+    font-weight: 900;
+    color: #9E9D8F; }
+  .locations-block .region-selector-container .region-selector .selected-region {
+    margin-left: 10px;
+    margin-bottom: -3px;
+    color: #191714;
+    font-size: 25px;
+    font-weight: 900;
+    border-bottom: 3px solid #FF9C5F;
+    cursor: pointer; }
+  .locations-block .locations-list {
+    padding-top: 75px;
+    padding-bottom: 215px; }
+    .locations-block .locations-list .location-item {
+      line-height: .9;
+      position: relative;
+      margin-bottom: 80px; }
+      .locations-block .locations-list .location-item .location-name {
+        position: absolute;
+        background: #D9D9D2;
+        font-family: SixCaps,sans-serif;
+        text-transform: uppercase;
+        font-size: 200px;
+        text-align: center;
+        padding: 30px 100px;
+        left: 50%;
+        top: 50%;
+        transform: translate3D(-50%, -50%, 0); }
+      .locations-block .locations-list .location-item.type-1 .left {
+        padding-right: 20px; }
+        .locations-block .locations-list .location-item.type-1 .left .caption {
+          text-align: right;
+          padding-top: 20px;
+          font-weight: 900; }
+      .locations-block .locations-list .location-item.type-2 .right {
+        padding-left: 20px; }
+        .locations-block .locations-list .location-item.type-2 .right .caption {
+          text-align: left;
+          padding-top: 20px;
+          font-weight: 900; }
 
-.colechester .places {
-  padding-top: 75px;
-  padding-bottom: 215px;
-  font-size: 140px;
-  font-weight: 700;
-  color: #131828; }
-
-.colechester .places .place {
-  line-height: .9; }
+.mailing-block {
+  padding: 0 7%;
+  margin-bottom: 200px; }
+  .mailing-block .caption {
+    font-weight: 900;
+    font-size: 30px;
+    text-transform: uppercase;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    z-index: 2; }
+    .mailing-block .caption:after {
+      content: "";
+      display: block;
+      border-bottom: 4px solid #FF9C5F;
+      width: 100%;
+      padding: 0 30px;
+      box-sizing: content-box;
+      margin-left: -30px;
+      margin-top: -25px; }
+  .mailing-block:after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid #9E9D8F;
+    transform: rotate(9deg);
+    width: 100%;
+    margin-top: -17px;
+    position: relative;
+    z-index: 1; }
 
 footer {
   height: 565px;
