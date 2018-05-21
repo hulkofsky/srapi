@@ -109,7 +109,7 @@ class HomePage extends React.Component {
           <div className="row">
             <div className="col-md-6">
               <div className="bedroom-block">
-                <img src="/static/images/bedroom.jpg" alt="bedroom" className="bedroom" />
+                <img src="/static/images/bedroom.jpg" alt="bedroom" className="img-fluid bedroom" />
 
                 <div className="text-block">
                   <div className="text">
@@ -122,7 +122,7 @@ class HomePage extends React.Component {
               </div>
 
               <div className="kitchen-block">
-                <img src="/static/images/kitchen.jpg" alt="kitchen" className="kitchen" />
+                <img src="/static/images/kitchen.jpg" alt="kitchen" className="img-fluid kitchen" />
 
                 <div className="text-block">
                   <div className="text">
@@ -137,7 +137,7 @@ class HomePage extends React.Component {
             </div>
             <div className="col-md-6">
               <div className="bathroom-block">
-                <img src="/static/images/bathroom.jpg" alt="bathroom" className="bathroom" />
+                <img src="/static/images/bathroom.jpg" alt="bathroom" className="img-fluid bathroom" />
 
                 <div className="text-block">
                   <div className="text">
@@ -148,6 +148,8 @@ class HomePage extends React.Component {
                   </div>
                 </div>
               </div>
+
+              <div className="divider"></div>
 
               <div className="quote-block">
                 <div className="quote">
@@ -165,9 +167,7 @@ class HomePage extends React.Component {
           </div>
         </div>
 
-        <div className="line line3">
-
-        </div>
+        <div className="line line3"></div>
 
         <div className="just-living-block">
           <div className="football">
@@ -211,7 +211,7 @@ class HomePage extends React.Component {
               ROOFTOP SPORT
 
               <div className="svg-advantages-wrapper">
-                <img src="/static/svg/text.svg" alt="Advantages" className="svg-advantages" />
+                <img src="/static/svg/text.svg" alt="Advantages" className="img-fluid svg-advantages" />
               </div>
 
               <div className="line">
@@ -293,13 +293,13 @@ class HomePage extends React.Component {
             <div className="location-item d-flex align-items-center justify-content-center type-1">
               <div className="left">
                 <div className="image">
-                  <img src="/static/images/FG_UI01_assets_home_location 1 main.jpg" alt="" />
+                  <img src="/static/images/FG_UI01_assets_home_location 1 main.jpg" className="img-fluid" alt="" />
                 </div>
                 <div className="caption">featuring the UKs first LED cinema on site</div>
               </div>
               <div className="right">
                 <div className="image">
-                  <img src="/static/images/FG_UI01_assets_home_location 1 detail.jpg" alt="" />
+                  <img src="/static/images/FG_UI01_assets_home_location 1 detail.jpg" className="img-fluid" alt="" />
                 </div>
               </div>
               <div className="center-block">
@@ -312,12 +312,12 @@ class HomePage extends React.Component {
             <div className="location-item d-flex align-items-center justify-content-center type-2">
               <div className="left">
                 <div className="image">
-                  <img src="/static/images/FG_UI01_assets_home_location 2 detail.jpg" alt="" />
+                  <img src="/static/images/FG_UI01_assets_home_location 2 detail.jpg" className="img-fluid" alt="" />
                 </div>
               </div>
               <div className="right">
                 <div className="image">
-                  <img src="/static/images/FG_UI01_assets_home_location 2 main.jpg" alt="" />
+                  <img src="/static/images/FG_UI01_assets_home_location 2 main.jpg" className="img-fluid" alt="" />
                 </div>
                 <div className="caption">featuring the UKs first LED cinema on site</div>
               </div>
@@ -331,13 +331,13 @@ class HomePage extends React.Component {
             <div className="location-item d-flex align-items-center justify-content-center type-1">
               <div className="left">
                 <div className="image">
-                  <img src="/static/images/FG_UI01_assets_home_location 1 main.jpg" alt="" />
+                  <img src="/static/images/FG_UI01_assets_home_location 1 main.jpg" className="img-fluid" alt="" />
                 </div>
                 <div className="caption">featuring the UKs first LED cinema on site</div>
               </div>
               <div className="right">
                 <div className="image">
-                  <img src="/static/images/FG_UI01_assets_home_location 1 detail.jpg" alt="" />
+                  <img src="/static/images/FG_UI01_assets_home_location 1 detail.jpg" className="img-fluid" alt="" />
                 </div>
               </div>
               <div className="center-block">

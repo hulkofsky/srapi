@@ -22338,7 +22338,7 @@ function (_React$Component) {
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/bedroom.jpg",
         alt: "bedroom",
-        className: "bedroom",
+        className: "img-fluid bedroom",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 112
@@ -22370,7 +22370,7 @@ function (_React$Component) {
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/kitchen.jpg",
         alt: "kitchen",
-        className: "kitchen",
+        className: "img-fluid kitchen",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 125
@@ -22408,7 +22408,7 @@ function (_React$Component) {
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/bathroom.jpg",
         alt: "bathroom",
-        className: "bathroom",
+        className: "img-fluid bathroom",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 140
@@ -22432,40 +22432,46 @@ function (_React$Component) {
           lineNumber: 146
         }
       }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "quote-block",
+        className: "divider",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 152
+        }
+      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "quote-block",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 154
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "quote",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 153
+          lineNumber: 155
         }
       }, "This is more than your first, second or third year of Uni, this is the beginning of your success story and adult life. So reject the status quo, and rebuild it. With us."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn-container",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 159
+          lineNumber: 161
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn tour",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 160
+          lineNumber: 162
         }
       }, "Take a tour"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn btn-border",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 161
+          lineNumber: 163
         }
       })))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "line line3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 168
+          lineNumber: 170
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "just-living-block",
@@ -22586,7 +22592,7 @@ function (_React$Component) {
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/svg/text.svg",
         alt: "Advantages",
-        className: "svg-advantages",
+        className: "img-fluid svg-advantages",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 214
@@ -22799,6 +22805,7 @@ function (_React$Component) {
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/FG_UI01_assets_home_location 1 main.jpg",
+        className: "img-fluid",
         alt: "",
         __source: {
           fileName: _jsxFileName,
@@ -22824,6 +22831,7 @@ function (_React$Component) {
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/FG_UI01_assets_home_location 1 detail.jpg",
+        className: "img-fluid",
         alt: "",
         __source: {
           fileName: _jsxFileName,
@@ -22867,6 +22875,7 @@ function (_React$Component) {
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/FG_UI01_assets_home_location 2 detail.jpg",
+        className: "img-fluid",
         alt: "",
         __source: {
           fileName: _jsxFileName,
@@ -22886,6 +22895,7 @@ function (_React$Component) {
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/FG_UI01_assets_home_location 2 main.jpg",
+        className: "img-fluid",
         alt: "",
         __source: {
           fileName: _jsxFileName,
@@ -22935,6 +22945,7 @@ function (_React$Component) {
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/FG_UI01_assets_home_location 1 main.jpg",
+        className: "img-fluid",
         alt: "",
         __source: {
           fileName: _jsxFileName,
@@ -22960,6 +22971,7 @@ function (_React$Component) {
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/FG_UI01_assets_home_location 1 detail.jpg",
+        className: "img-fluid",
         alt: "",
         __source: {
           fileName: _jsxFileName,
