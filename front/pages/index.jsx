@@ -103,6 +103,9 @@ class HomePage extends React.Component {
             Ours was that student housing is exactly that. <br/>
             Housing. Nothing more. We’re creating the more.
           </div>
+
+          <div className="dashes first"></div>
+          <div className="dashes second"></div>
         </div>
 
         <div className="tour-block">

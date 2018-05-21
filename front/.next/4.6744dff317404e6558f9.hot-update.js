@@ -273,333 +273,345 @@ function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 103
         }
-      }), "Housing. Nothing more. We\u2019re creating the more.")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }), "Housing. Nothing more. We\u2019re creating the more."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "dashes",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 107
+        }
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "tour-block",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 108
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "row",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 109
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "col-md-6",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 110
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "bedroom-block",
+        className: "row",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 111
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
-        src: "/static/images/bedroom.jpg",
-        alt: "bedroom",
-        className: "bedroom",
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "col-md-6",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 112
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "bedroom-block",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 113
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
+        src: "/static/images/bedroom.jpg",
+        alt: "bedroom",
+        className: "img-fluid bedroom",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 114
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 114
+          lineNumber: 116
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 115
+          lineNumber: 117
         }
       }, "Refined personal bedrooms for whatever you get up to"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "horizontal-line",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 118
+          lineNumber: 120
         }
       }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "kitchen-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 124
+          lineNumber: 126
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/kitchen.jpg",
         alt: "kitchen",
-        className: "kitchen",
+        className: "img-fluid kitchen",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 125
+          lineNumber: 127
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 127
+          lineNumber: 129
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 128
+          lineNumber: 130
         }
       }, "Takeaway slaying, sleek looking, party space kitchens"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "horizontal-line",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 131
+          lineNumber: 133
         }
       })))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "col-md-6",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 138
+          lineNumber: 140
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "bathroom-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 139
+          lineNumber: 141
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/bathroom.jpg",
         alt: "bathroom",
-        className: "bathroom",
+        className: "img-fluid bathroom",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 140
+          lineNumber: 142
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 142
+          lineNumber: 144
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 143
+          lineNumber: 145
         }
       }, "A home from home, right down to the bathrooms"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "horizontal-line",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 146
+          lineNumber: 148
         }
       }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "divider",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 154
+        }
+      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "quote-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 152
+          lineNumber: 156
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "quote",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 153
+          lineNumber: 157
         }
       }, "This is more than your first, second or third year of Uni, this is the beginning of your success story and adult life. So reject the status quo, and rebuild it. With us."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn-container",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 159
+          lineNumber: 163
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn tour",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 160
+          lineNumber: 164
         }
       }, "Take a tour"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn btn-border",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 161
+          lineNumber: 165
         }
       })))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "line line3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 168
+          lineNumber: 172
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "just-living-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 172
+          lineNumber: 174
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "football",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 173
+          lineNumber: 175
         }
       }, "We put a football pitch on your roof and a cinema in your basement."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 177
+          lineNumber: 179
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "col-md-9",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 178
+          lineNumber: 180
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "quote",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 179
+          lineNumber: 181
         }
       }, "THIS ISN\u2019T ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 180
+          lineNumber: 182
         }
       }), "STUDENT LIVING. ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 181
+          lineNumber: 183
         }
       }), "IT\u2019S JUST LIVING.")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "col-md-3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 185
+          lineNumber: 187
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "horizontal-line",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 186
+          lineNumber: 188
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "roof",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 190
+          lineNumber: 192
         }
       })))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "roof-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 197
+          lineNumber: 199
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "background-quote",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 198
+          lineNumber: 200
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "quote",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 199
+          lineNumber: 201
         }
       }, "THIS ISN\u2019T ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 200
+          lineNumber: 202
         }
       }), "STUDENT LIVING. ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 201
+          lineNumber: 203
         }
       }), "IT\u2019S JUST LIVING.")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 206
+          lineNumber: 208
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "col-md-6",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 207
+          lineNumber: 209
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "full-football",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 208
+          lineNumber: 210
         }
       })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "advantages",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 210
+          lineNumber: 212
         }
       }, "ROOFTOP SPORT", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "svg-advantages-wrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 213
+          lineNumber: 215
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/svg/text.svg",
         alt: "Advantages",
-        className: "svg-advantages",
+        className: "img-fluid svg-advantages",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 214
+          lineNumber: 216
         }
       })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "line",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 217
+          lineNumber: 219
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "available",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 221
+          lineNumber: 223
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "available-title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 222
+          lineNumber: 224
         }
       }, "Available at Loughborough, Bristol and Manchester"), "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cum dolore nulla quidem repellat tenetur. Cumque distinctio dolor dolorum expedita fugiat."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "lines",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 228
+          lineNumber: 230
         }
       })))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "partner-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 233
+          lineNumber: 235
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "ellipse-bg",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 234
+          lineNumber: 236
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 237
+          lineNumber: 239
         }
       }, "YOU\u2019LL GET 25% OFF OUR PARTNER\u2019S TECH"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "wrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 241
+          lineNumber: 243
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/svg/samsung-logo.svg",
@@ -607,41 +619,41 @@ function (_React$Component) {
         className: "samsung-logo",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 242
+          lineNumber: 244
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
         className: "paragraph",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 244
+          lineNumber: 246
         }
       }, "This is more than your \uFB01rst, second or third year of Uni, ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 245
+          lineNumber: 247
         }
       }), "this is the beginning of your success story and adult life. ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 246
+          lineNumber: 248
         }
       }), "So reject the status quo, and rebuild it. With us."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn-container",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 250
+          lineNumber: 252
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn discount",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 251
+          lineNumber: 253
         }
       }, "Get 25% off"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn btn-border",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 252
+          lineNumber: 254
         }
       })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/small-bedroom.jpg",
@@ -649,212 +661,196 @@ function (_React$Component) {
         className: "partner-block-image",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 255
+          lineNumber: 257
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 257
+          lineNumber: 259
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 258
+          lineNumber: 260
         }
       }, "Pixel perfect TVs and other tech integration in your spaces"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "horizontal-line",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 261
+          lineNumber: 263
         }
       })))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "leap-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 268
+          lineNumber: 270
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "quote-line quote-line-one",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 269
+          lineNumber: 271
         }
       }, "TAKE THIS STEP"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "quote-line quote-line-two",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 272
+          lineNumber: 274
         }
       }, "TO MAKE YOUR LEAP")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "locations-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 277
+          lineNumber: 279
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "caption-region-selector",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 280
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 278
+          lineNumber: 281
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "paragraph col-md-4",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 279
+          lineNumber: 282
         }
       }, "With over 30 locations across the country, we want there to be a location especially for you. Once you\u2019ve found the best fit, view it\u2019s bespoke page full of local trivia, recommendations and flat details to get you going in your new city."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "region-selector-container col-md-4 offset-md-4 justify-content-md-end justify-content-center align-items-end d-flex",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 282
+          lineNumber: 285
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "region-selector-prefix",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 283
+          lineNumber: 286
         }
       }, "Region:"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "region-selector",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 284
+          lineNumber: 287
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "selected-region",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 285
+          lineNumber: 288
         }
-      }, "Northern England")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, "Northern England"))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "locations-list",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 290
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "location-item d-flex align-items-center justify-content-center type-1",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 291
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "left",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 292
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 293
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
-        src: "/static/images/FG_UI01_assets_home_location 1 main.jpg",
-        alt: "",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 294
         }
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "caption",
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "location-item d-flex align-items-center justify-content-center type-1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 295
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "left",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 296
         }
-      }, "featuring the UKs first LED cinema on site")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "right",
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 297
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
+        src: "/static/images/FG_UI01_assets_home_location 1 main.jpg",
+        className: "img-fluid",
+        alt: "",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 298
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 299
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
-        src: "/static/images/FG_UI01_assets_home_location 1 detail.jpg",
-        alt: "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 300
-        }
-      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "center-block",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 303
-        }
-      }, "Guildford")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "location-item d-flex align-items-center justify-content-center type-2",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 305
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "left",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 306
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 307
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
-        src: "/static/images/FG_UI01_assets_home_location 2 detail.jpg",
-        alt: "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 308
-        }
-      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "right",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 311
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 312
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
-        src: "/static/images/FG_UI01_assets_home_location 2 main.jpg",
-        alt: "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 313
         }
       })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "caption",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 315
+          lineNumber: 300
         }
       }, "featuring the UKs first LED cinema on site")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "right",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 302
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 303
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
+        src: "/static/images/FG_UI01_assets_home_location 1 detail.jpg",
+        className: "img-fluid",
+        alt: "",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 304
+        }
+      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "center-block",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 307
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "location-name",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 308
+        }
+      }, "Guildford"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "caption",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 311
+        }
+      }, "featuring the UKs first LED cinema on site"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "location-item d-flex align-items-center justify-content-center type-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 314
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "left",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 315
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 316
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
+        src: "/static/images/FG_UI01_assets_home_location 2 detail.jpg",
+        className: "img-fluid",
+        alt: "",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 317
         }
-      }, "colechester")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "location-item d-flex align-items-center justify-content-center type-1",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 319
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "left",
+      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "right",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 320
@@ -866,7 +862,8 @@ function (_React$Component) {
           lineNumber: 321
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
-        src: "/static/images/FG_UI01_assets_home_location 1 main.jpg",
+        src: "/static/images/FG_UI01_assets_home_location 2 main.jpg",
+        className: "img-fluid",
         alt: "",
         __source: {
           fileName: _jsxFileName,
@@ -879,46 +876,109 @@ function (_React$Component) {
           lineNumber: 324
         }
       }, "featuring the UKs first LED cinema on site")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "right",
+        className: "center-block",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 326
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image",
+        className: "location-name",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 327
         }
+      }, "colechester"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "caption",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 330
+        }
+      }, "featuring the UKs first LED cinema on site"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "location-item d-flex align-items-center justify-content-center type-1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 333
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "left",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 334
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 335
+        }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
-        src: "/static/images/FG_UI01_assets_home_location 1 detail.jpg",
+        src: "/static/images/FG_UI01_assets_home_location 1 main.jpg",
+        className: "img-fluid",
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 328
+          lineNumber: 336
+        }
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "caption",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 338
+        }
+      }, "featuring the UKs first LED cinema on site")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "right",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 340
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 341
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
+        src: "/static/images/FG_UI01_assets_home_location 1 detail.jpg",
+        className: "img-fluid",
+        alt: "",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 342
         }
       }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "center-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 331
+          lineNumber: 345
         }
-      }, "Guildford")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "location-name",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 346
+        }
+      }, "Guildford"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "caption",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 349
+        }
+      }, "featuring the UKs first LED cinema on site"))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "mailing-block text-center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 336
+          lineNumber: 355
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "caption",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 337
+          lineNumber: 356
         }
       }, "sign up to our mailing")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__components_Footer__["a" /* default */], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 340
+          lineNumber: 359
         }
       }));
     }
@@ -1024,4 +1084,4 @@ var _default = Object(__WEBPACK_IMPORTED_MODULE_6_react_redux__["b" /* connect *
 /***/ })
 
 })
-//# sourceMappingURL=4.70c0649df32ef8f8fd78.hot-update.js.map
+//# sourceMappingURL=4.6744dff317404e6558f9.hot-update.js.map

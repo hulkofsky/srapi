@@ -6988,11 +6988,41 @@ body {
     left: -25vw;
     z-index: 1; }
 
+.rising-standarts-block .dashes {
+  display: none; }
+
 @media screen and (max-width: 740px) {
   .rising-standarts-block {
-    padding-top: 32vw; }
+    background: url(/static/svg/bg-mobile.svg) center top no-repeat;
+    background-size: cover;
+    padding-top: 36vw;
+    padding-bottom: 70vw; }
     .rising-standarts-block .quote {
-      width: 70%; } }
+      width: 70%; }
+    .rising-standarts-block .text {
+      width: 70%;
+      margin-left: 15%;
+      padding-bottom: 4vw; }
+      .rising-standarts-block .text:before {
+        position: static;
+        margin-bottom: 70px;
+        width: 50%;
+        margin-left: 25%; }
+    .rising-standarts-block .dashes {
+      display: block;
+      border: 1px solid transparent;
+      border-image: url(/static/images/border.png) 1 repeat;
+      height: 50vw;
+      border-bottom: none;
+      border-top: none; }
+      .rising-standarts-block .dashes.first {
+        margin-left: 7%;
+        width: 41%;
+        float: left; }
+      .rising-standarts-block .dashes.second {
+        margin-left: 4%;
+        width: 41%;
+        float: left; } }
 
 .tour-block {
   padding: 0 9.75% 130px;
@@ -7090,38 +7120,42 @@ body {
     width: 100%; } }
 
 @media screen and (max-width: 767px) {
-  .tour-block .bathroom-block {
-    margin-top: 0; }
-  .tour-block .quote-block .btn {
-    width: 100%; } }
+  .tour-block {
+    margin-top: -225px; }
+    .tour-block .bathroom-block {
+      margin-top: 0; }
+    .tour-block .quote-block .btn {
+      width: 100%; } }
 
 @media screen and (max-width: 740px) {
-  .tour-block .horizontal-line {
-    display: none; }
-  .tour-block .col-md-6:first-child,
-  .tour-block .col-md-6:last-child {
-    padding: 0; }
-  .tour-block .text-block {
-    margin-bottom: 50px; }
-    .tour-block .text-block .text {
-      width: 60%;
-      display: block;
-      margin: 0 auto;
-      text-align: center;
-      font-size: 21px; }
-  .tour-block .quote-block .quote {
-    margin-top: 0;
-    font-size: 21px;
-    line-height: 1.5;
-    text-align: justify; }
-  .tour-block .quote-block .btn-container {
-    width: 350px;
-    margin: 0 auto; }
-  .tour-block .quote-block:after {
-    margin-top: 0;
-    top: 20vw; }
-  .tour-block .divider {
-    display: none; } }
+  .tour-block {
+    margin-top: -50px; }
+    .tour-block .horizontal-line {
+      display: none; }
+    .tour-block .col-md-6:first-child,
+    .tour-block .col-md-6:last-child {
+      padding: 0; }
+    .tour-block .text-block {
+      margin-bottom: 50px; }
+      .tour-block .text-block .text {
+        width: 60%;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 21px; }
+    .tour-block .quote-block .quote {
+      margin-top: 0;
+      font-size: 21px;
+      line-height: 1.5;
+      text-align: justify; }
+    .tour-block .quote-block .btn-container {
+      width: 350px;
+      margin: 0 auto; }
+    .tour-block .quote-block:after {
+      margin-top: 0;
+      top: 20vw; }
+    .tour-block .divider {
+      display: none; } }
 
 .line3 {
   content: "";
@@ -7170,6 +7204,29 @@ body {
   background-color: #9e9d8f;
   position: absolute;
   bottom: 100px; }
+
+@media screen and (max-width: 767px) {
+  .just-living-block {
+    padding-bottom: 300px;
+    overflow: hidden; }
+    .just-living-block .football {
+      font-size: 21px; }
+    .just-living-block .quote {
+      font-size: 24vw;
+      line-height: 1; }
+    .just-living-block .row {
+      position: relative; }
+    .just-living-block .roof {
+      height: 100vw;
+      left: 70%; }
+    .just-living-block .col-md-3 {
+      position: absolute;
+      top: 0;
+      left: 30%; }
+    .just-living-block .horizontal-line {
+      position: absolute;
+      bottom: 100px;
+      left: 40%; } }
 
 .roof-block {
   padding-top: 130px; }
@@ -7244,10 +7301,12 @@ body {
   background-size: cover; }
 
 @media screen and (max-width: 740px) {
-  .roof-block .svg-advantages-wrapper {
-    display: none; }
-  .roof-block .advantages {
-    position: static; } }
+  .roof-block {
+    padding-top: 0; }
+    .roof-block .svg-advantages-wrapper {
+      display: none; }
+    .roof-block .advantages {
+      position: static; } }
 
 .partner-block {
   display: -webkit-box;
