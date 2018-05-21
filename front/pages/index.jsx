@@ -21,6 +21,12 @@ class HomePage extends React.Component {
   componentWillUnmount () {
   }
 
+  scrollToBlock(selector) {
+    document.querySelector(selector).scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  }
+
   render () {
     const { locations } = this.props
 
@@ -42,7 +48,7 @@ class HomePage extends React.Component {
         </nav>
 
         <div className="skateboard-block">
-          <div className="btn-container">
+          <div className="btn-container" onClick={() => this.scrollToBlock('.status-quo-block')}>
             <div className="btn">future generation</div>
             <div className="btn btn-border"></div>
           </div>
@@ -76,7 +82,7 @@ class HomePage extends React.Component {
                 life. So reject the status quo, and rebuild it.
               </p>
 
-              <div className="btn-container">
+              <div className="btn-container" onClick={() => this.scrollToBlock('.escalator-block')}>
                 <div className="btn">Keep talking</div>
                 <div className="btn btn-border"></div>
               </div>
@@ -161,7 +167,7 @@ class HomePage extends React.Component {
                   So reject the status quo, and rebuild it. With us.
                 </div>
 
-                <div className="btn-container">
+                <div className="btn-container" onClick={() => this.scrollToBlock('.just-living-block')}>
                   <div className="btn tour">Take a tour</div>
                   <div className="btn btn-border"></div>
                 </div>

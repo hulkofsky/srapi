@@ -1,540 +1,32 @@
-module.exports =
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		var threw = true;
-/******/ 		try {
-/******/ 			modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/ 			threw = false;
-/******/ 		} finally {
-/******/ 			if(threw) delete installedModules[moduleId];
-/******/ 		}
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
-/******/ })
-/************************************************************************/
-/******/ ({
-
-/***/ "./actions/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return REQUEST_CURRENT_LOCATION; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return REQUEST_LOCATIONS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return RECEIVE_CURRENT_LOCATION; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return RECEIVE_LOCATIONS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return SHOW_AUTH_DIALOG; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HIDE_AUTH_DIALOG; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return SUBMIT_AUTH_DIALOG; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return PROCESS_AUTH_DIALOG; });
-/* unused harmony export requestCurrentLocation */
-/* unused harmony export requestLocations */
-/* unused harmony export receiveCurrentLocation */
-/* unused harmony export receiveLocations */
-/* unused harmony export fetchCurrentLocation */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return fetchLocations; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return showAuthDialog; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return hideAuthDialog; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return submitAuthDialog; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return processAuthDialog; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch__ = __webpack_require__("isomorphic-unfetch");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch__);
-
-var backendUrl = 'http://localhost:1337';
-var authUrl = backendUrl + '/auth';
-var baseApiUrl = backendUrl + '/api';
-var REQUEST_CURRENT_LOCATION = 'REQUEST_CURRENT_LOCATION';
-var REQUEST_LOCATIONS = 'REQUEST_LOCATIONS';
-var RECEIVE_CURRENT_LOCATION = 'RECEIVE_CURRENT_LOCATION';
-var RECEIVE_LOCATIONS = 'RECEIVE_LOCATIONS';
-var SHOW_AUTH_DIALOG = 'SHOW_AUTH_DIALOG';
-var HIDE_AUTH_DIALOG = 'HIDE_AUTH_DIALOG';
-var SUBMIT_AUTH_DIALOG = 'SUBMIT_AUTH_DIALOG';
-var PROCESS_AUTH_DIALOG = 'PROCESS_AUTH_DIALOG';
-var requestCurrentLocation = function requestCurrentLocation(locationID) {
-  return {
-    type: REQUEST_CURRENT_LOCATION,
-    id: locationID
-  };
-};
-var requestLocations = function requestLocations() {
-  return {
-    type: REQUEST_LOCATIONS
-  };
-};
-var receiveCurrentLocation = function receiveCurrentLocation(json) {
-  return {
-    type: RECEIVE_CURRENT_LOCATION,
-    location: json,
-    receivedAt: Date.now()
-  };
-};
-var receiveLocations = function receiveLocations(json) {
-  return {
-    type: RECEIVE_LOCATIONS,
-    locations: json,
-    receivedAt: Date.now()
-  };
-};
-var fetchCurrentLocation = function fetchCurrentLocation(locationID) {
-  return function (dispatch) {
-    dispatch(requestCurrentLocation());
-    return __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch___default()(baseApiUrl + '/location/' + locationID).then(function (response) {
-      return response.json();
-    }, function (error) {
-      return console.log('An error occurred.', error);
-    }).then(function (json) {
-      return dispatch(receiveCurrentLocation(json));
-    });
-  };
-};
-var fetchLocations = function fetchLocations() {
-  return function (dispatch) {
-    dispatch(requestLocations());
-    return __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch___default()(baseApiUrl + '/location').then(function (response) {
-      return response.json();
-    }, function (error) {
-      return console.log('An error occurred.', error);
-    }).then(function (json) {
-      return dispatch(receiveLocations(json));
-    });
-  };
-};
-var showAuthDialog = function showAuthDialog() {
-  return {
-    type: SHOW_AUTH_DIALOG
-  };
-};
-var hideAuthDialog = function hideAuthDialog() {
-  return {
-    type: HIDE_AUTH_DIALOG
-  };
-};
-var submitAuthDialog = function submitAuthDialog(identifier, password) {
-  return function (dispatch) {
-    return __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch___default()(authUrl + '/local', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        identifier: identifier,
-        password: password
-      })
-    }).then(function (response) {
-      return response.json();
-    }, function (error) {
-      return console.log('An error occurred.', error);
-    }).then(function (json) {
-      if (json.error) {
-        alert(json.message);
-      } else {
-        dispatch(processAuthDialog(json));
-      }
-    });
-  };
-};
-var processAuthDialog = function processAuthDialog(auth) {
-  return {
-    type: PROCESS_AUTH_DIALOG,
-    auth: auth
-  };
-};
-
-/***/ }),
-
-/***/ "./components/Footer.jsx":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux__ = __webpack_require__("react-redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_redux__);
-var _jsxFileName = "C:\\Users\\venom\\Desktop\\future_generation\\front\\components\\Footer.jsx";
-
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-var Footer =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(Footer, _React$Component);
-
-  function Footer() {
-    _classCallCheck(this, Footer);
-
-    return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
-  }
-
-  _createClass(Footer, [{
-    key: "render",
-    value: function render() {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("footer", {
-        className: "footer",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 7
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-        src: "/static/svg/FG_UI01_assets_footer fg logo.svg",
-        alt: "footer-logo",
-        className: "footer-logo",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 8
-        }
-      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        className: "footer-menu",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 9
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        href: "#",
-        className: "menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 10
-        }
-      }, "Partners"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        href: "#",
-        className: "menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 11
-        }
-      }, "Brand Appearances"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        href: "#",
-        className: "menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 12
-        }
-      }, "Press Kit "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        href: "#",
-        className: "menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 13
-        }
-      }, "Legal & Policy"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        className: "dev",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 15
-        }
-      }, "designed and built by vitamin london")));
-    }
-  }]);
-
-  return Footer;
-}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["connect"])(null, null)(Footer));
-
-/***/ }),
-
-/***/ "./components/Header.jsx":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head__ = __webpack_require__("next/head");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_head__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_redux__ = __webpack_require__("react-redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_redux__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_redux__ = __webpack_require__("redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_redux__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__actions__ = __webpack_require__("./actions/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_bootstrap__ = __webpack_require__("react-bootstrap");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_bootstrap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_react_bootstrap__);
-var _jsxFileName = "C:\\Users\\venom\\Desktop\\future_generation\\front\\components\\Header.jsx";
-
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-
-
-
-var Header =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(Header, _React$Component);
-
-  function Header() {
-    _classCallCheck(this, Header);
-
-    return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
-  }
-
-  _createClass(Header, [{
-    key: "handleAuthDialogSubmit",
-    value: function handleAuthDialogSubmit(event) {
-      event.preventDefault();
-      var data = new FormData(event.target);
-      this.props.submitAuthDialog(data.get("identifier"), data.get("password"));
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var authDialog = this.props.authDialog;
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 24
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_head___default.a, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 25
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("title", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 26
-        }
-      }, this.props.title), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("link", {
-        rel: "shortcut icon",
-        href: "/static/favicon.ico",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 27
-        }
-      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", {
-        name: "viewport",
-        content: "width=device-width, initial-scale=1",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 28
-        }
-      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", {
-        charSet: "utf-8",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 29
-        }
-      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("link", {
-        rel: "stylesheet",
-        href: "/static/style.css",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 30
-        }
-      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_react_bootstrap__["Modal"], {
-        show: authDialog.isVisible,
-        onHide: this.props.hideAuthDialog,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 35
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_react_bootstrap__["Modal"].Header, {
-        closeButton: true,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 36
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_react_bootstrap__["Modal"].Title, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 37
-        }
-      }, "Authentication required")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5_react_bootstrap__["Modal"].Body, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 39
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("form", {
-        onSubmit: this.handleAuthDialogSubmit.bind(this),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 40
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        className: "form-group",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 41
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("label", {
-        htmlFor: "identifierInput",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 42
-        }
-      }, "Username or email"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
-        type: "text",
-        name: "identifier",
-        className: "form-control",
-        id: "identifierInput",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 43
-        }
-      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        className: "form-group",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 45
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("label", {
-        htmlFor: "passwordInput",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 46
-        }
-      }, "Password"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
-        type: "password",
-        name: "password",
-        className: "form-control",
-        id: "passwordInput",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 47
-        }
-      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
-        type: "submit",
-        className: "btn btn-primary",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 49
-        }
-      }, "Submit")))));
-    }
-  }]);
-
-  return Header;
-}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
-
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    authDialog: state.authDialog
-  };
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    showAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_3_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_4__actions__["l" /* showAuthDialog */], dispatch),
-    hideAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_3_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_4__actions__["j" /* hideAuthDialog */], dispatch),
-    submitAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_3_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_4__actions__["m" /* submitAuthDialog */], dispatch),
-    processAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_3_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_4__actions__["k" /* processAuthDialog */], dispatch)
-  };
-};
-
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_2_react_redux__["connect"])(mapStateToProps, mapDispatchToProps)(Header));
-
-/***/ }),
+webpackHotUpdate(4,{
 
 /***/ "./pages/index.jsx":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__ = __webpack_require__("@babel/runtime/regenerator");
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__ = __webpack_require__("./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__("prop-types");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__("./node_modules/next/node_modules/prop-types/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_redux__ = __webpack_require__("redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_redux__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_redux__ = __webpack_require__("./node_modules/redux/es/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__actions__ = __webpack_require__("./actions/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store__ = __webpack_require__("./store.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_redux__ = __webpack_require__("react-redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react_redux__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_next_link__ = __webpack_require__("next/link");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_redux__ = __webpack_require__("./node_modules/react-redux/es/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_next_link__ = __webpack_require__("./node_modules/next/link.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_next_link__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Header__ = __webpack_require__("./components/Header.jsx");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Footer__ = __webpack_require__("./components/Footer.jsx");
 
 var _jsxFileName = "C:\\Users\\venom\\Desktop\\future_generation\\front\\pages\\index.jsx";
+
+(function () {
+  var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
+
+  enterModule && enterModule(module);
+})();
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -580,17 +72,15 @@ function (_React$Component) {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {}
   }, {
-    key: "scrollToBlock",
-    value: function scrollToBlock(selector) {
-      document.querySelector(selector).scrollIntoView({
+    key: "scrollToStatusQuo",
+    value: function scrollToStatusQuo() {
+      document.querySelector('.status-quo-block').scrollIntoView({
         behavior: 'smooth'
       });
     }
   }, {
     key: "render",
     value: function render() {
-      var _this = this;
-
       var locations = this.props.locations;
       return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "homepage",
@@ -634,9 +124,7 @@ function (_React$Component) {
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn-container",
-        onClick: function onClick() {
-          return _this.scrollToBlock('.status-quo-block');
-        },
+        onClick: this.scrollToStatusQuo,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 51
@@ -731,9 +219,6 @@ function (_React$Component) {
         }
       }, "This is more than your first, second or third year of Uni, this is the beginning of your success story and adult life. So reject the status quo, and rebuild it."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn-container",
-        onClick: function onClick() {
-          return _this.scrollToBlock('.escalator-block');
-        },
         __source: {
           fileName: _jsxFileName,
           lineNumber: 85
@@ -948,9 +433,6 @@ function (_React$Component) {
         }
       }, "This is more than your first, second or third year of Uni, this is the beginning of your success story and adult life. So reject the status quo, and rebuild it. With us."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn-container",
-        onClick: function onClick() {
-          return _this.scrollToBlock('.just-living-block');
-        },
         __source: {
           fileName: _jsxFileName,
           lineNumber: 170
@@ -1514,6 +996,11 @@ function (_React$Component) {
         }
       }));
     }
+  }, {
+    key: "__reactstandin__regenerateByEval",
+    value: function __reactstandin__regenerateByEval(key, code) {
+      this[key] = eval(code);
+    }
   }], [{
     key: "getInitialProps",
     value: function () {
@@ -1566,240 +1053,49 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_6_react_redux__["connect"])(mapStateToProps, mapDispatchToProps)(HomePage));
+var _default = Object(__WEBPACK_IMPORTED_MODULE_6_react_redux__["b" /* connect */])(mapStateToProps, mapDispatchToProps)(HomePage);
 
-/***/ }),
+/* harmony default export */ __webpack_exports__["default"] = (_default);
+;
 
-/***/ "./reducers/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+(function () {
+  var reactHotLoader = __webpack_require__("./node_modules/react-hot-loader/index.js").default;
 
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__("redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_redux__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actions__ = __webpack_require__("./actions/index.js");
+  var leaveModule = __webpack_require__("./node_modules/react-hot-loader/index.js").leaveModule;
 
-
-
-function currentLocation() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
-    isFetching: false,
-    item: null
-  };
-  var action = arguments.length > 1 ? arguments[1] : undefined;
-
-  switch (action.type) {
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["e" /* REQUEST_CURRENT_LOCATION */]:
-      return Object.assign({}, state, {
-        isFetching: true
-      });
-
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["c" /* RECEIVE_CURRENT_LOCATION */]:
-      return Object.assign({}, state, {
-        isFetching: false,
-        item: action.location,
-        lastUpdated: action.receivedAt
-      });
-
-    default:
-      return state;
+  if (!reactHotLoader) {
+    return;
   }
-}
 
-function locations() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
-    isFetching: false,
-    items: []
-  };
-  var action = arguments.length > 1 ? arguments[1] : undefined;
+  reactHotLoader.register(HomePage, "HomePage", "C:\\Users\\venom\\Desktop\\future_generation\\front\\pages\\index.jsx");
+  reactHotLoader.register(mapStateToProps, "mapStateToProps", "C:\\Users\\venom\\Desktop\\future_generation\\front\\pages\\index.jsx");
+  reactHotLoader.register(mapDispatchToProps, "mapDispatchToProps", "C:\\Users\\venom\\Desktop\\future_generation\\front\\pages\\index.jsx");
+  reactHotLoader.register(_default, "default", "C:\\Users\\venom\\Desktop\\future_generation\\front\\pages\\index.jsx");
+  leaveModule(module);
+})();
 
-  switch (action.type) {
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["f" /* REQUEST_LOCATIONS */]:
-      return Object.assign({}, state, {
-        isFetching: true
-      });
+;
+    (function (Component, route) {
+      if(!Component) return
+      if (false) return
+      module.hot.accept()
+      Component.__route = route
 
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["d" /* RECEIVE_LOCATIONS */]:
-      return Object.assign({}, state, {
-        isFetching: false,
-        items: action.locations,
-        lastUpdated: action.receivedAt
-      });
+      if (module.hot.status() === 'idle') return
 
-    default:
-      return state;
-  }
-}
+      var components = next.router.components
+      for (var r in components) {
+        if (!components.hasOwnProperty(r)) continue
 
-function authDialog() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
-    isVisible: false,
-    isSubmitting: false,
-    identifier: null,
-    password: null,
-    auth: null,
-    error: null
-  };
-  var action = arguments.length > 1 ? arguments[1] : undefined;
-
-  switch (action.type) {
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["g" /* SHOW_AUTH_DIALOG */]:
-      return Object.assign({}, state, {
-        isVisible: true
-      });
-
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["a" /* HIDE_AUTH_DIALOG */]:
-      return Object.assign({}, state, {
-        isVisible: false
-      });
-
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["h" /* SUBMIT_AUTH_DIALOG */]:
-      return Object.assign({}, state, {
-        isSubmitting: true,
-        identifier: action.identifier,
-        password: action.password
-      });
-
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["b" /* PROCESS_AUTH_DIALOG */]:
-      return Object.assign({}, state, {
-        isSubmitting: false,
-        isVisible: false,
-        auth: action.auth
-      });
-
-    default:
-      return state;
-  }
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_redux__["combineReducers"])({
-  currentLocation: currentLocation,
-  locations: locations,
-  authDialog: authDialog
-}));
-
-/***/ }),
-
-/***/ "./store.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return initStore; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__("redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_redux__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_redux_devtools_extension__ = __webpack_require__("redux-devtools-extension");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_redux_devtools_extension___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_redux_devtools_extension__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_redux_thunk__ = __webpack_require__("redux-thunk");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_redux_thunk___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_redux_thunk__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__actions__ = __webpack_require__("./actions/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__reducers__ = __webpack_require__("./reducers/index.js");
-
-
-
-
-
-var appInitialState = {
-  locations: [],
-  currentLocation: null,
-  authDialog: {
-    isVisible: false,
-    isSubmitting: false,
-    identifier: '',
-    password: '',
-    auth: null,
-    error: null
-  }
-};
-var initStore = function initStore() {
-  var initialState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : appInitialState;
-  return Object(__WEBPACK_IMPORTED_MODULE_0_redux__["createStore"])(__WEBPACK_IMPORTED_MODULE_4__reducers__["a" /* default */], initialState, Object(__WEBPACK_IMPORTED_MODULE_1_redux_devtools_extension__["composeWithDevTools"])(Object(__WEBPACK_IMPORTED_MODULE_0_redux__["applyMiddleware"])(__WEBPACK_IMPORTED_MODULE_2_redux_thunk___default.a)));
-};
-
-/***/ }),
-
-/***/ 3:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__("./pages/index.jsx");
-
-
-/***/ }),
-
-/***/ "@babel/runtime/regenerator":
-/***/ (function(module, exports) {
-
-module.exports = require("@babel/runtime/regenerator");
-
-/***/ }),
-
-/***/ "isomorphic-unfetch":
-/***/ (function(module, exports) {
-
-module.exports = require("isomorphic-unfetch");
-
-/***/ }),
-
-/***/ "next/head":
-/***/ (function(module, exports) {
-
-module.exports = require("next/head");
-
-/***/ }),
-
-/***/ "next/link":
-/***/ (function(module, exports) {
-
-module.exports = require("next/link");
-
-/***/ }),
-
-/***/ "prop-types":
-/***/ (function(module, exports) {
-
-module.exports = require("prop-types");
-
-/***/ }),
-
-/***/ "react":
-/***/ (function(module, exports) {
-
-module.exports = require("react");
-
-/***/ }),
-
-/***/ "react-bootstrap":
-/***/ (function(module, exports) {
-
-module.exports = require("react-bootstrap");
-
-/***/ }),
-
-/***/ "react-redux":
-/***/ (function(module, exports) {
-
-module.exports = require("react-redux");
-
-/***/ }),
-
-/***/ "redux":
-/***/ (function(module, exports) {
-
-module.exports = require("redux");
-
-/***/ }),
-
-/***/ "redux-devtools-extension":
-/***/ (function(module, exports) {
-
-module.exports = require("redux-devtools-extension");
-
-/***/ }),
-
-/***/ "redux-thunk":
-/***/ (function(module, exports) {
-
-module.exports = require("redux-thunk");
+        if (components[r].Component.__route === route) {
+          next.router.update(r, Component)
+        }
+      }
+    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/")
+  
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module)))
 
 /***/ })
 
-/******/ });
-//# sourceMappingURL=index.js.map
+})
+//# sourceMappingURL=4.e4e446f21c08124ef1d6.hot-update.js.map
