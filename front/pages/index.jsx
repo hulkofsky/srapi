@@ -49,22 +49,16 @@ class HomePage extends React.Component {
         </div>
 
         <div className="status-quo-block">
-          <div className="row">
-            <div className="col-md-9">
-              The status quo doesn't make great leaders <br/> or change <br/> the world.
-            </div>
+          <div className="caption">
+            The status quo doesn't make great leaders <br/> or change <br/> the world.
           </div>
-        </div>
-
-        <div className="line">
-
         </div>
 
         <div className="give-a-fuck-block">
           <div className="row">
-            <div className="col-md-4 image">
+            <div className="col-md-4 p0 image">
             </div>
-            <div className="col-md-8 quote">
+            <div className="col-md-8 p0 quote">
               we don’t give a fuck about the status quo
             </div>
           </div>
@@ -72,7 +66,7 @@ class HomePage extends React.Component {
 
         <div className="keep-talking-block">
           <div className="row">
-            <div className="col-md-4">
+            <div className="col-md-4 p0">
               <p className="paragraph">
                 We do things differently. We help you become who you want to be, not just through university but by providing a
                 place which respects you. Encourages you to network, collaborate and relax for your hard work.
@@ -87,11 +81,6 @@ class HomePage extends React.Component {
                 <div className="btn btn-border"></div>
               </div>
 
-            </div>
-            <div className="col-md-8">
-              <div className="line line2">
-
-              </div>
             </div>
           </div>
         </div>
@@ -161,9 +150,6 @@ class HomePage extends React.Component {
               </div>
 
               <div className="quote-block">
-                <div className="line">
-
-                </div>
                 <div className="quote">
                   This is more than your first, second or third year of Uni,
                   this is the beginning of your success story and adult life.
@@ -289,14 +275,16 @@ class HomePage extends React.Component {
         </div>
 
         <div className="locations-block">
-          <div className="row">
-            <div className="paragraph col-md-4">
-              With over 30 locations across the country, we want there to be a location especially for you. Once you’ve found the best fit, view it’s bespoke page full of local trivia, recommendations and flat details to get you going in your new city.
-            </div>
-            <div className="region-selector-container col-md-4 offset-4 justify-content-end align-items-end d-flex">
-              <div className="region-selector-prefix">Region:</div>
-              <div className="region-selector">
-                <div className="selected-region">Northern England</div>
+          <div className="caption-region-selector">
+            <div className="row">
+              <div className="paragraph col-md-4">
+                With over 30 locations across the country, we want there to be a location especially for you. Once you’ve found the best fit, view it’s bespoke page full of local trivia, recommendations and flat details to get you going in your new city.
+              </div>
+              <div className="region-selector-container col-md-4 offset-md-4 justify-content-md-end justify-content-center align-items-end d-flex">
+                <div className="region-selector-prefix">Region:</div>
+                <div className="region-selector">
+                  <div className="selected-region">Northern England</div>
+                </div>
               </div>
             </div>
           </div>
@@ -314,7 +302,12 @@ class HomePage extends React.Component {
                   <img src="/static/images/FG_UI01_assets_home_location 1 detail.jpg" alt="" />
                 </div>
               </div>
-              <div className="location-name">Guildford</div>
+              <div className="center-block">
+                <div className="location-name">
+                  Guildford
+                </div>
+                <div className="caption">featuring the UKs first LED cinema on site</div>
+              </div>
             </div>
             <div className="location-item d-flex align-items-center justify-content-center type-2">
               <div className="left">
@@ -328,7 +321,12 @@ class HomePage extends React.Component {
                 </div>
                 <div className="caption">featuring the UKs first LED cinema on site</div>
               </div>
-              <div className="location-name">colechester</div>
+              <div className="center-block">
+                <div className="location-name">
+                  colechester
+                </div>
+                <div className="caption">featuring the UKs first LED cinema on site</div>
+              </div>
             </div>
             <div className="location-item d-flex align-items-center justify-content-center type-1">
               <div className="left">
@@ -342,7 +340,12 @@ class HomePage extends React.Component {
                   <img src="/static/images/FG_UI01_assets_home_location 1 detail.jpg" alt="" />
                 </div>
               </div>
-              <div className="location-name">Guildford</div>
+              <div className="center-block">
+                <div className="location-name">
+                  Guildford
+                </div>
+                <div className="caption">featuring the UKs first LED cinema on site</div>
+              </div>
             </div>
           </div>
         </div>
