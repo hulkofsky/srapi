@@ -15,16 +15,39 @@ class HomePage extends React.Component {
     await store.dispatch(fetchLocations())
   }
 
-  componentDidMount () {
+  componentDidMount() {
+    window.addEventListener('scroll', this.updateRoomTypesClasses.bind(this), { passive: true })
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.updateRoomTypesClasses)
   }
 
   scrollToBlock(selector) {
-    document.querySelector(selector).scrollIntoView({ 
+    document.querySelector(selector).scrollIntoView({
       behavior: 'smooth' 
     });
+  }
+
+  isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+
+    return (
+      rect.top < (window.innerHeight - 300) &&
+      rect.bottom > 300
+    );
+  }
+
+  updateRoomTypesClasses() {
+    var images = document.querySelectorAll('.animated-image'), i;
+
+    for (i = 0; i < images.length; ++i) {
+      if (this.isElementInViewport(images[i])) {
+        images[i].classList.add("scrolled-into-view");
+      } else {
+        images[i].classList.remove("scrolled-into-view");
+      }
+    }
   }
 
   render () {
@@ -118,7 +141,7 @@ class HomePage extends React.Component {
           <div className="row">
             <div className="col-md-6">
               <div className="bedroom-block">
-                <img src="/static/images/bedroom.jpg" alt="bedroom" className="img-fluid bedroom" />
+                <img src="/static/images/bedroom.jpg" alt="bedroom" className="img-fluid animated-image bedroom" />
 
                 <div className="text-block">
                   <div className="text">
@@ -131,7 +154,7 @@ class HomePage extends React.Component {
               </div>
 
               <div className="kitchen-block">
-                <img src="/static/images/kitchen.jpg" alt="kitchen" className="img-fluid kitchen" />
+                <img src="/static/images/kitchen.jpg" alt="kitchen" className="img-fluid animated-image kitchen" />
 
                 <div className="text-block">
                   <div className="text">
@@ -146,7 +169,7 @@ class HomePage extends React.Component {
             </div>
             <div className="col-md-6">
               <div className="bathroom-block">
-                <img src="/static/images/bathroom.jpg" alt="bathroom" className="img-fluid bathroom" />
+                <img src="/static/images/bathroom.jpg" alt="bathroom" className="img-fluid animated-image bathroom" />
 
                 <div className="text-block">
                   <div className="text">
