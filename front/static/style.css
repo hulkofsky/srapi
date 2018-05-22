@@ -7246,15 +7246,19 @@ body {
       line-height: 1.1;
       font-weight: 900;
       color: #191714;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      margin-bottom: 30px; }
       .roof-block .right .advantages-names .advantage-name {
         cursor: pointer; }
-        .roof-block .right .advantages-names .advantage-name .advantage-name-svg .advantage-name-text {
-          stroke: #9E9D8F;
-          stroke-width: 0.3;
-          fill: none;
-          font-size: 11px;
-          letter-spacing: 0.1px; }
+        .roof-block .right .advantages-names .advantage-name .advantage-name-svg {
+          display: inline-block;
+          width: 45vw; }
+          .roof-block .right .advantages-names .advantage-name .advantage-name-svg .advantage-name-text {
+            stroke: #9E9D8F;
+            stroke-width: 0.3;
+            fill: none;
+            font-size: 11px;
+            letter-spacing: 0.1px; }
         .roof-block .right .advantages-names .advantage-name.active .advantage-name-svg .advantage-name-text {
           stroke: #191714;
           fill: #191714; }
@@ -7269,7 +7273,7 @@ body {
   .roof-block .available {
     font-size: 16px;
     font-weight: 400;
-    margin-top: 20px;
+    margin-top: 30px;
     text-align: left;
     width: 53%;
     margin-left: 36%;
@@ -7277,6 +7281,8 @@ body {
   .roof-block .available .available-title {
     font-style: italic;
     margin-bottom: 15px; }
+  .roof-block .slider-controls {
+    display: none; }
   .roof-block .lines {
     width: 53%;
     margin-left: 36%;
@@ -7295,7 +7301,10 @@ body {
         .roof-block .right .advantages-names .advantage-name .advantage-name-svg .advantage-name-text {
           font-size: 1.5vw; }
         .roof-block .right .advantages-names .advantage-name.active {
-          display: block; }
+          display: block;
+          width: 80%;
+          text-align: left;
+          margin-left: 10%; }
       .roof-block .right .line {
         display: none; }
     .roof-block .col-md-6 {
@@ -7320,8 +7329,20 @@ body {
     .roof-block .advantage-image {
       margin-bottom: 30px;
       height: 80vw; }
+    .roof-block .slider-controls {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0; }
+      .roof-block .slider-controls .slider-control {
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        border: 2px solid #353133;
+        margin-left: 20px; }
+        .roof-block .slider-controls .slider-control.active {
+          background: #353133; }
     .roof-block .lines {
-      margin: 0 10%;
+      margin: 10px 10% 0 10%;
       width: 80%; } }
 
 .partner-block {

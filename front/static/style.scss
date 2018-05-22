@@ -619,9 +619,12 @@ body {
 		    font-weight: 900;
 		    color: #191714;
 		    text-transform: uppercase;
+		    margin-bottom: 30px;
 		    .advantage-name {
 		    	cursor: pointer;
 			    .advantage-name-svg {
+			    	display: inline-block;
+			    	width: 45vw;
 			    	.advantage-name-text {
 						stroke: #9E9D8F;
 						stroke-width: 0.3;
@@ -653,7 +656,7 @@ body {
  	.available {
 	    font-size: 16px;
 	    font-weight: 400;
-	    margin-top: 20px;
+	    margin-top: 30px;
 	    text-align: left;
 	    width: 53%;
 	    margin-left: 36%;
@@ -662,6 +665,9 @@ body {
 	.available .available-title {
 	    font-style: italic;
 	    margin-bottom: 15px;
+	}
+	.slider-controls {
+		display: none;
 	}
 	.lines {
 	    width: 53%;
@@ -688,6 +694,9 @@ body {
 					}
 					&.active {
 						display: block;
+						width: 80%;
+						text-align: left;
+						margin-left: 10%;
 					}					
 				}
 			}
@@ -723,8 +732,23 @@ body {
 			margin-bottom: 30px;
 			height: 80vw;
 		}
+		.slider-controls {
+			display: flex;
+			justify-content: center;
+			margin: 10px 0;
+			.slider-control {
+				height: 15px;
+				width: 15px;
+				border-radius: 50%;
+				border: 2px solid #353133;
+				margin-left: 20px;
+				&.active {
+					background: #353133;
+				}
+			}
+		}
 		.lines {
-			margin: 0 10%;
+			margin: 10px 10% 0 10%;
 			width: 80%;
 		}
 	}
