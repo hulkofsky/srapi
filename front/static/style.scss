@@ -34,6 +34,30 @@ body {
     color: #131828
 }
 
+.main-menu {
+	text-align: left;
+    background: #191714;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    z-index: 1;
+    padding: 2% 3%;
+    width: 100%;
+    display: none;
+	.main-menu-item {
+		font-weight: bold;
+		font-size: 120px;
+		color: #D9D9D2;
+		display: block;
+		text-decoration: none;
+		text-transform: uppercase;
+		line-height: 1;
+	}
+	&.visible {
+		display: block;
+	}
+}
+
 .nav {
     display: flex;
     position: absolute;
@@ -57,7 +81,8 @@ body {
 
 .nav .burger {
     height: 27px;
-    width: 27px
+    width: 27px;
+    cursor: pointer;
 }
 
 .skateboard-block {
@@ -812,7 +837,8 @@ body {
 	}
 	.wrapper {
 	    background-color: #131828;
-	    text-align: center
+	    text-align: center;
+	    width: 100%;
 	}
 	.text-block {
 	    display: flex;
@@ -1020,7 +1046,7 @@ body {
 	}
 }
 
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 767px) {
 	.locations-block {
 		padding: 0;
 		.caption-region-selector {

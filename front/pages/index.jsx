@@ -80,11 +80,6 @@ class HomePage extends React.Component {
           </div>  
         ))*/}
 
-        <nav className="nav">
-          <img className="logo" src="/static/svg/logo.svg" alt="logo" />
-          <img className="burger" src="/static/svg/burger.svg" alt="burger" />
-        </nav>
-
         <div className="skateboard-block">
           <div className="btn-container" onClick={() => this.scrollToBlock('.status-quo-block')}>
             <div className="btn">future generation</div>
@@ -345,10 +340,10 @@ class HomePage extends React.Component {
         <div className="locations-block">
           <div className="caption-region-selector">
             <div className="row">
-              <div className="paragraph col-md-4">
+              <div className="paragraph col-md-6 col-lg-4">
                 With over 30 locations across the country, we want there to be a location especially for you. Once you’ve found the best fit, view it’s bespoke page full of local trivia, recommendations and flat details to get you going in your new city.
               </div>
-              <div className="region-selector-container col-md-4 offset-md-4 justify-content-md-end justify-content-center align-items-end d-flex">
+              <div className="region-selector-container col-md-6 col-lg-4 offset-lg-4 justify-content-md-end justify-content-center align-items-end d-flex">
                 <div className="region-selector-prefix">Region:</div>
                 <div className="region-selector">
                   <div className="selected-region">Northern England</div>

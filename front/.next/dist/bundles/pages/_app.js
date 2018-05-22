@@ -76,24 +76,28 @@ module.exports =
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return REQUEST_CURRENT_LOCATION; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return REQUEST_LOCATIONS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return RECEIVE_CURRENT_LOCATION; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return RECEIVE_LOCATIONS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return SHOW_AUTH_DIALOG; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return REQUEST_CURRENT_LOCATION; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return REQUEST_LOCATIONS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return RECEIVE_CURRENT_LOCATION; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return RECEIVE_LOCATIONS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return SHOW_AUTH_DIALOG; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HIDE_AUTH_DIALOG; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return SUBMIT_AUTH_DIALOG; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return PROCESS_AUTH_DIALOG; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return SUBMIT_AUTH_DIALOG; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return PROCESS_AUTH_DIALOG; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return SHOW_MAIN_MENU; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return HIDE_MAIN_MENU; });
 /* unused harmony export requestCurrentLocation */
 /* unused harmony export requestLocations */
 /* unused harmony export receiveCurrentLocation */
 /* unused harmony export receiveLocations */
 /* unused harmony export fetchCurrentLocation */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return fetchLocations; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return showAuthDialog; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return hideAuthDialog; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return submitAuthDialog; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return processAuthDialog; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return fetchLocations; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return showAuthDialog; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return hideAuthDialog; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return showMainMenu; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return hideMainMenu; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return submitAuthDialog; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return processAuthDialog; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch__ = __webpack_require__("isomorphic-unfetch");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch__);
 
@@ -108,6 +112,8 @@ var SHOW_AUTH_DIALOG = 'SHOW_AUTH_DIALOG';
 var HIDE_AUTH_DIALOG = 'HIDE_AUTH_DIALOG';
 var SUBMIT_AUTH_DIALOG = 'SUBMIT_AUTH_DIALOG';
 var PROCESS_AUTH_DIALOG = 'PROCESS_AUTH_DIALOG';
+var SHOW_MAIN_MENU = 'SHOW_MAIN_MENU';
+var HIDE_MAIN_MENU = 'HIDE_MAIN_MENU';
 var requestCurrentLocation = function requestCurrentLocation(locationID) {
   return {
     type: REQUEST_CURRENT_LOCATION,
@@ -165,6 +171,16 @@ var showAuthDialog = function showAuthDialog() {
 var hideAuthDialog = function hideAuthDialog() {
   return {
     type: HIDE_AUTH_DIALOG
+  };
+};
+var showMainMenu = function showMainMenu() {
+  return {
+    type: SHOW_MAIN_MENU
+  };
+};
+var hideMainMenu = function hideMainMenu() {
+  return {
+    type: HIDE_MAIN_MENU
   };
 };
 var submitAuthDialog = function submitAuthDialog(identifier, password) {
@@ -350,12 +366,12 @@ function currentLocation() {
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["e" /* REQUEST_CURRENT_LOCATION */]:
+    case __WEBPACK_IMPORTED_MODULE_1__actions__["f" /* REQUEST_CURRENT_LOCATION */]:
       return Object.assign({}, state, {
         isFetching: true
       });
 
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["c" /* RECEIVE_CURRENT_LOCATION */]:
+    case __WEBPACK_IMPORTED_MODULE_1__actions__["d" /* RECEIVE_CURRENT_LOCATION */]:
       return Object.assign({}, state, {
         isFetching: false,
         item: action.location,
@@ -375,12 +391,12 @@ function locations() {
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["f" /* REQUEST_LOCATIONS */]:
+    case __WEBPACK_IMPORTED_MODULE_1__actions__["g" /* REQUEST_LOCATIONS */]:
       return Object.assign({}, state, {
         isFetching: true
       });
 
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["d" /* RECEIVE_LOCATIONS */]:
+    case __WEBPACK_IMPORTED_MODULE_1__actions__["e" /* RECEIVE_LOCATIONS */]:
       return Object.assign({}, state, {
         isFetching: false,
         items: action.locations,
@@ -404,7 +420,7 @@ function authDialog() {
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["g" /* SHOW_AUTH_DIALOG */]:
+    case __WEBPACK_IMPORTED_MODULE_1__actions__["h" /* SHOW_AUTH_DIALOG */]:
       return Object.assign({}, state, {
         isVisible: true
       });
@@ -414,14 +430,14 @@ function authDialog() {
         isVisible: false
       });
 
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["h" /* SUBMIT_AUTH_DIALOG */]:
+    case __WEBPACK_IMPORTED_MODULE_1__actions__["j" /* SUBMIT_AUTH_DIALOG */]:
       return Object.assign({}, state, {
         isSubmitting: true,
         identifier: action.identifier,
         password: action.password
       });
 
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["b" /* PROCESS_AUTH_DIALOG */]:
+    case __WEBPACK_IMPORTED_MODULE_1__actions__["c" /* PROCESS_AUTH_DIALOG */]:
       return Object.assign({}, state, {
         isSubmitting: false,
         isVisible: false,
@@ -433,10 +449,33 @@ function authDialog() {
   }
 }
 
+function mainMenu() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
+    isVisible: false
+  };
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case __WEBPACK_IMPORTED_MODULE_1__actions__["i" /* SHOW_MAIN_MENU */]:
+      return Object.assign({}, state, {
+        isVisible: true
+      });
+
+    case __WEBPACK_IMPORTED_MODULE_1__actions__["b" /* HIDE_MAIN_MENU */]:
+      return Object.assign({}, state, {
+        isVisible: false
+      });
+
+    default:
+      return state;
+  }
+}
+
 /* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_redux__["combineReducers"])({
   currentLocation: currentLocation,
   locations: locations,
-  authDialog: authDialog
+  authDialog: authDialog,
+  mainMenu: mainMenu
 }));
 
 /***/ }),
@@ -462,6 +501,9 @@ function authDialog() {
 var appInitialState = {
   locations: [],
   currentLocation: null,
+  mainMenu: {
+    isVisible: false
+  },
   authDialog: {
     isVisible: false,
     isSubmitting: false,

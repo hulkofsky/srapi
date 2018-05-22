@@ -1,14 +1,5 @@
 import { combineReducers } from 'redux'
-import {
-  REQUEST_CURRENT_LOCATION,
-  REQUEST_LOCATIONS,
-  RECEIVE_CURRENT_LOCATION,
-  RECEIVE_LOCATIONS,
-  SHOW_AUTH_DIALOG,
-  HIDE_AUTH_DIALOG,
-  SUBMIT_AUTH_DIALOG,
-  PROCESS_AUTH_DIALOG
-} from '../actions'
+import * as actions from '../actions'
 
 function currentLocation(
   state = {
@@ -18,11 +9,11 @@ function currentLocation(
   action
 ) {
   switch (action.type) {
-    case REQUEST_CURRENT_LOCATION:
+    case actions.REQUEST_CURRENT_LOCATION:
       return Object.assign({}, state, {
         isFetching: true
       })
-    case RECEIVE_CURRENT_LOCATION:
+    case actions.RECEIVE_CURRENT_LOCATION:
       return Object.assign({}, state, {
         isFetching: false,
         item: action.location,
@@ -41,11 +32,11 @@ function locations(
   action
 ) {
   switch (action.type) {
-    case REQUEST_LOCATIONS:
+    case actions.REQUEST_LOCATIONS:
       return Object.assign({}, state, {
         isFetching: true
       })
-    case RECEIVE_LOCATIONS:
+    case actions.RECEIVE_LOCATIONS:
       return Object.assign({}, state, {
         isFetching: false,
         items: action.locations,
@@ -68,21 +59,21 @@ function authDialog(
   action
 ) {
   switch (action.type) {
-    case SHOW_AUTH_DIALOG:
+    case actions.SHOW_AUTH_DIALOG:
       return Object.assign({}, state, {
         isVisible: true
       })
-    case HIDE_AUTH_DIALOG:
+    case actions.HIDE_AUTH_DIALOG:
       return Object.assign({}, state, {
         isVisible: false
       })
-    case SUBMIT_AUTH_DIALOG:
+    case actions.SUBMIT_AUTH_DIALOG:
       return Object.assign({}, state, {
         isSubmitting: true,
         identifier: action.identifier,
         password: action.password
       })
-    case PROCESS_AUTH_DIALOG:
+    case actions.PROCESS_AUTH_DIALOG:
       return Object.assign({}, state, {
         isSubmitting: false,
         isVisible: false,
@@ -93,8 +84,29 @@ function authDialog(
   }
 }
 
+function mainMenu(
+  state = {
+    isVisible: false
+  },
+  action
+) {
+  switch (action.type) {
+    case actions.SHOW_MAIN_MENU:
+      return Object.assign({}, state, {
+        isVisible: true
+      })
+     case actions.HIDE_MAIN_MENU:
+      return Object.assign({}, state, {
+        isVisible: false
+      })
+    default:
+      return state
+  }
+}
+
 export default combineReducers({
   currentLocation,
   locations,
-  authDialog
+  authDialog,
+  mainMenu
 });

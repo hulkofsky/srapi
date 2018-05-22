@@ -7,6 +7,9 @@ import reducers from './reducers'
 const appInitialState = {
   locations: [],
   currentLocation: null,
+  mainMenu: {
+    isVisible: false
+  },
   authDialog: {
   	isVisible: false,
   	isSubmitting: false,

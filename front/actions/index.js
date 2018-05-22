@@ -12,6 +12,8 @@ export const SHOW_AUTH_DIALOG = 'SHOW_AUTH_DIALOG'
 export const HIDE_AUTH_DIALOG = 'HIDE_AUTH_DIALOG'
 export const SUBMIT_AUTH_DIALOG = 'SUBMIT_AUTH_DIALOG'
 export const PROCESS_AUTH_DIALOG = 'PROCESS_AUTH_DIALOG'
+export const SHOW_MAIN_MENU = 'SHOW_MAIN_MENU'
+export const HIDE_MAIN_MENU = 'HIDE_MAIN_MENU'
 
 export const requestCurrentLocation = (locationID) => {
   return {
@@ -81,6 +83,18 @@ export const showAuthDialog = () => {
 export const hideAuthDialog = () => {
   return {
     type: HIDE_AUTH_DIALOG
+  }
+}
+
+export const showMainMenu = () => {
+  return {
+    type: SHOW_MAIN_MENU
+  }
+}
+
+export const hideMainMenu = () => {
+  return {
+    type: HIDE_MAIN_MENU
   }
 }
 

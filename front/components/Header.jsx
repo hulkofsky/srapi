@@ -1,9 +1,12 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import {
   showAuthDialog,
   hideAuthDialog,
+  showMainMenu,
+  hideMainMenu,
   submitAuthDialog,
   processAuthDialog
 } from '../actions'
@@ -15,6 +18,10 @@ class Header extends React.Component {
     const data = new FormData(event.target);
     
     this.props.submitAuthDialog(data.get("identifier"), data.get("password"));
+  }
+
+  toggleMainMenu() {
+    this.props.mainMenu.isVisible ? this.props.hideMainMenu() : this.props.showMainMenu();
   }
 
   render () {
@@ -49,7 +56,30 @@ class Header extends React.Component {
               <button type="submit" className="btn btn-primary">Submit</button>
             </form>
           </Modal.Body>
-        </Modal>    
+        </Modal>
+
+        <nav className="nav">
+          <img className="logo" src="/static/svg/logo.svg" alt="logo" />
+          <img className="burger" src="/static/svg/burger.svg" alt="burger" onClick={this.toggleMainMenu.bind(this)} />
+        </nav>
+
+        <div className={'main-menu ' + (this.props.mainMenu.isVisible ? 'visible' : '')}>
+          <Link href={{ pathname: '/' }}>
+            <a className="main-menu-item">home</a>
+          </Link>
+          <Link href={{ pathname: '/locations' }}>
+            <a className="main-menu-item">locations</a>
+          </Link>
+          <Link href={{ pathname: '/spotify' }}>
+            <a className="main-menu-item">spotify</a>
+          </Link>
+          <Link href={{ pathname: '/stance' }}>
+            <a className="main-menu-item">stance</a>
+          </Link>
+          <Link href={{ pathname: '/contact' }}>
+            <a className="main-menu-item">contact</a>
+          </Link>
+        </div>
       </div>
     )
   }
@@ -58,6 +88,7 @@ class Header extends React.Component {
 const mapStateToProps = (state) => {
   return {
     authDialog: state.authDialog,
+    mainMenu: state.mainMenu,
   }
 }
 
@@ -67,6 +98,8 @@ const mapDispatchToProps = (dispatch) => {
     hideAuthDialog: bindActionCreators(hideAuthDialog, dispatch),
     submitAuthDialog: bindActionCreators(submitAuthDialog, dispatch),
     processAuthDialog: bindActionCreators(processAuthDialog, dispatch),
+    showMainMenu: bindActionCreators(showMainMenu, dispatch),
+    hideMainMenu: bindActionCreators(hideMainMenu, dispatch),
   }
 }
 
