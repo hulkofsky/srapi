@@ -6782,7 +6782,7 @@ body {
 .main-menu {
   text-align: left;
   background: #191714;
-  position: absolute;
+  position: fixed;
   top: 90px;
   left: 0;
   z-index: 1;
@@ -6809,19 +6809,20 @@ body {
   justify-content: space-between;
   padding: 30px 28px 0;
   width: 100%; }
+  .nav .logo {
+    width: 33px;
+    height: 33px; }
+  .nav .burger {
+    height: 27px;
+    width: 27px;
+    cursor: pointer; }
+  .nav.sticky {
+    position: fixed;
+    top: 0; }
 
 .btn, .skateboard-block {
   display: -webkit-box;
   display: -ms-flexbox; }
-
-.nav .logo {
-  width: 33px;
-  height: 33px; }
-
-.nav .burger {
-  height: 27px;
-  width: 27px;
-  cursor: pointer; }
 
 .skateboard-block {
   height: 100vh;

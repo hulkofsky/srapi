@@ -20,6 +20,20 @@ class Header extends React.Component {
     this.props.submitAuthDialog(data.get("identifier"), data.get("password"));
   }
 
+  componentDidMount() {
+    window.addEventListener('scroll', this.updateMainMenuSticky.bind(this), { passive: true })
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.updateMainMenuSticky)
+  }
+
+  updateMainMenuSticky() {
+    let nav = document.querySelector(".nav");
+
+    (window.pageYOffset > 0) ? nav.classList.add("sticky") : nav.classList.remove("sticky");
+  }
+
   toggleMainMenu() {
     this.props.mainMenu.isVisible ? this.props.hideMainMenu() : this.props.showMainMenu();
   }
