@@ -50,6 +50,18 @@ class HomePage extends React.Component {
     }
   }
 
+  setActiveAdvantage(index) {
+    let advantagesNames = document.querySelectorAll(".advantages-list .advantage-name");
+
+    for (var i = 0; i < advantagesNames.length; ++i) {
+      if (i !== index) {
+        advantagesNames[i].classList.remove("active");
+      } else {
+        advantagesNames[i].classList.add("active");
+      }
+    }
+  }
+
   render () {
     const { locations } = this.props
 
@@ -235,24 +247,38 @@ class HomePage extends React.Component {
             </div>
           </div>
 
-          <div className="row">
-            <div className="col-md-6">
-              <div className="full-football"></div>
+          <div className="row advantages-list">
+            <div className="col-md-6 left">
+              <div className="advantage-image"></div>
             </div>
-            <div className="advantages">
-              ROOFTOP SPORT
-
-              <div className="svg-advantages-wrapper">
-                <img src="/static/svg/text.svg" alt="Advantages" className="img-fluid svg-advantages" />
+            <div className="right">
+              <div className="advantages-names">
+                <div className="advantage-name active" onClick={() => this.setActiveAdvantage(0)}>
+                  <svg viewBox="0 0 100 12" className="advantage-name-svg">
+                    <text className="advantage-name-text" x="100" y="11" textAnchor="end">ROOFTOP SPORT</text>
+                  </svg>
+                </div>
+                <div className="advantage-name"  onClick={() => this.setActiveAdvantage(1)}>
+                  <svg viewBox="0 0 100 12" className="advantage-name-svg">
+                    <text className="advantage-name-text" x="100" y="11" textAnchor="end">coworking</text>
+                  </svg>
+                </div>
+                <div className="advantage-name"  onClick={() => this.setActiveAdvantage(2)}>
+                  <svg viewBox="0 0 100 12" className="advantage-name-svg">
+                    <text className="advantage-name-text" x="100" y="11" textAnchor="end">skyline bars</text>
+                  </svg>
+                </div>
+                <div className="advantage-name" onClick={() => this.setActiveAdvantage(3)}>
+                  <svg viewBox="0 0 100 12" className="advantage-name-svg">
+                    <text className="advantage-name-text" x="100" y="11" textAnchor="end">on site cinema</text>
+                  </svg>
+                </div>
               </div>
 
-              <div className="line">
-
-              </div>
+              <div className="line"></div>
 
               <div className="available">
                 <div className="available-title">Available at Loughborough, Bristol and Manchester</div>
-
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cum dolore nulla quidem repellat tenetur. Cumque
                 distinctio dolor dolorum expedita fugiat.
               </div>
@@ -271,7 +297,7 @@ class HomePage extends React.Component {
           </div>
 
           <div className="wrapper">
-            <img src="/static/svg/samsung-logo.svg" alt="Samsung logo" className="samsung-logo" />
+            <img src="/static/svg/samsung-logo.svg" alt="Samsung logo" className="img-fluid samsung-logo" />
 
             <p className="paragraph">
               This is more than your ﬁrst, second or third year of Uni, <br/>

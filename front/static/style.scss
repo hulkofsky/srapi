@@ -206,7 +206,7 @@ body {
     }
 }
 
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 767px) {
 	.give-a-fuck-block {
 		position: relative;
 		.image {
@@ -587,98 +587,145 @@ body {
 }
 
 .roof-block {
-    padding-top: 130px
+    padding-top: 130px;
+	.row {
+	    margin: 0;
+	    position: relative
+	}
+	.background-quote {
+	    margin-left: -120px;
+	    position: absolute
+	}
+	.col-md-6 {
+	    padding: 0;
+	    margin-left: 10%
+	}
+	.quote {
+	    opacity: .05
+	}
+	.advantage-image {
+	    height: 650px;
+	    background: url(/static/images/full-football.jpg) center no-repeat;
+	    margin-bottom: 130px;
+	    opacity: .9
+	}
+	.right {
+	    position: absolute;
+	    right: 3.7%;
+	    width: 50%;
+	    .advantages-names {
+	    	text-align: right;
+	    	line-height: 1.1;
+		    font-weight: 900;
+		    color: #191714;
+		    text-transform: uppercase;
+		    .advantage-name {
+		    	cursor: pointer;
+			    .advantage-name-svg {
+			    	.advantage-name-text {
+						stroke: #9E9D8F;
+						stroke-width: 0.3;
+						fill: none;
+						font-size: 11px;
+						letter-spacing: 0.1px;
+			    	}
+			    }
+			    &.active {
+			    	.advantage-name-svg {
+				    	.advantage-name-text {
+				    		stroke: #191714;
+				    		fill: #191714;
+				    	}
+				    }
+			    }
+		    }
+	    }
+	}
+	.line {
+	    height: 95px;
+	    position: static;
+	    -webkit-transform: none;
+	    transform: none;
+	    background: linear-gradient(to top right,transparent calc(50% - 1px),#babab0,transparent calc(50% + 1px));
+	    margin: 0 0 0 36%;
+	    width: 53%
+	}
+ 	.available {
+	    font-size: 16px;
+	    font-weight: 400;
+	    margin-top: 20px;
+	    text-align: left;
+	    width: 53%;
+	    margin-left: 36%;
+	    line-height: 1.81;
+	}
+	.available .available-title {
+	    font-style: italic;
+	    margin-bottom: 15px;
+	}
+	.lines {
+	    width: 53%;
+	    margin-left: 36%;
+	    height: 140px;
+	    background: url(/static/images/lines.png);
+	    background-size: cover;
+	}
 }
 
-.roof-block .row {
-    margin: 0;
-    position: relative
-}
-
-.roof-block .background-quote {
-    margin-left: -120px;
-    position: absolute
-}
-
-.roof-block .col-md-6 {
-    padding: 0;
-    margin-left: 10%
-}
-
-.roof-block .quote {
-    opacity: .05
-}
-
-.roof-block .full-football {
-    height: 650px;
-    background: url(/static/images/full-football.jpg) 45% 45%;
-    background-size: 185%;
-    margin-bottom: 130px;
-    opacity: .9
-}
-
-.roof-block .advantages {
-    font-size: 80px;
-    font-weight: 900;
-    color: #191714;
-    position: absolute;
-    right: 3.7%;
-    line-height: 1.1;
-    width: 50%;
-    text-align: right
-}
-
-.roof-block .svg-advantages-wrapper {
-    margin-top: 15px;
-    text-align: right;
-    margin-bottom: 40px
-}
-
-.roof-block .svg-advantages {
-    height: 250px;
-}
-
-.roof-block .line {
-    height: 95px;
-    position: static;
-    -webkit-transform: none;
-    transform: none;
-    background: linear-gradient(to top right,transparent calc(50% - 1px),#babab0,transparent calc(50% + 1px));
-    margin: 0 0 0 36%;
-    width: 53%
-}
-
-.roof-block .available {
-    font-size: 16px;
-    font-weight: 400;
-    margin-top: 20px;
-    text-align: left;
-    width: 53%;
-    margin-left: 36%;
-    line-height: 1.81
-}
-
-.roof-block .available .available-title {
-    font-style: italic;
-    margin-bottom: 15px
-}
-
-.roof-block .lines {
-    width: 53%;
-    margin-left: 36%;
-    height: 140px;
-    background: url(/static/images/lines.png);
-    background-size: cover
-}
-
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 767px) {
 	.roof-block {
 		padding-top: 0;
-		.svg-advantages-wrapper {
+		.right {
+			position: static;
+			width: 100%;
+			.advantages-names {
+				.advantage-name {
+					display: none;
+					.advantage-name-svg {
+						.advantage-name-text {
+							font-size: 1.5vw;
+						}
+					}
+					&.active {
+						display: block;
+					}					
+				}
+			}
+			.line {
+				display: none;
+			}
+		}
+		.col-md-6 {
+			margin-left: 0;
+		}
+		.available {
+			width: 80%;
+			margin: 20px 10% 0 10%;
+			.available-title {
+				position: relative;
+				padding-left: 20px;
+				&:before {
+					content: "";
+					display: inline-block;
+					width: 10px;
+					height: 4px;
+					background: #FF9C5F;
+					position: absolute;
+					top: 12px;
+					left: 5px;
+				}
+			}
+		}
+		.background-quote {
 			display: none;
 		}
-		.advantages {
-			position: static;
+		.advantage-image {
+			margin-bottom: 30px;
+			height: 80vw;
+		}
+		.lines {
+			margin: 0 10%;
+			width: 80%;
 		}
 	}
 }
@@ -693,104 +740,95 @@ body {
     -ms-flex-align: center;
     align-items: center;
     position: relative;
-    margin-top: -20px
+    margin-top: -20px;
+	.ellipse-bg {
+	    background: url('/static/svg/FG_UI01_assets_samsung oval.svg') 50% 33% no-repeat;
+	    background-size: cover;
+	    height: 850px;
+	    position: absolute;
+	    width: 100%;
+	    z-index: 2
+	}
+	.title {
+	    padding-top: 205px;
+	    font-size: 30px;
+	    font-weight: 900;
+	    color: #d9d9d2;
+	    padding-bottom: 45px;
+	    z-index: 3;
+	    position: relative
+	}
+	.samsung-logo {
+	    height: 72px;
+	    margin-bottom: 65px;
+	    z-index: 3;
+	    position: relative
+	}
+	.paragraph {
+	    color: #d9d9d2;
+	    text-align: center;
+	    line-height: 1.81;
+	    padding-bottom: 70px;
+	    z-index: 3;
+	    position: relative
+	}
+	.btn-container {
+	    z-index: 3;
+	    position: relative;
+	    width: 353px;
+	    margin: 0 auto
+	}
+	.discount {
+	    border: 1px solid #ff8b1f;
+	    color: #ff8b1f;
+	    letter-spacing: 3.5px
+	}
+	.btn-border {
+	    border-color: #ff8b1f
+	}
+	.wrapper {
+	    background-color: #131828;
+	    text-align: center
+	}
+	.text-block {
+	    display: flex;
+	    -webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	    justify-content: space-between;
+	    -webkit-box-align: center;
+	    -ms-flex-align: center;
+	    align-items: center;
+	    color: #9e9d8f;
+	    letter-spacing: -.5px;
+	    width: 100%;
+	    position: relative;
+	    padding: 0 15%
+	}
+	.horizontal-line {
+	    border-bottom: solid 1px #9e9d8f;
+	    width: 70px;
+	    height: 1px
+	}
+	.partner-block-image {
+	    margin-top: 100px;
+	    height: 500px;
+	    width: 100%;
+	    -o-object-fit: cover;
+	    object-fit: cover;
+	    margin-bottom: 15px;
+	    opacity: .9;
+	    padding: 0 15%
+	}
 }
 
-.leap-block,.partner-block .text-block {
-    display: -webkit-box;
-    display: -ms-flexbox
-}
-
-.partner-block .ellipse-bg {
-    background: url(/static/images/ameba-v.png) 50% 33%;
-    height: 850px;
-    position: absolute;
-    width: 100%;
-    z-index: 2
-}
-
-.partner-block .title {
-    padding-top: 205px;
-    font-size: 30px;
-    font-weight: 900;
-    color: #d9d9d2;
-    padding-bottom: 45px;
-    z-index: 3;
-    position: relative
-}
-
-.partner-block .samsung-logo {
-    height: 72px;
-    margin-bottom: 65px;
-    z-index: 3;
-    position: relative
-}
-
-.partner-block .paragraph {
-    color: #d9d9d2;
-    text-align: center;
-    line-height: 1.81;
-    padding-bottom: 70px;
-    z-index: 3;
-    position: relative
-}
-
-.partner-block .btn-container {
-    z-index: 3;
-    position: relative;
-    width: 353px;
-    margin: 0 auto
-}
-
-.partner-block .discount {
-    border: 1px solid #ff8b1f;
-    color: #ff8b1f;
-    letter-spacing: 3.5px
-}
-
-.partner-block .btn-border {
-    border-color: #ff8b1f
-}
-
-.partner-block .wrapper {
-    background-color: #131828;
-    text-align: center
-}
-
-.partner-block .text-block {
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    color: #9e9d8f;
-    letter-spacing: -.5px;
-    width: 100%;
-    position: relative;
-    padding: 0 15%
-}
-
-.partner-block .horizontal-line {
-    border-bottom: solid 1px #9e9d8f;
-    width: 70px;
-    height: 1px
-}
-
-.partner-block .partner-block-image {
-    margin-top: 100px;
-    height: 500px;
-    width: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
-    margin-bottom: 15px;
-    opacity: .9;
-    padding: 0 15%
-}
-
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 767px) {
 	.partner-block {
+		.ellipse-bg {
+
+		}
+		.samsung-logo {
+			width: 80%;
+		}
 		.title {
 			text-align: center;
 			width: 60%;
@@ -805,6 +843,12 @@ body {
 			}
 		}
 	}
+}
+
+.leap-block,
+.partner-block .text-block {
+    display: -webkit-box;
+    display: -ms-flexbox
 }
 
 .leap-block {
