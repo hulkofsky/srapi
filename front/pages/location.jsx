@@ -8,6 +8,7 @@ import { initStore } from '../store'
 import { connect } from 'react-redux'
 import Link from 'next/link'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 class LocationPage extends React.Component {
   static async getInitialProps ({store, pathname, query}) {
@@ -21,16 +22,46 @@ class LocationPage extends React.Component {
   }
 
   render () {
-    const { location } = this.props
-
     return (
-      <div>
-        <Header title="home page" />
-        <h1>{location && location.item && location.item.name} page</h1>
+      <div className="location-page">
+        <Header title="Location page" />
 
-        <Link href={{ pathname: '/' }}>
-          <a>go home</a>
-        </Link>
+        <div className="hero-block">
+          <div className="main-image"></div>
+          <div className="main-info">
+            <div className="row content-container">
+              <div className="col-md-5 info">
+                <div className="caption">The Steel city itself. Welcome to</div>
+                <div className="city-name">sheffield</div>
+              </div>
+              <div className="col-md-5 offset-md-2 image">
+                <img className="img-fluid" src="/static/images/FG_UI01_assets_location_hero.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="intro-block">
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+        </div>
+
+        <Footer></Footer> 
       </div>
     )
   }

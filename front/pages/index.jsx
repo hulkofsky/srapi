@@ -72,14 +72,6 @@ class HomePage extends React.Component {
       <div className="homepage">
         <Header title="home page" />
 
-        {/*locations && locations.map((location) => (
-          <div key={location.id}>
-            <Link href={{ pathname: '/location', query: { id: location.id } }}>
-              <a>{location.name}</a>
-            </Link>
-          </div>  
-        ))*/}
-
         <div className="skateboard-block">
           <div className="btn-container" onClick={() => this.scrollToBlock('.status-quo-block')}>
             <div className="btn">future generation</div>
@@ -352,6 +344,14 @@ class HomePage extends React.Component {
             </div>
           </div>
 
+          {/*locations && locations.map((location) => (
+            <div key={location.id}>
+              <Link href={{ pathname: '/location', query: { id: location.id } }}>
+                <a>{location.name}</a>
+              </Link>
+            </div>  
+          ))*/}
+
           <div className="locations-list">
             <div className="location-item d-flex align-items-center justify-content-center type-1">
               <div className="left">
@@ -366,9 +366,11 @@ class HomePage extends React.Component {
                 </div>
               </div>
               <div className="center-block">
-                <div className="location-name">
-                  Guildford
-                </div>
+                <Link href={{ pathname: '/location', query: { id: 1 } }}>
+                  <a className="location-name">
+                    Guildford
+                  </a>
+                </Link>
                 <div className="caption">featuring the UKs first LED cinema on site</div>
               </div>
             </div>
@@ -385,9 +387,11 @@ class HomePage extends React.Component {
                 <div className="caption">featuring the UKs first LED cinema on site</div>
               </div>
               <div className="center-block">
-                <div className="location-name">
-                  colechester
-                </div>
+                <Link href={{ pathname: '/location', query: { id: 1 } }}>
+                  <a className="location-name">
+                    colechester
+                  </a>
+                </Link>
                 <div className="caption">featuring the UKs first LED cinema on site</div>
               </div>
             </div>
@@ -404,9 +408,11 @@ class HomePage extends React.Component {
                 </div>
               </div>
               <div className="center-block">
-                <div className="location-name">
-                  Guildford
-                </div>
+                <Link href={{ pathname: '/location', query: { id: 1 } }}>
+                  <a className="location-name">
+                    Guildford
+                  </a>
+                </Link>
                 <div className="caption">featuring the UKs first LED cinema on site</div>
               </div>
             </div>

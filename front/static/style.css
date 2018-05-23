@@ -7659,13 +7659,13 @@ a:hover {
     position: relative;
     z-index: 1; }
 
-.contact .caption {
+.contact-page .caption {
   padding: 100px 10% 10% 10%;
   font-family: SixCaps, sans-serif;
   font-size: 16vw;
   line-height: 1;
   position: relative; }
-  .contact .caption:after {
+  .contact-page .caption:after {
     content: "";
     display: block;
     border-bottom: 2px solid #9E9D8F;
@@ -7675,12 +7675,48 @@ a:hover {
     position: relative;
     z-index: 1; }
 
-.contact .contact-info {
+.contact-page .contact-info {
   padding: 0 10% 10% 10%;
   font-weight: bold;
   font-size: 21px;
   line-height: 1.3;
   text-transform: uppercase; }
+
+.location-page .hero-block {
+  height: 100vh; }
+  .location-page .hero-block .main-image {
+    background: url("/static/images/FG_UI01_assets_location_hero.jpg") center no-repeat;
+    background-size: cover;
+    height: 40vw; }
+  .location-page .hero-block .main-info {
+    background: #1D1D1B;
+    height: 17vw;
+    padding: 0 10%; }
+    .location-page .hero-block .main-info .content-container {
+      position: relative;
+      bottom: -1vw;
+      padding-top: 2vw; }
+      .location-page .hero-block .main-info .content-container .caption {
+        color: #BCBCBC;
+        text-transform: uppercase;
+        font-size: 1.2vw; }
+      .location-page .hero-block .main-info .content-container .city-name {
+        font-family: SixCaps, sans-serif;
+        font-size: 16vw;
+        line-height: 1;
+        color: #BCBCBC;
+        text-transform: uppercase; }
+
+@media screen and (max-width: 767px) {
+  .location-page .hero-block .main-info {
+    height: 25vw;
+    padding-top: 3%; }
+    .location-page .hero-block .main-info .content-container .caption {
+      font-size: 3vw; }
+    .location-page .hero-block .main-info .content-container .city-name {
+      font-size: 21vw; }
+    .location-page .hero-block .main-info .image {
+      display: none; } }
 
 footer {
   height: 565px;
