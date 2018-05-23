@@ -58,6 +58,15 @@ body {
 	}
 }
 
+@media screen and(max-width: 767px) {
+	.main-menu {
+		.main-menu-item {
+			font-size: 8vw;
+			line-height: 1.5;
+		}
+	}
+}
+
 .nav {
     display: flex;
     position: absolute;
@@ -65,21 +74,36 @@ body {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: 30px 28px 0;
+    padding: 30px 28px;
     width: 100%;
     .logo {
         width: 33px;
         height: 33px
     }
     .burger {
+    	background: url('/static/svg/burger.svg') center no-repeat;
         height: 27px;
         width: 27px;
         cursor: pointer;
+        transition: 0.2s;
+        &:hover {
+        	background: url('/static/svg/FG_UI01_assets_DESK_burger hover.svg') center no-repeat;
+        }
     }
     &.sticky {
+    	@extend .nav-dark;
     	position: fixed;
     	top: 0;
     }
+    &.menu-visible {
+    	.burger {
+    		background: url('/static/svg/FG_UI01_assets_DESK_burger back.svg') center no-repeat;
+    	}
+    }
+}
+
+.nav-dark {
+	background: #191714;
 }
 
 .btn,.skateboard-block {

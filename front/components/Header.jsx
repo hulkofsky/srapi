@@ -13,6 +13,10 @@ import {
 import { Button, Modal } from 'react-bootstrap';
 
 class Header extends React.Component {
+  state = {
+    navIsSticky: false
+  }
+
   handleAuthDialogSubmit(event) {
     event.preventDefault();
     const data = new FormData(event.target);
@@ -22,6 +26,8 @@ class Header extends React.Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.updateMainMenuSticky.bind(this), { passive: true })
+
+    this.updateMainMenuSticky();
   }
 
   componentWillUnmount() {
@@ -29,9 +35,7 @@ class Header extends React.Component {
   }
 
   updateMainMenuSticky() {
-    let nav = document.querySelector(".nav");
-
-    (window.pageYOffset > 0) ? nav.classList.add("sticky") : nav.classList.remove("sticky");
+    this.setState({navIsSticky: (window.pageYOffset > 0)});
   }
 
   toggleMainMenu() {
@@ -72,9 +76,9 @@ class Header extends React.Component {
           </Modal.Body>
         </Modal>
 
-        <nav className="nav">
+        <nav className={'nav ' + (this.props.navClass ? this.props.navClass : '') + (this.state.navIsSticky ? 'sticky ' : '') + (this.props.mainMenu.isVisible ? 'menu-visible ' : '')}>
           <img className="logo" src="/static/svg/logo.svg" alt="logo" />
-          <img className="burger" src="/static/svg/burger.svg" alt="burger" onClick={this.toggleMainMenu.bind(this)} />
+          <div className="burger" onClick={this.toggleMainMenu.bind(this)}></div>
         </nav>
 
         <div className={'main-menu ' + (this.props.mainMenu.isVisible ? 'visible' : '')}>

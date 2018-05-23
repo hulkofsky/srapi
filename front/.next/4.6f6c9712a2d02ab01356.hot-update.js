@@ -33,9 +33,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 
 
@@ -50,9 +50,24 @@ function (_React$Component) {
   _inherits(Header, _React$Component);
 
   function Header() {
+    var _ref;
+
+    var _temp, _this;
+
     _classCallCheck(this, Header);
 
-    return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_ref = Header.__proto__ || Object.getPrototypeOf(Header)).call.apply(_ref, [this].concat(args))), Object.defineProperty(_assertThisInitialized(_this), "state", {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: {
+        navIsSticky: false
+      }
+    }), _temp));
   }
 
   _createClass(Header, [{
@@ -68,6 +83,7 @@ function (_React$Component) {
       window.addEventListener('scroll', this.updateMainMenuSticky.bind(this), {
         passive: true
       });
+      this.updateMainMenuSticky();
     }
   }, {
     key: "componentWillUnmount",
@@ -77,7 +93,9 @@ function (_React$Component) {
   }, {
     key: "updateMainMenuSticky",
     value: function updateMainMenuSticky() {
-      console.log(window.pageYOffset);
+      this.setState({
+        navIsSticky: window.pageYOffset > 0
+      });
     }
   }, {
     key: "toggleMainMenu",
@@ -91,85 +109,85 @@ function (_React$Component) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 49
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_head___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 50
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("title", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 51
         }
       }, this.props.title), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("link", {
         rel: "shortcut icon",
         href: "/static/favicon.ico",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 52
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", {
         name: "viewport",
         content: "width=device-width, initial-scale=1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 53
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", {
         charSet: "utf-8",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 54
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("link", {
         rel: "stylesheet",
         href: "/static/style.css",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 55
         }
       })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_bootstrap__["a" /* Modal */], {
         show: authDialog.isVisible,
         onHide: this.props.hideAuthDialog,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 60
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_bootstrap__["a" /* Modal */].Header, {
         closeButton: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 61
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_bootstrap__["a" /* Modal */].Title, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 62
         }
       }, "Authentication required")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_bootstrap__["a" /* Modal */].Body, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 64
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("form", {
         onSubmit: this.handleAuthDialogSubmit.bind(this),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 65
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "form-group",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 66
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("label", {
         htmlFor: "identifierInput",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 67
         }
       }, "Username or email"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
         type: "text",
@@ -178,19 +196,19 @@ function (_React$Component) {
         id: "identifierInput",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 68
         }
       })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "form-group",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 70
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("label", {
         htmlFor: "passwordInput",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 71
         }
       }, "Password"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
         type: "password",
@@ -199,20 +217,20 @@ function (_React$Component) {
         id: "passwordInput",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 72
         }
       })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
         type: "submit",
         className: "btn btn-primary",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 74
         }
       }, "Submit")))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("nav", {
-        className: "nav",
+        className: 'nav ' + (this.props.navClass ? this.props.navClass : '') + (this.state.navIsSticky ? 'sticky' : '') + (this.props.mainMenu.isVisible ? 'menu-visible' : ''),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73
+          lineNumber: 79
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
         className: "logo",
@@ -220,54 +238,24 @@ function (_React$Component) {
         alt: "logo",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 80
         }
-      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "burger",
-        src: "/static/svg/burger.svg",
-        alt: "burger",
         onClick: this.toggleMainMenu.bind(this),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 75
+          lineNumber: 81
         }
       })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: 'main-menu ' + (this.props.mainMenu.isVisible ? 'visible' : ''),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 78
+          lineNumber: 84
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: {
           pathname: '/'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 79
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        className: "main-menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 80
-        }
-      }, "home")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
-        href: {
-          pathname: '/locations'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 82
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        className: "main-menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 83
-        }
-      }, "locations")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
-        href: {
-          pathname: '/spotify'
         },
         __source: {
           fileName: _jsxFileName,
@@ -279,9 +267,9 @@ function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 86
         }
-      }, "spotify")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
+      }, "home")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: {
-          pathname: '/stance'
+          pathname: '/locations'
         },
         __source: {
           fileName: _jsxFileName,
@@ -293,9 +281,9 @@ function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 89
         }
-      }, "stance")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
+      }, "locations")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: {
-          pathname: '/contact'
+          pathname: '/spotify'
         },
         __source: {
           fileName: _jsxFileName,
@@ -306,6 +294,34 @@ function (_React$Component) {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 92
+        }
+      }, "spotify")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
+        href: {
+          pathname: '/stance'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 94
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+        className: "main-menu-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 95
+        }
+      }, "stance")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
+        href: {
+          pathname: '/contact'
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 97
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+        className: "main-menu-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 98
         }
       }, "contact"))));
     }
@@ -364,4 +380,4 @@ var _default = Object(__WEBPACK_IMPORTED_MODULE_3_react_redux__["b" /* connect *
 /***/ })
 
 })
-//# sourceMappingURL=4.7e6a74df0170ea42713b.hot-update.js.map
+//# sourceMappingURL=4.6f6c9712a2d02ab01356.hot-update.js.map
