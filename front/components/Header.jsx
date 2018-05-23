@@ -83,19 +83,29 @@ class Header extends React.Component {
 
         <div className={'main-menu ' + (this.props.mainMenu.isVisible ? 'visible' : '')}>
           <Link href={{ pathname: '/' }}>
-            <a className="main-menu-item">home</a>
+            <a className="main-menu-item">
+              <div onClick={this.toggleMainMenu.bind(this)}>home</div>
+            </a>
           </Link>
           <Link href={{ pathname: '/locations' }}>
-            <a className="main-menu-item">locations</a>
+            <a className="main-menu-item">
+              <div onClick={this.toggleMainMenu.bind(this)}>locations</div>
+            </a>
           </Link>
           <Link href={{ pathname: '/spotify' }}>
-            <a className="main-menu-item">spotify</a>
+            <a className="main-menu-item">
+              <div onClick={this.toggleMainMenu.bind(this)}>spotify</div>
+            </a>
           </Link>
           <Link href={{ pathname: '/stance' }}>
-            <a className="main-menu-item">stance</a>
+            <a className="main-menu-item">
+              <div onClick={this.toggleMainMenu.bind(this)}>stance</div>
+            </a>
           </Link>
           <Link href={{ pathname: '/contact' }}>
-            <a className="main-menu-item">contact</a>
+            <a className="main-menu-item">
+              <div onClick={this.toggleMainMenu.bind(this)}>contact</div>
+            </a>
           </Link>
         </div>
       </div>

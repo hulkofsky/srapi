@@ -586,63 +586,93 @@ function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 86
         }
-      }, "home")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        onClick: this.toggleMainMenu.bind(this),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 87
+        }
+      }, "home"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: {
           pathname: '/locations'
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 90
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         className: "main-menu-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89
+          lineNumber: 91
         }
-      }, "locations")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        onClick: this.toggleMainMenu.bind(this),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 92
+        }
+      }, "locations"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: {
           pathname: '/spotify'
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 95
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         className: "main-menu-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 92
+          lineNumber: 96
         }
-      }, "spotify")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        onClick: this.toggleMainMenu.bind(this),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 97
+        }
+      }, "spotify"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: {
           pathname: '/stance'
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 94
+          lineNumber: 100
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         className: "main-menu-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95
+          lineNumber: 101
         }
-      }, "stance")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        onClick: this.toggleMainMenu.bind(this),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 102
+        }
+      }, "stance"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: {
           pathname: '/contact'
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97
+          lineNumber: 105
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         className: "main-menu-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 98
+          lineNumber: 106
         }
-      }, "contact"))));
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        onClick: this.toggleMainMenu.bind(this),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 107
+        }
+      }, "contact")))));
     }
   }]);
 

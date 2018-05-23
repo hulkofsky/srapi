@@ -1,4 +1,4 @@
-webpackHotUpdate(4,{
+webpackHotUpdate(5,{
 
 /***/ "./components/Header.jsx":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -100,6 +100,7 @@ function (_React$Component) {
   }, {
     key: "toggleMainMenu",
     value: function toggleMainMenu() {
+      console.log(this.props.mainMenu.isVisible);
       this.props.mainMenu.isVisible ? this.props.hideMainMenu() : this.props.showMainMenu();
     }
   }, {
@@ -109,85 +110,85 @@ function (_React$Component) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 50
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_head___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 51
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("title", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 52
         }
       }, this.props.title), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("link", {
         rel: "shortcut icon",
         href: "/static/favicon.ico",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 53
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", {
         name: "viewport",
         content: "width=device-width, initial-scale=1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 54
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", {
         charSet: "utf-8",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 55
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("link", {
         rel: "stylesheet",
         href: "/static/style.css",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 56
         }
       })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_bootstrap__["a" /* Modal */], {
         show: authDialog.isVisible,
         onHide: this.props.hideAuthDialog,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 61
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_bootstrap__["a" /* Modal */].Header, {
         closeButton: true,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 62
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_bootstrap__["a" /* Modal */].Title, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 63
         }
       }, "Authentication required")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_bootstrap__["a" /* Modal */].Body, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 65
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("form", {
         onSubmit: this.handleAuthDialogSubmit.bind(this),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 66
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "form-group",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 67
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("label", {
         htmlFor: "identifierInput",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 67
+          lineNumber: 68
         }
       }, "Username or email"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
         type: "text",
@@ -196,19 +197,19 @@ function (_React$Component) {
         id: "identifierInput",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 69
         }
       })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "form-group",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70
+          lineNumber: 71
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("label", {
         htmlFor: "passwordInput",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71
+          lineNumber: 72
         }
       }, "Password"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
         type: "password",
@@ -217,20 +218,20 @@ function (_React$Component) {
         id: "passwordInput",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 72
+          lineNumber: 73
         }
       })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
         type: "submit",
         className: "btn btn-primary",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 75
         }
       }, "Submit")))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("nav", {
         className: 'nav ' + (this.props.navClass ? this.props.navClass : '') + (this.state.navIsSticky ? 'sticky ' : '') + (this.props.mainMenu.isVisible ? 'menu-visible ' : ''),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 79
+          lineNumber: 80
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
         className: "logo",
@@ -238,20 +239,20 @@ function (_React$Component) {
         alt: "logo",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 81
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "burger",
         onClick: this.toggleMainMenu.bind(this),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 82
         }
       })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: 'main-menu ' + (this.props.mainMenu.isVisible ? 'visible' : ''),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 84
+          lineNumber: 85
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: {
@@ -259,41 +260,54 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 85
+          lineNumber: 86
         }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "main-menu-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 86
+          lineNumber: 87
         }
-      }, "home")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+        onClick: this.toggleMainMenu.bind(this),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 88
+        }
+      }, "home"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: {
           pathname: '/locations'
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 88
+          lineNumber: 91
         }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "main-menu-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 89
+          lineNumber: 92
         }
-      }, "locations")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+        onClick: this.toggleMainMenu.bind(this),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 93
+        }
+      }, "locations"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: {
           pathname: '/spotify'
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 91
+          lineNumber: 96
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         className: "main-menu-item",
+        onClick: this.toggleMainMenu.bind(this),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 92
+          lineNumber: 97
         }
       }, "spotify")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: {
@@ -301,13 +315,14 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 94
+          lineNumber: 99
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         className: "main-menu-item",
+        onClick: this.toggleMainMenu.bind(this),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 95
+          lineNumber: 100
         }
       }, "stance")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
         href: {
@@ -315,15 +330,21 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97
+          lineNumber: 102
         }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "main-menu-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 98
+          lineNumber: 103
         }
-      }, "contact"))));
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
+        onClick: this.toggleMainMenu.bind(this),
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 104
+        }
+      }, "contact")))));
     }
   }, {
     key: "__reactstandin__regenerateByEval",
@@ -380,4 +401,4 @@ var _default = Object(__WEBPACK_IMPORTED_MODULE_3_react_redux__["b" /* connect *
 /***/ })
 
 })
-//# sourceMappingURL=4.3a38fced60669dbc9e21.hot-update.js.map
+//# sourceMappingURL=5.79895e953b2bd6dac8fe.hot-update.js.map
