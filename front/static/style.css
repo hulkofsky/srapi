@@ -7683,7 +7683,7 @@ a:hover {
   text-transform: uppercase; }
 
 .location-page .hero-block {
-  height: 100vh; }
+  padding-bottom: 10vw; }
   .location-page .hero-block .main-image {
     background: url("/static/images/FG_UI01_assets_location_hero.jpg") center no-repeat;
     background-size: cover;
@@ -7717,6 +7717,89 @@ a:hover {
       font-size: 21vw; }
     .location-page .hero-block .main-info .image {
       display: none; } }
+
+.location-page .intro-block {
+  padding: 0 10%; }
+  .location-page .intro-block .rooms-starting {
+    border-bottom: 2px solid #FF9C5F;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 20px;
+    display: inline-block; }
+  .location-page .intro-block .sections-and-slogan {
+    padding-top: 9vw; }
+    .location-page .intro-block .sections-and-slogan .left .caption {
+      line-height: 1.5;
+      text-align: justify;
+      padding-bottom: 2vw;
+      font-size: 16px; }
+    .location-page .intro-block .sections-and-slogan .left .btn-container {
+      display: none; }
+    .location-page .intro-block .sections-and-slogan .left .sections {
+      border-left: 2px dashed #BABAB0;
+      border-right: 2px dashed #BABAB0;
+      padding-top: 15vw; }
+      .location-page .intro-block .sections-and-slogan .left .sections .prefix {
+        padding-bottom: 30px;
+        padding-left: 16px; }
+      .location-page .intro-block .sections-and-slogan .left .sections .sections-list .section-item {
+        cursor: pointer;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 2vw;
+        line-height: 1.5;
+        padding-left: 16px;
+        position: relative; }
+        .location-page .intro-block .sections-and-slogan .left .sections .sections-list .section-item.rooms-section-item {
+          padding-top: 30px; }
+        .location-page .intro-block .sections-and-slogan .left .sections .sections-list .section-item:before {
+          content: "";
+          display: inline-block;
+          width: 10px;
+          height: 4px;
+          background: #FF9C5F;
+          position: absolute;
+          bottom: 1.5vw;
+          left: -6px; }
+      .location-page .intro-block .sections-and-slogan .left .sections .suffix {
+        padding-top: 30px;
+        padding-left: 16px; }
+    .location-page .intro-block .sections-and-slogan .right .slogan {
+      color: #BABAB0;
+      font-size: 14vw;
+      line-height: 0.83;
+      font-family: SixCaps, sans-serif;
+      text-align: right; }
+  .location-page .intro-block:after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid #9E9D8F;
+    transform: rotate(9deg);
+    width: 100%;
+    margin-top: 10vw;
+    position: relative;
+    z-index: 1; }
+
+@media screen and (max-width: 767px) {
+  .location-page .intro-block .sections-and-slogan .left .sections {
+    display: none; }
+  .location-page .intro-block .sections-and-slogan .left .btn-container {
+    display: block;
+    z-index: 3;
+    position: relative;
+    width: 353px;
+    margin: 0 auto; }
+    .location-page .intro-block .sections-and-slogan .left .btn-container .btn {
+      border: 1px solid #ff8b1f;
+      color: #ff8b1f;
+      letter-spacing: 3.5px; }
+  .location-page .intro-block .sections-and-slogan .left .btn-border {
+    border-color: #ff8b1f; }
+  .location-page .intro-block .sections-and-slogan .right {
+    margin-top: 40px;
+    padding: 0 25%; }
+    .location-page .intro-block .sections-and-slogan .right .slogan {
+      text-align: center; } }
 
 footer {
   height: 565px;

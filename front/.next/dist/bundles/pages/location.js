@@ -67,7 +67,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -845,37 +845,31 @@ function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 44
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "rooms-starting",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 45
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 46
-        }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 47
-        }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+      }, "Rooms starting from only \xA3000.00 per month"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "row sections-and-slogan",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 48
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "col-md-5 left",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 49
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "caption",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 50
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+      }, "There was a time when the best thing to come out of Sheffield was a bunch of steel and 5 naked blokes. That time is gone. ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 51
@@ -883,57 +877,114 @@ function (_React$Component) {
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 51
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 53
-        }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+      }), "Sheffield is emerging from it\u2019s shadows as a cultural northern powerhouse, here\u2019s your Future Generation guide to the best (and worst) of the steel city."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "btn-container",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 54
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "btn discount",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 55
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+      }, "jump to a section"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "btn btn-border",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 56
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 57
-        }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "sections",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 58
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "prefix",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 59
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+      }, "Jump to:"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "sections-list",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 60
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "section-item",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 61
         }
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__components_Footer__["a" /* default */], {
+      }, "Local Heroes"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "section-item",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 64
+        }
+      }, "Foodie Heaven"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "section-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 67
+        }
+      }, "Did you know"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "section-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 70
+        }
+      }, "for extroverts"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "section-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 73
+        }
+      }, "team mentality"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "section-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 76
+        }
+      }, "Local music"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "section-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 79
+        }
+      }, "when you\u2019re sober"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "section-item rooms-section-item",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 82
+        }
+      }, "Oh, and the rooms")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "suffix",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 86
+        }
+      }, "Or keep scrolling. You\u2019re your own person."))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "col-md-7 right d-flex align-items-md-end",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 91
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "slogan",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 92
+        }
+      }, "feel like you know it better than a local")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__components_Footer__["a" /* default */], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 99
         }
       }));
     }
@@ -1159,7 +1210,7 @@ var initStore = function initStore() {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/location.jsx");

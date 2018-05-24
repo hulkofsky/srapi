@@ -2,7 +2,7 @@ module.exports =
 
         __NEXT_REGISTER_PAGE('/', function() {
           var comp = 
-      webpackJsonp([4],{
+      webpackJsonp([6],{
 
 /***/ "./actions/index.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -23744,7 +23744,7 @@ var initStore = function initStore() {
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__("./pages/index.jsx");
@@ -23752,7 +23752,7 @@ module.exports = __webpack_require__("./pages/index.jsx");
 
 /***/ })
 
-},[3])
+},[5])
           return { page: comp.default }
         })
       ;
