@@ -100,7 +100,7 @@ class LocationPage extends React.Component {
           <div className="title">
             Local Heroes
           </div>
-          <div className="items-slider heroes-list">
+          <div className="items-slider with-next-visible heroes-list">
             <div className="item hero type-1">
               <div className="row">
                 <div className="image">
@@ -315,11 +315,11 @@ class LocationPage extends React.Component {
         </div>
 
         <div className="when-sober">
-          <div className="title">When you’re sober</div>
-          <div className="intro-text">
+          <div className="row title">When you’re sober</div>
+          <div className="row intro-text">
             Ok so your family or friends are coming to visit for the day. What the hell are you going to do in all that time? Fotunately we’ve got a list for you to try.
           </div>
-          <div className="items-slider">
+          <div className="items-slider with-next-visible">
             <div className="item type-1">
               <div className="row">
                 <div className="image">
@@ -352,7 +352,7 @@ class LocationPage extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="item hero type-1">
+            <div className="item type-1">
               <div className="row">
                 <div className="image">
                   <img className="img-fluid" src="/static/images/FG_UI01_assets_location_sober 2.jpg" alt="" />
@@ -368,7 +368,7 @@ class LocationPage extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="item hero type-1">
+            <div className="item type-1">
               <div className="row">
                 <div className="image">
                   <img className="img-fluid" src="/static/images/FG_UI01_assets_location_sober 2.jpg" alt="" />

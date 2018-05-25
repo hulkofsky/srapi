@@ -22530,7 +22530,7 @@ function (_React$Component) {
           lineNumber: 100
         }
       }, "Local Heroes"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "items-slider heroes-list",
+        className: "items-slider with-next-visible heroes-list",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 103
@@ -23304,19 +23304,19 @@ function (_React$Component) {
           lineNumber: 317
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "title",
+        className: "row title",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 318
         }
       }, "When you\u2019re sober"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "intro-text",
+        className: "row intro-text",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 319
         }
       }, "Ok so your family or friends are coming to visit for the day. What the hell are you going to do in all that time? Fotunately we\u2019ve got a list for you to try."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "items-slider",
+        className: "items-slider with-next-visible",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 322
@@ -23442,7 +23442,7 @@ function (_React$Component) {
           lineNumber: 349
         }
       }), "Getting immersed in nature is what this wildlife and falconry centre is all about. Whether it\u2019s brightly coloured winged creatures flying around your head, walking through Meerkat Mansion, handling a bird of prey or, for the bravest, there are snakes, crocodiles and spiders in the Tropical House!")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "item hero type-1",
+        className: "item type-1",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 355
@@ -23502,7 +23502,7 @@ function (_React$Component) {
           lineNumber: 365
         }
       }), "Getting immersed in nature is what this wildlife and falconry centre is all about. Whether it\u2019s brightly coloured winged creatures flying around your head, walking through Meerkat Mansion, handling a bird of prey or, for the bravest, there are snakes, crocodiles and spiders in the Tropical House!")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "item hero type-1",
+        className: "item type-1",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 371
