@@ -40,6 +40,88 @@ a:hover {
 	text-decoration: none;
 }
 
+.btn-orange-transparent {
+	display: block;
+    z-index: 3;
+    position: relative;
+    width: 353px;
+    margin: 0 auto;
+    .btn {
+    	border: 1px solid #ff8b1f;
+	    color: #ff8b1f;
+	    letter-spacing: 3.5px;
+    }
+	.btn-border {
+		border-color: #ff8b1f;
+	}
+}
+
+.items-slider {
+	.item {
+		.description {
+			position: relative;
+			padding-left: 15px;
+			.line-1 {
+				text-transform: uppercase;
+				font-weight: bold;
+				font-size: 2vw;
+			}
+			.line-2 {
+				margin: 10px 0;
+				font-weight: bold;
+			}
+			.info {
+				text-align: justify;
+			}
+		}
+		&.type-1 {
+			.image {
+				width: 50%;
+			}
+			.description {
+				width: 50%;
+				&:after {
+					content: "";
+					display: block;
+					border-bottom: 2px solid #9E9D8F;
+					transform: rotate(9deg);
+					width: 100%;
+					margin-top: 10vw;
+					position: relative;
+					z-index: 1;
+				}
+			}
+		}
+		&.type-2 {
+			.image {
+				width: 100%;
+				margin-bottom: 20px;
+			}
+			.description {
+				width: 100%;
+				padding-left: 0;
+			}
+		}
+	}
+}
+
+.slider-controls {
+	display: flex;
+	justify-content: center;
+	margin: 10px 0;
+	.slider-control {
+		height: 15px;
+		width: 15px;
+		border-radius: 50%;
+		border: 2px solid #353133;
+		margin-left: 20px;
+		cursor: pointer;
+		&.active {
+			background: #353133;
+		}
+	}
+}
+
 .main-menu {
 	text-align: left;
     background: #191714;
@@ -724,6 +806,7 @@ a:hover {
 	    margin-bottom: 15px;
 	}
 	.slider-controls {
+		@extend .slider-controls;
 		display: none;
 	}
 	.lines {
@@ -791,18 +874,6 @@ a:hover {
 		}
 		.slider-controls {
 			display: flex;
-			justify-content: center;
-			margin: 10px 0;
-			.slider-control {
-				height: 15px;
-				width: 15px;
-				border-radius: 50%;
-				border: 2px solid #353133;
-				margin-left: 20px;
-				&.active {
-					background: #353133;
-				}
-			}
 		}
 		.lines {
 			margin: 10px 10% 0 10%;
@@ -853,7 +924,7 @@ a:hover {
 	    z-index: 3;
 	    position: relative
 	}
-	.btn-container {
+	.btn-orange-transparent{
 	    z-index: 3;
 	    position: relative;
 	    width: 353px;
@@ -906,7 +977,6 @@ a:hover {
 @media screen and (max-width: 767px) {
 	.partner-block {
 		.ellipse-bg {
-
 		}
 		.samsung-logo {
 			width: 80%;
@@ -1276,7 +1346,7 @@ a:hover {
 					padding-bottom: 2vw;
 					font-size: 16px;
 				}
-				.btn-container {
+				.btn-orange-transparent {
 					display: none;
 				}
 				.sections {
@@ -1348,20 +1418,8 @@ a:hover {
 					.sections {
 						display: none;
 					}
-					.btn-container {
+					.btn-orange-transparent {
 						display: block;
-					    z-index: 3;
-				        position: relative;
-				        width: 353px;
-				        margin: 0 auto;
-				        .btn {
-				        	border: 1px solid #ff8b1f;
-						    color: #ff8b1f;
-						    letter-spacing: 3.5px;
-				        }
-					}
-					.btn-border {
-						border-color: #ff8b1f;
 					}
 				}
 				.right {
@@ -1372,6 +1430,73 @@ a:hover {
 					}
 				}
 			}
+		}
+	}
+}
+
+.location-page {
+	.local-heroes {
+		padding: 70px 10% 0 10%;
+		.title {
+			font-size: 3.5vw;
+			text-transform: uppercase;
+			font-weight: bold;
+			padding: 20px 0;
+		}
+		.slider-controls {
+			padding: 40px 0;
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.location-page {
+		.local-heroes {
+
+		}
+	}
+}
+
+.for-extrovers {
+	padding: 70px 10% 0 10%;
+	.title {
+		font-size: 3.5vw;
+		text-transform: uppercase;
+		font-weight: bold;
+		padding: 20px 0;
+	}
+	.slider-controls {
+		padding: 40px 0;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.for-extrovers {
+		.title {
+		}
+		.slider-controls {
+		}
+	}
+}
+
+.team-mentality {
+	padding: 70px 10% 0 10%;
+	.title {
+		font-size: 3.5vw;
+		text-transform: uppercase;
+		font-weight: bold;
+		padding: 20px 0;
+	}
+	.slider-controls {
+		padding: 40px 0;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.team-mentality {
+		.title {
+		}
+		.slider-controls {
 		}
 	}
 }

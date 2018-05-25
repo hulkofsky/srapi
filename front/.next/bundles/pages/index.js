@@ -23043,7 +23043,7 @@ function (_React$Component) {
           lineNumber: 301
         }
       }), "So reject the status quo, and rebuild it. With us."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "btn-container",
+        className: "btn-orange-transparent",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 305

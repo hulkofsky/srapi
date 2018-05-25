@@ -51,7 +51,7 @@ class LocationPage extends React.Component {
                 There was a time when the best thing to come out of Sheffield was a bunch of steel and 5 naked blokes. That time is gone. <br/><br/>
                 Sheffield is emerging from it’s shadows as a cultural northern powerhouse, here’s your Future Generation guide to the best (and worst) of the steel city.
               </div>
-              <div className="btn-container">
+              <div className="btn-orange-transparent">
                 <div className="btn discount">jump to a section</div>
                 <div className="btn btn-border"></div>
               </div>
@@ -93,6 +93,93 @@ class LocationPage extends React.Component {
                 feel like you know it better than a local
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="local-heroes">
+          <div className="title">
+            Local Heroes
+          </div>
+          <div className="items-slider heroes-list">
+            <div className="item hero type-1">
+              <div className="row">
+                <div className="image">
+                  <img src="/static/images/FG_UI01_assets_location_local 1.jpg" alt="" />
+                </div>
+                <div className="description">
+                  <div className="line-1 name">Helen Sharman</div>
+                  <div className="line-2 role">First Briton in Space</div>
+                  <div className="info">
+                    Helen Patricia Sharman, OBE PhD, is a British chemist who became the first Briton in space and the first woman to visit the Mir space station in 1991. She received a BSc in chemistry at the University of Sheffield in 1984 and a PhD from Birkbeck, University of London. Helen worked as an engineer for GEC in London and later as a chemist for Mars Incorporated dealing with flavourant properties of chocolate. Sweet.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="slider-controls">
+            <div className="slider-control active" onClick={() => this.setActiveLocalHero(0)}></div>
+            <div className="slider-control" onClick={() => this.setActiveLocalHero(1)}></div>
+            <div className="slider-control" onClick={() => this.setActiveLocalHero(2)}></div>
+            <div className="slider-control" onClick={() => this.setActiveLocalHero(3)}></div>
+          </div>
+        </div>
+
+        <div className="for-extrovers">
+          <div className="title">
+            For extroverts
+          </div>
+          <div className="items-slider heroes-list">
+            <div className="item hero type-1">
+              <div className="row">
+                <div className="image">
+                  <img src="/static/images/FG_UI01_assets_location_club 1.jpg" alt="" />
+                </div>
+                <div className="description">
+                  <div className="line-1 name">Pop tarts</div>
+                  <div className="line-2 role">FG rating 7.5 / 10</div>
+                  <div className="info">
+                    It’s the elephant in the room. Despite being the best SU club night in the country there are some who dare to insult the hallowed grounds of Pop Tarts.
+                    <br/><br/>
+                    Home to basic bitches and the final hurdle of many socials, Pop Tarts sells out within the week before it. So clearly they’re doing something right. The SU really does have a simple brief here. Play fuck loads of Beyoncé, Britney, and Chumbawumba. Simple, yet crowdpleasing.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="slider-controls">
+            <div className="slider-control active" onClick={() => this.setActiveForExtroverts(0)}></div>
+            <div className="slider-control" onClick={() => this.setActiveForExtroverts(1)}></div>
+            <div className="slider-control" onClick={() => this.setActiveForExtroverts(2)}></div>
+            <div className="slider-control" onClick={() => this.setActiveForExtroverts(3)}></div>
+          </div>
+        </div>
+
+        <div className="team-mentality">
+          <div className="title">
+            team mentality
+          </div>
+          <div className="items-slider heroes-list">
+            <div className="item hero type-1">
+              <div className="row">
+                <div className="image">
+                  <img src="/static/images/FG_UI01_assets_location_activity 1.jpg" alt="" />
+                </div>
+                <div className="description">
+                  <div className="line-1 name">Mixed Rowing</div>
+                  <div className="info">
+                    It’s the elephant in the room. Despite being the best SU club night in the country there are some who dare to insult the hallowed grounds of Pop Tarts.
+                    <br/><br/>
+                    Home to basic bitches and the final hurdle of many socials, Pop Tarts sells out within the week before it. So clearly they’re doing something right. The SU really does have a simple brief here. Play fuck loads of Beyoncé, Britney, and Chumbawumba. Simple, yet crowdpleasing.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="slider-controls">
+            <div className="slider-control active" onClick={() => this.setActiveTeamMentality(0)}></div>
+            <div className="slider-control" onClick={() => this.setActiveTeamMentality(1)}></div>
+            <div className="slider-control" onClick={() => this.setActiveTeamMentality(2)}></div>
+            <div className="slider-control" onClick={() => this.setActiveTeamMentality(3)}></div>
           </div>
         </div>
 

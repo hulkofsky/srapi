@@ -6784,6 +6784,69 @@ a:hover {
   color: #131828;
   text-decoration: none; }
 
+.btn-orange-transparent {
+  display: block;
+  z-index: 3;
+  position: relative;
+  width: 353px;
+  margin: 0 auto; }
+  .btn-orange-transparent .btn {
+    border: 1px solid #ff8b1f;
+    color: #ff8b1f;
+    letter-spacing: 3.5px; }
+  .btn-orange-transparent .btn-border {
+    border-color: #ff8b1f; }
+
+.items-slider .item .description {
+  position: relative;
+  padding-left: 15px; }
+  .items-slider .item .description .line-1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2vw; }
+  .items-slider .item .description .line-2 {
+    margin: 10px 0;
+    font-weight: bold; }
+  .items-slider .item .description .info {
+    text-align: justify; }
+
+.items-slider .item.type-1 .image {
+  width: 50%; }
+
+.items-slider .item.type-1 .description {
+  width: 50%; }
+  .items-slider .item.type-1 .description:after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid #9E9D8F;
+    transform: rotate(9deg);
+    width: 100%;
+    margin-top: 10vw;
+    position: relative;
+    z-index: 1; }
+
+.items-slider .item.type-2 .image {
+  width: 100%;
+  margin-bottom: 20px; }
+
+.items-slider .item.type-2 .description {
+  width: 100%;
+  padding-left: 0; }
+
+.slider-controls, .roof-block .slider-controls {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0; }
+  .slider-controls .slider-control {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 2px solid #353133;
+    margin-left: 20px;
+    cursor: pointer; }
+    .slider-controls .slider-control.active {
+      background: #353133; }
+
 .main-menu {
   text-align: left;
   background: #191714;
@@ -7372,17 +7435,7 @@ a:hover {
       margin-bottom: 30px;
       height: 80vw; }
     .roof-block .slider-controls {
-      display: flex;
-      justify-content: center;
-      margin: 10px 0; }
-      .roof-block .slider-controls .slider-control {
-        height: 15px;
-        width: 15px;
-        border-radius: 50%;
-        border: 2px solid #353133;
-        margin-left: 20px; }
-        .roof-block .slider-controls .slider-control.active {
-          background: #353133; }
+      display: flex; }
     .roof-block .lines {
       margin: 10px 10% 0 10%;
       width: 80%; } }
@@ -7425,7 +7478,7 @@ a:hover {
     padding-bottom: 70px;
     z-index: 3;
     position: relative; }
-  .partner-block .btn-container {
+  .partner-block .btn-orange-transparent {
     z-index: 3;
     position: relative;
     width: 353px;
@@ -7733,7 +7786,7 @@ a:hover {
       text-align: justify;
       padding-bottom: 2vw;
       font-size: 16px; }
-    .location-page .intro-block .sections-and-slogan .left .btn-container {
+    .location-page .intro-block .sections-and-slogan .left .btn-orange-transparent {
       display: none; }
     .location-page .intro-block .sections-and-slogan .left .sections {
       border-left: 2px dashed #BABAB0;
@@ -7783,23 +7836,43 @@ a:hover {
 @media screen and (max-width: 767px) {
   .location-page .intro-block .sections-and-slogan .left .sections {
     display: none; }
-  .location-page .intro-block .sections-and-slogan .left .btn-container {
-    display: block;
-    z-index: 3;
-    position: relative;
-    width: 353px;
-    margin: 0 auto; }
-    .location-page .intro-block .sections-and-slogan .left .btn-container .btn {
-      border: 1px solid #ff8b1f;
-      color: #ff8b1f;
-      letter-spacing: 3.5px; }
-  .location-page .intro-block .sections-and-slogan .left .btn-border {
-    border-color: #ff8b1f; }
+  .location-page .intro-block .sections-and-slogan .left .btn-orange-transparent {
+    display: block; }
   .location-page .intro-block .sections-and-slogan .right {
     margin-top: 40px;
     padding: 0 25%; }
     .location-page .intro-block .sections-and-slogan .right .slogan {
       text-align: center; } }
+
+.location-page .local-heroes {
+  padding: 70px 10% 0 10%; }
+  .location-page .local-heroes .title {
+    font-size: 3.5vw;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 20px 0; }
+  .location-page .local-heroes .slider-controls {
+    padding: 40px 0; }
+
+.for-extrovers {
+  padding: 70px 10% 0 10%; }
+  .for-extrovers .title {
+    font-size: 3.5vw;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 20px 0; }
+  .for-extrovers .slider-controls {
+    padding: 40px 0; }
+
+.team-mentality {
+  padding: 70px 10% 0 10%; }
+  .team-mentality .title {
+    font-size: 3.5vw;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 20px 0; }
+  .team-mentality .slider-controls {
+    padding: 40px 0; }
 
 footer {
   height: 565px;

@@ -302,7 +302,7 @@ class HomePage extends React.Component {
               So reject the status quo, and rebuild it. With us.
             </p>
 
-            <div className="btn-container">
+            <div className="btn-orange-transparent">
               <div className="btn discount">Get 25% off</div>
               <div className="btn btn-border"></div>
             </div>
