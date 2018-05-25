@@ -6789,11 +6789,14 @@ a:hover {
   z-index: 3;
   position: relative;
   width: 353px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  max-width: 100%; }
   .btn-orange-transparent .btn {
     border: 1px solid #ff8b1f;
     color: #ff8b1f;
-    letter-spacing: 3.5px; }
+    letter-spacing: 3.5px;
+    max-width: 100%;
+    white-space: normal; }
   .btn-orange-transparent .btn-border {
     border-color: #ff8b1f; }
 
@@ -6846,6 +6849,73 @@ a:hover {
     cursor: pointer; }
     .slider-controls .slider-control.active {
       background: #353133; }
+  .slider-controls.on-dark .slider-control {
+    border-color: #D9D9D2; }
+    .slider-controls.on-dark .slider-control.active {
+      background: #D9D9D2; }
+
+.vertical-image-section {
+  padding: 5% 10% 0 10%; }
+  .vertical-image-section .title {
+    font-size: 3.5vw;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 20px 0;
+    margin: 0 -15px; }
+  .vertical-image-section .image {
+    width: 60%; }
+    .vertical-image-section .image .dashes {
+      display: none; }
+  .vertical-image-section .info {
+    width: 40%;
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+    .vertical-image-section .info .text {
+      text-align: justify; }
+    .vertical-image-section .info .btn-orange-transparent {
+      margin: 20px 0; }
+    .vertical-image-section .info .dashes {
+      border-left: 2px dashed #BABAB0;
+      border-right: 2px dashed #BABAB0;
+      height: 100%;
+      position: relative; }
+      .vertical-image-section .info .dashes .caption {
+        position: absolute;
+        bottom: 0;
+        left: -3px; }
+
+@media screen and (max-width: 767px) {
+  .vertical-image-section .image {
+    width: 100%;
+    order: 2; }
+    .vertical-image-section .image .dashes {
+      display: block;
+      border-left: 2px dashed #BABAB0;
+      border-right: 2px dashed #BABAB0;
+      padding: 5vw 0 15vw 0;
+      width: 90%;
+      margin: 0 5%; }
+      .vertical-image-section .image .dashes .caption {
+        text-align: center;
+        font-size: 3vw; }
+    .vertical-image-section .image:before {
+      content: "";
+      border-left: 2px dashed #BABAB0;
+      border-right: 2px dashed #BABAB0;
+      margin: 0 5%;
+      width: 90%;
+      height: 40px;
+      display: inline-block; }
+  .vertical-image-section .info {
+    width: 100%;
+    padding-left: 0;
+    order: 1; }
+    .vertical-image-section .info .text {
+      font-size: 3vw; }
+    .vertical-image-section .info .dashes {
+      display: none; } }
 
 .main-menu {
   text-align: left;
@@ -6895,7 +6965,8 @@ a:hover {
       background: url("/static/svg/FG_UI01_assets_DESK_burger hover.svg") center no-repeat; }
   .nav.sticky {
     position: fixed;
-    top: 0; }
+    top: 0;
+    z-index: 10; }
   .nav.menu-visible .burger {
     background: url("/static/svg/FG_UI01_assets_DESK_burger back.svg") center no-repeat; }
 
@@ -7854,6 +7925,35 @@ a:hover {
   .location-page .local-heroes .slider-controls {
     padding: 40px 0; }
 
+.did-you-know {
+  padding: 70px 10% 10% 10%;
+  background: #191714;
+  position: relative; }
+  .did-you-know .title {
+    font-size: 3.5vw;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 20px 0;
+    color: #D9D9D2; }
+  .did-you-know:before {
+    content: "";
+    background-image: linear-gradient(7deg, #191714, #191714 49.6%, transparent 50%, transparent 100%);
+    height: 12vw;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: -12vw;
+    left: 0; }
+  .did-you-know:after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid #9E9D8F;
+    transform: rotate(9deg);
+    width: 80%;
+    bottom: 0;
+    position: absolute;
+    z-index: 1; }
+
 .for-extrovers {
   padding: 70px 10% 0 10%; }
   .for-extrovers .title {
@@ -7863,6 +7963,13 @@ a:hover {
     padding: 20px 0; }
   .for-extrovers .slider-controls {
     padding: 40px 0; }
+
+.location-page .local-music .image {
+  order: 2; }
+
+.location-page .local-music .info {
+  order: 1;
+  padding: 0 10% 0 0; }
 
 .team-mentality {
   padding: 70px 10% 0 10%; }

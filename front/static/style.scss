@@ -46,10 +46,13 @@ a:hover {
     position: relative;
     width: 353px;
     margin: 0 auto;
+    max-width: 100%;
     .btn {
     	border: 1px solid #ff8b1f;
 	    color: #ff8b1f;
 	    letter-spacing: 3.5px;
+	    max-width: 100%;
+	    white-space: normal;
     }
 	.btn-border {
 		border-color: #ff8b1f;
@@ -120,6 +123,96 @@ a:hover {
 			background: #353133;
 		}
 	}
+	&.on-dark {
+		.slider-control {
+			border-color: #D9D9D2;
+			&.active {
+				background: #D9D9D2;
+			}
+		}
+	}
+}
+
+.vertical-image-section {
+	padding: 5% 10% 0 10%;
+	.title {
+		font-size: 3.5vw;
+		text-transform: uppercase;
+		font-weight: bold;
+		padding: 20px 0;
+		margin: 0 -15px;
+	}
+	.image {
+		width: 60%;
+		.dashes {
+			display: none;
+		}
+	}
+	.info {
+		width: 40%;
+		padding-left: 10%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		.text {
+			text-align: justify;
+		}
+		.btn-orange-transparent {
+			margin: 20px 0;		
+		}
+		.dashes {
+			border-left: 2px dashed #BABAB0;
+			border-right: 2px dashed #BABAB0;
+			height: 100%;
+			position: relative;
+			.caption {
+				position: absolute;
+				bottom: 0;
+				left: -3px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.vertical-image-section {
+		.image {
+			width: 100%;
+			order: 2;
+			.dashes {
+				display: block;
+				border-left: 2px dashed #BABAB0;
+				border-right: 2px dashed #BABAB0;
+				padding: 5vw 0 15vw 0;
+				width: 90%;
+				margin: 0 5%;
+				.caption {
+					text-align: center;
+					font-size: 3vw;
+				}
+			}
+			&:before {
+				content: "";
+				border-left: 2px dashed #BABAB0;
+				border-right: 2px dashed #BABAB0;
+				margin: 0 5%;
+				width: 90%;
+				height: 40px;
+				display: inline-block;
+			}
+		}
+		.info {
+			width: 100%;
+			padding-left: 0;
+			order: 1;
+			.text {
+				font-size: 3vw;
+			}
+			.dashes {
+				display: none;
+			}
+		}
+	}
 }
 
 .main-menu {
@@ -182,6 +275,7 @@ a:hover {
     	@extend .nav-dark;
     	position: fixed;
     	top: 0;
+    	z-index: 10;
     }
     &.menu-visible {
     	.burger {
@@ -1457,6 +1551,60 @@ a:hover {
 	}
 }
 
+.location-page {
+	.foodie {
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.location-page {
+		.foodie {
+		}
+	}
+}
+
+.did-you-know {
+	padding: 70px 10% 10% 10%;
+	background: #191714;
+	position: relative;
+	.title {
+		font-size: 3.5vw;
+		text-transform: uppercase;
+		font-weight: bold;
+		padding: 20px 0;
+		color: #D9D9D2;
+	}
+	&:before {
+		content: "";
+		background-image:
+		    linear-gradient(7deg, #191714, #191714 49.6%, transparent 50%, transparent 100%);
+		height: 12vw;
+		width: 100%;
+		display: block;
+		position: absolute;
+		top: -12vw;
+		left: 0;
+	}
+	&:after {
+		content: "";
+	    display: block;
+	    border-bottom: 2px solid #9E9D8F;
+	    transform: rotate(9deg);
+	    width: 80%;
+	    bottom: 0;
+	    position: absolute;
+	    z-index: 1;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.location-page {
+		.did-you-know {
+
+		}
+	}
+}
+
 .for-extrovers {
 	padding: 70px 10% 0 10%;
 	.title {
@@ -1475,6 +1623,25 @@ a:hover {
 		.title {
 		}
 		.slider-controls {
+		}
+	}
+}
+
+.location-page {
+	.local-music {
+		.image {
+			order: 2;
+		}
+		.info {
+			order: 1;
+			padding: 0 10% 0 0;
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.location-page {
+		.local-music {
 		}
 	}
 }

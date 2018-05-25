@@ -104,7 +104,49 @@ class LocationPage extends React.Component {
             <div className="item hero type-1">
               <div className="row">
                 <div className="image">
-                  <img src="/static/images/FG_UI01_assets_location_local 1.jpg" alt="" />
+                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_local 1.jpg" alt="" />
+                </div>
+                <div className="description">
+                  <div className="line-1 name">Helen Sharman</div>
+                  <div className="line-2 role">First Briton in Space</div>
+                  <div className="info">
+                    Helen Patricia Sharman, OBE PhD, is a British chemist who became the first Briton in space and the first woman to visit the Mir space station in 1991. She received a BSc in chemistry at the University of Sheffield in 1984 and a PhD from Birkbeck, University of London. Helen worked as an engineer for GEC in London and later as a chemist for Mars Incorporated dealing with flavourant properties of chocolate. Sweet.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="item hero type-2">
+              <div className="row">
+                <div className="image">
+                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_local 2.jpg" alt="" />
+                </div>
+                <div className="description">
+                  <div className="line-1 name">Helen Sharman</div>
+                  <div className="line-2 role">First Briton in Space</div>
+                  <div className="info">
+                    Helen Patricia Sharman, OBE PhD, is a British chemist who became the first Briton in space and the first woman to visit the Mir space station in 1991. She received a BSc in chemistry at the University of Sheffield in 1984 and a PhD from Birkbeck, University of London. Helen worked as an engineer for GEC in London and later as a chemist for Mars Incorporated dealing with flavourant properties of chocolate. Sweet.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="item hero type-1">
+              <div className="row">
+                <div className="image">
+                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_local 1.jpg" alt="" />
+                </div>
+                <div className="description">
+                  <div className="line-1 name">Helen Sharman</div>
+                  <div className="line-2 role">First Briton in Space</div>
+                  <div className="info">
+                    Helen Patricia Sharman, OBE PhD, is a British chemist who became the first Briton in space and the first woman to visit the Mir space station in 1991. She received a BSc in chemistry at the University of Sheffield in 1984 and a PhD from Birkbeck, University of London. Helen worked as an engineer for GEC in London and later as a chemist for Mars Incorporated dealing with flavourant properties of chocolate. Sweet.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="item hero type-2">
+              <div className="row">
+                <div className="image">
+                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_local 2.jpg" alt="" />
                 </div>
                 <div className="description">
                   <div className="line-1 name">Helen Sharman</div>
@@ -124,6 +166,44 @@ class LocationPage extends React.Component {
           </div>
         </div>
 
+        <div className="vertical-image-section foodie">
+          <div className="title">Foodie Heaven</div>
+          <div className="row">
+            <div className="image">
+              <img className="img-fluid" src="/static/images/FG_UI01_assets_location_food.jpg" alt="" />
+              <div className="dashes">
+                <div className="caption">
+                  Great, now I’m hungry.
+                </div>
+              </div>
+            </div>
+            <div className="info">
+              <div className="text">
+                Sheffields food economy has exploded in the past few years. With a number of street food hubs and restraunts you’ll be able to find somewhere affordable at any time.
+              </div>
+              <div className="btn-orange-transparent">
+                <div className="btn discount">see our favourITES</div>
+                <div className="btn btn-border"></div>
+              </div>
+              <div className="dashes">
+                <div className="caption">
+                  Great, now I’m hungry.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="did-you-know">
+          <div className="title">Did you know</div>
+          <div className="slider-controls on-dark">
+            <div className="slider-control active" onClick={() => this.setActiveDidYouKnow(0)}></div>
+            <div className="slider-control" onClick={() => this.setActiveDidYouKnow(1)}></div>
+            <div className="slider-control" onClick={() => this.setActiveDidYouKnow(2)}></div>
+            <div className="slider-control" onClick={() => this.setActiveDidYouKnow(3)}></div>
+          </div>
+        </div>
+
         <div className="for-extrovers">
           <div className="title">
             For extroverts
@@ -132,7 +212,7 @@ class LocationPage extends React.Component {
             <div className="item hero type-1">
               <div className="row">
                 <div className="image">
-                  <img src="/static/images/FG_UI01_assets_location_club 1.jpg" alt="" />
+                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_club 1.jpg" alt="" />
                 </div>
                 <div className="description">
                   <div className="line-1 name">Pop tarts</div>
@@ -154,6 +234,34 @@ class LocationPage extends React.Component {
           </div>
         </div>
 
+        <div className="vertical-image-section local-music">
+          <div className="title">Local Music</div>
+          <div className="row">
+            <div className="image">
+              <img className="img-fluid" src="/static/images/FG_UI01_assets_location_music.jpg" alt="" />
+              <div className="dashes">
+                <div className="caption">
+                  Encore.
+                </div>
+              </div>
+            </div>
+            <div className="info">
+              <div className="text">
+                Audiophiles rejoice. Sheffield has a great music scene from the smaller bar gigs to sell-out tour concert venues. Whatever your genre, you’re bound to find it here.
+              </div>
+              <div className="btn-orange-transparent">
+                <div className="btn discount">see our favourITES</div>
+                <div className="btn btn-border"></div>
+              </div>
+              <div className="dashes">
+                <div className="caption">
+                  Encore.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="team-mentality">
           <div className="title">
             team mentality
@@ -162,7 +270,7 @@ class LocationPage extends React.Component {
             <div className="item hero type-1">
               <div className="row">
                 <div className="image">
-                  <img src="/static/images/FG_UI01_assets_location_activity 1.jpg" alt="" />
+                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_activity 1.jpg" alt="" />
                 </div>
                 <div className="description">
                   <div className="line-1 name">Mixed Rowing</div>
