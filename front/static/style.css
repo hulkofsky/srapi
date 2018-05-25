@@ -7928,13 +7928,44 @@ a:hover {
 .did-you-know {
   padding: 70px 10% 10% 10%;
   background: #191714;
-  position: relative; }
-  .did-you-know .title {
+  position: relative;
+  color: #D9D9D2; }
+  .did-you-know > .title {
     font-size: 3.5vw;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 20px 0;
-    color: #D9D9D2; }
+    padding: 20px 0; }
+  .did-you-know .facts .fact {
+    display: flex; }
+    .did-you-know .facts .fact .left {
+      width: 40%;
+      text-align: justify; }
+      .did-you-know .facts .fact .left .quote {
+        display: none; }
+      .did-you-know .facts .fact .left .translation .title {
+        margin-top: 15px;
+        font-weight: bold;
+        margin: 15px 0 5px 0; }
+        .did-you-know .facts .fact .left .translation .title:before {
+          content: "";
+          width: 100%;
+          margin-bottom: 5px;
+          height: 6vw;
+          display: block;
+          border-left: 2px dashed #BABAB0;
+          border-right: 2px dashed #BABAB0;
+          opacity: 0.25; }
+    .did-you-know .facts .fact .right {
+      width: 60%;
+      padding-left: 10%;
+      display: flex;
+      align-items: flex-end; }
+      .did-you-know .facts .fact .right .quote {
+        font-family: SixCaps, sans-serif;
+        font-size: 14vw;
+        line-height: 1; }
+  .did-you-know .slider-controls {
+    margin: 10% 0 2% 0; }
   .did-you-know:before {
     content: "";
     background-image: linear-gradient(7deg, #191714, #191714 49.6%, transparent 50%, transparent 100%);
@@ -7953,6 +7984,32 @@ a:hover {
     bottom: 0;
     position: absolute;
     z-index: 1; }
+
+@media screen and (max-width: 767px) {
+  .location-page .did-you-know .facts .fact {
+    flex-direction: column; }
+    .location-page .did-you-know .facts .fact .left {
+      width: 100%; }
+      .location-page .did-you-know .facts .fact .left .text-1:after {
+        content: "";
+        width: 100%;
+        margin-top: 25px;
+        height: 10vw;
+        display: block;
+        border-left: 2px dashed #BABAB0;
+        border-right: 2px dashed #BABAB0;
+        opacity: 0.25; }
+      .location-page .did-you-know .facts .fact .left .quote {
+        display: block;
+        font-family: SixCaps, sans-serif;
+        font-size: 18vw;
+        line-height: 1;
+        text-align: center;
+        margin: 50px 0; }
+      .location-page .did-you-know .facts .fact .left .translation .title:before {
+        content: none; }
+    .location-page .did-you-know .facts .fact .right {
+      display: none; } }
 
 .for-extrovers {
   padding: 70px 10% 0 10%; }
@@ -7980,6 +8037,39 @@ a:hover {
     padding: 20px 0; }
   .team-mentality .slider-controls {
     padding: 40px 0; }
+
+.when-sober {
+  margin: 100px 0;
+  padding: 70px 10% 10% 10%;
+  background: #191714;
+  position: relative;
+  color: #D9D9D2; }
+  .when-sober > .title {
+    font-size: 3.5vw;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 20px 0; }
+  .when-sober .intro-text {
+    margin: 50px 0;
+    width: 40%; }
+  .when-sober:before {
+    content: "";
+    background-image: linear-gradient(7deg, #191714, #191714 49.6%, transparent 50%, transparent 100%);
+    height: 12vw;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: -12vw;
+    left: 0; }
+  .when-sober:after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid #9E9D8F;
+    transform: rotate(9deg);
+    width: 80%;
+    bottom: 0;
+    position: absolute;
+    z-index: 1; }
 
 footer {
   height: 565px;

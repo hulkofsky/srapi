@@ -196,6 +196,29 @@ class LocationPage extends React.Component {
 
         <div className="did-you-know">
           <div className="title">Did you know</div>
+          <div className="facts">
+            <div className="fact">
+              <div className="left">
+                <div className="text-1">
+                  From the niché sayings to the interresting details, Sheffield has a lot to offer. So before you move there and become a Sheffieldian, lets get you up to speed.
+                </div>
+                <div className="quote">
+                  “ey up chap”
+                </div>
+                <div className="translation">
+                  <div className="title">Translation:</div>
+                  <div className="text-2">
+                    “How are you? or ”are you alright?”. Whether you’re greeting someone down the local pub or just passing them in the street, ‘ey up’ is the go to phrase here in Sheffield. Ususally accompanied with a complimentary nod or even a smile. When someone says this to you, the best thing to do is return the gesture.
+                  </div>
+                </div>
+              </div>
+              <div className="right">
+                <div className="quote">
+                  “ey up chap”
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="slider-controls on-dark">
             <div className="slider-control active" onClick={() => this.setActiveDidYouKnow(0)}></div>
             <div className="slider-control" onClick={() => this.setActiveDidYouKnow(1)}></div>
@@ -288,6 +311,85 @@ class LocationPage extends React.Component {
             <div className="slider-control" onClick={() => this.setActiveTeamMentality(1)}></div>
             <div className="slider-control" onClick={() => this.setActiveTeamMentality(2)}></div>
             <div className="slider-control" onClick={() => this.setActiveTeamMentality(3)}></div>
+          </div>
+        </div>
+
+        <div className="when-sober">
+          <div className="title">When you’re sober</div>
+          <div className="intro-text">
+            Ok so your family or friends are coming to visit for the day. What the hell are you going to do in all that time? Fotunately we’ve got a list for you to try.
+          </div>
+          <div className="items-slider">
+            <div className="item type-1">
+              <div className="row">
+                <div className="image">
+                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_sober 1.jpg" alt="" />
+                </div>
+                <div className="description">
+                  <div className="line-1 name">Tropical Butterfly</div>
+                  <div className="line-2 role">FG rating 8 / 10</div>
+                  <div className="info">
+                    If you dream of escaping to a tropical climate, where exotic birds and butterflies fly freely over your head in a rainforest-like setting, then the Tropical Butterfly House is for you.
+                    <br/><br/>
+                    Getting immersed in nature is what this wildlife and falconry centre is all about. Whether it’s brightly coloured winged creatures flying around your head, walking through Meerkat Mansion, handling a bird of prey or, for the bravest, there are snakes, crocodiles and spiders in the Tropical House!
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="item type-1">
+              <div className="row">
+                <div className="image">
+                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_sober 2.jpg" alt="" />
+                </div>
+                <div className="description">
+                  <div className="line-1 name">Tropical Butterfly</div>
+                  <div className="line-2 role">FG rating 8 / 10</div>
+                  <div className="info">
+                    If you dream of escaping to a tropical climate, where exotic birds and butterflies fly freely over your head in a rainforest-like setting, then the Tropical Butterfly House is for you.
+                    <br/><br/>
+                    Getting immersed in nature is what this wildlife and falconry centre is all about. Whether it’s brightly coloured winged creatures flying around your head, walking through Meerkat Mansion, handling a bird of prey or, for the bravest, there are snakes, crocodiles and spiders in the Tropical House!
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="item hero type-1">
+              <div className="row">
+                <div className="image">
+                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_sober 2.jpg" alt="" />
+                </div>
+                <div className="description">
+                  <div className="line-1 name">Tropical Butterfly</div>
+                  <div className="line-2 role">FG rating 8 / 10</div>
+                  <div className="info">
+                    If you dream of escaping to a tropical climate, where exotic birds and butterflies fly freely over your head in a rainforest-like setting, then the Tropical Butterfly House is for you.
+                    <br/><br/>
+                    Getting immersed in nature is what this wildlife and falconry centre is all about. Whether it’s brightly coloured winged creatures flying around your head, walking through Meerkat Mansion, handling a bird of prey or, for the bravest, there are snakes, crocodiles and spiders in the Tropical House!
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="item hero type-1">
+              <div className="row">
+                <div className="image">
+                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_sober 2.jpg" alt="" />
+                </div>
+                <div className="description">
+                  <div className="line-1 name">Tropical Butterfly</div>
+                  <div className="line-2 role">FG rating 8 / 10</div>
+                  <div className="info">
+                    If you dream of escaping to a tropical climate, where exotic birds and butterflies fly freely over your head in a rainforest-like setting, then the Tropical Butterfly House is for you.
+                    <br/><br/>
+                    Getting immersed in nature is what this wildlife and falconry centre is all about. Whether it’s brightly coloured winged creatures flying around your head, walking through Meerkat Mansion, handling a bird of prey or, for the bravest, there are snakes, crocodiles and spiders in the Tropical House!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="slider-controls on-dark">
+            <div className="slider-control active" onClick={() => this.setActiveWhenSober(0)}></div>
+            <div className="slider-control" onClick={() => this.setActiveWhenSober(1)}></div>
+            <div className="slider-control" onClick={() => this.setActiveWhenSober(2)}></div>
+            <div className="slider-control" onClick={() => this.setActiveWhenSober(3)}></div>
           </div>
         </div>
 
