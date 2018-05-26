@@ -26,11 +26,11 @@ class LocationPage extends React.Component {
       <div className="location-page">
         <Header title="Location page" />
 
-        <div className="rooms-type-selector-trigger d-none">
+        <div className="rooms-type-selector-trigger">
           <img className="arrow" src="/static/svg/FG_UI01_assets_arrow icon.svg" alt="" />
           <div className="caption">the rooms</div>
         </div>
-        <div className="rooms-type-selector">
+        <div className="rooms-type-selector d-none">
           <div className="title">Jump to:</div>
           <div className="type-name">Classic</div>
           <div className="type-name">en suite</div>
