@@ -26,6 +26,18 @@ class LocationPage extends React.Component {
       <div className="location-page">
         <Header title="Location page" />
 
+        <div className="rooms-type-selector-trigger d-none">
+          <img className="arrow" src="/static/svg/FG_UI01_assets_arrow icon.svg" alt="" />
+          <div className="caption">the rooms</div>
+        </div>
+        <div className="rooms-type-selector">
+          <div className="title">Jump to:</div>
+          <div className="type-name">Classic</div>
+          <div className="type-name">en suite</div>
+          <div className="type-name">studio</div>
+          <img className="arrow" src="/static/svg/FG_UI01_assets_arrow icon.svg" alt="" />
+        </div>
+
         <div className="hero-block">
           <div className="main-image"></div>
           <div className="main-info">
@@ -390,6 +402,72 @@ class LocationPage extends React.Component {
             <div className="slider-control" onClick={() => this.setActiveWhenSober(1)}></div>
             <div className="slider-control" onClick={() => this.setActiveWhenSober(2)}></div>
             <div className="slider-control" onClick={() => this.setActiveWhenSober(3)}></div>
+          </div>
+        </div>
+
+        <div className="rooms-section">
+          <div className="title">
+            oh, and the rooms
+          </div>
+          <div className="intro">
+            And what you’re naturally here for, the rooms available in our building. We have 3 types available ranging through communal kitchen floors to private studio flats.
+          </div>
+          <div className="rooms-type">
+            <div className="row align-items-center">
+              <div className="col-md-6 room-part-name">
+                classic Bedrooms
+              </div>
+              <div className="col-md-6 book-btn-wrapper">
+                <div className="btn-dark-orange-border">
+                  <div className="btn">Book ‘classic’ now</div>
+                  <div className="btn btn-border"></div>
+                </div>
+              </div>
+            </div>
+            <div className="hero-image">
+              <img src="/static/images/FG_UI01_assets_location_bedroom hero.jpg" alt="" className="img-fluid" />
+              <div className="text-block">
+                <div className="text">
+                  Pan around what could be your bedroom, come multi-million business origin story
+                </div>
+                <div className="horizontal-line"></div>
+              </div>
+            </div>
+            <div className="row additional-info">
+              <div className="col-md-6 images">
+                <img src="/static/images/FG_UI01_assets_location_bedroom thumbnail 1.jpg" alt="" className="img-fluid" />
+                <img src="/static/images/FG_UI01_assets_location_bedroom thumbnail 2.jpg" alt="" className="img-fluid" />
+              </div>
+              <div className="col-md-4 offset-md-1 text">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad 
+              </div>
+            </div>
+
+            <div className="row align-items-center">
+              <div className="col-md-6 room-part-name">
+                classic Kitchen
+              </div>
+              <div className="col-md-6 book-btn-wrapper">
+              </div>
+            </div>
+            <div className="hero-image">
+              <img src="/static/images/FG_UI01_assets_location_kitchen hero.jpg" alt="" className="img-fluid" />
+              <div className="text-block">
+                <div className="text">
+                  Look around a space where you’ll revise, drink, regret drinking, and have deep conversations over pizza
+                </div>
+                <div className="horizontal-line"></div>
+              </div>
+            </div>
+            <div className="row additional-info">
+              <div className="col-md-6 images">
+                <img src="/static/images/FG_UI01_assets_location_bedroom thumbnail 1.jpg" alt="" className="img-fluid" />
+                <img src="/static/images/FG_UI01_assets_location_bedroom thumbnail 2.jpg" alt="" className="img-fluid" />
+              </div>
+              <div className="col-md-4 offset-md-1 text">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad 
+              </div>
+            </div>
           </div>
         </div>
 

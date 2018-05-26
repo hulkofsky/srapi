@@ -6800,6 +6800,22 @@ a:hover {
   .btn-orange-transparent .btn-border {
     border-color: #ff8b1f; }
 
+.btn-dark-orange-border {
+  display: block;
+  z-index: 3;
+  position: relative;
+  width: 353px;
+  margin: 0 auto;
+  max-width: 100%; }
+  .btn-dark-orange-border .btn {
+    background: #191714;
+    color: #ff8b1f;
+    letter-spacing: 3.5px;
+    max-width: 100%;
+    white-space: normal; }
+  .btn-dark-orange-border .btn-border {
+    border-color: #ff8b1f; }
+
 .items-slider .item .row {
   margin: 0; }
 
@@ -8134,6 +8150,120 @@ a:hover {
 @media screen and (max-width: 767px) {
   .location-page .when-sober .title {
     font-size: 7vw; } }
+
+.location-page .rooms-section {
+  margin: 100px 0;
+  padding: 70px 10% 0 10%; }
+  .location-page .rooms-section .title {
+    font-size: 4vw;
+    font-weight: bold;
+    text-transform: uppercase; }
+  .location-page .rooms-section .intro {
+    margin: 50px 0;
+    width: 30%; }
+  .location-page .rooms-section .room-part-name {
+    font-size: 2vw;
+    font-weight: bold;
+    text-transform: uppercase; }
+  .location-page .rooms-section .book-btn-wrapper {
+    text-align: right; }
+    .location-page .rooms-section .book-btn-wrapper .btn-dark-orange-border {
+      display: inline-block; }
+  .location-page .rooms-section .hero-image {
+    margin-top: 30px; }
+    .location-page .rooms-section .hero-image .text-block {
+      margin: 10px 0;
+      color: #9e9d8f;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      .location-page .rooms-section .hero-image .text-block .horizontal-line {
+        border-bottom: solid 1px #9e9d8f;
+        width: 70px;
+        height: 1px; }
+  .location-page .rooms-section .additional-info {
+    margin: 50px -15px 80px -15px; }
+    .location-page .rooms-section .additional-info .images img {
+      width: 45%;
+      margin-right: 5%; }
+    .location-page .rooms-section .additional-info .text {
+      text-align: justify; }
+
+@media screen and (max-width: 767px) {
+  .location-page .rooms-section .room-part-name {
+    font-size: 4vw;
+    margin-bottom: 15px; }
+  .location-page .rooms-section .book-btn-wrapper {
+    text-align: left; }
+  .location-page .rooms-section .hero-image .text-block .text {
+    text-align: center;
+    padding: 0 10%;
+    font-size: 3vw; }
+  .location-page .rooms-section .hero-image .text-block .horizontal-line {
+    display: none; }
+  .location-page .rooms-section .additional-info .images img {
+    width: 49%;
+    margin-right: 0; }
+    .location-page .rooms-section .additional-info .images img:first-child {
+      margin-right: 2%; }
+  .location-page .rooms-section .additional-info .text {
+    margin-top: 25px;
+    font-size: 3vw; } }
+
+.rooms-type-selector-trigger {
+  position: fixed;
+  background: #1D1D1B;
+  right: -64px;
+  top: 50%;
+  transform: rotate(-90deg); }
+  .rooms-type-selector-trigger .arrow {
+    transform: rotate(-90deg);
+    width: 16px;
+    height: 24px;
+    position: absolute;
+    bottom: -1px;
+    left: -4px;
+    cursor: pointer;
+    border: 1px solid #CC8011;
+    padding: 6px 11px;
+    box-sizing: content-box; }
+  .rooms-type-selector-trigger .caption {
+    text-transform: uppercase;
+    color: #FF9C5F;
+    font-size: 14px;
+    padding: 10px 40px 10px 50px;
+    cursor: pointer; }
+
+.rooms-type-selector {
+  position: fixed;
+  background: #1D1D1B;
+  right: 0;
+  top: calc(50% - 140px);
+  padding: 10px 35px 80px 35px;
+  z-index: 5; }
+  .rooms-type-selector .title {
+    color: #D9D9D2;
+    opacity: 0.5;
+    text-align: center;
+    padding-bottom: 10px; }
+  .rooms-type-selector .type-name {
+    text-transform: uppercase;
+    color: #D9D9D2;
+    text-align: center;
+    padding: 10px 35px;
+    border-top: 1px solid #D9D9D2; }
+    .rooms-type-selector .type-name:last-child {
+      border-bottom: 1px solid #D9D9D2; }
+  .rooms-type-selector .arrow {
+    width: 16px;
+    height: 24px;
+    position: absolute;
+    bottom: -3px;
+    right: 0;
+    cursor: pointer;
+    border: 1px solid #CC8011;
+    padding: 6px 11px;
+    box-sizing: content-box; }
 
 footer {
   height: 565px;
