@@ -8307,6 +8307,146 @@ footer {
     padding-top: 15px;
     color: #d9d9d2; }
 
+.stance-page .main-caption {
+  padding: 10%;
+  font-size: 12vw;
+  line-height: 0.83;
+  font-family: SixCaps, sans-serif; }
+  .stance-page .main-caption:after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid #9E9D8F;
+    transform: rotate(9deg);
+    width: 80%;
+    bottom: 0;
+    margin-top: 10vw;
+    z-index: 1; }
+
+.stance-page .photo-block {
+  padding: 50px 10%; }
+  .stance-page .photo-block .left {
+    display: flex;
+    flex-direction: column; }
+    .stance-page .photo-block .left .text {
+      text-align: justify; }
+    .stance-page .photo-block .left .image {
+      margin: 25px 0; }
+    .stance-page .photo-block .left .dashes {
+      border-left: 2px dashed #191714;
+      border-right: 2px dashed #191714;
+      opacity: 0.25;
+      flex-grow: 1; }
+  .stance-page .photo-block .right img {
+    width: 100%; }
+
+.stance-page .author-block {
+  padding: 50px 10%; }
+  .stance-page .author-block .left {
+    font-size: 12vw;
+    line-height: 0.83;
+    font-family: SixCaps, sans-serif; }
+  .stance-page .author-block .right .dashes {
+    border-left: 2px dashed #191714;
+    border-right: 2px dashed #191714;
+    opacity: 0.25;
+    height: 100%; }
+  .stance-page .author-block .right .text {
+    text-align: justify;
+    margin-top: 25px; }
+
+.stance-page .space-block {
+  padding-top: 9vw;
+  background: url(/static/images/bg.png) center top no-repeat;
+  background-size: cover; }
+  .stance-page .space-block .quote {
+    font-weight: 900;
+    font-size: 6vw;
+    color: #d9d9d2;
+    width: 54%;
+    margin: 0 auto;
+    line-height: 1;
+    text-transform: uppercase;
+    text-align: center; }
+  .stance-page .space-block .text {
+    color: #d9d9d2;
+    width: 25%;
+    margin-left: 51.5%;
+    padding-bottom: 36vw;
+    padding-top: 10vw;
+    line-height: 1.81;
+    position: relative;
+    text-align: justify; }
+    .stance-page .space-block .text:before {
+      content: "";
+      position: absolute;
+      display: block;
+      border-bottom: 2px solid #9E9D8F;
+      width: 80%;
+      top: 140px;
+      left: -25vw;
+      z-index: 1; }
+
+.stance-page .final-captions {
+  padding: 10%;
+  font-size: 12vw;
+  line-height: 0.83;
+  font-family: SixCaps, sans-serif; }
+  .stance-page .final-captions .caption-2 {
+    margin-top: 16vw; }
+
+@media screen and (max-width: 767px) {
+  .stance-page .photo-block .image {
+    display: none; }
+  .stance-page .photo-block .right {
+    margin-top: 25px; }
+  .stance-page .author-block .left {
+    text-align: center; }
+  .stance-page .author-block .right .dashes {
+    display: none; }
+  .stance-page .final-captions {
+    text-align: center; }
+  .stance-page .space-block {
+    background: url(/static/svg/bg-mobile.svg) center top no-repeat;
+    background-size: cover;
+    padding-top: 42vw;
+    padding-bottom: 70vw; }
+    .stance-page .space-block .quote {
+      width: 70%;
+      position: relative; }
+      .stance-page .space-block .quote:before {
+        content: "";
+        position: absolute;
+        display: block;
+        border-bottom: 2px solid #9E9D8F;
+        width: 80%;
+        top: -10vw;
+        margin-left: 10%;
+        z-index: 1; }
+    .stance-page .space-block .text {
+      width: 70%;
+      margin-left: 15%;
+      padding-bottom: 4vw; }
+      .stance-page .space-block .text:before {
+        position: static;
+        margin-bottom: 70px;
+        width: 80%;
+        margin-left: 10%; }
+    .stance-page .space-block .dashes {
+      display: block;
+      border: 1px solid transparent;
+      border-image: url(/static/images/border.png) 1 repeat;
+      height: 50vw;
+      border-bottom: none;
+      border-top: none; }
+      .stance-page .space-block .dashes.first {
+        margin-left: 7%;
+        width: 41%;
+        float: left; }
+      .stance-page .space-block .dashes.second {
+        margin-left: 4%;
+        width: 41%;
+        float: left; } }
+
 @media screen and (max-width: 740px) {
   footer {
     background: url("/static/svg/mobile-footer.svg") center top no-repeat;
