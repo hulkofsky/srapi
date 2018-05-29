@@ -6768,8 +6768,8 @@ html {
   font-family: SixCaps;
   font-style: normal;
   font-weight: 400;
-  src: url(/static/fonts/six-caps-v8-latinRegular.eot);
-  src: local("Six Caps"), local("SixCaps"), url(/static/fonts/six-caps-v8-latinRegular.eot?#iefix) format("embedded-opentype"), url(/static/fonts/six-caps-v8-latinRegular.woff2) format("woff2"), url(/static/fonts/six-caps-v8-latinRegular.woff) format("woff"), url(/static/fonts/six-caps-v8-latinRegular.ttf) format("truetype"), url(/static/fonts/six-caps-v8-latinRegular.svg#SixCaps) format("svg"); }
+  src: url(/static/fonts/SixCaps.eot);
+  src: local("Six Caps"), local("SixCaps"), url(/static/fonts/SixCaps.eot?#iefix) format("embedded-opentype"), url(/static/fonts/SixCaps.woff2) format("woff2"), url(/static/fonts/SixCaps.woff) format("woff"), url(/static/fonts/SixCaps.ttf) format("truetype"), url(/static/fonts/SixCaps.svg#SixCaps) format("svg"); }
 
 .leap-block, .partner-block {
   -webkit-box-orient: vertical;
