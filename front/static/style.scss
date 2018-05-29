@@ -2145,7 +2145,7 @@ footer {
 	.author-block {
 		padding: 50px 10%;
 		.left {
-			font-size: 12vw;
+			font-size: 16vw;
 			line-height: 0.83;
 			font-family: SixCaps, sans-serif;
 		}
@@ -2210,6 +2210,9 @@ footer {
 
 @media screen and (max-width: 767px) {
 	.stance-page {
+		.main-caption {
+			padding-top: 100px;
+		}
 		.photo-block {
 			.image {
 				display: none;

@@ -8342,7 +8342,7 @@ footer {
 .stance-page .author-block {
   padding: 50px 10%; }
   .stance-page .author-block .left {
-    font-size: 12vw;
+    font-size: 16vw;
     line-height: 0.83;
     font-family: SixCaps, sans-serif; }
   .stance-page .author-block .right .dashes {
@@ -8395,6 +8395,8 @@ footer {
     margin-top: 16vw; }
 
 @media screen and (max-width: 767px) {
+  .stance-page .main-caption {
+    padding-top: 100px; }
   .stance-page .photo-block .image {
     display: none; }
   .stance-page .photo-block .right {
