@@ -361,7 +361,8 @@ a:hover {
 
 .skateboard-block {
     height: 100vh;
-    background: url(/static/images/guy-with-scateboard.jpg) center;
+    // background: url(/static/images/guy-with-scateboard.jpg) center;
+    background: #000;
     position: relative;
     display: flex;
     -webkit-box-align: end;
