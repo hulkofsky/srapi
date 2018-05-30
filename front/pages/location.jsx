@@ -15,10 +15,16 @@ class LocationPage extends React.Component {
     await store.dispatch(fetchCurrentLocation(query.id))
   }
 
-  componentDidMount () {
+  componentDidMount() {
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
+  }
+
+  scrollToBlock(selector) {
+    document.querySelector(selector).scrollIntoView({
+      behavior: 'smooth' 
+    });
   }
 
   render () {
@@ -70,28 +76,28 @@ class LocationPage extends React.Component {
               <div className="sections">
                 <div className="prefix">Jump to:</div>
                 <div className="sections-list">
-                  <div className="section-item">
+                  <div className="section-item" onClick={() => this.scrollToBlock('.local-heroes')}>
                     Local Heroes
                   </div>
-                  <div className="section-item">
+                  <div className="section-item" onClick={() => this.scrollToBlock('.foodie')}>
                     Foodie Heaven
                   </div>
-                  <div className="section-item">
+                  <div className="section-item" onClick={() => this.scrollToBlock('.did-you-know')}>
                     Did you know
                   </div>
-                  <div className="section-item">
+                  <div className="section-item" onClick={() => this.scrollToBlock('.for-extrovers')}>
                     for extroverts
                   </div>
-                  <div className="section-item">
+                  <div className="section-item" onClick={() => this.scrollToBlock('.local-music')}>
                     team mentality
                   </div>
-                  <div className="section-item">
+                  <div className="section-item" onClick={() => this.scrollToBlock('.team-mentality')}>
                     Local music
                   </div>
-                  <div className="section-item">
+                  <div className="section-item" onClick={() => this.scrollToBlock('.when-sober')}>
                     when you’re sober
                   </div>
-                  <div className="section-item rooms-section-item">
+                  <div className="section-item rooms-section-item" onClick={() => this.scrollToBlock('.rooms-section')}>
                     Oh, and the rooms
                   </div>
                 </div>
