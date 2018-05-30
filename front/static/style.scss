@@ -370,7 +370,14 @@ a:hover {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    background-size: cover
+    background-size: cover;
+    .heroVideo {
+    	position: fixed;
+	    right: 0;
+	    bottom: 0;
+	    min-width: 100%; 
+	    min-height: 100%;
+    }
 }
 
 .skateboard-block .btn {

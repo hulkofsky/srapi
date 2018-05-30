@@ -7036,6 +7036,12 @@ a:hover {
   -ms-flex-pack: center;
   justify-content: center;
   background-size: cover; }
+  .skateboard-block .heroVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%; }
 
 .skateboard-block .btn {
   background-color: #191714;

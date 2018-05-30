@@ -73,6 +73,10 @@ class HomePage extends React.Component {
         <Header title="home page" />
 
         <div className="skateboard-block">
+          <video autoPlay muted loop id="heroVideo" className="heroVideo">
+            <source src="/static/siska.mp4" type="video/mp4" />
+          </video>
+
           <div className="btn-container" onClick={() => this.scrollToBlock('.status-quo-block')}>
             <div className="btn">future generation</div>
             <div className="btn btn-border"></div>
