@@ -13,7 +13,7 @@ class StancePage extends React.Component {
   render () {
     return (
       <div className="stance-page">
-        <Header title="Stance" />
+        <Header title="Stance" navClass="nav-dark" />
 
         <div className="main-caption">
           stance is a <br/>strong word. <br/>but then we don’t <br/>exactly half ass things

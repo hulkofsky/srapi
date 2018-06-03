@@ -131,6 +131,8 @@ a:hover {
 	&.with-next-visible {
 		display: flex;
 		overflow: hidden;
+		width: 125%;
+		margin-left: -12.5%;
 		.item {
 			flex: 1 0 60%;
 			margin-right: 10%;
@@ -165,6 +167,8 @@ a:hover {
 		}
 		&.with-next-visible {
 			display: block;
+			width: 100%;
+			margin-left: 0;
 			.item {
 				margin-right: 0;
 			}
@@ -290,6 +294,7 @@ a:hover {
     z-index: 10;
     padding: 2% 3%;
     width: 100%;
+    height: 100vh;
     display: none;
 	.main-menu-item {
 		font-weight: bold;
@@ -471,7 +476,7 @@ a:hover {
     align-items: flex-end;
     padding: 140px 9.75% 50px;
     .quote {
-        font-size: 24vw;
+        font-size: 16vw;
         line-height: .92;
         position: relative;
         &:after {
@@ -487,8 +492,8 @@ a:hover {
         }
     }
     .image {
-        background: url(/static/images/fuck.png);
-        background-size: cover
+        background: url(/static/images/fuck.png) no-repeat;
+        background-size: contain;
     }
 }
 
@@ -547,11 +552,58 @@ a:hover {
     padding: 16.25%
 }
 
-.escalator-block .escalator-image {
-    background: url(/static/images/escalator.png) center no-repeat;
-    background-size: cover;
-    height: 100vh;
-    width: 100%
+.escalator-block {
+    .lines-pre-image,
+    .lines-post-image {
+    	content: "";
+    	border-top: 1px solid #D9D9D2;
+    	border-bottom: 1px solid #D9D9D2;
+    	transform: rotate(9deg);
+	    position: absolute;
+    	height: 20px;
+	    width: 5vw;
+    }
+    .lines-pre-image {
+    	top: 41.8%;
+    	left: -4vw;
+    }
+    .lines-post-image {
+    	top: 58.3%;
+    	right: -4vw;
+    }
+	.escalator-image {
+	    background: url('/static/images/FG_UI01_assets_home_secret hover.jpg') center no-repeat;
+	    background-size: cover;
+	    height: 100vh;
+	    width: 100%;
+	    position: relative;
+	    .lines {
+	    	border-top: 1px solid #D9D9D2;
+	    	border-bottom: 1px solid #D9D9D2;
+	    	height: 20px;
+	    	width: 112%;
+	    	transform: rotate(9deg);
+	    	position: absolute;
+	    	top: 50%;
+	    	left: -6%;
+	    }
+	    .lines-mask-wrapper {
+	    	overflow: hidden;
+	    	position: relative;
+	    	width: 100%;
+	    	height: 100%;
+		    .lines-mask {
+		    	border-top: 1px solid #7d7d7d;
+		    	border-bottom: 1px solid #7d7d7d;
+		    	height: 20px;
+		    	width: 112%;
+		    	transform: rotate(9deg);
+		    	position: absolute;
+		    	top: 50%;
+		    	left: -6%;
+		    }
+	    }
+	}
 }
 
 .rising-standarts-block {
@@ -2000,6 +2052,7 @@ a:hover {
 
 .rooms-type-selector-trigger {
 	position: fixed;
+	z-index: 5;
 	background: #1D1D1B;
 	right: -64px;
 	top: 50%;

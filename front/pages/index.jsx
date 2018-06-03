@@ -16,11 +16,11 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.updateRoomTypesClasses.bind(this), { passive: true })
+    window.addEventListener('scroll', this.updateRoomTypesImagesClasses.bind(this), { passive: true })
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.updateRoomTypesClasses)
+    window.removeEventListener('scroll', this.updateRoomTypesImagesClasses)
   }
 
   scrollToBlock(selector) {
@@ -38,7 +38,7 @@ class HomePage extends React.Component {
     );
   }
 
-  updateRoomTypesClasses() {
+  updateRoomTypesImagesClasses() {
     var images = document.querySelectorAll('.animated-image'), i;
 
     for (i = 0; i < images.length; ++i) {
@@ -121,10 +121,15 @@ class HomePage extends React.Component {
         </div>
 
         <div className="escalator-block">
-          <div className="row">
+          <div className="row position-relative">
+           
             <div className="escalator-image">
-
+              <div className="lines"></div>
+              <div className="lines-mask-wrapper">
+                <div className="lines-mask"></div>
+              </div>
             </div>
+            
           </div>
         </div>
 

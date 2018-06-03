@@ -10,15 +10,37 @@ import Link from 'next/link'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
+let whenSoberBlock = null
+let roomTypeSelectorTrigger = null
+let roomTypeSelectorTriggerHeight = 0
+let whenSoberBottomOffset = 0
+
 class LocationPage extends React.Component {
   static async getInitialProps ({store, pathname, query}) {
     await store.dispatch(fetchCurrentLocation(query.id))
   }
 
   componentDidMount() {
+    whenSoberBlock = document.querySelector(".when-sober")
+    roomTypeSelectorTrigger = document.querySelector(".rooms-type-selector-trigger")
+    whenSoberBottomOffset = whenSoberBlock.offsetTop + whenSoberBlock.getBoundingClientRect().height;
+    roomTypeSelectorTriggerHeight = roomTypeSelectorTrigger.clientHeight
+
+    window.addEventListener('scroll', this.updateRoomTypeSelectorTriggerStyle.bind(this), { passive: true })
   }
 
   componentWillUnmount() {
+    window.removeEventListener('scroll', this.updateRoomTypeSelectorTriggerStyle)
+  }
+
+  updateRoomTypeSelectorTriggerStyle() {
+    let roomTypeWidgetMinY = (window.scrollY + window.innerHeight / 2 + roomTypeSelectorTriggerHeight);
+
+    if (roomTypeWidgetMinY > whenSoberBottomOffset) {
+      roomTypeSelectorTrigger.style.top = (whenSoberBottomOffset - roomTypeWidgetMinY) + window.innerHeight/2 + 'px'
+    } else {
+      roomTypeSelectorTrigger.style.top = '50%'
+    }
   }
 
   scrollToBlock(selector) {
@@ -249,7 +271,23 @@ class LocationPage extends React.Component {
           <div className="title">
             For extroverts
           </div>
-          <div className="items-slider heroes-list">
+          <div className="items-slider with-next-visible">
+            <div className="item hero type-1">
+              <div className="row">
+                <div className="image">
+                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_club 1.jpg" alt="" />
+                </div>
+                <div className="description">
+                  <div className="line-1 name">Pop tarts</div>
+                  <div className="line-2 role">FG rating 7.5 / 10</div>
+                  <div className="info">
+                    It’s the elephant in the room. Despite being the best SU club night in the country there are some who dare to insult the hallowed grounds of Pop Tarts.
+                    <br/><br/>
+                    Home to basic bitches and the final hurdle of many socials, Pop Tarts sells out within the week before it. So clearly they’re doing something right. The SU really does have a simple brief here. Play fuck loads of Beyoncé, Britney, and Chumbawumba. Simple, yet crowdpleasing.
+                  </div>
+                </div>
+              </div>
+            </div>
             <div className="item hero type-1">
               <div className="row">
                 <div className="image">
@@ -307,7 +345,7 @@ class LocationPage extends React.Component {
           <div className="title">
             team mentality
           </div>
-          <div className="items-slider heroes-list">
+          <div className="items-slider">
             <div className="item hero type-1">
               <div className="row">
                 <div className="image">

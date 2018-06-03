@@ -13,7 +13,7 @@ class ContactPage extends React.Component {
   render () {
     return (
       <div className="contact-page">
-        <Header title="Contact" />
+        <Header title="Contact" navClass="nav-dark" />
 
         <div className="caption">
           strike up <br/>

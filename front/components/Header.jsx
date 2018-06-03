@@ -44,6 +44,12 @@ class Header extends React.Component {
 
   render () {
     let { authDialog } = this.props;
+    let navClasses = [
+      'nav',
+      (this.props.navClass ? this.props.navClass : ''),
+      (this.state.navIsSticky ? 'sticky ' : ''),
+      (this.props.mainMenu.isVisible ? 'menu-visible ' : '')
+    ];
 
     return (
       <div>
@@ -76,8 +82,12 @@ class Header extends React.Component {
           </Modal.Body>
         </Modal>
 
-        <nav className={'nav ' + (this.props.navClass ? this.props.navClass : '') + (this.state.navIsSticky ? 'sticky ' : '') + (this.props.mainMenu.isVisible ? 'menu-visible ' : '')}>
-          <img className="logo" src="/static/svg/logo.svg" alt="logo" />
+        <nav className={navClasses.join(' ')}>
+          <Link href={{ pathname: '/' }}>
+            <a className="main-menu-item">
+              <img className="logo" src="/static/svg/logo.svg" alt="logo" onClick={this.toggleMainMenu.bind(this)} />
+            </a>
+          </Link>
           <div className="burger" onClick={this.toggleMainMenu.bind(this)}></div>
         </nav>
 
