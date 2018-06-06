@@ -6784,6 +6784,9 @@ a:hover {
   color: #131828;
   text-decoration: none; }
 
+.btn {
+  max-width: 100%; }
+
 .btn-orange-transparent {
   display: block;
   z-index: 3;
@@ -7055,7 +7058,8 @@ a:hover {
 
 .btn-container {
   position: relative;
-  width: auto; }
+  width: auto;
+  max-width: 100%; }
 
 .btn-border {
   border: 1px solid #cc8011;
@@ -7575,8 +7579,8 @@ a:hover {
       width: 100%; }
       .roof-block .right .advantages-names .advantage-name {
         display: none; }
-        .roof-block .right .advantages-names .advantage-name .advantage-name-svg .advantage-name-text {
-          font-size: 1.5vw; }
+        .roof-block .right .advantages-names .advantage-name .advantage-name-svg {
+          width: 100%; }
         .roof-block .right .advantages-names .advantage-name.active {
           display: block;
           width: 80%;
@@ -7907,6 +7911,10 @@ a:hover {
   line-height: 1.3;
   text-transform: uppercase; }
 
+@media screen and (max-width: 767px) {
+  .contact-page .caption {
+    line-height: 0.88; } }
+
 .location-page .hero-block {
   padding-bottom: 10vw; }
   .location-page .hero-block .main-image {
@@ -8014,7 +8022,8 @@ a:hover {
     margin-top: 40px;
     padding: 0 25%; }
     .location-page .intro-block .sections-and-slogan .right .slogan {
-      text-align: center; } }
+      text-align: center;
+      font-size: 16vw; } }
 
 .location-page .local-heroes {
   padding: 70px 10% 0 10%; }
@@ -8203,7 +8212,9 @@ a:hover {
 
 @media screen and (max-width: 767px) {
   .location-page .when-sober .title {
-    font-size: 7vw; } }
+    font-size: 7vw; }
+  .location-page .when-sober .intro-text {
+    width: 100%; } }
 
 .location-page .rooms-section {
   margin: 100px 0;
@@ -8224,7 +8235,7 @@ a:hover {
     .location-page .rooms-section .book-btn-wrapper .btn-dark-orange-border {
       display: inline-block; }
   .location-page .rooms-section .hero-image {
-    margin-top: 30px; }
+    margin: 30px -12.5% 0 -12.5%; }
     .location-page .rooms-section .hero-image .text-block {
       margin: 10px 0;
       color: #9e9d8f;
@@ -8244,6 +8255,11 @@ a:hover {
       text-align: justify; }
 
 @media screen and (max-width: 767px) {
+  .location-page .rooms-section .title {
+    font-size: 8vw;
+    line-height: 1; }
+  .location-page .rooms-section .intro {
+    width: 100%; }
   .location-page .rooms-section .room-part-name {
     font-size: 4vw;
     margin-bottom: 15px; }
@@ -8319,6 +8335,14 @@ a:hover {
     border: 1px solid #CC8011;
     padding: 6px 11px;
     box-sizing: content-box; }
+
+@media screen and (max-width: 767px) {
+  .rooms-type-selector-trigger {
+    transform: rotate(-90deg) scale(0.7);
+    right: -70px; }
+  .rooms-type-selector {
+    transform: scale(0.7);
+    right: -31px; } }
 
 footer {
   height: 565px;
@@ -8451,7 +8475,8 @@ footer {
 
 @media screen and (max-width: 767px) {
   .stance-page .main-caption {
-    padding-top: 100px; }
+    padding-top: 100px;
+    font-size: 16vw; }
   .stance-page .photo-block .image {
     display: none; }
   .stance-page .photo-block .right {
@@ -8461,7 +8486,8 @@ footer {
   .stance-page .author-block .right .dashes {
     display: none; }
   .stance-page .final-captions {
-    text-align: center; }
+    text-align: center;
+    font-size: 16vw; }
   .stance-page .space-block {
     background: url(/static/svg/bg-mobile.svg) center top no-repeat;
     background-size: cover;
@@ -8504,7 +8530,7 @@ footer {
         width: 41%;
         float: left; } }
 
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 767px) {
   footer {
     background: url("/static/svg/mobile-footer.svg") center top no-repeat;
     background-size: cover;
@@ -8525,5 +8551,5 @@ footer {
         line-height: 1.5; }
       footer .footer-menu .dev {
         margin-top: 40px;
-        font-size: 21px;
+        font-size: 16px;
         color: #9E9D8F; } }

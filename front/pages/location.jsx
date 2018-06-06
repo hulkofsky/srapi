@@ -16,6 +16,10 @@ let roomTypeSelectorTriggerHeight = 0
 let whenSoberBottomOffset = 0
 
 class LocationPage extends React.Component {
+  state = {
+    roomsTypeSelectorVisible: false
+  }
+
   static async getInitialProps ({store, pathname, query}) {
     await store.dispatch(fetchCurrentLocation(query.id))
   }
@@ -49,21 +53,25 @@ class LocationPage extends React.Component {
     });
   }
 
+  toggleRoomsTypeSelector() {
+    this.setState({roomsTypeSelectorVisible: !this.state.roomsTypeSelectorVisible});
+  }
+
   render () {
     return (
       <div className="location-page">
         <Header title="Location page" />
 
-        <div className="rooms-type-selector-trigger">
+        <div className={['rooms-type-selector-trigger', (this.state.roomsTypeSelectorVisible ? 'd-none' : '')].join(' ')} onClick={() => this.toggleRoomsTypeSelector()}>
           <img className="arrow" src="/static/svg/FG_UI01_assets_arrow icon.svg" alt="" />
           <div className="caption">the rooms</div>
         </div>
-        <div className="rooms-type-selector d-none">
+        <div className={['rooms-type-selector', (this.state.roomsTypeSelectorVisible ? '' : 'd-none')].join(' ')}>
           <div className="title">Jump to:</div>
           <div className="type-name">Classic</div>
           <div className="type-name">en suite</div>
           <div className="type-name">studio</div>
-          <img className="arrow" src="/static/svg/FG_UI01_assets_arrow icon.svg" alt="" />
+          <img className="arrow" src="/static/svg/FG_UI01_assets_arrow icon.svg" alt="" onClick={() => this.toggleRoomsTypeSelector()} />
         </div>
 
         <div className="hero-block">
@@ -463,7 +471,7 @@ class LocationPage extends React.Component {
               </div>
               <div className="col-md-6 book-btn-wrapper">
                 <div className="btn-dark-orange-border">
-                  <div className="btn">Book ‘classic’ now</div>
+                  <div className="btn">Book</div>
                   <div className="btn btn-border"></div>
                 </div>
               </div>
