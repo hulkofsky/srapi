@@ -11,6 +11,11 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 class HomePage extends React.Component {
+  state = {
+    escalatorHiddenContentClass: '',
+    escalatorHiddenContentTimer: null
+  }
+
   static async getInitialProps ({store, pathname, query}) {
     await store.dispatch(fetchLocations())
   }
@@ -63,6 +68,20 @@ class HomePage extends React.Component {
         sliderControls[i].classList.add("active");
       }
     }
+  }
+
+  escalatorMouseOver() {
+    let timeout = setTimeout(() => {
+      this.setState({escalatorHiddenContentClass: 'hidden-content-shown'})
+    }, 3000);
+
+    this.setState({escalatorHiddenContentTimer: timeout})
+  }
+
+  escalatorMouseOut() {
+    clearTimeout(this.state.escalatorHiddenContentTimer)
+
+    this.setState({escalatorHiddenContentClass: ''})
   }
 
   render () {
@@ -120,10 +139,12 @@ class HomePage extends React.Component {
           </div>
         </div>
 
-        <div className="escalator-block">
+        <div className={['escalator-block', this.state.escalatorHiddenContentClass].join(' ')} onMouseOut={() => this.escalatorMouseOut()} onMouseOver={() => this.escalatorMouseOver()}>
           <div className="row position-relative">
            
             <div className="escalator-image">
+            </div>
+            <div className="lines-wrapper">
               <div className="lines"></div>
               <div className="lines-mask-wrapper">
                 <div className="lines-mask"></div>

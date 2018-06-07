@@ -578,11 +578,17 @@ a:hover {
     	right: -4vw;
     }
 	.escalator-image {
-	    background: url('/static/images/FG_UI01_assets_home_secret hover.jpg') center no-repeat;
-	    background-size: cover;
+		background: url('/static/images/FG_UI01_assets_home_secret hover.jpg') center no-repeat;
+		background-size: cover;
 	    height: 100vh;
 	    width: 100%;
 	    position: relative;
+	    transition: 0.5s;
+	}
+	.lines-wrapper {
+		position: absolute;
+		width: 100%;
+		height: 100%;
 	    .lines {
 	    	border-top: 1px solid #D9D9D2;
 	    	border-bottom: 1px solid #D9D9D2;
@@ -595,9 +601,10 @@ a:hover {
 	    }
 	    .lines-mask-wrapper {
 	    	overflow: hidden;
-	    	position: relative;
+	    	position: absolute;
 	    	width: 100%;
 	    	height: 100%;
+	    	top: 0;
 		    .lines-mask {
 		    	border-top: 1px solid #7d7d7d;
 		    	border-bottom: 1px solid #7d7d7d;
@@ -609,7 +616,35 @@ a:hover {
 		    	left: -6%;
 		    }
 	    }
+    	&:after {
+    		transition: 0.5s;
+			content: "we encourage those who try";
+			font-size: 16vw;
+			line-height: .92;
+			text-transform: uppercase;
+			font-family: SixCaps,sans-serif;
+			position: absolute;
+			transform: translateY(-50%);
+			left: 0;
+			top: 50%;
+			color: #D9D9D2;
+			width: 80%;
+			margin-left: 10%;
+			text-align: center;
+			opacity: 0;
+    	}
 	}
+    &.hidden-content-shown {
+    	.escalator-image {
+			opacity: 0.1;
+    		filter: grayscale(100%);
+    	}
+    	.lines-wrapper {
+	    	&:after {
+	    		opacity: 1;
+	    	}
+    	}
+    }
 }
 
 .rising-standarts-block {

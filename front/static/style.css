@@ -7212,8 +7212,14 @@ a:hover {
   background-size: cover;
   height: 100vh;
   width: 100%;
-  position: relative; }
-  .escalator-block .escalator-image .lines {
+  position: relative;
+  transition: 0.5s; }
+
+.escalator-block .lines-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+  .escalator-block .lines-wrapper .lines {
     border-top: 1px solid #D9D9D2;
     border-bottom: 1px solid #D9D9D2;
     height: 20px;
@@ -7222,12 +7228,13 @@ a:hover {
     position: absolute;
     top: 50%;
     left: -6%; }
-  .escalator-block .escalator-image .lines-mask-wrapper {
+  .escalator-block .lines-wrapper .lines-mask-wrapper {
     overflow: hidden;
-    position: relative;
+    position: absolute;
     width: 100%;
-    height: 100%; }
-    .escalator-block .escalator-image .lines-mask-wrapper .lines-mask {
+    height: 100%;
+    top: 0; }
+    .escalator-block .lines-wrapper .lines-mask-wrapper .lines-mask {
       border-top: 1px solid #7d7d7d;
       border-bottom: 1px solid #7d7d7d;
       height: 20px;
@@ -7236,6 +7243,29 @@ a:hover {
       position: absolute;
       top: 50%;
       left: -6%; }
+  .escalator-block .lines-wrapper:after {
+    transition: 0.5s;
+    content: "we encourage those who try";
+    font-size: 16vw;
+    line-height: .92;
+    text-transform: uppercase;
+    font-family: SixCaps,sans-serif;
+    position: absolute;
+    transform: translateY(-50%);
+    left: 0;
+    top: 50%;
+    color: #D9D9D2;
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+    opacity: 0; }
+
+.escalator-block.hidden-content-shown .escalator-image {
+  opacity: 0.1;
+  filter: grayscale(100%); }
+
+.escalator-block.hidden-content-shown .lines-wrapper:after {
+  opacity: 1; }
 
 .rising-standarts-block {
   padding-top: 9vw;
