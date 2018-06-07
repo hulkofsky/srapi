@@ -13,7 +13,25 @@ import Footer from '../components/Footer'
 class HomePage extends React.Component {
   state = {
     escalatorHiddenContentClass: '',
-    escalatorHiddenContentTimer: null
+    escalatorHiddenContentTimer: null,
+    advantagesItems: [
+      {
+        name: "ROOFTOP SPORT",
+        image: '/static/images/full-football.jpg'
+      },
+      {
+        name: "coworking",
+        image: '/static/images/guy-with-scateboard.jpg'
+      },
+      {
+        name: "skyline bars",
+        image: '/static/images/guy-with-scateboard.jpg'
+      },
+      {
+        name: "on site cinema",
+        image: '/static/images/guy-with-scateboard.jpg'
+      }
+    ]
   }
 
   static async getInitialProps ({store, pathname, query}) {
@@ -269,30 +287,17 @@ class HomePage extends React.Component {
 
           <div className="row advantages-list">
             <div className="col-md-6 left">
-              <div className="advantage-image"></div>
+              <img src="/static/images/full-football.jpg" className="advantage-image" />
             </div>
             <div className="right">
               <div className="advantages-names">
-                <div className="advantage-name active" onClick={() => this.setActiveAdvantage(0)}>
-                  <svg viewBox="0 0 100 12" className="advantage-name-svg">
-                    <text className="advantage-name-text" x="0" y="11">ROOFTOP SPORT</text>
-                  </svg>
-                </div>
-                <div className="advantage-name" onClick={() => this.setActiveAdvantage(1)}>
-                  <svg viewBox="0 0 100 12" className="advantage-name-svg">
-                    <text className="advantage-name-text" x="0" y="11">coworking</text>
-                  </svg>
-                </div>
-                <div className="advantage-name" onClick={() => this.setActiveAdvantage(2)}>
-                  <svg viewBox="0 0 100 12" className="advantage-name-svg">
-                    <text className="advantage-name-text" x="0" y="11">skyline bars</text>
-                  </svg>
-                </div>
-                <div className="advantage-name" onClick={() => this.setActiveAdvantage(3)}>
-                  <svg viewBox="0 0 100 12" className="advantage-name-svg">
-                    <text className="advantage-name-text" x="0" y="11">on site cinema</text>
-                  </svg>
-                </div>
+                {this.state.advantagesItems && this.state.advantagesItems.map((advantageItem, index) => (
+                  <div className={['advantage-name', (index === 0 ? 'active' : '')].join(' ')} key={index} onClick={() => this.setActiveAdvantage(index)}>
+                    <svg viewBox="0 0 100 12" className="advantage-name-svg">
+                      <text className="advantage-name-text" x="0" y="11">{advantageItem.name}</text>
+                    </svg>
+                  </div>
+                ))}
               </div>
 
               <div className="line"></div>

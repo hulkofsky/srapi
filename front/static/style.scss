@@ -352,6 +352,15 @@ a:hover {
     	position: fixed;
     	top: 0;
     	z-index: 10;
+    	padding: 20px 18px;
+    	.logo {
+    		width: 24px;
+    		height: 24px;
+    	}
+    	.burger {
+    		width: 21px;
+    		height: 21px;
+    	}
     }
     &.menu-visible {
     	.burger {
@@ -1006,7 +1015,6 @@ a:hover {
 	}
 	.advantage-image {
 	    height: 650px;
-	    background: url(/static/images/full-football.jpg) center no-repeat;
 	    margin-bottom: 130px;
 	    opacity: .9
 	}
