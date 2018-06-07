@@ -16,22 +16,27 @@ class HomePage extends React.Component {
     escalatorHiddenContentTimer: null,
     advantagesItems: [
       {
+        id: 1,
         name: "ROOFTOP SPORT",
         image: '/static/images/full-football.jpg'
       },
       {
+        id: 2,
         name: "coworking",
         image: '/static/images/guy-with-scateboard.jpg'
       },
       {
+        id: 3,
         name: "skyline bars",
         image: '/static/images/guy-with-scateboard.jpg'
       },
       {
+        id: 4,
         name: "on site cinema",
         image: '/static/images/guy-with-scateboard.jpg'
       }
-    ]
+    ],
+    activeAdvantageItem: null
   }
 
   static async getInitialProps ({store, pathname, query}) {
@@ -40,6 +45,8 @@ class HomePage extends React.Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.updateRoomTypesImagesClasses.bind(this), { passive: true })
+
+    this.setActiveAdvantage(0)
   }
 
   componentWillUnmount() {
@@ -74,18 +81,7 @@ class HomePage extends React.Component {
   }
 
   setActiveAdvantage(index) {
-    let advantagesNames = document.querySelectorAll(".roof-block .advantage-name");
-    let sliderControls = document.querySelectorAll(".roof-block .slider-control");
-
-    for (var i = 0; i < advantagesNames.length; ++i) {
-      if (i !== index) {
-        advantagesNames[i].classList.remove("active");
-        sliderControls[i].classList.remove("active");
-      } else {
-        advantagesNames[i].classList.add("active");
-        sliderControls[i].classList.add("active");
-      }
-    }
+    this.setState({activeAdvantageItem: this.state.advantagesItems[index]});
   }
 
   escalatorMouseOver() {
@@ -287,12 +283,14 @@ class HomePage extends React.Component {
 
           <div className="row advantages-list">
             <div className="col-md-6 left">
-              <img src="/static/images/full-football.jpg" className="advantage-image" />
+            {this.state.activeAdvantageItem ? (
+              <img src={this.state.activeAdvantageItem.image} className="advantage-image" />
+            ) : ''}
             </div>
             <div className="right">
               <div className="advantages-names">
                 {this.state.advantagesItems && this.state.advantagesItems.map((advantageItem, index) => (
-                  <div className={['advantage-name', (index === 0 ? 'active' : '')].join(' ')} key={index} onClick={() => this.setActiveAdvantage(index)}>
+                  <div className={['advantage-name', ((this.state.activeAdvantageItem && (advantageItem.id === this.state.activeAdvantageItem.id)) ? 'active' : '')].join(' ')} key={index} onClick={() => this.setActiveAdvantage(index)}>
                     <svg viewBox="0 0 100 12" className="advantage-name-svg">
                       <text className="advantage-name-text" x="0" y="11">{advantageItem.name}</text>
                     </svg>
