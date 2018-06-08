@@ -6889,20 +6889,20 @@ a:hover {
     .items-slider.with-next-visible .item {
       margin-right: 0; } }
 
-.slider-controls, .roof-block .slider-controls {
+.slider-controls, .just-living-block .sliding-block .roof-block .slider-controls {
   display: flex;
   justify-content: center;
   margin: 10px 0; }
-  .slider-controls .slider-control {
+  .slider-controls .slider-control, .just-living-block .sliding-block .roof-block .slider-controls .slider-control {
     height: 15px;
     width: 15px;
     border-radius: 50%;
     border: 2px solid #353133;
     margin-left: 20px;
     cursor: pointer; }
-    .slider-controls .slider-control.active {
+    .slider-controls .slider-control.active, .just-living-block .sliding-block .roof-block .slider-controls .slider-control.active {
       background: #353133; }
-  .slider-controls.on-dark .slider-control {
+  .slider-controls.on-dark .slider-control, .just-living-block .sliding-block .roof-block .on-dark.slider-controls .slider-control {
     border-color: #D9D9D2; }
     .slider-controls.on-dark .slider-control.active {
       background: #D9D9D2; }
@@ -7153,8 +7153,15 @@ a:hover {
       position: absolute;
       z-index: 1; }
   .give-a-fuck-block .image {
-    background: url(/static/images/fuck.png) no-repeat;
-    background-size: contain; }
+    background: url("/static/images/ezgif.com-reverse.gif") no-repeat;
+    background-size: cover;
+    opacity: 0.1;
+    transition: 0.5s;
+    padding: 0;
+    border-left: 2px dashed #BABAB0;
+    border-right: 2px dashed #BABAB0; }
+  .give-a-fuck-block:hover .image {
+    opacity: 1; }
 
 .keep-talking-block,
 .rising-standarts-block .quote {
@@ -7477,43 +7484,105 @@ a:hover {
 
 .just-living-block {
   padding: 140px 0 0; }
-
-.just-living-block .football {
-  letter-spacing: -.6px;
-  color: #191714;
-  margin-bottom: 25px; }
-
-.just-living-block .row {
-  margin: 0; }
-
-.just-living-block .col-md-9, .just-living-block .football {
-  padding-left: 9.75%; }
-
-.just-living-block .col-md-3 {
-  padding-right: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end; }
-
-.just-living-block .roof {
-  background: url(/static/images/football.png);
-  width: 290px;
-  height: 650px;
-  background-size: cover;
-  opacity: .2; }
-
-.just-living-block .horizontal-line {
-  height: 12px;
-  width: 100%;
-  background-color: #9e9d8f;
-  position: absolute;
-  bottom: 100px; }
+  .just-living-block .football {
+    letter-spacing: -.6px;
+    color: #191714;
+    margin-bottom: 25px; }
+  .just-living-block .row {
+    margin: 0; }
+  .just-living-block .football {
+    padding-left: 9.75%; }
+  .just-living-block .roof {
+    background: url(/static/images/football.png);
+    width: 290px;
+    height: 650px;
+    background-size: cover;
+    opacity: .2; }
+  .just-living-block .horizontal-line {
+    height: 12px;
+    width: 100%;
+    background-color: #9e9d8f;
+    position: absolute;
+    bottom: 250px; }
+  .just-living-block .sliding-block {
+    padding-left: 10%;
+    white-space: nowrap; }
+    .just-living-block .sliding-block .quote {
+      display: inline-block;
+      width: 75%;
+      vertical-align: top; }
+    .just-living-block .sliding-block .roof-block {
+      display: inline-block; }
+      .just-living-block .sliding-block .roof-block .advantages-list {
+        position: relative; }
+      .just-living-block .sliding-block .roof-block .row {
+        margin: 0;
+        position: relative; }
+      .just-living-block .sliding-block .roof-block .background-quote {
+        margin-left: -120px;
+        position: absolute; }
+      .just-living-block .sliding-block .roof-block .col-md-6 {
+        padding: 0;
+        margin-left: 10%; }
+      .just-living-block .sliding-block .roof-block .quote {
+        opacity: .05; }
+      .just-living-block .sliding-block .roof-block .advantage-image {
+        height: 650px;
+        margin-bottom: 130px;
+        opacity: .9; }
+      .just-living-block .sliding-block .roof-block .right {
+        position: absolute;
+        right: 3.7%;
+        width: 50%; }
+        .just-living-block .sliding-block .roof-block .right .advantages-names {
+          text-align: right;
+          line-height: 1.1;
+          font-weight: 900;
+          color: #191714;
+          text-transform: uppercase;
+          margin-bottom: 30px; }
+          .just-living-block .sliding-block .roof-block .right .advantages-names .advantage-name {
+            cursor: pointer; }
+            .just-living-block .sliding-block .roof-block .right .advantages-names .advantage-name .advantage-name-svg {
+              display: inline-block;
+              width: 45vw; }
+              .just-living-block .sliding-block .roof-block .right .advantages-names .advantage-name .advantage-name-svg .advantage-name-text {
+                stroke: #9E9D8F;
+                stroke-width: 0.3;
+                fill: none;
+                font-size: 11px;
+                letter-spacing: 0.1px; }
+            .just-living-block .sliding-block .roof-block .right .advantages-names .advantage-name.active .advantage-name-svg .advantage-name-text {
+              stroke: #191714;
+              fill: #191714; }
+      .just-living-block .sliding-block .roof-block .line {
+        height: 95px;
+        position: static;
+        -webkit-transform: none;
+        transform: none;
+        background: linear-gradient(to top right, transparent calc(50% - 1px), #babab0, transparent calc(50% + 1px));
+        margin: 0 0 0 36%;
+        width: 53%; }
+      .just-living-block .sliding-block .roof-block .available {
+        font-size: 16px;
+        font-weight: 400;
+        margin-top: 30px;
+        text-align: left;
+        width: 53%;
+        margin-left: 36%;
+        line-height: 1.81;
+        white-space: normal; }
+      .just-living-block .sliding-block .roof-block .available .available-title {
+        font-style: italic;
+        margin-bottom: 15px; }
+      .just-living-block .sliding-block .roof-block .slider-controls {
+        display: none; }
+      .just-living-block .sliding-block .roof-block .lines {
+        width: 53%;
+        margin-left: 36%;
+        height: 140px;
+        background: url(/static/images/lines.png);
+        background-size: cover; }
 
 @media screen and (max-width: 767px) {
   .just-living-block {
@@ -7536,122 +7605,50 @@ a:hover {
     .just-living-block .horizontal-line {
       position: absolute;
       bottom: 100px;
-      left: 40%; } }
-
-.roof-block {
-  padding-top: 130px; }
-  .roof-block .row {
-    margin: 0;
-    position: relative; }
-  .roof-block .background-quote {
-    margin-left: -120px;
-    position: absolute; }
-  .roof-block .col-md-6 {
-    padding: 0;
-    margin-left: 10%; }
-  .roof-block .quote {
-    opacity: .05; }
-  .roof-block .advantage-image {
-    height: 650px;
-    margin-bottom: 130px;
-    opacity: .9; }
-  .roof-block .right {
-    position: absolute;
-    right: 3.7%;
-    width: 50%; }
-    .roof-block .right .advantages-names {
-      text-align: right;
-      line-height: 1.1;
-      font-weight: 900;
-      color: #191714;
-      text-transform: uppercase;
-      margin-bottom: 30px; }
-      .roof-block .right .advantages-names .advantage-name {
-        cursor: pointer; }
-        .roof-block .right .advantages-names .advantage-name .advantage-name-svg {
-          display: inline-block;
-          width: 45vw; }
-          .roof-block .right .advantages-names .advantage-name .advantage-name-svg .advantage-name-text {
-            stroke: #9E9D8F;
-            stroke-width: 0.3;
-            fill: none;
-            font-size: 11px;
-            letter-spacing: 0.1px; }
-        .roof-block .right .advantages-names .advantage-name.active .advantage-name-svg .advantage-name-text {
-          stroke: #191714;
-          fill: #191714; }
-  .roof-block .line {
-    height: 95px;
-    position: static;
-    -webkit-transform: none;
-    transform: none;
-    background: linear-gradient(to top right, transparent calc(50% - 1px), #babab0, transparent calc(50% + 1px));
-    margin: 0 0 0 36%;
-    width: 53%; }
-  .roof-block .available {
-    font-size: 16px;
-    font-weight: 400;
-    margin-top: 30px;
-    text-align: left;
-    width: 53%;
-    margin-left: 36%;
-    line-height: 1.81; }
-  .roof-block .available .available-title {
-    font-style: italic;
-    margin-bottom: 15px; }
-  .roof-block .slider-controls {
-    display: none; }
-  .roof-block .lines {
-    width: 53%;
-    margin-left: 36%;
-    height: 140px;
-    background: url(/static/images/lines.png);
-    background-size: cover; }
-
-@media screen and (max-width: 767px) {
-  .roof-block {
-    padding-top: 0; }
-    .roof-block .right {
-      position: static;
-      width: 100%; }
-      .roof-block .right .advantages-names .advantage-name {
+      left: 40%; }
+    .just-living-block .sliding-block .roof-block {
+      padding-top: 0; }
+      .just-living-block .sliding-block .roof-block .right {
+        position: static;
+        width: 100%; }
+        .just-living-block .sliding-block .roof-block .right .advantages-names .advantage-name {
+          display: none; }
+          .just-living-block .sliding-block .roof-block .right .advantages-names .advantage-name .advantage-name-svg {
+            width: 100%; }
+          .just-living-block .sliding-block .roof-block .right .advantages-names .advantage-name.active {
+            display: block;
+            width: 80%;
+            text-align: left;
+            margin-left: 10%; }
+        .just-living-block .sliding-block .roof-block .right .line {
+          display: none; }
+      .just-living-block .sliding-block .roof-block .col-md-6 {
+        margin-left: 0; }
+      .just-living-block .sliding-block .roof-block .available {
+        width: 80%;
+        margin: 20px 10% 0 10%; }
+        .just-living-block .sliding-block .roof-block .available .available-title {
+          position: relative;
+          padding-left: 20px; }
+          .just-living-block .sliding-block .roof-block .available .available-title:before {
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 4px;
+            background: #FF9C5F;
+            position: absolute;
+            top: 12px;
+            left: 5px; }
+      .just-living-block .sliding-block .roof-block .background-quote {
         display: none; }
-        .roof-block .right .advantages-names .advantage-name .advantage-name-svg {
-          width: 100%; }
-        .roof-block .right .advantages-names .advantage-name.active {
-          display: block;
-          width: 80%;
-          text-align: left;
-          margin-left: 10%; }
-      .roof-block .right .line {
-        display: none; }
-    .roof-block .col-md-6 {
-      margin-left: 0; }
-    .roof-block .available {
-      width: 80%;
-      margin: 20px 10% 0 10%; }
-      .roof-block .available .available-title {
-        position: relative;
-        padding-left: 20px; }
-        .roof-block .available .available-title:before {
-          content: "";
-          display: inline-block;
-          width: 10px;
-          height: 4px;
-          background: #FF9C5F;
-          position: absolute;
-          top: 12px;
-          left: 5px; }
-    .roof-block .background-quote {
-      display: none; }
-    .roof-block .advantage-image {
-      margin-bottom: 30px;
-      height: 80vw; }
-    .roof-block .slider-controls {
-      display: flex; }
-    .roof-block .lines {
-      margin: 10px 10% 0 10%;
-      width: 80%; } }
+      .just-living-block .sliding-block .roof-block .advantage-image {
+        margin-bottom: 30px;
+        height: 80vw; }
+      .just-living-block .sliding-block .roof-block .slider-controls {
+        display: flex; }
+      .just-living-block .sliding-block .roof-block .lines {
+        margin: 10px 10% 0 10%;
+        width: 80%; } }
 
 .partner-block {
   display: -webkit-box;
@@ -8069,7 +8066,7 @@ a:hover {
     text-transform: uppercase;
     font-weight: bold;
     padding: 20px 0; }
-  .location-page .local-heroes .slider-controls {
+  .location-page .local-heroes .slider-controls, .location-page .local-heroes .just-living-block .sliding-block .roof-block .slider-controls, .just-living-block .sliding-block .roof-block .location-page .local-heroes .slider-controls {
     padding: 40px 0; }
 
 @media screen and (max-width: 767px) {
@@ -8122,7 +8119,7 @@ a:hover {
         font-family: SixCaps, sans-serif;
         font-size: 14vw;
         line-height: 1; }
-  .location-page .did-you-know .slider-controls {
+  .location-page .did-you-know .slider-controls, .location-page .did-you-know .just-living-block .sliding-block .roof-block .slider-controls, .just-living-block .sliding-block .roof-block .location-page .did-you-know .slider-controls {
     margin: 10% 0 2% 0; }
   .location-page .did-you-know:before {
     content: "";
@@ -8178,7 +8175,7 @@ a:hover {
     text-transform: uppercase;
     font-weight: bold;
     padding: 20px 0; }
-  .location-page .for-extrovers .slider-controls {
+  .location-page .for-extrovers .slider-controls, .location-page .for-extrovers .just-living-block .sliding-block .roof-block .slider-controls, .just-living-block .sliding-block .roof-block .location-page .for-extrovers .slider-controls {
     padding: 40px 0; }
 
 @media screen and (max-width: 767px) {
@@ -8204,7 +8201,7 @@ a:hover {
     text-transform: uppercase;
     font-weight: bold;
     padding: 20px 0; }
-  .location-page .team-mentality .slider-controls {
+  .location-page .team-mentality .slider-controls, .location-page .team-mentality .just-living-block .sliding-block .roof-block .slider-controls, .just-living-block .sliding-block .roof-block .location-page .team-mentality .slider-controls {
     padding: 40px 0; }
 
 @media screen and (max-width: 767px) {
@@ -8226,7 +8223,7 @@ a:hover {
   .location-page .when-sober .intro-text {
     margin: 30px 0 50px 0;
     width: 40%; }
-  .location-page .when-sober .slider-controls {
+  .location-page .when-sober .slider-controls, .location-page .when-sober .just-living-block .sliding-block .roof-block .slider-controls, .just-living-block .sliding-block .roof-block .location-page .when-sober .slider-controls {
     margin: 10% 0 2% 0; }
   .location-page .when-sober:before {
     content: "";

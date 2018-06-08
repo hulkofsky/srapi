@@ -252,68 +252,49 @@ class HomePage extends React.Component {
             We put a football pitch on your roof and a cinema in your basement.
           </div>
 
-          <div className="row">
-            <div className="col-md-9">
-              <div className="quote">
-                THIS ISN’T <br/>
-                STUDENT LIVING. <br/>
-                IT’S JUST LIVING.
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="horizontal-line">
-
-              </div>
-
-              <div className="roof">
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="roof-block">
-          <div className="background-quote">
+          <div className="sliding-block">
             <div className="quote">
               THIS ISN’T <br/>
               STUDENT LIVING. <br/>
               IT’S JUST LIVING.
             </div>
-          </div>
-
-          <div className="row advantages-list">
-            <div className="col-md-6 left">
-            {this.state.activeAdvantageItem ? (
-              <img src={this.state.activeAdvantageItem.image} className="advantage-image" />
-            ) : ''}
-            </div>
-            <div className="right">
-              <div className="advantages-names">
-                {this.state.advantagesItems && this.state.advantagesItems.map((advantageItem, index) => (
-                  <div className={['advantage-name', ((this.state.activeAdvantageItem && (advantageItem.id === this.state.activeAdvantageItem.id)) ? 'active' : '')].join(' ')} key={index} onClick={() => this.setActiveAdvantage(index)}>
-                    <svg viewBox="0 0 100 12" className="advantage-name-svg">
-                      <text className="advantage-name-text" x="0" y="11">{advantageItem.name}</text>
-                    </svg>
+            <div className="roof-block">
+              <div className="row advantages-list">
+                <div className="horizontal-line"></div>
+                <div className="col-md-6 left">
+                {this.state.activeAdvantageItem ? (
+                  <img src={this.state.activeAdvantageItem.image} className="advantage-image" />
+                ) : ''}
+                </div>
+                <div className="right">
+                  <div className="advantages-names">
+                    {this.state.advantagesItems && this.state.advantagesItems.map((advantageItem, index) => (
+                      <div className={['advantage-name', ((this.state.activeAdvantageItem && (advantageItem.id === this.state.activeAdvantageItem.id)) ? 'active' : '')].join(' ')} key={index} onClick={() => this.setActiveAdvantage(index)}>
+                        <svg viewBox="0 0 100 12" className="advantage-name-svg">
+                          <text className="advantage-name-text" x="0" y="11">{advantageItem.name}</text>
+                        </svg>
+                      </div>
+                    ))}
                   </div>
-                ))}
+
+                  <div className="line"></div>
+
+                  <div className="available">
+                    <div className="available-title">Available at Loughborough, Bristol and Manchester</div>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cum dolore nulla quidem repellat tenetur. Cumque
+                    distinctio dolor dolorum expedita fugiat.
+                  </div>
+
+                  <div className="slider-controls">
+                    <div className="slider-control active" onClick={() => this.setActiveAdvantage(0)}></div>
+                    <div className="slider-control" onClick={() => this.setActiveAdvantage(1)}></div>
+                    <div className="slider-control" onClick={() => this.setActiveAdvantage(2)}></div>
+                    <div className="slider-control" onClick={() => this.setActiveAdvantage(3)}></div>
+                  </div>
+
+                  <div className="lines"></div>
+                </div>
               </div>
-
-              <div className="line"></div>
-
-              <div className="available">
-                <div className="available-title">Available at Loughborough, Bristol and Manchester</div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cum dolore nulla quidem repellat tenetur. Cumque
-                distinctio dolor dolorum expedita fugiat.
-              </div>
-
-              <div className="slider-controls">
-                <div className="slider-control active" onClick={() => this.setActiveAdvantage(0)}></div>
-                <div className="slider-control" onClick={() => this.setActiveAdvantage(1)}></div>
-                <div className="slider-control" onClick={() => this.setActiveAdvantage(2)}></div>
-                <div className="slider-control" onClick={() => this.setActiveAdvantage(3)}></div>
-              </div>
-
-              <div className="lines"></div>
             </div>
           </div>
         </div>
