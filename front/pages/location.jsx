@@ -7,6 +7,7 @@ import {
 import { initStore } from '../store'
 import { connect } from 'react-redux'
 import Link from 'next/link'
+import withContent from '../utils/withContent'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
@@ -15,14 +16,15 @@ let roomTypeSelectorTrigger = null
 let roomTypeSelectorTriggerHeight = 0
 let whenSoberBottomOffset = 0
 
+@withContent
 class LocationPage extends React.Component {
   state = {
     roomsTypeSelectorVisible: false
   }
 
-  static async getInitialProps ({store, pathname, query}) {
-    await store.dispatch(fetchCurrentLocation(query.id))
-  }
+  // static async getInitialProps ({store, pathname, query}) {
+  //   await store.dispatch(fetchCurrentLocation(query.id))
+  // }
 
   componentDidMount() {
     whenSoberBlock = document.querySelector(".when-sober")
@@ -49,7 +51,7 @@ class LocationPage extends React.Component {
 
   scrollToBlock(selector) {
     document.querySelector(selector).scrollIntoView({
-      behavior: 'smooth' 
+      behavior: 'smooth'
     });
   }
 
@@ -58,6 +60,8 @@ class LocationPage extends React.Component {
   }
 
   render () {
+    const {content} = this.props
+
     return (
       <div className="location-page">
         <Header title="Location page" />
@@ -80,7 +84,7 @@ class LocationPage extends React.Component {
             <div className="row content-container">
               <div className="col-md-5 info">
                 <div className="caption">The Steel city itself. Welcome to</div>
-                <div className="city-name">sheffield</div>
+                <div className="city-name">{content.location_title}</div>
               </div>
               <div className="col-md-5 offset-md-2 image">
                 <img className="img-fluid" src="/static/images/FG_UI01_assets_location_hero.jpg" alt="" />
@@ -491,7 +495,7 @@ class LocationPage extends React.Component {
                 <img src="/static/images/FG_UI01_assets_location_bedroom thumbnail 2.jpg" alt="" className="img-fluid" />
               </div>
               <div className="col-md-4 offset-md-1 text">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad 
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad
               </div>
             </div>
 
@@ -517,13 +521,13 @@ class LocationPage extends React.Component {
                 <img src="/static/images/FG_UI01_assets_location_bedroom thumbnail 2.jpg" alt="" className="img-fluid" />
               </div>
               <div className="col-md-4 offset-md-1 text">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad 
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad
               </div>
             </div>
           </div>
         </div>
 
-        <Footer></Footer> 
+        <Footer></Footer>
       </div>
     )
   }

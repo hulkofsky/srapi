@@ -7,11 +7,13 @@
         "client": "postgres",
         "host": "127.0.0.1",
         "port": 5432,
-        "database": "fg_db",
-        "username": "fg_db_user",
-        "password": "fg"
+        "database": "fg-api",
+        "username": "",
+        "password": ""
       },
-      "options": {}
+      "options": {
+        "ssl": false
+      }
     }
   }
 }

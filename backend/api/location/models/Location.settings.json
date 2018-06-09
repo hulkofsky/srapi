@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "location",
+  "collectionName": "locations",
   "info": {
     "name": "location",
     "description": ""
@@ -11,22 +11,12 @@
     "comment": ""
   },
   "attributes": {
-    "name": {
-      "multiple": false,
-      "type": "string",
-      "required": true
-    },
-    "order": {
-      "multiple": false,
-      "type": "integer"
-    },
-    "url": {
-      "multiple": false,
+    "slug": {
       "type": "string"
     },
-    "ID": {
-      "model": "contentblock",
-      "via": "Page ID"
+    "contents": {
+      "collection": "content",
+      "via": "location"
     }
   }
 }

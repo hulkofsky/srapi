@@ -2,7 +2,7 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/api/location",
+      "path": "/location",
       "handler": "Location.find",
       "config": {
         "policies": []
@@ -10,15 +10,23 @@
     },
     {
       "method": "GET",
-      "path": "/api/location/:id",
+      "path": "/location/:id",
       "handler": "Location.findOne",
       "config": {
         "policies": []
       }
     },
     {
+      "method": "GET",
+      "path": "/location/count",
+      "handler": "Location.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "POST",
-      "path": "/api/location",
+      "path": "/location",
       "handler": "Location.create",
       "config": {
         "policies": []
@@ -26,7 +34,7 @@
     },
     {
       "method": "PUT",
-      "path": "/api/location/:id",
+      "path": "/location/:id",
       "handler": "Location.update",
       "config": {
         "policies": []
@@ -34,7 +42,7 @@
     },
     {
       "method": "DELETE",
-      "path": "/api/location/:id",
+      "path": "/location/:id",
       "handler": "Location.destroy",
       "config": {
         "policies": []
@@ -42,7 +50,7 @@
     },
     {
       "method": "POST",
-      "path": "/api/location/:id/relationships/:relation",
+      "path": "/location/:id/relationships/:relation",
       "handler": "Location.createRelation",
       "config": {
         "policies": []
@@ -50,7 +58,7 @@
     },
     {
       "method": "PUT",
-      "path": "/api/location/:id/relationships/:relation",
+      "path": "/location/:id/relationships/:relation",
       "handler": "Location.updateRelation",
       "config": {
         "policies": []
@@ -58,7 +66,7 @@
     },
     {
       "method": "DELETE",
-      "path": "/api/location/:id/relationships/:relation",
+      "path": "/location/:id/relationships/:relation",
       "handler": "Location.destroyRelation",
       "config": {
         "policies": []
