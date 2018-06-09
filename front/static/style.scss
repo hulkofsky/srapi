@@ -148,7 +148,6 @@ a:hover {
 @media screen and (max-width: 767px) {
 	.items-slider {
 		.item {
-			display: none;
 			&.type-1,
 			&.type-2 {
 				.image {
@@ -171,11 +170,11 @@ a:hover {
 			}
 		}
 		&.with-next-visible {
-			display: block;
 			width: 100%;
 			margin-left: 0;
 			.item {
 				margin-right: 0;
+				flex: 1 0 100%;
 			}
 		}
 	}
