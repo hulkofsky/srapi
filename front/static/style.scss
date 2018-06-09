@@ -83,7 +83,10 @@ a:hover {
 }
 
 .items-slider {
+	display: flex;
+	overflow: hidden;
 	.item {
+		flex: 1 0 100%;
 		.row {
 			margin: 0;
 		}
@@ -133,8 +136,6 @@ a:hover {
 		}
 	}
 	&.with-next-visible {
-		display: flex;
-		overflow: hidden;
 		width: 125%;
 		margin-left: -12.5%;
 		.item {

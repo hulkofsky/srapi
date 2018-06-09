@@ -10,7 +10,7 @@ import {
   submitAuthDialog,
   processAuthDialog
 } from '../actions'
-import { Button, Modal } from 'react-bootstrap';
+import { Button, Modal } from 'react-bootstrap'
 
 class Header extends React.Component {
   state = {
@@ -18,16 +18,16 @@ class Header extends React.Component {
   }
 
   handleAuthDialogSubmit(event) {
-    event.preventDefault();
-    const data = new FormData(event.target);
+    event.preventDefault()
+    const data = new FormData(event.target)
     
-    this.props.submitAuthDialog(data.get("identifier"), data.get("password"));
+    this.props.submitAuthDialog(data.get("identifier"), data.get("password"))
   }
 
   componentDidMount() {
     window.addEventListener('scroll', this.updateMainMenuSticky.bind(this), { passive: true })
 
-    this.updateMainMenuSticky();
+    this.updateMainMenuSticky()
   }
 
   componentWillUnmount() {
@@ -35,21 +35,21 @@ class Header extends React.Component {
   }
 
   updateMainMenuSticky() {
-    this.setState({navIsSticky: (window.pageYOffset > 0)});
+    this.setState({navIsSticky: (window.pageYOffset > 0)})
   }
 
   toggleMainMenu() {
-    this.props.mainMenu.isVisible ? this.props.hideMainMenu() : this.props.showMainMenu();
+    this.props.mainMenu.isVisible ? this.props.hideMainMenu() : this.props.showMainMenu()
   }
 
   render () {
-    let { authDialog } = this.props;
+    let { authDialog } = this.props
     let navClasses = [
       'nav',
       (this.props.navClass ? this.props.navClass : ''),
       (this.state.navIsSticky ? 'sticky ' : ''),
       (this.props.mainMenu.isVisible ? 'menu-visible ' : '')
-    ];
+    ]
 
     return (
       <div>

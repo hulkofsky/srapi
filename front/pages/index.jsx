@@ -63,38 +63,38 @@ class HomePage extends React.Component {
   scrollToBlock(selector) {
     document.querySelector(selector).scrollIntoView({
       behavior: 'smooth' 
-    });
+    })
   }
 
   isElementInViewport(el) {
-    var rect = el.getBoundingClientRect();
+    var rect = el.getBoundingClientRect()
 
     return (
       rect.top < (window.innerHeight - 300) &&
       rect.bottom > 300
-    );
+    )
   }
 
   updateRoomTypesImagesClasses() {
-    var images = document.querySelectorAll('.animated-image'), i;
+    var images = document.querySelectorAll('.animated-image'), i
 
     for (i = 0; i < images.length; ++i) {
       if (this.isElementInViewport(images[i])) {
-        images[i].classList.add("scrolled-into-view");
+        images[i].classList.add("scrolled-into-view")
       } else {
-        images[i].classList.remove("scrolled-into-view");
+        images[i].classList.remove("scrolled-into-view")
       }
     }
   }
 
   setActiveAdvantage(index) {
-    this.setState({activeAdvantageItem: this.state.advantagesItems[index]});
+    this.setState({activeAdvantageItem: this.state.advantagesItems[index]})
   }
 
   escalatorMouseOver() {
     let timeout = setTimeout(() => {
       this.setState({escalatorHiddenContentClass: 'hidden-content-shown'})
-    }, 3000);
+    }, 3000)
 
     this.setState({escalatorHiddenContentTimer: timeout})
   }

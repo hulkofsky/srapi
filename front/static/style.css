@@ -6819,53 +6819,50 @@ a:hover {
   .btn-dark-orange-border .btn-border {
     border-color: #ff8b1f; }
 
-.items-slider .item .row {
-  margin: 0; }
-
-.items-slider .item .description {
-  position: relative;
-  padding-left: 15px; }
-  .items-slider .item .description .line-1 {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 2vw; }
-  .items-slider .item .description .line-2 {
-    margin: 10px 0;
-    font-weight: bold; }
-  .items-slider .item .description .info {
-    text-align: justify; }
-
-.items-slider .item.type-1 .image {
-  width: 50%; }
-
-.items-slider .item.type-1 .description {
-  width: 50%; }
-  .items-slider .item.type-1 .description:after {
-    content: "";
-    display: block;
-    border-bottom: 2px solid #9E9D8F;
-    transform: rotate(9deg);
-    width: 100%;
-    margin-top: 10vw;
-    position: relative;
-    z-index: 1; }
-
-.items-slider .item.type-2 .image {
-  width: 100%;
-  margin-bottom: 20px; }
-
-.items-slider .item.type-2 .description {
-  width: 100%;
-  padding-left: 0; }
-
-.items-slider.with-next-visible {
+.items-slider {
   display: flex;
-  overflow: hidden;
-  width: 125%;
-  margin-left: -12.5%; }
-  .items-slider.with-next-visible .item {
-    flex: 1 0 60%;
-    margin-right: 10%; }
+  overflow: hidden; }
+  .items-slider .item {
+    flex: 1 0 100%; }
+    .items-slider .item .row {
+      margin: 0; }
+    .items-slider .item .description {
+      position: relative;
+      padding-left: 15px; }
+      .items-slider .item .description .line-1 {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 2vw; }
+      .items-slider .item .description .line-2 {
+        margin: 10px 0;
+        font-weight: bold; }
+      .items-slider .item .description .info {
+        text-align: justify; }
+    .items-slider .item.type-1 .image {
+      width: 50%; }
+    .items-slider .item.type-1 .description {
+      width: 50%; }
+      .items-slider .item.type-1 .description:after {
+        content: "";
+        display: block;
+        border-bottom: 2px solid #9E9D8F;
+        transform: rotate(9deg);
+        width: 100%;
+        margin-top: 10vw;
+        position: relative;
+        z-index: 1; }
+    .items-slider .item.type-2 .image {
+      width: 100%;
+      margin-bottom: 20px; }
+    .items-slider .item.type-2 .description {
+      width: 100%;
+      padding-left: 0; }
+  .items-slider.with-next-visible {
+    width: 125%;
+    margin-left: -12.5%; }
+    .items-slider.with-next-visible .item {
+      flex: 1 0 60%;
+      margin-right: 10%; }
 
 @media screen and (max-width: 767px) {
   .items-slider .item {
