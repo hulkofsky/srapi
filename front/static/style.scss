@@ -913,7 +913,7 @@ a:hover {
 
 .just-living-block .quote,
 .roof-block .quote {
-    font-size: 240px;
+    font-size: 18vw;
     line-height: .92;
     text-transform: uppercase;
     font-family: SixCaps,sans-serif
@@ -956,15 +956,17 @@ a:hover {
 	    bottom: 250px;
 	}
 	.sliding-block {
-		padding-left: 10%;
 		white-space: nowrap;
+		overflow: hidden;
 		.quote {
 			display: inline-block;
 			width: 75%;
+			padding-left: 10%;
 			vertical-align: top;
 		}
 		.roof-block {
 			display: inline-block;
+			width: 100%;
 			.advantages-list {
 				position: relative;
 			}
@@ -976,6 +978,9 @@ a:hover {
 			    margin-left: -120px;
 			    position: absolute
 			}
+			.left {
+				opacity: 0.3;
+			}
 			.col-md-6 {
 			    padding: 0;
 			    margin-left: 10%
@@ -984,7 +989,7 @@ a:hover {
 			    opacity: .05
 			}
 			.advantage-image {
-			    height: 650px;
+			    width: 100%;
 			    margin-bottom: 130px;
 			    opacity: .9
 			}
@@ -1043,8 +1048,20 @@ a:hover {
 			    white-space: normal;
 			}
 			.available .available-title {
+			    position: relative;
 			    font-style: italic;
 			    margin-bottom: 15px;
+			    padding-left: 20px;
+			    &:before {
+			    	content: "";
+			    	display: inline-block;
+			    	width: 10px;
+			    	height: 4px;
+			    	background: #FF9C5F;
+			    	position: absolute;
+			    	top: 12px;
+			    	left: 5px;
+			    }
 			}
 			.slider-controls {
 				@extend .slider-controls;
@@ -1058,6 +1075,23 @@ a:hover {
 			    background-size: cover;
 			}
 		}
+		&.fully-scrolled {
+			.roof-block {
+				.horizontal-line {
+					display: none;
+				}
+				.left {
+					opacity: 1;
+				}
+			}
+		}
+		&.partially-scrolled {
+			.roof-block {
+				.horizontal-line {
+					display: none;
+				}
+			}
+		}
 	}
 }
 
@@ -1069,7 +1103,6 @@ a:hover {
 			font-size: 21px;
 		}
 		.quote {
-			font-size: 24vw;
 			line-height: 1;
 		}
 		.row {
@@ -1084,16 +1117,17 @@ a:hover {
 			top: 0;
 			left: 30%;
 		}
-		.horizontal-line {
-			position: absolute;
-			bottom: 100px;
-			left: 40%;
-		}
 		.sliding-block {
 			.roof-block {
 				padding-top: 0;
+				.horizontal-line {
+					position: absolute;
+					top: 400px;
+					left: -20px;
+				}
 				.right {
 					position: static;
+					right: 0;
 					width: 100%;
 					.advantages-names {
 						.advantage-name {
@@ -1119,27 +1153,14 @@ a:hover {
 				.available {
 					width: 80%;
 					margin: 20px 10% 0 10%;
-					.available-title {
-						position: relative;
-						padding-left: 20px;
-						&:before {
-							content: "";
-							display: inline-block;
-							width: 10px;
-							height: 4px;
-							background: #FF9C5F;
-							position: absolute;
-							top: 12px;
-							left: 5px;
-						}
-					}
 				}
 				.background-quote {
 					display: none;
 				}
 				.advantage-image {
 					margin-bottom: 30px;
-					height: 80vw;
+					height: auto;
+					max-width: 100%;
 				}
 				.slider-controls {
 					display: flex;
@@ -1148,6 +1169,9 @@ a:hover {
 					margin: 10px 10% 0 10%;
 					width: 80%;
 				}
+			}
+			&.fully-scrolled {
+				padding-left: 0;
 			}
 		}
 	}
@@ -1364,6 +1388,7 @@ a:hover {
 				font-weight: 900;
     			border-bottom: 3px solid #FF9C5F;
     			cursor: pointer;
+    			white-space: nowrap;
     		}
     	}
     }

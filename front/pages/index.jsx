@@ -18,25 +18,26 @@ class HomePage extends React.Component {
       {
         id: 1,
         name: "ROOFTOP SPORT",
-        image: '/static/images/full-football.jpg'
+        image: '/static/images/FG_UI01_assets_home_features.jpg'
       },
       {
         id: 2,
         name: "coworking",
-        image: '/static/images/guy-with-scateboard.jpg'
+        image: '/static/images/FG_UI01_assets_home_features.jpg'
       },
       {
         id: 3,
         name: "skyline bars",
-        image: '/static/images/guy-with-scateboard.jpg'
+        image: '/static/images/FG_UI01_assets_home_features.jpg'
       },
       {
         id: 4,
         name: "on site cinema",
-        image: '/static/images/guy-with-scateboard.jpg'
+        image: '/static/images/FG_UI01_assets_home_features.jpg'
       }
     ],
-    activeAdvantageItem: null
+    activeAdvantageItem: null,
+    justLivingSlidingBlock: null
   }
 
   static async getInitialProps ({store, pathname, query}) {
@@ -44,13 +45,19 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
+    let justLivingSlidingBlock = document.querySelector(".sliding-block")
+    this.setState({justLivingSlidingBlock: justLivingSlidingBlock})
+
     window.addEventListener('scroll', this.updateRoomTypesImagesClasses.bind(this), { passive: true })
+    justLivingSlidingBlock.addEventListener('wheel', this.handleJustLivingScroll.bind(this))
+
 
     this.setActiveAdvantage(0)
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.updateRoomTypesImagesClasses)
+    window.removeEventListener('wheel', this.handleJustLivingScroll)
   }
 
   scrollToBlock(selector) {
@@ -96,6 +103,36 @@ class HomePage extends React.Component {
     clearTimeout(this.state.escalatorHiddenContentTimer)
 
     this.setState({escalatorHiddenContentClass: ''})
+  }
+
+  handleJustLivingScroll(e) {
+    let justLivingSlidingBlock = this.state.justLivingSlidingBlock
+
+    justLivingSlidingBlock.scrollLeft += e.deltaY
+
+    if (e.deltaY > 0) {
+      if (!justLivingSlidingBlock.classList.contains('fully-scrolled')) {
+        e.preventDefault()
+      }
+
+      if (justLivingSlidingBlock.scrollLeft < (justLivingSlidingBlock.scrollWidth - justLivingSlidingBlock.clientWidth)) {
+        justLivingSlidingBlock.classList.add('partially-scrolled')
+      } else {
+        justLivingSlidingBlock.classList.remove('partially-scrolled')
+        justLivingSlidingBlock.classList.add('fully-scrolled')
+      }
+    } else {
+      if (justLivingSlidingBlock.classList.contains('partially-scrolled') || justLivingSlidingBlock.classList.contains('fully-scrolled')) {
+        e.preventDefault()
+      }
+
+      if (justLivingSlidingBlock.scrollLeft > 0) {
+        justLivingSlidingBlock.classList.add('partially-scrolled')
+        justLivingSlidingBlock.classList.remove('fully-scrolled')
+      } else {
+        justLivingSlidingBlock.classList.remove('partially-scrolled')
+      }
+    }
   }
 
   render () {
@@ -187,7 +224,7 @@ class HomePage extends React.Component {
           <div className="row">
             <div className="col-md-6">
               <div className="bedroom-block">
-                <img src="/static/images/bedroom.jpg" alt="bedroom" className="img-fluid animated-image bedroom" />
+                <img src="/static/images/FG_UI01_assets_home_bedroom.jpg" alt="bedroom" className="img-fluid animated-image bedroom" />
 
                 <div className="text-block">
                   <div className="text">
@@ -200,7 +237,7 @@ class HomePage extends React.Component {
               </div>
 
               <div className="kitchen-block">
-                <img src="/static/images/kitchen.jpg" alt="kitchen" className="img-fluid animated-image kitchen" />
+                <img src="/static/images/FG_UI01_assets_home_kitchen.jpg" alt="kitchen" className="img-fluid animated-image kitchen" />
 
                 <div className="text-block">
                   <div className="text">
@@ -215,7 +252,7 @@ class HomePage extends React.Component {
             </div>
             <div className="col-md-6">
               <div className="bathroom-block">
-                <img src="/static/images/bathroom.jpg" alt="bathroom" className="img-fluid animated-image bathroom" />
+                <img src="/static/images/FG_UI01_assets_home_bathroom.jpg" alt="bathroom" className="img-fluid animated-image bathroom" />
 
                 <div className="text-block">
                   <div className="text">
@@ -271,7 +308,7 @@ class HomePage extends React.Component {
                     {this.state.advantagesItems && this.state.advantagesItems.map((advantageItem, index) => (
                       <div className={['advantage-name', ((this.state.activeAdvantageItem && (advantageItem.id === this.state.activeAdvantageItem.id)) ? 'active' : '')].join(' ')} key={index} onClick={() => this.setActiveAdvantage(index)}>
                         <svg viewBox="0 0 100 12" className="advantage-name-svg">
-                          <text className="advantage-name-text" x="0" y="11">{advantageItem.name}</text>
+                          <text className="advantage-name-text" x="100" y="11" textAnchor="end">{advantageItem.name}</text>
                         </svg>
                       </div>
                     ))}

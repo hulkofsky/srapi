@@ -7469,7 +7469,7 @@ a:hover {
 
 .just-living-block .quote,
 .roof-block .quote {
-  font-size: 240px;
+  font-size: 18vw;
   line-height: .92;
   text-transform: uppercase;
   font-family: SixCaps,sans-serif; }
@@ -7505,14 +7505,16 @@ a:hover {
     position: absolute;
     bottom: 250px; }
   .just-living-block .sliding-block {
-    padding-left: 10%;
-    white-space: nowrap; }
+    white-space: nowrap;
+    overflow: hidden; }
     .just-living-block .sliding-block .quote {
       display: inline-block;
       width: 75%;
+      padding-left: 10%;
       vertical-align: top; }
     .just-living-block .sliding-block .roof-block {
-      display: inline-block; }
+      display: inline-block;
+      width: 100%; }
       .just-living-block .sliding-block .roof-block .advantages-list {
         position: relative; }
       .just-living-block .sliding-block .roof-block .row {
@@ -7521,13 +7523,15 @@ a:hover {
       .just-living-block .sliding-block .roof-block .background-quote {
         margin-left: -120px;
         position: absolute; }
+      .just-living-block .sliding-block .roof-block .left {
+        opacity: 0.3; }
       .just-living-block .sliding-block .roof-block .col-md-6 {
         padding: 0;
         margin-left: 10%; }
       .just-living-block .sliding-block .roof-block .quote {
         opacity: .05; }
       .just-living-block .sliding-block .roof-block .advantage-image {
-        height: 650px;
+        width: 100%;
         margin-bottom: 130px;
         opacity: .9; }
       .just-living-block .sliding-block .roof-block .right {
@@ -7573,8 +7577,19 @@ a:hover {
         line-height: 1.81;
         white-space: normal; }
       .just-living-block .sliding-block .roof-block .available .available-title {
+        position: relative;
         font-style: italic;
-        margin-bottom: 15px; }
+        margin-bottom: 15px;
+        padding-left: 20px; }
+        .just-living-block .sliding-block .roof-block .available .available-title:before {
+          content: "";
+          display: inline-block;
+          width: 10px;
+          height: 4px;
+          background: #FF9C5F;
+          position: absolute;
+          top: 12px;
+          left: 5px; }
       .just-living-block .sliding-block .roof-block .slider-controls {
         display: none; }
       .just-living-block .sliding-block .roof-block .lines {
@@ -7583,6 +7598,12 @@ a:hover {
         height: 140px;
         background: url(/static/images/lines.png);
         background-size: cover; }
+    .just-living-block .sliding-block.fully-scrolled .roof-block .horizontal-line {
+      display: none; }
+    .just-living-block .sliding-block.fully-scrolled .roof-block .left {
+      opacity: 1; }
+    .just-living-block .sliding-block.partially-scrolled .roof-block .horizontal-line {
+      display: none; }
 
 @media screen and (max-width: 767px) {
   .just-living-block {
@@ -7591,7 +7612,6 @@ a:hover {
     .just-living-block .football {
       font-size: 21px; }
     .just-living-block .quote {
-      font-size: 24vw;
       line-height: 1; }
     .just-living-block .row {
       position: relative; }
@@ -7602,14 +7622,15 @@ a:hover {
       position: absolute;
       top: 0;
       left: 30%; }
-    .just-living-block .horizontal-line {
-      position: absolute;
-      bottom: 100px;
-      left: 40%; }
     .just-living-block .sliding-block .roof-block {
       padding-top: 0; }
+      .just-living-block .sliding-block .roof-block .horizontal-line {
+        position: absolute;
+        top: 400px;
+        left: -20px; }
       .just-living-block .sliding-block .roof-block .right {
         position: static;
+        right: 0;
         width: 100%; }
         .just-living-block .sliding-block .roof-block .right .advantages-names .advantage-name {
           display: none; }
@@ -7627,28 +7648,19 @@ a:hover {
       .just-living-block .sliding-block .roof-block .available {
         width: 80%;
         margin: 20px 10% 0 10%; }
-        .just-living-block .sliding-block .roof-block .available .available-title {
-          position: relative;
-          padding-left: 20px; }
-          .just-living-block .sliding-block .roof-block .available .available-title:before {
-            content: "";
-            display: inline-block;
-            width: 10px;
-            height: 4px;
-            background: #FF9C5F;
-            position: absolute;
-            top: 12px;
-            left: 5px; }
       .just-living-block .sliding-block .roof-block .background-quote {
         display: none; }
       .just-living-block .sliding-block .roof-block .advantage-image {
         margin-bottom: 30px;
-        height: 80vw; }
+        height: auto;
+        max-width: 100%; }
       .just-living-block .sliding-block .roof-block .slider-controls {
         display: flex; }
       .just-living-block .sliding-block .roof-block .lines {
         margin: 10px 10% 0 10%;
-        width: 80%; } }
+        width: 80%; }
+    .just-living-block .sliding-block.fully-scrolled {
+      padding-left: 0; } }
 
 .partner-block {
   display: -webkit-box;
@@ -7822,7 +7834,8 @@ a:hover {
     font-size: 25px;
     font-weight: 900;
     border-bottom: 3px solid #FF9C5F;
-    cursor: pointer; }
+    cursor: pointer;
+    white-space: nowrap; }
   .locations-block .locations-list {
     padding-top: 75px;
     padding-bottom: 215px; }
