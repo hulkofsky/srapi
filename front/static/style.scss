@@ -1379,6 +1379,7 @@ a:hover {
 			color: #9E9D8F;
     	}
     	.region-selector {
+    		position: relative;
     		.selected-region {
     			margin-left: 10px;
     			margin-bottom: -3px;
@@ -1388,6 +1389,54 @@ a:hover {
     			border-bottom: 3px solid #FF9C5F;
     			cursor: pointer;
     			white-space: nowrap;
+    			transition: 0.5s;
+    			&:after {
+    				content: " England";
+    			}
+    			&:hover {
+    				background: #BABAB0;
+    				padding: 0 15px;
+    			}
+    		}
+    		.other-regions {
+    			display: none;
+    			position: absolute;
+    			z-index: 5;
+    			background: #BABAB0;
+    			padding: 0 15px;
+    			font-size: 25px;
+    			font-weight: 900;
+    			width: calc(100% - 10px);
+    			left: 10px;
+    			top: 40px;
+    			.region-item {
+    				opacity: 0.5;
+    				position: relative;
+    				cursor: pointer;
+    				transition: 0.5s;
+    				&:hover {
+						opacity: 1;
+						margin-left: -5px;
+						&:before {
+							content: "";
+							width: 9px;
+							height: 3px;
+							background: #FF9C5F;
+							position: absolute;
+							left: -15px;
+							top: 17px;
+						}
+    				}
+    			}
+    		}
+    		&.opened {
+    			.selected-region {
+    				background: #BABAB0;
+    				padding: 0 15px;
+    			}
+    			.other-regions {
+    				display: block;
+    			}
     		}
     	}
     }

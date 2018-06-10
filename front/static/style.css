@@ -7821,15 +7821,55 @@ a:hover {
     font-size: 25px;
     font-weight: 900;
     color: #9E9D8F; }
-  .locations-block .region-selector-container .region-selector .selected-region {
-    margin-left: 10px;
-    margin-bottom: -3px;
-    color: #191714;
-    font-size: 25px;
-    font-weight: 900;
-    border-bottom: 3px solid #FF9C5F;
-    cursor: pointer;
-    white-space: nowrap; }
+  .locations-block .region-selector-container .region-selector {
+    position: relative; }
+    .locations-block .region-selector-container .region-selector .selected-region {
+      margin-left: 10px;
+      margin-bottom: -3px;
+      color: #191714;
+      font-size: 25px;
+      font-weight: 900;
+      border-bottom: 3px solid #FF9C5F;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: 0.5s; }
+      .locations-block .region-selector-container .region-selector .selected-region:after {
+        content: " England"; }
+      .locations-block .region-selector-container .region-selector .selected-region:hover {
+        background: #BABAB0;
+        padding: 0 15px; }
+    .locations-block .region-selector-container .region-selector .other-regions {
+      display: none;
+      position: absolute;
+      z-index: 5;
+      background: #BABAB0;
+      padding: 0 15px;
+      font-size: 25px;
+      font-weight: 900;
+      width: calc(100% - 10px);
+      left: 10px;
+      top: 40px; }
+      .locations-block .region-selector-container .region-selector .other-regions .region-item {
+        opacity: 0.5;
+        position: relative;
+        cursor: pointer;
+        transition: 0.5s; }
+        .locations-block .region-selector-container .region-selector .other-regions .region-item:hover {
+          opacity: 1;
+          margin-left: -5px; }
+          .locations-block .region-selector-container .region-selector .other-regions .region-item:hover:before {
+            content: "";
+            width: 9px;
+            height: 3px;
+            background: #FF9C5F;
+            position: absolute;
+            left: -15px;
+            top: 17px; }
+    .locations-block .region-selector-container .region-selector.opened .selected-region {
+      background: #BABAB0;
+      padding: 0 15px; }
+    .locations-block .region-selector-container .region-selector.opened .other-regions {
+      display: block; }
   .locations-block .locations-list {
     padding-top: 75px;
     padding-bottom: 215px; }

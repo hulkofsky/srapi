@@ -1,745 +1,32 @@
-module.exports =
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		var threw = true;
-/******/ 		try {
-/******/ 			modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/ 			threw = false;
-/******/ 		} finally {
-/******/ 			if(threw) delete installedModules[moduleId];
-/******/ 		}
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
-/******/ })
-/************************************************************************/
-/******/ ({
-
-/***/ "./actions/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return REQUEST_CURRENT_LOCATION; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return REQUEST_LOCATIONS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return RECEIVE_CURRENT_LOCATION; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return RECEIVE_LOCATIONS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return SHOW_AUTH_DIALOG; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HIDE_AUTH_DIALOG; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return SUBMIT_AUTH_DIALOG; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return PROCESS_AUTH_DIALOG; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return SHOW_MAIN_MENU; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return HIDE_MAIN_MENU; });
-/* unused harmony export requestCurrentLocation */
-/* unused harmony export requestLocations */
-/* unused harmony export receiveCurrentLocation */
-/* unused harmony export receiveLocations */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return fetchCurrentLocation; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return fetchLocations; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return showAuthDialog; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return hideAuthDialog; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return showMainMenu; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return hideMainMenu; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return submitAuthDialog; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return processAuthDialog; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch__ = __webpack_require__("isomorphic-unfetch");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch__);
-
-var backendUrl = 'http://localhost:1337';
-var authUrl = backendUrl + '/auth';
-var baseApiUrl = backendUrl + '/api';
-var REQUEST_CURRENT_LOCATION = 'REQUEST_CURRENT_LOCATION';
-var REQUEST_LOCATIONS = 'REQUEST_LOCATIONS';
-var RECEIVE_CURRENT_LOCATION = 'RECEIVE_CURRENT_LOCATION';
-var RECEIVE_LOCATIONS = 'RECEIVE_LOCATIONS';
-var SHOW_AUTH_DIALOG = 'SHOW_AUTH_DIALOG';
-var HIDE_AUTH_DIALOG = 'HIDE_AUTH_DIALOG';
-var SUBMIT_AUTH_DIALOG = 'SUBMIT_AUTH_DIALOG';
-var PROCESS_AUTH_DIALOG = 'PROCESS_AUTH_DIALOG';
-var SHOW_MAIN_MENU = 'SHOW_MAIN_MENU';
-var HIDE_MAIN_MENU = 'HIDE_MAIN_MENU';
-var requestCurrentLocation = function requestCurrentLocation(locationID) {
-  return {
-    type: REQUEST_CURRENT_LOCATION,
-    id: locationID
-  };
-};
-var requestLocations = function requestLocations() {
-  return {
-    type: REQUEST_LOCATIONS
-  };
-};
-var receiveCurrentLocation = function receiveCurrentLocation(json) {
-  return {
-    type: RECEIVE_CURRENT_LOCATION,
-    location: json,
-    receivedAt: Date.now()
-  };
-};
-var receiveLocations = function receiveLocations(json) {
-  return {
-    type: RECEIVE_LOCATIONS,
-    locations: json,
-    receivedAt: Date.now()
-  };
-};
-var fetchCurrentLocation = function fetchCurrentLocation(locationID) {
-  return function (dispatch) {
-    dispatch(requestCurrentLocation());
-    return __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch___default()(baseApiUrl + '/location/' + locationID).then(function (response) {
-      return response.json();
-    }, function (error) {
-      return console.log('An error occurred.', error);
-    }).then(function (json) {
-      return dispatch(receiveCurrentLocation(json));
-    });
-  };
-};
-var fetchLocations = function fetchLocations() {
-  return function (dispatch) {
-    dispatch(requestLocations());
-    return __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch___default()(baseApiUrl + '/location').then(function (response) {
-      return response.json();
-    }, function (error) {
-      return console.log('An error occurred.', error);
-    }).then(function (json) {
-      return dispatch(receiveLocations(json));
-    });
-  };
-};
-var showAuthDialog = function showAuthDialog() {
-  return {
-    type: SHOW_AUTH_DIALOG
-  };
-};
-var hideAuthDialog = function hideAuthDialog() {
-  return {
-    type: HIDE_AUTH_DIALOG
-  };
-};
-var showMainMenu = function showMainMenu() {
-  return {
-    type: SHOW_MAIN_MENU
-  };
-};
-var hideMainMenu = function hideMainMenu() {
-  return {
-    type: HIDE_MAIN_MENU
-  };
-};
-var submitAuthDialog = function submitAuthDialog(identifier, password) {
-  return function (dispatch) {
-    return __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch___default()(authUrl + '/local', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        identifier: identifier,
-        password: password
-      })
-    }).then(function (response) {
-      return response.json();
-    }, function (error) {
-      return console.log('An error occurred.', error);
-    }).then(function (json) {
-      if (json.error) {
-        alert(json.message);
-      } else {
-        dispatch(processAuthDialog(json));
-      }
-    });
-  };
-};
-var processAuthDialog = function processAuthDialog(auth) {
-  return {
-    type: PROCESS_AUTH_DIALOG,
-    auth: auth
-  };
-};
-
-/***/ }),
-
-/***/ "./components/Footer.jsx":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux__ = __webpack_require__("react-redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_redux__);
-var _jsxFileName = "C:\\Users\\venom\\Desktop\\future_generation\\front\\components\\Footer.jsx";
-
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-var Footer =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(Footer, _React$Component);
-
-  function Footer() {
-    _classCallCheck(this, Footer);
-
-    return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
-  }
-
-  _createClass(Footer, [{
-    key: "render",
-    value: function render() {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("footer", {
-        className: "footer",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 7
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-        src: "/static/svg/FG_UI01_assets_footer fg logo.svg",
-        alt: "footer-logo",
-        className: "footer-logo",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 8
-        }
-      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        className: "footer-menu",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 9
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        href: "#",
-        className: "menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 10
-        }
-      }, "Partners"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        href: "#",
-        className: "menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 11
-        }
-      }, "Brand Appearances"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        href: "#",
-        className: "menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 12
-        }
-      }, "Press Kit "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        href: "#",
-        className: "menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 13
-        }
-      }, "Legal & Policy"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        className: "dev",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 15
-        }
-      }, "designed and built by vitamin london")));
-    }
-  }]);
-
-  return Footer;
-}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["connect"])(null, null)(Footer));
-
-/***/ }),
-
-/***/ "./components/Header.jsx":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head__ = __webpack_require__("next/head");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_head__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_link__ = __webpack_require__("next/link");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_next_link__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_redux__ = __webpack_require__("react-redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_react_redux__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_redux__ = __webpack_require__("redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_redux__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__actions__ = __webpack_require__("./actions/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_bootstrap__ = __webpack_require__("react-bootstrap");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_bootstrap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react_bootstrap__);
-var _jsxFileName = "C:\\Users\\venom\\Desktop\\future_generation\\front\\components\\Header.jsx";
-
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-
-
-
-
-
-
-
-var Header =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(Header, _React$Component);
-
-  function Header() {
-    var _ref;
-
-    var _temp, _this;
-
-    _classCallCheck(this, Header);
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_ref = Header.__proto__ || Object.getPrototypeOf(Header)).call.apply(_ref, [this].concat(args))), Object.defineProperty(_assertThisInitialized(_this), "state", {
-      configurable: true,
-      enumerable: true,
-      writable: true,
-      value: {
-        navIsSticky: false
-      }
-    }), _temp));
-  }
-
-  _createClass(Header, [{
-    key: "handleAuthDialogSubmit",
-    value: function handleAuthDialogSubmit(event) {
-      event.preventDefault();
-      var data = new FormData(event.target);
-      this.props.submitAuthDialog(data.get("identifier"), data.get("password"));
-    }
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      window.addEventListener('scroll', this.updateMainMenuSticky.bind(this), {
-        passive: true
-      });
-      this.updateMainMenuSticky();
-    }
-  }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      window.removeEventListener('scroll', this.updateMainMenuSticky);
-    }
-  }, {
-    key: "updateMainMenuSticky",
-    value: function updateMainMenuSticky() {
-      this.setState({
-        navIsSticky: window.pageYOffset > 0
-      });
-    }
-  }, {
-    key: "toggleMainMenu",
-    value: function toggleMainMenu() {
-      this.props.mainMenu.isVisible ? this.props.hideMainMenu() : this.props.showMainMenu();
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var authDialog = this.props.authDialog;
-      var navClasses = ['nav', this.props.navClass ? this.props.navClass : '', this.state.navIsSticky ? 'sticky ' : '', this.props.mainMenu.isVisible ? 'menu-visible ' : ''];
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 55
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_head___default.a, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 56
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("title", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 57
-        }
-      }, this.props.title), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("link", {
-        rel: "shortcut icon",
-        href: "/static/favicon.ico",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 58
-        }
-      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", {
-        name: "viewport",
-        content: "width=device-width, initial-scale=1",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 59
-        }
-      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", {
-        charSet: "utf-8",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 60
-        }
-      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("link", {
-        rel: "stylesheet",
-        href: "/static/style.css",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 61
-        }
-      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_bootstrap__["Modal"], {
-        show: authDialog.isVisible,
-        onHide: this.props.hideAuthDialog,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 66
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_bootstrap__["Modal"].Header, {
-        closeButton: true,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 67
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_bootstrap__["Modal"].Title, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 68
-        }
-      }, "Authentication required")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_bootstrap__["Modal"].Body, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 70
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("form", {
-        onSubmit: this.handleAuthDialogSubmit.bind(this),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 71
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        className: "form-group",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 72
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("label", {
-        htmlFor: "identifierInput",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 73
-        }
-      }, "Username or email"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
-        type: "text",
-        name: "identifier",
-        className: "form-control",
-        id: "identifierInput",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 74
-        }
-      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        className: "form-group",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 76
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("label", {
-        htmlFor: "passwordInput",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 77
-        }
-      }, "Password"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
-        type: "password",
-        name: "password",
-        className: "form-control",
-        id: "passwordInput",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 78
-        }
-      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
-        type: "submit",
-        className: "btn btn-primary",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 80
-        }
-      }, "Submit")))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("nav", {
-        className: navClasses.join(' '),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 85
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
-        href: {
-          pathname: '/'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 86
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        className: "main-menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 87
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-        className: "logo",
-        src: "/static/svg/logo.svg",
-        alt: "logo",
-        onClick: this.toggleMainMenu.bind(this),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 88
-        }
-      }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        className: "burger",
-        onClick: this.toggleMainMenu.bind(this),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 91
-        }
-      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        className: 'main-menu ' + (this.props.mainMenu.isVisible ? 'visible' : ''),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 94
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
-        href: {
-          pathname: '/'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 95
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        className: "main-menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 96
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        onClick: this.toggleMainMenu.bind(this),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 97
-        }
-      }, "home"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
-        href: {
-          pathname: '/locations'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 100
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        className: "main-menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 101
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        onClick: this.toggleMainMenu.bind(this),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 102
-        }
-      }, "locations"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
-        href: {
-          pathname: '/spotify'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 105
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        className: "main-menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 106
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        onClick: this.toggleMainMenu.bind(this),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 107
-        }
-      }, "spotify"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
-        href: {
-          pathname: '/stance'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 110
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        className: "main-menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 111
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        onClick: this.toggleMainMenu.bind(this),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 112
-        }
-      }, "stance"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
-        href: {
-          pathname: '/contact'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 115
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        className: "main-menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 116
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        onClick: this.toggleMainMenu.bind(this),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 117
-        }
-      }, "contact")))));
-    }
-  }]);
-
-  return Header;
-}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
-
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    authDialog: state.authDialog,
-    mainMenu: state.mainMenu
-  };
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    showAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["p" /* showAuthDialog */], dispatch),
-    hideAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["m" /* hideAuthDialog */], dispatch),
-    submitAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["r" /* submitAuthDialog */], dispatch),
-    processAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["o" /* processAuthDialog */], dispatch),
-    showMainMenu: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["q" /* showMainMenu */], dispatch),
-    hideMainMenu: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["n" /* hideMainMenu */], dispatch)
-  };
-};
-
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_3_react_redux__["connect"])(mapStateToProps, mapDispatchToProps)(Header));
-
-/***/ }),
+webpackHotUpdate(5,{
 
 /***/ "./pages/index.jsx":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__ = __webpack_require__("@babel/runtime/regenerator");
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__ = __webpack_require__("./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__("prop-types");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__("./node_modules/next/node_modules/prop-types/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_redux__ = __webpack_require__("redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_redux__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_redux__ = __webpack_require__("./node_modules/redux/es/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__actions__ = __webpack_require__("./actions/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store__ = __webpack_require__("./store.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_redux__ = __webpack_require__("react-redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react_redux__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_next_link__ = __webpack_require__("next/link");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_redux__ = __webpack_require__("./node_modules/react-redux/es/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_next_link__ = __webpack_require__("./node_modules/next/link.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_next_link__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Header__ = __webpack_require__("./components/Header.jsx");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Footer__ = __webpack_require__("./components/Footer.jsx");
 
 var _jsxFileName = "C:\\Users\\venom\\Desktop\\future_generation\\front\\pages\\index.jsx";
+
+(function () {
+  var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
+
+  enterModule && enterModule(module);
+})();
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -811,9 +98,7 @@ function (_React$Component) {
         advantageItemSvgTextAnchor: 'end',
         activeAdvantageItem: null,
         justLivingSlidingBlock: null,
-        justLivingSlidingBlockTouchLastY: 0,
-        regionSelectorOpened: false,
-        selectedRegion: 'All of'
+        justLivingSlidingBlockTouchLastY: 0
       }
     }), _temp));
   }
@@ -945,21 +230,6 @@ function (_React$Component) {
       }
     }
   }, {
-    key: "toggleRegionSelector",
-    value: function toggleRegionSelector() {
-      this.setState({
-        regionSelectorOpened: !this.state.regionSelectorOpened
-      });
-    }
-  }, {
-    key: "setSelectedRegion",
-    value: function setSelectedRegion(region) {
-      this.setState({
-        selectedRegion: region
-      });
-      this.toggleRegionSelector();
-    }
-  }, {
     key: "render",
     value: function render() {
       var _this4 = this;
@@ -969,19 +239,19 @@ function (_React$Component) {
         className: "homepage",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 173
+          lineNumber: 162
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__components_Header__["a" /* default */], {
         title: "home page",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 174
+          lineNumber: 163
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "skateboard-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 176
+          lineNumber: 165
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("video", {
         autoPlay: true,
@@ -991,14 +261,14 @@ function (_React$Component) {
         className: "heroVideo",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 177
+          lineNumber: 166
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("source", {
         src: "/static/siska.mp4",
         type: "video/mp4",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 178
+          lineNumber: 167
         }
       })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn-container",
@@ -1007,95 +277,95 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 181
+          lineNumber: 170
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 182
+          lineNumber: 171
         }
       }, "future generation"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn btn-border",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 183
+          lineNumber: 172
         }
       }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "status-quo-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 187
+          lineNumber: 176
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "caption",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 188
+          lineNumber: 177
         }
       }, "The status quo doesn't make great leaders ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 189
+          lineNumber: 178
         }
       }), " or change ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 189
+          lineNumber: 178
         }
       }), " the world.")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "give-a-fuck-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 193
+          lineNumber: 182
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 194
+          lineNumber: 183
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "col-md-4 p0 image",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 195
+          lineNumber: 184
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "col-md-8 p0 quote",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 197
+          lineNumber: 186
         }
       }, "we don\u2019t give a fuck about the status quo"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "keep-talking-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 203
+          lineNumber: 192
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 204
+          lineNumber: 193
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "col-md-4 p0",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 205
+          lineNumber: 194
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
         className: "paragraph",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 206
+          lineNumber: 195
         }
       }, "We do things differently. We help you become who you want to be, not just through university but by providing a place which respects you. Encourages you to network, collaborate and relax for your hard work."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
         className: "paragraph",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 210
+          lineNumber: 199
         }
       }, "This is more than your first, second or third year of Uni, this is the beginning of your success story and adult life. So reject the status quo, and rebuild it."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn-container",
@@ -1104,19 +374,19 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 215
+          lineNumber: 204
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 216
+          lineNumber: 205
         }
       }, "Keep talking"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn btn-border",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 217
+          lineNumber: 206
         }
       }))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: ['escalator-block', this.state.escalatorHiddenContentClass].join(' '),
@@ -1128,107 +398,107 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 224
+          lineNumber: 213
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row position-relative",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 225
+          lineNumber: 214
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "escalator-image",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 227
+          lineNumber: 216
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "lines-wrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 229
+          lineNumber: 218
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "lines",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 230
+          lineNumber: 219
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "lines-mask-wrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 231
+          lineNumber: 220
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "lines-mask",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 232
+          lineNumber: 221
         }
       }))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "rising-standarts-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 239
+          lineNumber: 228
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "quote",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 240
+          lineNumber: 229
         }
       }, "RAISING THE STANDARDS OF STUDENT LIVING"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 244
+          lineNumber: 233
         }
       }, "Every standard starts with a problem that needs solving. ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 245
+          lineNumber: 234
         }
       }), "Ours was that student housing is exactly that. ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 246
+          lineNumber: 235
         }
       }), "Housing. Nothing more. We\u2019re creating the more."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "dashes first",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 250
+          lineNumber: 239
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "dashes second",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 251
+          lineNumber: 240
         }
       })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "tour-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 254
+          lineNumber: 243
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 255
+          lineNumber: 244
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "col-md-6",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 256
+          lineNumber: 245
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "bedroom-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 257
+          lineNumber: 246
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/FG_UI01_assets_home_bedroom.jpg",
@@ -1236,31 +506,31 @@ function (_React$Component) {
         className: "img-fluid animated-image bedroom",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 258
+          lineNumber: 247
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 260
+          lineNumber: 249
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 261
+          lineNumber: 250
         }
       }, "Refined personal bedrooms for whatever you get up to"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "horizontal-line",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 264
+          lineNumber: 253
         }
       }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "kitchen-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 270
+          lineNumber: 259
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/FG_UI01_assets_home_kitchen.jpg",
@@ -1268,37 +538,37 @@ function (_React$Component) {
         className: "img-fluid animated-image kitchen",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 271
+          lineNumber: 260
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 273
+          lineNumber: 262
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 274
+          lineNumber: 263
         }
       }, "Takeaway slaying, sleek looking, party space kitchens"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "horizontal-line",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 277
+          lineNumber: 266
         }
       })))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "col-md-6",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 284
+          lineNumber: 273
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "bathroom-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 285
+          lineNumber: 274
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/FG_UI01_assets_home_bathroom.jpg",
@@ -1306,43 +576,43 @@ function (_React$Component) {
         className: "img-fluid animated-image bathroom",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 286
+          lineNumber: 275
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 288
+          lineNumber: 277
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 289
+          lineNumber: 278
         }
       }, "A home from home, right down to the bathrooms"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "horizontal-line",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 292
+          lineNumber: 281
         }
       }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "divider",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 298
+          lineNumber: 287
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "quote-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 300
+          lineNumber: 289
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "quote",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 301
+          lineNumber: 290
         }
       }, "This is more than your first, second or third year of Uni, this is the beginning of your success story and adult life. So reject the status quo, and rebuild it. With us."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn-container",
@@ -1351,102 +621,102 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 307
+          lineNumber: 296
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn tour",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 308
+          lineNumber: 297
         }
       }, "Take a tour"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn btn-border",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 309
+          lineNumber: 298
         }
       })))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "line line3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 316
+          lineNumber: 305
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "just-living-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 318
+          lineNumber: 307
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "football",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 319
+          lineNumber: 308
         }
       }, "We put a football pitch on your roof and a cinema in your basement."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "sliding-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 323
+          lineNumber: 312
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "quote",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 324
+          lineNumber: 313
         }
       }, "THIS ISN\u2019T ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 325
+          lineNumber: 314
         }
       }), "STUDENT LIVING. ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 326
+          lineNumber: 315
         }
       }), "IT\u2019S JUST LIVING."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "roof-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 329
+          lineNumber: 318
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row advantages-list",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 330
+          lineNumber: 319
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "horizontal-line",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 331
+          lineNumber: 320
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "col-md-6 left",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 332
+          lineNumber: 321
         }
       }, this.state.activeAdvantageItem ? __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: this.state.activeAdvantageItem.image,
         className: "advantage-image",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 334
+          lineNumber: 323
         }
       }) : ''), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "right",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 337
+          lineNumber: 326
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "advantages-names",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 338
+          lineNumber: 327
         }
       }, this.state.advantagesItems && this.state.advantagesItems.map(function (advantageItem, index) {
         return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
@@ -1457,14 +727,14 @@ function (_React$Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 340
+            lineNumber: 329
           }
         }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("svg", {
           viewBox: "0 0 100 12",
           className: "advantage-name-svg",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 341
+            lineNumber: 330
           }
         }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("text", {
           className: "advantage-name-text",
@@ -1473,32 +743,32 @@ function (_React$Component) {
           textAnchor: _this4.state.advantageItemSvgTextAnchor,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 342
+            lineNumber: 331
           }
         }, advantageItem.name)));
       })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "line",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 348
+          lineNumber: 337
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "available",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 350
+          lineNumber: 339
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "available-title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 351
+          lineNumber: 340
         }
       }, "Available at Loughborough, Bristol and Manchester"), "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cum dolore nulla quidem repellat tenetur. Cumque distinctio dolor dolorum expedita fugiat."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "slider-controls",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 356
+          lineNumber: 345
         }
       }, this.state.advantagesItems && this.state.advantagesItems.map(function (advantageItem, index) {
         return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
@@ -1509,38 +779,38 @@ function (_React$Component) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 358
+            lineNumber: 347
           }
         });
       })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "lines",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 362
+          lineNumber: 351
         }
       })))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "partner-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 369
+          lineNumber: 358
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "ellipse-bg",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 370
+          lineNumber: 359
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 373
+          lineNumber: 362
         }
       }, "YOU\u2019LL GET 25% OFF OUR PARTNER\u2019S TECH"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "wrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 377
+          lineNumber: 366
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/svg/samsung-logo.svg",
@@ -1548,41 +818,41 @@ function (_React$Component) {
         className: "img-fluid samsung-logo",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 378
+          lineNumber: 367
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
         className: "paragraph",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 380
+          lineNumber: 369
         }
       }, "This is more than your \uFB01rst, second or third year of Uni, ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 381
+          lineNumber: 370
         }
       }), "this is the beginning of your success story and adult life. ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 382
+          lineNumber: 371
         }
       }), "So reject the status quo, and rebuild it. With us."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn-orange-transparent",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 386
+          lineNumber: 375
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn discount",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 387
+          lineNumber: 376
         }
       }, "Get 25% off"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn btn-border",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 388
+          lineNumber: 377
         }
       })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/small-bedroom.jpg",
@@ -1590,178 +860,157 @@ function (_React$Component) {
         className: "partner-block-image",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 391
+          lineNumber: 380
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 393
+          lineNumber: 382
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 394
+          lineNumber: 383
         }
       }, "Pixel perfect TVs and other tech integration in your spaces"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "horizontal-line",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 397
+          lineNumber: 386
         }
       })))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "leap-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 404
+          lineNumber: 393
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "quote-line quote-line-one",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 405
+          lineNumber: 394
         }
       }, "TAKE THIS STEP"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "quote-line quote-line-two",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 408
+          lineNumber: 397
         }
       }, "TO MAKE YOUR LEAP")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "locations-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 413
+          lineNumber: 402
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "caption-region-selector",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 414
+          lineNumber: 403
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 415
+          lineNumber: 404
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "paragraph col-md-6 col-lg-4",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 416
+          lineNumber: 405
         }
       }, "With over 30 locations across the country, we want there to be a location especially for you. Once you\u2019ve found the best fit, view it\u2019s bespoke page full of local trivia, recommendations and flat details to get you going in your new city."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "region-selector-container col-md-6 col-lg-4 offset-lg-4 justify-content-md-end justify-content-center d-flex",
+        className: "region-selector-container col-md-6 col-lg-4 offset-lg-4 justify-content-md-end justify-content-center align-items-end d-flex",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 419
+          lineNumber: 408
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "region-selector-prefix",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 420
+          lineNumber: 409
         }
       }, "Region:"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: ['region-selector', this.state.regionSelectorOpened ? 'opened' : ''].join(' '),
-        onClick: function onClick() {
-          return _this4.toggleRegionSelector();
-        },
+        className: "region-selector",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 421
+          lineNumber: 410
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "selected-region",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 422
+          lineNumber: 411
         }
-      }, this.state.selectedRegion), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, "Northern England"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "other-regions",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 423
+          lineNumber: 412
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "region-item",
-        onClick: function onClick() {
-          return _this4.setSelectedRegion('Northern');
-        },
+        "class": "region-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 424
+          lineNumber: 413
         }
       }, "Northern"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "region-item",
-        onClick: function onClick() {
-          return _this4.setSelectedRegion('Middle');
-        },
+        "class": "region-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 425
+          lineNumber: 414
         }
       }, "Middle"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "region-item",
-        onClick: function onClick() {
-          return _this4.setSelectedRegion('Southern');
-        },
+        "class": "region-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 426
+          lineNumber: 415
         }
       }, "Southern"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "region-item",
-        onClick: function onClick() {
-          return _this4.setSelectedRegion('South West');
-        },
+        "class": "region-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 427
+          lineNumber: 416
         }
       }, "South West"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "region-item",
-        onClick: function onClick() {
-          return _this4.setSelectedRegion('South East');
-        },
+        "class": "region-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 428
+          lineNumber: 417
         }
       }, "South East"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "region-item",
-        onClick: function onClick() {
-          return _this4.setSelectedRegion('All of');
-        },
+        "class": "region-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 429
+          lineNumber: 418
         }
       }, "All of")))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "locations-list",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 436
+          lineNumber: 425
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "location-item d-flex align-items-center justify-content-center type-1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 437
+          lineNumber: 426
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "left",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 438
+          lineNumber: 427
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "image",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 439
+          lineNumber: 428
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/FG_UI01_assets_home_location 1 main.jpg",
@@ -1769,25 +1018,25 @@ function (_React$Component) {
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 440
+          lineNumber: 429
         }
       })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "caption",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 442
+          lineNumber: 431
         }
       }, "featuring the UKs first LED cinema on site")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "right",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 444
+          lineNumber: 433
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "image",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 445
+          lineNumber: 434
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/FG_UI01_assets_home_location 1 detail.jpg",
@@ -1795,13 +1044,13 @@ function (_React$Component) {
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 446
+          lineNumber: 435
         }
       }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "center-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 449
+          lineNumber: 438
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7_next_link___default.a, {
         href: {
@@ -1812,37 +1061,37 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 450
+          lineNumber: 439
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("a", {
         className: "location-name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 451
+          lineNumber: 440
         }
       }, "Guildford")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "caption",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 455
+          lineNumber: 444
         }
       }, "featuring the UKs first LED cinema on site"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "location-item d-flex align-items-center justify-content-center type-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 458
+          lineNumber: 447
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "left",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 459
+          lineNumber: 448
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "image",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 460
+          lineNumber: 449
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/FG_UI01_assets_home_location 2 detail.jpg",
@@ -1850,19 +1099,19 @@ function (_React$Component) {
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 461
+          lineNumber: 450
         }
       }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "right",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 464
+          lineNumber: 453
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "image",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 465
+          lineNumber: 454
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/FG_UI01_assets_home_location 2 main.jpg",
@@ -1870,19 +1119,19 @@ function (_React$Component) {
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 466
+          lineNumber: 455
         }
       })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "caption",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 468
+          lineNumber: 457
         }
       }, "featuring the UKs first LED cinema on site")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "center-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 470
+          lineNumber: 459
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7_next_link___default.a, {
         href: {
@@ -1893,37 +1142,37 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 471
+          lineNumber: 460
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("a", {
         className: "location-name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 472
+          lineNumber: 461
         }
       }, "colechester")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "caption",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 476
+          lineNumber: 465
         }
       }, "featuring the UKs first LED cinema on site"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "location-item d-flex align-items-center justify-content-center type-1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 479
+          lineNumber: 468
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "left",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 480
+          lineNumber: 469
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "image",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 481
+          lineNumber: 470
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/FG_UI01_assets_home_location 1 main.jpg",
@@ -1931,25 +1180,25 @@ function (_React$Component) {
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 482
+          lineNumber: 471
         }
       })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "caption",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 484
+          lineNumber: 473
         }
       }, "featuring the UKs first LED cinema on site")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "right",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 486
+          lineNumber: 475
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "image",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 487
+          lineNumber: 476
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/FG_UI01_assets_home_location 1 detail.jpg",
@@ -1957,13 +1206,13 @@ function (_React$Component) {
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 488
+          lineNumber: 477
         }
       }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "center-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 491
+          lineNumber: 480
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7_next_link___default.a, {
         href: {
@@ -1974,38 +1223,43 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 492
+          lineNumber: 481
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("a", {
         className: "location-name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 493
+          lineNumber: 482
         }
       }, "Guildford")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "caption",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 497
+          lineNumber: 486
         }
       }, "featuring the UKs first LED cinema on site"))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "mailing-block text-center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 503
+          lineNumber: 492
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "caption",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 504
+          lineNumber: 493
         }
       }, "sign up to our mailing")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__components_Footer__["a" /* default */], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 507
+          lineNumber: 496
         }
       }));
+    }
+  }, {
+    key: "__reactstandin__regenerateByEval",
+    value: function __reactstandin__regenerateByEval(key, code) {
+      this[key] = eval(code);
     }
   }], [{
     key: "getInitialProps",
@@ -2059,266 +1313,49 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_6_react_redux__["connect"])(mapStateToProps, mapDispatchToProps)(HomePage));
+var _default = Object(__WEBPACK_IMPORTED_MODULE_6_react_redux__["b" /* connect */])(mapStateToProps, mapDispatchToProps)(HomePage);
 
-/***/ }),
+/* harmony default export */ __webpack_exports__["default"] = (_default);
+;
 
-/***/ "./reducers/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+(function () {
+  var reactHotLoader = __webpack_require__("./node_modules/react-hot-loader/index.js").default;
 
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__("redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_redux__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actions__ = __webpack_require__("./actions/index.js");
+  var leaveModule = __webpack_require__("./node_modules/react-hot-loader/index.js").leaveModule;
 
-
-
-function currentLocation() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
-    isFetching: false,
-    item: null
-  };
-  var action = arguments.length > 1 ? arguments[1] : undefined;
-
-  switch (action.type) {
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["f" /* REQUEST_CURRENT_LOCATION */]:
-      return Object.assign({}, state, {
-        isFetching: true
-      });
-
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["d" /* RECEIVE_CURRENT_LOCATION */]:
-      return Object.assign({}, state, {
-        isFetching: false,
-        item: action.location,
-        lastUpdated: action.receivedAt
-      });
-
-    default:
-      return state;
+  if (!reactHotLoader) {
+    return;
   }
-}
 
-function locations() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
-    isFetching: false,
-    items: []
-  };
-  var action = arguments.length > 1 ? arguments[1] : undefined;
+  reactHotLoader.register(HomePage, "HomePage", "C:\\Users\\venom\\Desktop\\future_generation\\front\\pages\\index.jsx");
+  reactHotLoader.register(mapStateToProps, "mapStateToProps", "C:\\Users\\venom\\Desktop\\future_generation\\front\\pages\\index.jsx");
+  reactHotLoader.register(mapDispatchToProps, "mapDispatchToProps", "C:\\Users\\venom\\Desktop\\future_generation\\front\\pages\\index.jsx");
+  reactHotLoader.register(_default, "default", "C:\\Users\\venom\\Desktop\\future_generation\\front\\pages\\index.jsx");
+  leaveModule(module);
+})();
 
-  switch (action.type) {
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["g" /* REQUEST_LOCATIONS */]:
-      return Object.assign({}, state, {
-        isFetching: true
-      });
+;
+    (function (Component, route) {
+      if(!Component) return
+      if (false) return
+      module.hot.accept()
+      Component.__route = route
 
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["e" /* RECEIVE_LOCATIONS */]:
-      return Object.assign({}, state, {
-        isFetching: false,
-        items: action.locations,
-        lastUpdated: action.receivedAt
-      });
+      if (module.hot.status() === 'idle') return
 
-    default:
-      return state;
-  }
-}
+      var components = next.router.components
+      for (var r in components) {
+        if (!components.hasOwnProperty(r)) continue
 
-function authDialog() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
-    isVisible: false,
-    isSubmitting: false,
-    identifier: null,
-    password: null,
-    auth: null,
-    error: null
-  };
-  var action = arguments.length > 1 ? arguments[1] : undefined;
-
-  switch (action.type) {
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["h" /* SHOW_AUTH_DIALOG */]:
-      return Object.assign({}, state, {
-        isVisible: true
-      });
-
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["a" /* HIDE_AUTH_DIALOG */]:
-      return Object.assign({}, state, {
-        isVisible: false
-      });
-
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["j" /* SUBMIT_AUTH_DIALOG */]:
-      return Object.assign({}, state, {
-        isSubmitting: true,
-        identifier: action.identifier,
-        password: action.password
-      });
-
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["c" /* PROCESS_AUTH_DIALOG */]:
-      return Object.assign({}, state, {
-        isSubmitting: false,
-        isVisible: false,
-        auth: action.auth
-      });
-
-    default:
-      return state;
-  }
-}
-
-function mainMenu() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
-    isVisible: false
-  };
-  var action = arguments.length > 1 ? arguments[1] : undefined;
-
-  switch (action.type) {
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["i" /* SHOW_MAIN_MENU */]:
-      return Object.assign({}, state, {
-        isVisible: true
-      });
-
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["b" /* HIDE_MAIN_MENU */]:
-      return Object.assign({}, state, {
-        isVisible: false
-      });
-
-    default:
-      return state;
-  }
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_redux__["combineReducers"])({
-  currentLocation: currentLocation,
-  locations: locations,
-  authDialog: authDialog,
-  mainMenu: mainMenu
-}));
-
-/***/ }),
-
-/***/ "./store.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return initStore; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__("redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_redux__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_redux_devtools_extension__ = __webpack_require__("redux-devtools-extension");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_redux_devtools_extension___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_redux_devtools_extension__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_redux_thunk__ = __webpack_require__("redux-thunk");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_redux_thunk___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_redux_thunk__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__actions__ = __webpack_require__("./actions/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__reducers__ = __webpack_require__("./reducers/index.js");
-
-
-
-
-
-var appInitialState = {
-  locations: [],
-  currentLocation: null,
-  mainMenu: {
-    isVisible: false
-  },
-  authDialog: {
-    isVisible: false,
-    isSubmitting: false,
-    identifier: '',
-    password: '',
-    auth: null,
-    error: null
-  }
-};
-var initStore = function initStore() {
-  var initialState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : appInitialState;
-  return Object(__WEBPACK_IMPORTED_MODULE_0_redux__["createStore"])(__WEBPACK_IMPORTED_MODULE_4__reducers__["a" /* default */], initialState, Object(__WEBPACK_IMPORTED_MODULE_1_redux_devtools_extension__["composeWithDevTools"])(Object(__WEBPACK_IMPORTED_MODULE_0_redux__["applyMiddleware"])(__WEBPACK_IMPORTED_MODULE_2_redux_thunk___default.a)));
-};
-
-/***/ }),
-
-/***/ 4:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__("./pages/index.jsx");
-
-
-/***/ }),
-
-/***/ "@babel/runtime/regenerator":
-/***/ (function(module, exports) {
-
-module.exports = require("@babel/runtime/regenerator");
-
-/***/ }),
-
-/***/ "isomorphic-unfetch":
-/***/ (function(module, exports) {
-
-module.exports = require("isomorphic-unfetch");
-
-/***/ }),
-
-/***/ "next/head":
-/***/ (function(module, exports) {
-
-module.exports = require("next/head");
-
-/***/ }),
-
-/***/ "next/link":
-/***/ (function(module, exports) {
-
-module.exports = require("next/link");
-
-/***/ }),
-
-/***/ "prop-types":
-/***/ (function(module, exports) {
-
-module.exports = require("prop-types");
-
-/***/ }),
-
-/***/ "react":
-/***/ (function(module, exports) {
-
-module.exports = require("react");
-
-/***/ }),
-
-/***/ "react-bootstrap":
-/***/ (function(module, exports) {
-
-module.exports = require("react-bootstrap");
-
-/***/ }),
-
-/***/ "react-redux":
-/***/ (function(module, exports) {
-
-module.exports = require("react-redux");
-
-/***/ }),
-
-/***/ "redux":
-/***/ (function(module, exports) {
-
-module.exports = require("redux");
-
-/***/ }),
-
-/***/ "redux-devtools-extension":
-/***/ (function(module, exports) {
-
-module.exports = require("redux-devtools-extension");
-
-/***/ }),
-
-/***/ "redux-thunk":
-/***/ (function(module, exports) {
-
-module.exports = require("redux-thunk");
+        if (components[r].Component.__route === route) {
+          next.router.update(r, Component)
+        }
+      }
+    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/")
+  
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module)))
 
 /***/ })
 
-/******/ });
-//# sourceMappingURL=index.js.map
+})
+//# sourceMappingURL=5.0587ebc704a2da57d13f.hot-update.js.map
