@@ -37,7 +37,8 @@ class HomePage extends React.Component {
       }
     ],
     activeAdvantageItem: null,
-    justLivingSlidingBlock: null
+    justLivingSlidingBlock: null,
+    justLivingSlidingBlockTouchLastY: 0
   }
 
   static async getInitialProps ({store, pathname, query}) {
@@ -49,8 +50,16 @@ class HomePage extends React.Component {
     this.setState({justLivingSlidingBlock: justLivingSlidingBlock})
 
     window.addEventListener('scroll', this.updateRoomTypesImagesClasses.bind(this), { passive: true })
-    justLivingSlidingBlock.addEventListener('wheel', this.handleJustLivingScroll.bind(this))
 
+    justLivingSlidingBlock.addEventListener('wheel', this.handleJustLivingScroll.bind(this))
+    justLivingSlidingBlock.addEventListener('touchstart', (e) => {
+      this.setState({justLivingSlidingBlockTouchLastY: e.touches[0].clientY})
+    })
+    justLivingSlidingBlock.addEventListener('touchmove', (e) => {
+      e.deltaY = -1 / 10 * (e.changedTouches[0].clientY - this.state.justLivingSlidingBlockTouchLastY)
+
+      this.handleJustLivingScroll(e);
+    })
 
     this.setActiveAdvantage(0)
   }
@@ -58,6 +67,8 @@ class HomePage extends React.Component {
   componentWillUnmount() {
     window.removeEventListener('scroll', this.updateRoomTypesImagesClasses)
     window.removeEventListener('wheel', this.handleJustLivingScroll)
+    window.removeEventListener('touchstart', this.handleJustLivingScroll)
+    window.removeEventListener('touchmove', this.handleJustLivingScroll)
   }
 
   scrollToBlock(selector) {

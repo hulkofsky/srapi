@@ -98,7 +98,11 @@ class LocationPage extends React.Component {
   }
 
   setActiveSlide(slider, nextActiveSlideIndex) {
-    let pxToScroll = 0;
+    let pxToScroll = 0
+
+    if ((nextActiveSlideIndex < 0) || (nextActiveSlideIndex > slider.controls.length - 1)) {
+      return false
+    }
 
     slider.controls.map((control, controlIndex) => {
       control.classList.remove('active')
@@ -130,6 +134,22 @@ class LocationPage extends React.Component {
 
         if (control.classList.contains('active')) {
           slider.activeSlideIndex = index
+        }
+      })
+
+      slider.addEventListener('touchstart', (e) => {
+        slider.touchLastX = e.touches[0].clientX
+      })
+
+      slider.addEventListener('touchend', (e) => {
+        let deltaX = -1 * (e.changedTouches[0].clientX - slider.touchLastX)
+
+        if (deltaX > 70) {
+          this.setActiveSlide(slider, slider.activeSlideIndex + 1)
+        }
+
+        if (deltaX < -70) {
+          this.setActiveSlide(slider, slider.activeSlideIndex - 1)
         }
       })
     })
@@ -421,6 +441,38 @@ class LocationPage extends React.Component {
             For extroverts
           </div>
           <div className="items-slider for-extrovers-list with-next-visible">
+            <div className="item type-1">
+              <div className="row">
+                <div className="image">
+                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_club 1.jpg" alt="" />
+                </div>
+                <div className="description">
+                  <div className="line-1 name">Pop tarts</div>
+                  <div className="line-2 role">FG rating 7.5 / 10</div>
+                  <div className="info">
+                    It’s the elephant in the room. Despite being the best SU club night in the country there are some who dare to insult the hallowed grounds of Pop Tarts.
+                    <br/><br/>
+                    Home to basic bitches and the final hurdle of many socials, Pop Tarts sells out within the week before it. So clearly they’re doing something right. The SU really does have a simple brief here. Play fuck loads of Beyoncé, Britney, and Chumbawumba. Simple, yet crowdpleasing.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="item type-1">
+              <div className="row">
+                <div className="image">
+                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_club 1.jpg" alt="" />
+                </div>
+                <div className="description">
+                  <div className="line-1 name">Pop tarts</div>
+                  <div className="line-2 role">FG rating 7.5 / 10</div>
+                  <div className="info">
+                    It’s the elephant in the room. Despite being the best SU club night in the country there are some who dare to insult the hallowed grounds of Pop Tarts.
+                    <br/><br/>
+                    Home to basic bitches and the final hurdle of many socials, Pop Tarts sells out within the week before it. So clearly they’re doing something right. The SU really does have a simple brief here. Play fuck loads of Beyoncé, Britney, and Chumbawumba. Simple, yet crowdpleasing.
+                  </div>
+                </div>
+              </div>
+            </div>
             <div className="item type-1">
               <div className="row">
                 <div className="image">

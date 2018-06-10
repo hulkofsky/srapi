@@ -6823,7 +6823,8 @@ a:hover {
   display: flex;
   overflow: hidden; }
   .items-slider .item {
-    flex: 1 0 100%; }
+    flex: 1 0 100%;
+    margin-right: 10%; }
     .items-slider .item .row {
       margin: 0; }
     .items-slider .item .description {
@@ -6861,8 +6862,7 @@ a:hover {
     width: 125%;
     margin-left: -12.5%; }
     .items-slider.with-next-visible .item {
-      flex: 1 0 60%;
-      margin-right: 10%; }
+      flex: 1 0 60%; }
 
 @media screen and (max-width: 767px) {
   .items-slider .item.type-1 .image, .items-slider .item.type-2 .image {
@@ -6881,7 +6881,6 @@ a:hover {
     width: 100%;
     margin-left: 0; }
     .items-slider.with-next-visible .item {
-      margin-right: 0;
       flex: 1 0 100%; } }
 
 .slider-controls, .just-living-block .sliding-block .roof-block .slider-controls {
@@ -7621,8 +7620,8 @@ a:hover {
       padding-top: 0; }
       .just-living-block .sliding-block .roof-block .horizontal-line {
         position: absolute;
-        top: 400px;
-        left: -20px; }
+        top: 70vw;
+        left: -10vw; }
       .just-living-block .sliding-block .roof-block .right {
         position: static;
         right: 0;

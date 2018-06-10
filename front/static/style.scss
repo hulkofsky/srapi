@@ -87,6 +87,7 @@ a:hover {
 	overflow: hidden;
 	.item {
 		flex: 1 0 100%;
+		margin-right: 10%;
 		.row {
 			margin: 0;
 		}
@@ -140,7 +141,6 @@ a:hover {
 		margin-left: -12.5%;
 		.item {
 			flex: 1 0 60%;
-			margin-right: 10%;
 		}
 	}
 }
@@ -173,7 +173,6 @@ a:hover {
 			width: 100%;
 			margin-left: 0;
 			.item {
-				margin-right: 0;
 				flex: 1 0 100%;
 			}
 		}
@@ -1122,8 +1121,8 @@ a:hover {
 				padding-top: 0;
 				.horizontal-line {
 					position: absolute;
-					top: 400px;
-					left: -20px;
+					top: 70vw;
+					left: -10vw;
 				}
 				.right {
 					position: static;
