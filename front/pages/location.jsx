@@ -7,7 +7,7 @@ import {
 import { initStore } from '../store'
 import { connect } from 'react-redux'
 import Link from 'next/link'
-import withContent from '../utils/withContent'
+import withContent, { ContentFactory } from '../utils/withContent'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
@@ -61,6 +61,7 @@ class LocationPage extends React.Component {
 
   render () {
     const {content} = this.props
+    const Content = ContentFactory(true)
 
     return (
       <div className="location-page">
@@ -84,7 +85,7 @@ class LocationPage extends React.Component {
             <div className="row content-container">
               <div className="col-md-5 info">
                 <div className="caption">The Steel city itself. Welcome to</div>
-                <div className="city-name">{content.location_title}</div>
+                <div className="city-name">{Content(content.location_title)}</div>
               </div>
               <div className="col-md-5 offset-md-2 image">
                 <img className="img-fluid" src="/static/images/FG_UI01_assets_location_hero.jpg" alt="" />

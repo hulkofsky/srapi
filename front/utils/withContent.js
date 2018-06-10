@@ -14,7 +14,10 @@ const fetchContent = (id) => fetch(id ? `${CMS_URL}?location=${id}` : CMS_URL)
   .then((rows) => {
     const obj = {};
     rows.forEach(({ identifier, text_value }) => {
-      obj[identifier] = text_value;
+      obj[identifier] = {
+        identifier,
+        text_value
+      };
     });
     return obj;
   })
@@ -40,4 +43,12 @@ export default (Child) => {
       return <Child {...this.props}/>
     }
 	}
+}
+
+export const ContentFactory = (edit = false) => {
+  if (edit) {
+    return (content) => <span><span className='content-edit-button'></span>{content.text_value}</span>
+  } else {
+    return (content) => content.text_value
+  }
 }
