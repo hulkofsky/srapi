@@ -36,6 +36,8 @@ class HomePage extends React.Component {
         image: '/static/images/FG_UI01_assets_home_features.jpg'
       }
     ],
+    advantageItemSvgX: 100,
+    advantageItemSvgTextAnchor: 'end',
     activeAdvantageItem: null,
     justLivingSlidingBlock: null,
     justLivingSlidingBlockTouchLastY: 0
@@ -58,10 +60,17 @@ class HomePage extends React.Component {
     justLivingSlidingBlock.addEventListener('touchmove', (e) => {
       e.deltaY = -1 / 10 * (e.changedTouches[0].clientY - this.state.justLivingSlidingBlockTouchLastY)
 
-      this.handleJustLivingScroll(e);
+      this.handleJustLivingScroll(e)
     })
 
     this.setActiveAdvantage(0)
+
+    if (window.innerWidth <= 767) {
+      this.setState({
+        advantageItemSvgX: 0,
+        advantageItemSvgTextAnchor: 'start'
+      })
+    }
   }
 
   componentWillUnmount() {
@@ -319,7 +328,7 @@ class HomePage extends React.Component {
                     {this.state.advantagesItems && this.state.advantagesItems.map((advantageItem, index) => (
                       <div className={['advantage-name', ((this.state.activeAdvantageItem && (advantageItem.id === this.state.activeAdvantageItem.id)) ? 'active' : '')].join(' ')} key={index} onClick={() => this.setActiveAdvantage(index)}>
                         <svg viewBox="0 0 100 12" className="advantage-name-svg">
-                          <text className="advantage-name-text" x="100" y="11" textAnchor="end">{advantageItem.name}</text>
+                          <text className="advantage-name-text" x={this.state.advantageItemSvgX} y="11" textAnchor={this.state.advantageItemSvgTextAnchor}>{advantageItem.name}</text>
                         </svg>
                       </div>
                     ))}
@@ -334,10 +343,9 @@ class HomePage extends React.Component {
                   </div>
 
                   <div className="slider-controls">
-                    <div className="slider-control active" onClick={() => this.setActiveAdvantage(0)}></div>
-                    <div className="slider-control" onClick={() => this.setActiveAdvantage(1)}></div>
-                    <div className="slider-control" onClick={() => this.setActiveAdvantage(2)}></div>
-                    <div className="slider-control" onClick={() => this.setActiveAdvantage(3)}></div>
+                    {this.state.advantagesItems && this.state.advantagesItems.map((advantageItem, index) => (
+                      <div className={['slider-control', ((this.state.activeAdvantageItem && (advantageItem.id === this.state.activeAdvantageItem.id)) ? 'active' : '')].join(' ')} key={index} onClick={() => this.setActiveAdvantage(index)}></div>
+                    ))}
                   </div>
 
                   <div className="lines"></div>
