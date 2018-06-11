@@ -1433,6 +1433,10 @@ a:hover {
     			.selected-region {
     				background: #BABAB0;
     				padding: 0 15px;
+    				.region-name {
+    					transition: 0.5s;
+    					opacity: 0.1;
+    				}
     			}
     			.other-regions {
     				display: block;

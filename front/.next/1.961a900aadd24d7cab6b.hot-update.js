@@ -1030,4 +1030,4 @@ var _default = Object(__WEBPACK_IMPORTED_MODULE_0_redux__["combineReducers"])({
 /***/ })
 
 })
-//# sourceMappingURL=1.8a218c9bf7af87584579.hot-update.js.map
+//# sourceMappingURL=1.961a900aadd24d7cab6b.hot-update.js.map

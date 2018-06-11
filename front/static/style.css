@@ -7868,6 +7868,9 @@ a:hover {
     .locations-block .region-selector-container .region-selector.opened .selected-region {
       background: #BABAB0;
       padding: 0 15px; }
+      .locations-block .region-selector-container .region-selector.opened .selected-region .region-name {
+        transition: 0.5s;
+        opacity: 0.1; }
     .locations-block .region-selector-container .region-selector.opened .other-regions {
       display: block; }
   .locations-block .locations-list {

@@ -419,7 +419,7 @@ class HomePage extends React.Component {
               <div className="region-selector-container col-md-6 col-lg-4 offset-lg-4 justify-content-md-end justify-content-center d-flex">
                 <div className="region-selector-prefix">Region:</div>
                 <div className={['region-selector', (this.state.regionSelectorOpened ? 'opened' : '')].join(' ')} onClick={() => this.toggleRegionSelector()}>
-                  <div className="selected-region">{this.state.selectedRegion}</div>
+                  <div className="selected-region"><span className="region-name">{this.state.selectedRegion}</span></div>
                   <div className="other-regions">
                     <div className="region-item" onClick={() => this.setSelectedRegion('Northern')}>Northern</div>
                     <div className="region-item" onClick={() => this.setSelectedRegion('Middle')}>Middle</div>
