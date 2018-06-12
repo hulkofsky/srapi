@@ -249,8 +249,10 @@ class LocationPage extends React.Component {
           <div className="items-slider with-next-visible heroes-list">
             <div className="item hero type-1">
               <div className="row">
-                <div className="image">
-                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_local 1.jpg" alt="" />
+                <div className="image-wrapper">
+                  <div className="image">
+                    <img className="img-fluid" src="/static/images/FG_UI01_assets_location_local 1.jpg" alt="" />
+                  </div>
                 </div>
                 <div className="description">
                   <div className="line-1 name">Helen Sharman</div>
@@ -263,8 +265,10 @@ class LocationPage extends React.Component {
             </div>
             <div className="item hero type-2">
               <div className="row">
-                <div className="image">
-                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_local 2.jpg" alt="" />
+                <div className="image-wrapper">
+                  <div className="image">
+                    <img className="img-fluid" src="/static/images/FG_UI01_assets_location_local 2.jpg" alt="" />
+                  </div>
                 </div>
                 <div className="description">
                   <div className="line-1 name">Helen Sharman</div>
@@ -277,8 +281,10 @@ class LocationPage extends React.Component {
             </div>
             <div className="item hero type-1">
               <div className="row">
-                <div className="image">
-                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_local 1.jpg" alt="" />
+                <div className="image-wrapper">
+                  <div className="image">
+                    <img className="img-fluid" src="/static/images/FG_UI01_assets_location_local 1.jpg" alt="" />
+                  </div>
                 </div>
                 <div className="description">
                   <div className="line-1 name">Helen Sharman</div>
@@ -291,8 +297,10 @@ class LocationPage extends React.Component {
             </div>
             <div className="item hero type-2">
               <div className="row">
-                <div className="image">
-                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_local 2.jpg" alt="" />
+                <div className="image-wrapper">
+                  <div className="image">
+                    <img className="img-fluid" src="/static/images/FG_UI01_assets_location_local 2.jpg" alt="" />
+                  </div>
                 </div>
                 <div className="description">
                   <div className="line-1 name">Helen Sharman</div>
@@ -443,8 +451,10 @@ class LocationPage extends React.Component {
           <div className="items-slider for-extrovers-list with-next-visible">
             <div className="item type-1">
               <div className="row">
-                <div className="image">
-                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_club 1.jpg" alt="" />
+                <div className="image-wrapper">
+                  <div className="image">
+                    <img className="img-fluid" src="/static/images/FG_UI01_assets_location_club 1.jpg" alt="" />
+                  </div>
                 </div>
                 <div className="description">
                   <div className="line-1 name">Pop tarts</div>
@@ -459,8 +469,10 @@ class LocationPage extends React.Component {
             </div>
             <div className="item type-1">
               <div className="row">
-                <div className="image">
-                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_club 1.jpg" alt="" />
+                <div className="image-wrapper">
+                  <div className="image">
+                    <img className="img-fluid" src="/static/images/FG_UI01_assets_location_club 1.jpg" alt="" />
+                  </div>
                 </div>
                 <div className="description">
                   <div className="line-1 name">Pop tarts</div>
@@ -475,8 +487,10 @@ class LocationPage extends React.Component {
             </div>
             <div className="item type-1">
               <div className="row">
-                <div className="image">
-                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_club 1.jpg" alt="" />
+                <div className="image-wrapper">
+                  <div className="image">
+                    <img className="img-fluid" src="/static/images/FG_UI01_assets_location_club 1.jpg" alt="" />
+                  </div>
                 </div>
                 <div className="description">
                   <div className="line-1 name">Pop tarts</div>
@@ -491,8 +505,10 @@ class LocationPage extends React.Component {
             </div>
             <div className="item type-1">
               <div className="row">
-                <div className="image">
-                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_club 1.jpg" alt="" />
+                <div className="image-wrapper">
+                  <div className="image">
+                    <img className="img-fluid" src="/static/images/FG_UI01_assets_location_club 1.jpg" alt="" />
+                  </div>
                 </div>
                 <div className="description">
                   <div className="line-1 name">Pop tarts</div>
@@ -546,11 +562,13 @@ class LocationPage extends React.Component {
           <div className="title">
             team mentality
           </div>
-          <div className="items-slider">
+          <div className="items-slider with-next-visible">
             <div className="item type-1">
               <div className="row">
-                <div className="image">
-                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_activity 1.jpg" alt="" />
+                <div className="image-wrapper">
+                  <div className="image">
+                    <img className="img-fluid" src="/static/images/FG_UI01_assets_location_activity 1.jpg" alt="" />
+                  </div>
                 </div>
                 <div className="description">
                   <div className="line-1 name">Mixed Rowing</div>
@@ -564,8 +582,10 @@ class LocationPage extends React.Component {
             </div>
             <div className="item type-1">
               <div className="row">
-                <div className="image">
-                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_activity 1.jpg" alt="" />
+                <div className="image-wrapper">
+                  <div className="image">
+                    <img className="img-fluid" src="/static/images/FG_UI01_assets_location_activity 1.jpg" alt="" />
+                  </div>
                 </div>
                 <div className="description">
                   <div className="line-1 name">Mixed Rowing</div>
@@ -579,8 +599,10 @@ class LocationPage extends React.Component {
             </div>
             <div className="item type-1">
               <div className="row">
-                <div className="image">
-                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_activity 1.jpg" alt="" />
+                <div className="image-wrapper">
+                  <div className="image">
+                    <img className="img-fluid" src="/static/images/FG_UI01_assets_location_activity 1.jpg" alt="" />
+                  </div>
                 </div>
                 <div className="description">
                   <div className="line-1 name">Mixed Rowing</div>
@@ -594,8 +616,10 @@ class LocationPage extends React.Component {
             </div>
             <div className="item type-1">
               <div className="row">
-                <div className="image">
-                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_activity 1.jpg" alt="" />
+                <div className="image-wrapper">
+                  <div className="image">
+                    <img className="img-fluid" src="/static/images/FG_UI01_assets_location_activity 1.jpg" alt="" />
+                  </div>
                 </div>
                 <div className="description">
                   <div className="line-1 name">Mixed Rowing</div>
@@ -624,8 +648,10 @@ class LocationPage extends React.Component {
           <div className="items-slider when-sober-list with-next-visible">
             <div className="item type-1">
               <div className="row">
-                <div className="image">
-                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_sober 1.jpg" alt="" />
+                <div className="image-wrapper">
+                  <div className="image">
+                    <img className="img-fluid" src="/static/images/FG_UI01_assets_location_sober 1.jpg" alt="" />
+                  </div>
                 </div>
                 <div className="description">
                   <div className="line-1 name">Tropical Butterfly</div>
@@ -640,8 +666,10 @@ class LocationPage extends React.Component {
             </div>
             <div className="item type-1">
               <div className="row">
-                <div className="image">
-                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_sober 2.jpg" alt="" />
+                <div className="image-wrapper">
+                  <div className="image">
+                    <img className="img-fluid" src="/static/images/FG_UI01_assets_location_sober 2.jpg" alt="" />
+                  </div>
                 </div>
                 <div className="description">
                   <div className="line-1 name">Tropical Butterfly</div>
@@ -656,8 +684,10 @@ class LocationPage extends React.Component {
             </div>
             <div className="item type-1">
               <div className="row">
-                <div className="image">
-                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_sober 2.jpg" alt="" />
+                <div className="image-wrapper">
+                  <div className="image">
+                    <img className="img-fluid" src="/static/images/FG_UI01_assets_location_sober 2.jpg" alt="" />
+                  </div>
                 </div>
                 <div className="description">
                   <div className="line-1 name">Tropical Butterfly</div>
@@ -672,8 +702,10 @@ class LocationPage extends React.Component {
             </div>
             <div className="item type-1">
               <div className="row">
-                <div className="image">
-                  <img className="img-fluid" src="/static/images/FG_UI01_assets_location_sober 2.jpg" alt="" />
+                <div className="image-wrapper">
+                  <div className="image">
+                    <img className="img-fluid" src="/static/images/FG_UI01_assets_location_sober 2.jpg" alt="" />
+                  </div>
                 </div>
                 <div className="description">
                   <div className="line-1 name">Tropical Butterfly</div>
