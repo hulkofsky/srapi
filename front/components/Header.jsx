@@ -47,8 +47,14 @@ class Header extends React.Component {
     let navClasses = [
       'nav',
       (this.props.navClass ? this.props.navClass : ''),
-      (this.state.navIsSticky ? 'sticky ' : ''),
-      (this.props.mainMenu.isVisible ? 'menu-visible ' : '')
+      (this.state.navIsSticky ? 'sticky' : ''),
+      (this.props.mainMenu.isVisible ? 'menu-visible' : '')
+    ]
+
+    let mainMenuClasses = [
+      'main-menu',
+      (this.props.mainMenu.isVisible ? 'visible' : ''),
+      (this.state.navIsSticky ? 'nav-sticky' : '')
     ]
 
     return (
@@ -91,7 +97,7 @@ class Header extends React.Component {
           <div className="burger" onClick={this.toggleMainMenu.bind(this)}></div>
         </nav>
 
-        <div className={'main-menu ' + (this.props.mainMenu.isVisible ? 'visible' : '')}>
+        <div className={mainMenuClasses.join(' ')}>
           <Link href={{ pathname: '/' }}>
             <a className="main-menu-item">
               <div onClick={this.toggleMainMenu.bind(this)}>home</div>
