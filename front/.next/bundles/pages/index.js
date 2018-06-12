@@ -22655,18 +22655,18 @@ function (_React$Component) {
         }
       }))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: ['escalator-block', this.state.escalatorHiddenContentClass].join(' '),
-        onMouseOut: function onMouseOut() {
-          return _this4.escalatorMouseOut();
-        },
-        onMouseOver: function onMouseOver() {
-          return _this4.escalatorMouseOver();
-        },
         __source: {
           fileName: _jsxFileName,
           lineNumber: 224
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row position-relative",
+        onMouseOut: function onMouseOut() {
+          return _this4.escalatorMouseOut();
+        },
+        onMouseOver: function onMouseOver() {
+          return _this4.escalatorMouseOver();
+        },
         __source: {
           fileName: _jsxFileName,
           lineNumber: 225

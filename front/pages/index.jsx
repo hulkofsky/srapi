@@ -221,8 +221,8 @@ class HomePage extends React.Component {
           </div>
         </div>
 
-        <div className={['escalator-block', this.state.escalatorHiddenContentClass].join(' ')} onMouseOut={() => this.escalatorMouseOut()} onMouseOver={() => this.escalatorMouseOver()}>
-          <div className="row position-relative">
+        <div className={['escalator-block', this.state.escalatorHiddenContentClass].join(' ')}>
+          <div className="row position-relative" onMouseOut={() => this.escalatorMouseOut()} onMouseOver={() => this.escalatorMouseOver()}>
            
             <div className="escalator-image">
             </div>
