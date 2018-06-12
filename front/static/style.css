@@ -6879,7 +6879,8 @@ a:hover {
       align-items: center;
       justify-content: center; }
       .items-slider .item.type-1 .image-wrapper .image img, .items-slider .item.type-2 .image-wrapper .image img {
-        max-width: none; }
+        max-width: none;
+        width: 100%; }
   .items-slider .item.type-1 .description, .items-slider .item.type-2 .description {
     width: 100%;
     padding-left: 0; }
