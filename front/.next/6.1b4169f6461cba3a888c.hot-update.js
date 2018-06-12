@@ -1,746 +1,32 @@
-module.exports =
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		var threw = true;
-/******/ 		try {
-/******/ 			modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/ 			threw = false;
-/******/ 		} finally {
-/******/ 			if(threw) delete installedModules[moduleId];
-/******/ 		}
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
-/******/ })
-/************************************************************************/
-/******/ ({
-
-/***/ "./actions/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return REQUEST_CURRENT_LOCATION; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return REQUEST_LOCATIONS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return RECEIVE_CURRENT_LOCATION; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return RECEIVE_LOCATIONS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return SHOW_AUTH_DIALOG; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HIDE_AUTH_DIALOG; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return SUBMIT_AUTH_DIALOG; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return PROCESS_AUTH_DIALOG; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return SHOW_MAIN_MENU; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return HIDE_MAIN_MENU; });
-/* unused harmony export requestCurrentLocation */
-/* unused harmony export requestLocations */
-/* unused harmony export receiveCurrentLocation */
-/* unused harmony export receiveLocations */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return fetchCurrentLocation; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return fetchLocations; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return showAuthDialog; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return hideAuthDialog; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return showMainMenu; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return hideMainMenu; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return submitAuthDialog; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return processAuthDialog; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch__ = __webpack_require__("isomorphic-unfetch");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch__);
-
-var backendUrl = 'http://localhost:1337';
-var authUrl = backendUrl + '/auth';
-var baseApiUrl = backendUrl + '/api';
-var REQUEST_CURRENT_LOCATION = 'REQUEST_CURRENT_LOCATION';
-var REQUEST_LOCATIONS = 'REQUEST_LOCATIONS';
-var RECEIVE_CURRENT_LOCATION = 'RECEIVE_CURRENT_LOCATION';
-var RECEIVE_LOCATIONS = 'RECEIVE_LOCATIONS';
-var SHOW_AUTH_DIALOG = 'SHOW_AUTH_DIALOG';
-var HIDE_AUTH_DIALOG = 'HIDE_AUTH_DIALOG';
-var SUBMIT_AUTH_DIALOG = 'SUBMIT_AUTH_DIALOG';
-var PROCESS_AUTH_DIALOG = 'PROCESS_AUTH_DIALOG';
-var SHOW_MAIN_MENU = 'SHOW_MAIN_MENU';
-var HIDE_MAIN_MENU = 'HIDE_MAIN_MENU';
-var requestCurrentLocation = function requestCurrentLocation(locationID) {
-  return {
-    type: REQUEST_CURRENT_LOCATION,
-    id: locationID
-  };
-};
-var requestLocations = function requestLocations() {
-  return {
-    type: REQUEST_LOCATIONS
-  };
-};
-var receiveCurrentLocation = function receiveCurrentLocation(json) {
-  return {
-    type: RECEIVE_CURRENT_LOCATION,
-    location: json,
-    receivedAt: Date.now()
-  };
-};
-var receiveLocations = function receiveLocations(json) {
-  return {
-    type: RECEIVE_LOCATIONS,
-    locations: json,
-    receivedAt: Date.now()
-  };
-};
-var fetchCurrentLocation = function fetchCurrentLocation(locationID) {
-  return function (dispatch) {
-    dispatch(requestCurrentLocation());
-    return __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch___default()(baseApiUrl + '/location/' + locationID).then(function (response) {
-      return response.json();
-    }, function (error) {
-      return console.log('An error occurred.', error);
-    }).then(function (json) {
-      return dispatch(receiveCurrentLocation(json));
-    });
-  };
-};
-var fetchLocations = function fetchLocations() {
-  return function (dispatch) {
-    dispatch(requestLocations());
-    return __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch___default()(baseApiUrl + '/location').then(function (response) {
-      return response.json();
-    }, function (error) {
-      return console.log('An error occurred.', error);
-    }).then(function (json) {
-      return dispatch(receiveLocations(json));
-    });
-  };
-};
-var showAuthDialog = function showAuthDialog() {
-  return {
-    type: SHOW_AUTH_DIALOG
-  };
-};
-var hideAuthDialog = function hideAuthDialog() {
-  return {
-    type: HIDE_AUTH_DIALOG
-  };
-};
-var showMainMenu = function showMainMenu() {
-  return {
-    type: SHOW_MAIN_MENU
-  };
-};
-var hideMainMenu = function hideMainMenu() {
-  return {
-    type: HIDE_MAIN_MENU
-  };
-};
-var submitAuthDialog = function submitAuthDialog(identifier, password) {
-  return function (dispatch) {
-    return __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch___default()(authUrl + '/local', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        identifier: identifier,
-        password: password
-      })
-    }).then(function (response) {
-      return response.json();
-    }, function (error) {
-      return console.log('An error occurred.', error);
-    }).then(function (json) {
-      if (json.error) {
-        alert(json.message);
-      } else {
-        dispatch(processAuthDialog(json));
-      }
-    });
-  };
-};
-var processAuthDialog = function processAuthDialog(auth) {
-  return {
-    type: PROCESS_AUTH_DIALOG,
-    auth: auth
-  };
-};
-
-/***/ }),
-
-/***/ "./components/Footer.jsx":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux__ = __webpack_require__("react-redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_redux__);
-var _jsxFileName = "C:\\Users\\venom\\Desktop\\future_generation\\front\\components\\Footer.jsx";
-
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-var Footer =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(Footer, _React$Component);
-
-  function Footer() {
-    _classCallCheck(this, Footer);
-
-    return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
-  }
-
-  _createClass(Footer, [{
-    key: "render",
-    value: function render() {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("footer", {
-        className: "footer",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 7
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-        src: "/static/svg/FG_UI01_assets_footer fg logo.svg",
-        alt: "footer-logo",
-        className: "footer-logo",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 8
-        }
-      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        className: "footer-menu",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 9
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        href: "#",
-        className: "menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 10
-        }
-      }, "Partners"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        href: "#",
-        className: "menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 11
-        }
-      }, "Brand Appearances"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        href: "#",
-        className: "menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 12
-        }
-      }, "Press Kit "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        href: "#",
-        className: "menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 13
-        }
-      }, "Legal & Policy"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        className: "dev",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 15
-        }
-      }, "designed and built by vitamin london")));
-    }
-  }]);
-
-  return Footer;
-}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["connect"])(null, null)(Footer));
-
-/***/ }),
-
-/***/ "./components/Header.jsx":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head__ = __webpack_require__("next/head");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_next_head___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_next_head__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_link__ = __webpack_require__("next/link");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_next_link__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_redux__ = __webpack_require__("react-redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_react_redux__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_redux__ = __webpack_require__("redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_redux__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__actions__ = __webpack_require__("./actions/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_bootstrap__ = __webpack_require__("react-bootstrap");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_bootstrap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react_bootstrap__);
-var _jsxFileName = "C:\\Users\\venom\\Desktop\\future_generation\\front\\components\\Header.jsx";
-
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-
-
-
-
-
-
-
-var Header =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(Header, _React$Component);
-
-  function Header() {
-    var _ref;
-
-    var _temp, _this;
-
-    _classCallCheck(this, Header);
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_ref = Header.__proto__ || Object.getPrototypeOf(Header)).call.apply(_ref, [this].concat(args))), Object.defineProperty(_assertThisInitialized(_this), "state", {
-      configurable: true,
-      enumerable: true,
-      writable: true,
-      value: {
-        navIsSticky: false
-      }
-    }), _temp));
-  }
-
-  _createClass(Header, [{
-    key: "handleAuthDialogSubmit",
-    value: function handleAuthDialogSubmit(event) {
-      event.preventDefault();
-      var data = new FormData(event.target);
-      this.props.submitAuthDialog(data.get("identifier"), data.get("password"));
-    }
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      window.addEventListener('scroll', this.updateMainMenuSticky.bind(this), {
-        passive: true
-      });
-      this.updateMainMenuSticky();
-    }
-  }, {
-    key: "componentWillUnmount",
-    value: function componentWillUnmount() {
-      window.removeEventListener('scroll', this.updateMainMenuSticky);
-    }
-  }, {
-    key: "updateMainMenuSticky",
-    value: function updateMainMenuSticky() {
-      this.setState({
-        navIsSticky: window.pageYOffset > 0
-      });
-    }
-  }, {
-    key: "toggleMainMenu",
-    value: function toggleMainMenu() {
-      this.props.mainMenu.isVisible ? this.props.hideMainMenu() : this.props.showMainMenu();
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var authDialog = this.props.authDialog;
-      var navClasses = ['nav', this.props.navClass ? this.props.navClass : '', this.state.navIsSticky ? 'sticky' : '', this.props.mainMenu.isVisible ? 'menu-visible' : ''];
-      var mainMenuClasses = ['main-menu', this.props.mainMenu.isVisible ? 'visible' : '', this.state.navIsSticky ? 'nav-sticky' : ''];
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 61
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_next_head___default.a, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 62
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("title", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 63
-        }
-      }, this.props.title), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("link", {
-        rel: "shortcut icon",
-        href: "/static/favicon.ico",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 64
-        }
-      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", {
-        name: "viewport",
-        content: "width=device-width, initial-scale=1",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 65
-        }
-      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("meta", {
-        charSet: "utf-8",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 66
-        }
-      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("link", {
-        rel: "stylesheet",
-        href: "/static/style.css",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 67
-        }
-      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_bootstrap__["Modal"], {
-        show: authDialog.isVisible,
-        onHide: this.props.hideAuthDialog,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 72
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_bootstrap__["Modal"].Header, {
-        closeButton: true,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 73
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_bootstrap__["Modal"].Title, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 74
-        }
-      }, "Authentication required")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_react_bootstrap__["Modal"].Body, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 76
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("form", {
-        onSubmit: this.handleAuthDialogSubmit.bind(this),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 77
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        className: "form-group",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 78
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("label", {
-        htmlFor: "identifierInput",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 79
-        }
-      }, "Username or email"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
-        type: "text",
-        name: "identifier",
-        className: "form-control",
-        id: "identifierInput",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 80
-        }
-      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        className: "form-group",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 82
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("label", {
-        htmlFor: "passwordInput",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 83
-        }
-      }, "Password"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", {
-        type: "password",
-        name: "password",
-        className: "form-control",
-        id: "passwordInput",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 84
-        }
-      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", {
-        type: "submit",
-        className: "btn btn-primary",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 86
-        }
-      }, "Submit")))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("nav", {
-        className: navClasses.join(' '),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 91
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
-        href: {
-          pathname: '/'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 92
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        className: "main-menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 93
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-        className: "logo",
-        src: "/static/svg/logo.svg",
-        alt: "logo",
-        onClick: this.props.hideMainMenu.bind(this),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 94
-        }
-      }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        className: "burger",
-        onClick: this.toggleMainMenu.bind(this),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 97
-        }
-      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        className: mainMenuClasses.join(' '),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 100
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
-        href: {
-          pathname: '/'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 101
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        className: "main-menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 102
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        onClick: this.toggleMainMenu.bind(this),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 103
-        }
-      }, "home"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
-        href: {
-          pathname: '/locations'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 106
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        className: "main-menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 107
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        onClick: this.toggleMainMenu.bind(this),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 108
-        }
-      }, "locations"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
-        href: {
-          pathname: '/spotify'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 111
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        className: "main-menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 112
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        onClick: this.toggleMainMenu.bind(this),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 113
-        }
-      }, "spotify"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
-        href: {
-          pathname: '/stance'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 116
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        className: "main-menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 117
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        onClick: this.toggleMainMenu.bind(this),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 118
-        }
-      }, "stance"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_next_link___default.a, {
-        href: {
-          pathname: '/contact'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 121
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
-        className: "main-menu-item",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 122
-        }
-      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        onClick: this.toggleMainMenu.bind(this),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 123
-        }
-      }, "contact")))));
-    }
-  }]);
-
-  return Header;
-}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
-
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    authDialog: state.authDialog,
-    mainMenu: state.mainMenu
-  };
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    showAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["p" /* showAuthDialog */], dispatch),
-    hideAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["m" /* hideAuthDialog */], dispatch),
-    submitAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["r" /* submitAuthDialog */], dispatch),
-    processAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["o" /* processAuthDialog */], dispatch),
-    showMainMenu: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["q" /* showMainMenu */], dispatch),
-    hideMainMenu: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["n" /* hideMainMenu */], dispatch)
-  };
-};
-
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_3_react_redux__["connect"])(mapStateToProps, mapDispatchToProps)(Header));
-
-/***/ }),
+webpackHotUpdate(6,{
 
 /***/ "./pages/location.jsx":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__ = __webpack_require__("@babel/runtime/regenerator");
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__ = __webpack_require__("./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("./node_modules/react/cjs/react.development.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__("prop-types");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__("./node_modules/next/node_modules/prop-types/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_redux__ = __webpack_require__("redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_redux__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_redux__ = __webpack_require__("./node_modules/redux/es/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__actions__ = __webpack_require__("./actions/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store__ = __webpack_require__("./store.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_redux__ = __webpack_require__("react-redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react_redux__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_next_link__ = __webpack_require__("next/link");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_redux__ = __webpack_require__("./node_modules/react-redux/es/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_next_link__ = __webpack_require__("./node_modules/next/link.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_next_link__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Header__ = __webpack_require__("./components/Header.jsx");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Footer__ = __webpack_require__("./components/Footer.jsx");
 
 var _jsxFileName = "C:\\Users\\venom\\Desktop\\future_generation\\front\\pages\\location.jsx";
+
+(function () {
+  var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
+
+  enterModule && enterModule(module);
+})();
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -1275,232 +561,221 @@ function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 252
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
-        src: "/static/images/FG_UI01_assets_location_local 1.jpg",
-        className: "img-fluid",
-        alt: "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 253
-        }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "image",
         style: {
-          backgroundImage: 'url("/static/images/FG_UI01_assets_location_local 1.jpg")'
+          backgroundImage: url('/static/images/FG_UI01_assets_location_local 1.jpg')
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 254
+          lineNumber: 253
         }
       })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "description",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 257
+          lineNumber: 256
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "line-1 name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 258
+          lineNumber: 257
         }
       }, "Helen Sharman"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "line-2 role",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 259
+          lineNumber: 258
         }
       }, "First Briton in Space"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "info",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 260
+          lineNumber: 259
         }
       }, "Helen Patricia Sharman, OBE PhD, is a British chemist who became the first Briton in space and the first woman to visit the Mir space station in 1991. She received a BSc in chemistry at the University of Sheffield in 1984 and a PhD from Birkbeck, University of London. Helen worked as an engineer for GEC in London and later as a chemist for Mars Incorporated dealing with flavourant properties of chocolate. Sweet.")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "item hero type-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 265
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "row",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 266
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "row",
+        className: "image-wrapper",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 267
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image-wrapper",
+        className: "image",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 268
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
-        src: "/static/images/FG_UI01_assets_location_local 2.jpg",
         className: "img-fluid",
+        src: "/static/images/FG_UI01_assets_location_local 2.jpg",
         alt: "",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 269
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image",
-        style: {
-          backgroundImage: 'url("/static/images/FG_UI01_assets_location_local 2.jpg")'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 270
-        }
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "description",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 273
+          lineNumber: 272
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "line-1 name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 274
+          lineNumber: 273
         }
       }, "Helen Sharman"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "line-2 role",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 275
+          lineNumber: 274
         }
       }, "First Briton in Space"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "info",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 276
+          lineNumber: 275
         }
       }, "Helen Patricia Sharman, OBE PhD, is a British chemist who became the first Briton in space and the first woman to visit the Mir space station in 1991. She received a BSc in chemistry at the University of Sheffield in 1984 and a PhD from Birkbeck, University of London. Helen worked as an engineer for GEC in London and later as a chemist for Mars Incorporated dealing with flavourant properties of chocolate. Sweet.")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "item hero type-1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 282
+          lineNumber: 281
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 282
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image-wrapper",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 283
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image-wrapper",
+        className: "image",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 284
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
-        src: "/static/images/FG_UI01_assets_location_local 1.jpg",
         className: "img-fluid",
+        src: "/static/images/FG_UI01_assets_location_local 1.jpg",
         alt: "",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 285
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image",
-        style: {
-          backgroundImage: 'url("/static/images/FG_UI01_assets_location_local 1.jpg")'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 286
-        }
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "description",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 289
+          lineNumber: 288
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "line-1 name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 290
+          lineNumber: 289
         }
       }, "Helen Sharman"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "line-2 role",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 291
+          lineNumber: 290
         }
       }, "First Briton in Space"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "info",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 292
+          lineNumber: 291
         }
       }, "Helen Patricia Sharman, OBE PhD, is a British chemist who became the first Briton in space and the first woman to visit the Mir space station in 1991. She received a BSc in chemistry at the University of Sheffield in 1984 and a PhD from Birkbeck, University of London. Helen worked as an engineer for GEC in London and later as a chemist for Mars Incorporated dealing with flavourant properties of chocolate. Sweet.")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "item hero type-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 298
+          lineNumber: 297
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 299
+          lineNumber: 298
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "image-wrapper",
         __source: {
           fileName: _jsxFileName,
+          lineNumber: 299
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image",
+        __source: {
+          fileName: _jsxFileName,
           lineNumber: 300
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
-        src: "/static/images/FG_UI01_assets_location_local 2.jpg",
         className: "img-fluid",
+        src: "/static/images/FG_UI01_assets_location_local 2.jpg",
         alt: "",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 301
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image",
-        style: {
-          backgroundImage: 'url("/static/images/FG_UI01_assets_location_local 2.jpg")'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 302
-        }
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "description",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 305
+          lineNumber: 304
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "line-1 name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 306
+          lineNumber: 305
         }
       }, "Helen Sharman"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "line-2 role",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 307
+          lineNumber: 306
         }
       }, "First Briton in Space"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "info",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 308
+          lineNumber: 307
         }
       }, "Helen Patricia Sharman, OBE PhD, is a British chemist who became the first Briton in space and the first woman to visit the Mir space station in 1991. She received a BSc in chemistry at the University of Sheffield in 1984 and a PhD from Birkbeck, University of London. Helen worked as an engineer for GEC in London and later as a chemist for Mars Incorporated dealing with flavourant properties of chocolate. Sweet."))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "slider-controls",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 315
+          lineNumber: 314
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "slider-control active",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 315
+        }
+      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "slider-control",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 316
@@ -1517,35 +792,29 @@ function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 318
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "slider-control",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 319
-        }
       }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "vertical-image-section foodie",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 323
+          lineNumber: 322
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 324
+          lineNumber: 323
         }
       }, "Foodie Heaven"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 325
+          lineNumber: 324
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "image",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 326
+          lineNumber: 325
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         className: "img-fluid",
@@ -1553,304 +822,310 @@ function (_React$Component) {
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 327
+          lineNumber: 326
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "dashes",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 328
+          lineNumber: 327
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "caption",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 329
+          lineNumber: 328
         }
       }, "Great, now I\u2019m hungry."))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "info",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 334
+          lineNumber: 333
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 335
+          lineNumber: 334
         }
       }, "Sheffields food economy has exploded in the past few years. With a number of street food hubs and restraunts you\u2019ll be able to find somewhere affordable at any time."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn-orange-transparent",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 338
+          lineNumber: 337
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn discount",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 339
+          lineNumber: 338
         }
       }, "see our favourITES"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn btn-border",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 340
+          lineNumber: 339
         }
       })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "dashes",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 342
+          lineNumber: 341
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "caption",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 343
+          lineNumber: 342
         }
       }, "Great, now I\u2019m hungry."))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "did-you-know",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 351
+          lineNumber: 350
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 352
+          lineNumber: 351
         }
       }, "Did you know"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "items-slider facts",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 353
+          lineNumber: 352
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "item fact",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 353
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "left",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 354
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "left",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 355
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text-1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 356
+          lineNumber: 355
         }
       }, "From the nich\xE9 sayings to the interresting details, Sheffield has a lot to offer. So before you move there and become a Sheffieldian, lets get you up to speed."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "quote",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 359
+          lineNumber: 358
         }
       }, "\u201Cey up chap\u201D"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "translation",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 362
+          lineNumber: 361
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 363
+          lineNumber: 362
         }
       }, "Translation:"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 364
+          lineNumber: 363
         }
       }, "\u201CHow are you? or \u201Dare you alright?\u201D. Whether you\u2019re greeting someone down the local pub or just passing them in the street, \u2018ey up\u2019 is the go to phrase here in Sheffield. Ususally accompanied with a complimentary nod or even a smile. When someone says this to you, the best thing to do is return the gesture."))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "right",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 369
+          lineNumber: 368
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "quote",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 370
+          lineNumber: 369
         }
       }, "\u201Cey up chap\u201D"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "item fact",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 375
+          lineNumber: 374
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "left",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 376
+          lineNumber: 375
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text-1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 377
+          lineNumber: 376
         }
       }, "From the nich\xE9 sayings to the interresting details, Sheffield has a lot to offer. So before you move there and become a Sheffieldian, lets get you up to speed. 1"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "quote",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 380
+          lineNumber: 379
         }
       }, "\u201Cey up chap 1\u201D"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "translation",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 383
+          lineNumber: 382
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 384
+          lineNumber: 383
         }
       }, "Translation:"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 385
+          lineNumber: 384
         }
       }, "\u201CHow are you? or \u201Dare you alright?\u201D. Whether you\u2019re greeting someone down the local pub or just passing them in the street, \u2018ey up\u2019 is the go to phrase here in Sheffield. Ususally accompanied with a complimentary nod or even a smile. When someone says this to you, the best thing to do is return the gesture. 1"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "right",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 390
+          lineNumber: 389
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "quote",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 391
+          lineNumber: 390
         }
       }, "\u201Cey up chap 1\u201D"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "item fact",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 396
+          lineNumber: 395
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "left",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 397
+          lineNumber: 396
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text-1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 398
+          lineNumber: 397
         }
       }, "From the nich\xE9 sayings to the interresting details, Sheffield has a lot to offer. So before you move there and become a Sheffieldian, lets get you up to speed. 2"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "quote",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 401
+          lineNumber: 400
         }
       }, "\u201Cey up chap 2\u201D"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "translation",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 404
+          lineNumber: 403
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 405
+          lineNumber: 404
         }
       }, "Translation:"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 406
+          lineNumber: 405
         }
       }, "\u201CHow are you? or \u201Dare you alright?\u201D. Whether you\u2019re greeting someone down the local pub or just passing them in the street, \u2018ey up\u2019 is the go to phrase here in Sheffield. Ususally accompanied with a complimentary nod or even a smile. When someone says this to you, the best thing to do is return the gesture. 2"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "right",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 411
+          lineNumber: 410
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "quote",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 412
+          lineNumber: 411
         }
       }, "\u201Cey up chap 2\u201D"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "item fact",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 417
+          lineNumber: 416
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "left",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 418
+          lineNumber: 417
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text-1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 419
+          lineNumber: 418
         }
       }, "From the nich\xE9 sayings to the interresting details, Sheffield has a lot to offer. So before you move there and become a Sheffieldian, lets get you up to speed. 3"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "quote",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 422
+          lineNumber: 421
         }
       }, "\u201Cey up chap 3\u201D"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "translation",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 425
+          lineNumber: 424
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 426
+          lineNumber: 425
         }
       }, "Translation:"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text-2",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 427
+          lineNumber: 426
         }
       }, "\u201CHow are you? or \u201Dare you alright?\u201D. Whether you\u2019re greeting someone down the local pub or just passing them in the street, \u2018ey up\u2019 is the go to phrase here in Sheffield. Ususally accompanied with a complimentary nod or even a smile. When someone says this to you, the best thing to do is return the gesture. 3"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "right",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 432
+          lineNumber: 431
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "quote",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 433
+          lineNumber: 432
         }
       }, "\u201Cey up chap 3\u201D")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "slider-controls on-dark",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 439
+          lineNumber: 438
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "slider-control active",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 439
+        }
+      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "slider-control",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 440
@@ -1867,44 +1142,44 @@ function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 442
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "slider-control",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 443
-        }
       }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "for-extrovers",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 447
+          lineNumber: 446
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 448
+          lineNumber: 447
         }
       }, "For extroverts"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "items-slider for-extrovers-list with-next-visible",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 451
+          lineNumber: 450
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "item type-1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 452
+          lineNumber: 451
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 453
+          lineNumber: 452
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "image-wrapper",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 453
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 454
@@ -1917,16 +1192,7 @@ function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 455
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image",
-        style: {
-          backgroundImage: 'url("/static/images/FG_UI01_assets_location_club 1.jpg")'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 456
-        }
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "description",
         __source: {
           fileName: _jsxFileName,
@@ -1978,74 +1244,77 @@ function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 471
         }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 472
+        }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         className: "img-fluid",
         src: "/static/images/FG_UI01_assets_location_club 1.jpg",
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 472
-        }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image",
-        style: {
-          backgroundImage: 'url("/static/images/FG_UI01_assets_location_club 1.jpg")'
-        },
-        __source: {
-          fileName: _jsxFileName,
           lineNumber: 473
         }
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "description",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 475
+          lineNumber: 476
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "line-1 name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 476
+          lineNumber: 477
         }
       }, "Pop tarts"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "line-2 role",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 477
+          lineNumber: 478
         }
       }, "FG rating 7.5 / 10"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "info",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 478
+          lineNumber: 479
         }
       }, "It\u2019s the elephant in the room. Despite being the best SU club night in the country there are some who dare to insult the hallowed grounds of Pop Tarts.", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 480
+          lineNumber: 481
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 480
+          lineNumber: 481
         }
       }), "Home to basic bitches and the final hurdle of many socials, Pop Tarts sells out within the week before it. So clearly they\u2019re doing something right. The SU really does have a simple brief here. Play fuck loads of Beyonc\xE9, Britney, and Chumbawumba. Simple, yet crowdpleasing.")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "item type-1",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 486
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "row",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 487
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image-wrapper",
+        className: "row",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 488
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image-wrapper",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 489
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 490
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         className: "img-fluid",
@@ -2053,68 +1322,65 @@ function (_React$Component) {
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 489
+          lineNumber: 491
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image",
-        style: {
-          backgroundImage: 'url("/static/images/FG_UI01_assets_location_club 1.jpg")'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 490
-        }
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "description",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 492
+          lineNumber: 494
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "line-1 name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 493
+          lineNumber: 495
         }
       }, "Pop tarts"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "line-2 role",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 494
+          lineNumber: 496
         }
       }, "FG rating 7.5 / 10"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "info",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 495
+          lineNumber: 497
         }
       }, "It\u2019s the elephant in the room. Despite being the best SU club night in the country there are some who dare to insult the hallowed grounds of Pop Tarts.", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 497
+          lineNumber: 499
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 497
+          lineNumber: 499
         }
       }), "Home to basic bitches and the final hurdle of many socials, Pop Tarts sells out within the week before it. So clearly they\u2019re doing something right. The SU really does have a simple brief here. Play fuck loads of Beyonc\xE9, Britney, and Chumbawumba. Simple, yet crowdpleasing.")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "item type-1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 503
+          lineNumber: 505
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 504
+          lineNumber: 506
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "image-wrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 505
+          lineNumber: 507
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 508
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         className: "img-fluid",
@@ -2122,104 +1388,95 @@ function (_React$Component) {
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 506
+          lineNumber: 509
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image",
-        style: {
-          backgroundImage: 'url("/static/images/FG_UI01_assets_location_club 1.jpg")'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 507
-        }
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "description",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 509
+          lineNumber: 512
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "line-1 name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 510
+          lineNumber: 513
         }
       }, "Pop tarts"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "line-2 role",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 511
+          lineNumber: 514
         }
       }, "FG rating 7.5 / 10"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "info",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 512
+          lineNumber: 515
         }
       }, "It\u2019s the elephant in the room. Despite being the best SU club night in the country there are some who dare to insult the hallowed grounds of Pop Tarts.", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 514
+          lineNumber: 517
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 514
+          lineNumber: 517
         }
       }), "Home to basic bitches and the final hurdle of many socials, Pop Tarts sells out within the week before it. So clearly they\u2019re doing something right. The SU really does have a simple brief here. Play fuck loads of Beyonc\xE9, Britney, and Chumbawumba. Simple, yet crowdpleasing."))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "slider-controls",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 521
+          lineNumber: 524
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "slider-control active",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 522
-        }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "slider-control",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 523
-        }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "slider-control",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 524
-        }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "slider-control",
-        __source: {
-          fileName: _jsxFileName,
           lineNumber: 525
+        }
+      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "slider-control",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 526
+        }
+      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "slider-control",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 527
+        }
+      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "slider-control",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 528
         }
       }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "vertical-image-section local-music",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 529
+          lineNumber: 532
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 530
+          lineNumber: 533
         }
       }, "Local Music"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 531
+          lineNumber: 534
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "image",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 532
+          lineNumber: 535
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         className: "img-fluid",
@@ -2227,97 +1484,103 @@ function (_React$Component) {
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 533
+          lineNumber: 536
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "dashes",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 534
+          lineNumber: 537
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "caption",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 535
+          lineNumber: 538
         }
       }, "Encore."))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "info",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 540
+          lineNumber: 543
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 541
+          lineNumber: 544
         }
       }, "Audiophiles rejoice. Sheffield has a great music scene from the smaller bar gigs to sell-out tour concert venues. Whatever your genre, you\u2019re bound to find it here."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn-orange-transparent",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 544
+          lineNumber: 547
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn discount",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 545
+          lineNumber: 548
         }
       }, "see our favourITES"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn btn-border",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 546
+          lineNumber: 549
         }
       })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "dashes",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 548
+          lineNumber: 551
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "caption",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 549
+          lineNumber: 552
         }
       }, "Encore."))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "team-mentality",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 557
+          lineNumber: 560
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 558
+          lineNumber: 561
         }
       }, "team mentality"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "items-slider with-next-visible",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 561
+          lineNumber: 564
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "item type-1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 562
+          lineNumber: 565
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 563
+          lineNumber: 566
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "image-wrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 564
+          lineNumber: 567
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 568
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         className: "img-fluid",
@@ -2325,125 +1588,59 @@ function (_React$Component) {
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 565
+          lineNumber: 569
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image",
-        style: {
-          backgroundImage: 'url("/static/images/FG_UI01_assets_location_activity 1.jpg")'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 566
-        }
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "description",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 568
+          lineNumber: 572
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "line-1 name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 569
+          lineNumber: 573
         }
       }, "Mixed Rowing"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "info",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 570
+          lineNumber: 574
         }
       }, "It\u2019s the elephant in the room. Despite being the best SU club night in the country there are some who dare to insult the hallowed grounds of Pop Tarts.", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 572
+          lineNumber: 576
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 572
+          lineNumber: 576
         }
       }), "Home to basic bitches and the final hurdle of many socials, Pop Tarts sells out within the week before it. So clearly they\u2019re doing something right. The SU really does have a simple brief here. Play fuck loads of Beyonc\xE9, Britney, and Chumbawumba. Simple, yet crowdpleasing.")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "item type-1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 578
+          lineNumber: 582
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 579
+          lineNumber: 583
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "image-wrapper",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 580
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
-        className: "img-fluid",
-        src: "/static/images/FG_UI01_assets_location_activity 1.jpg",
-        alt: "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 581
-        }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image",
-        style: {
-          backgroundImage: 'url("/static/images/FG_UI01_assets_location_activity 1.jpg")'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 582
-        }
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "description",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 584
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "line-1 name",
+        className: "image",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 585
-        }
-      }, "Mixed Rowing"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "info",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 586
-        }
-      }, "It\u2019s the elephant in the room. Despite being the best SU club night in the country there are some who dare to insult the hallowed grounds of Pop Tarts.", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 588
-        }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 588
-        }
-      }), "Home to basic bitches and the final hurdle of many socials, Pop Tarts sells out within the week before it. So clearly they\u2019re doing something right. The SU really does have a simple brief here. Play fuck loads of Beyonc\xE9, Britney, and Chumbawumba. Simple, yet crowdpleasing.")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "item type-1",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 594
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "row",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 595
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image-wrapper",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 596
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         className: "img-fluid",
@@ -2451,62 +1648,59 @@ function (_React$Component) {
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 597
+          lineNumber: 586
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image",
-        style: {
-          backgroundImage: 'url("/static/images/FG_UI01_assets_location_activity 1.jpg")'
-        },
+      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "description",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 598
+          lineNumber: 589
         }
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "description",
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "line-1 name",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 590
+        }
+      }, "Mixed Rowing"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "info",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 591
+        }
+      }, "It\u2019s the elephant in the room. Despite being the best SU club night in the country there are some who dare to insult the hallowed grounds of Pop Tarts.", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 593
+        }
+      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 593
+        }
+      }), "Home to basic bitches and the final hurdle of many socials, Pop Tarts sells out within the week before it. So clearly they\u2019re doing something right. The SU really does have a simple brief here. Play fuck loads of Beyonc\xE9, Britney, and Chumbawumba. Simple, yet crowdpleasing.")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "item type-1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 599
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "row",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 600
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "line-1 name",
+        className: "image-wrapper",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 601
         }
-      }, "Mixed Rowing"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "info",
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 602
-        }
-      }, "It\u2019s the elephant in the room. Despite being the best SU club night in the country there are some who dare to insult the hallowed grounds of Pop Tarts.", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 604
-        }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 604
-        }
-      }), "Home to basic bitches and the final hurdle of many socials, Pop Tarts sells out within the week before it. So clearly they\u2019re doing something right. The SU really does have a simple brief here. Play fuck loads of Beyonc\xE9, Britney, and Chumbawumba. Simple, yet crowdpleasing.")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "item type-1",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 610
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "row",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 611
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image-wrapper",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 612
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         className: "img-fluid",
@@ -2514,254 +1708,173 @@ function (_React$Component) {
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 613
+          lineNumber: 603
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image",
-        style: {
-          backgroundImage: 'url("/static/images/FG_UI01_assets_location_activity 1.jpg")'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 614
-        }
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "description",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 616
+          lineNumber: 606
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "line-1 name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 617
+          lineNumber: 607
         }
       }, "Mixed Rowing"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "info",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 618
+          lineNumber: 608
         }
       }, "It\u2019s the elephant in the room. Despite being the best SU club night in the country there are some who dare to insult the hallowed grounds of Pop Tarts.", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 620
+          lineNumber: 610
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
+          lineNumber: 610
+        }
+      }), "Home to basic bitches and the final hurdle of many socials, Pop Tarts sells out within the week before it. So clearly they\u2019re doing something right. The SU really does have a simple brief here. Play fuck loads of Beyonc\xE9, Britney, and Chumbawumba. Simple, yet crowdpleasing.")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "item type-1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 616
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 617
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image-wrapper",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 618
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 619
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
+        className: "img-fluid",
+        src: "/static/images/FG_UI01_assets_location_activity 1.jpg",
+        alt: "",
+        __source: {
+          fileName: _jsxFileName,
           lineNumber: 620
+        }
+      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "description",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 623
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "line-1 name",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 624
+        }
+      }, "Mixed Rowing"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "info",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 625
+        }
+      }, "It\u2019s the elephant in the room. Despite being the best SU club night in the country there are some who dare to insult the hallowed grounds of Pop Tarts.", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 627
+        }
+      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 627
         }
       }), "Home to basic bitches and the final hurdle of many socials, Pop Tarts sells out within the week before it. So clearly they\u2019re doing something right. The SU really does have a simple brief here. Play fuck loads of Beyonc\xE9, Britney, and Chumbawumba. Simple, yet crowdpleasing."))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "slider-controls",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 627
+          lineNumber: 634
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "slider-control active",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 628
+          lineNumber: 635
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "slider-control",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 629
+          lineNumber: 636
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "slider-control",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 630
+          lineNumber: 637
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "slider-control",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 631
+          lineNumber: 638
         }
       }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "when-sober",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 635
+          lineNumber: 642
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 636
+          lineNumber: 643
         }
       }, "When you\u2019re sober"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row intro-text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 637
+          lineNumber: 644
         }
       }, "Ok so your family or friends are coming to visit for the day. What the hell are you going to do in all that time? Fotunately we\u2019ve got a list for you to try."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "items-slider when-sober-list with-next-visible",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 640
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "item type-1",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 641
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "row",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 642
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image-wrapper",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 643
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
-        className: "img-fluid",
-        src: "/static/images/FG_UI01_assets_location_sober 1.jpg",
-        alt: "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 644
-        }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image",
-        style: {
-          backgroundImage: 'url("/static/images/FG_UI01_assets_location_sober 1.jpg")'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 645
-        }
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "description",
-        __source: {
-          fileName: _jsxFileName,
           lineNumber: 647
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "line-1 name",
+        className: "item type-1",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 648
         }
-      }, "Tropical Butterfly"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "line-2 role",
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "row",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 649
         }
-      }, "FG rating 8 / 10"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "info",
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image-wrapper",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 650
         }
-      }, "If you dream of escaping to a tropical climate, where exotic birds and butterflies fly freely over your head in a rainforest-like setting, then the Tropical Butterfly House is for you.", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 652
-        }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 652
-        }
-      }), "Getting immersed in nature is what this wildlife and falconry centre is all about. Whether it\u2019s brightly coloured winged creatures flying around your head, walking through Meerkat Mansion, handling a bird of prey or, for the bravest, there are snakes, crocodiles and spiders in the Tropical House!")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "item type-1",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 658
-        }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "row",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 659
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image-wrapper",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 660
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
-        className: "img-fluid",
-        src: "/static/images/FG_UI01_assets_location_sober 2.jpg",
-        alt: "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 661
-        }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "image",
-        style: {
-          backgroundImage: 'url("/static/images/FG_UI01_assets_location_sober 2.jpg")'
-        },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 662
-        }
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "description",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 664
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "line-1 name",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 665
-        }
-      }, "Tropical Butterfly"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "line-2 role",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 666
-        }
-      }, "FG rating 8 / 10"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "info",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 667
-        }
-      }, "If you dream of escaping to a tropical climate, where exotic birds and butterflies fly freely over your head in a rainforest-like setting, then the Tropical Butterfly House is for you.", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 669
-        }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 669
-        }
-      }), "Getting immersed in nature is what this wildlife and falconry centre is all about. Whether it\u2019s brightly coloured winged creatures flying around your head, walking through Meerkat Mansion, handling a bird of prey or, for the bravest, there are snakes, crocodiles and spiders in the Tropical House!")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "item type-1",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 675
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "row",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 676
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image-wrapper",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 677
+          lineNumber: 651
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         className: "img-fluid",
@@ -2769,68 +1882,65 @@ function (_React$Component) {
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 678
+          lineNumber: 652
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image",
-        style: {
-          backgroundImage: 'url("/static/images/FG_UI01_assets_location_sober 1.jpg")'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 679
-        }
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "description",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 681
+          lineNumber: 655
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "line-1 name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 682
+          lineNumber: 656
         }
       }, "Tropical Butterfly"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "line-2 role",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 683
+          lineNumber: 657
         }
       }, "FG rating 8 / 10"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "info",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 684
+          lineNumber: 658
         }
       }, "If you dream of escaping to a tropical climate, where exotic birds and butterflies fly freely over your head in a rainforest-like setting, then the Tropical Butterfly House is for you.", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 686
+          lineNumber: 660
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 686
+          lineNumber: 660
         }
       }), "Getting immersed in nature is what this wildlife and falconry centre is all about. Whether it\u2019s brightly coloured winged creatures flying around your head, walking through Meerkat Mansion, handling a bird of prey or, for the bravest, there are snakes, crocodiles and spiders in the Tropical House!")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "item type-1",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 692
+          lineNumber: 666
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 693
+          lineNumber: 667
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "image-wrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 694
+          lineNumber: 668
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 669
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         className: "img-fluid",
@@ -2838,146 +1948,269 @@ function (_React$Component) {
         alt: "",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 695
+          lineNumber: 670
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image",
-        style: {
-          backgroundImage: 'url("/static/images/FG_UI01_assets_location_sober 2.jpg")'
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 696
-        }
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "description",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 698
+          lineNumber: 673
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "line-1 name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 699
+          lineNumber: 674
         }
       }, "Tropical Butterfly"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "line-2 role",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 700
+          lineNumber: 675
         }
       }, "FG rating 8 / 10"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "info",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 701
+          lineNumber: 676
         }
       }, "If you dream of escaping to a tropical climate, where exotic birds and butterflies fly freely over your head in a rainforest-like setting, then the Tropical Butterfly House is for you.", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 703
+          lineNumber: 678
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
+          lineNumber: 678
+        }
+      }), "Getting immersed in nature is what this wildlife and falconry centre is all about. Whether it\u2019s brightly coloured winged creatures flying around your head, walking through Meerkat Mansion, handling a bird of prey or, for the bravest, there are snakes, crocodiles and spiders in the Tropical House!")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "item type-1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 684
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 685
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image-wrapper",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 686
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 687
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
+        className: "img-fluid",
+        src: "/static/images/FG_UI01_assets_location_sober 2.jpg",
+        alt: "",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 688
+        }
+      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "description",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 691
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "line-1 name",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 692
+        }
+      }, "Tropical Butterfly"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "line-2 role",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 693
+        }
+      }, "FG rating 8 / 10"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "info",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 694
+        }
+      }, "If you dream of escaping to a tropical climate, where exotic birds and butterflies fly freely over your head in a rainforest-like setting, then the Tropical Butterfly House is for you.", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 696
+        }
+      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 696
+        }
+      }), "Getting immersed in nature is what this wildlife and falconry centre is all about. Whether it\u2019s brightly coloured winged creatures flying around your head, walking through Meerkat Mansion, handling a bird of prey or, for the bravest, there are snakes, crocodiles and spiders in the Tropical House!")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "item type-1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 702
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "row",
+        __source: {
+          fileName: _jsxFileName,
           lineNumber: 703
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image-wrapper",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 704
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 705
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
+        className: "img-fluid",
+        src: "/static/images/FG_UI01_assets_location_sober 2.jpg",
+        alt: "",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 706
+        }
+      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "description",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 709
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "line-1 name",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 710
+        }
+      }, "Tropical Butterfly"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "line-2 role",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 711
+        }
+      }, "FG rating 8 / 10"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "info",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 712
+        }
+      }, "If you dream of escaping to a tropical climate, where exotic birds and butterflies fly freely over your head in a rainforest-like setting, then the Tropical Butterfly House is for you.", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 714
+        }
+      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 714
         }
       }), "Getting immersed in nature is what this wildlife and falconry centre is all about. Whether it\u2019s brightly coloured winged creatures flying around your head, walking through Meerkat Mansion, handling a bird of prey or, for the bravest, there are snakes, crocodiles and spiders in the Tropical House!"))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "slider-controls on-dark",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 710
+          lineNumber: 721
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "slider-control active",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 711
+          lineNumber: 722
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "slider-control",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 712
+          lineNumber: 723
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "slider-control",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 713
+          lineNumber: 724
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "slider-control",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 714
+          lineNumber: 725
         }
       }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "rooms-section",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 718
+          lineNumber: 729
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 719
+          lineNumber: 730
         }
       }, "oh, and the rooms"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "intro",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 722
+          lineNumber: 733
         }
       }, "And what you\u2019re naturally here for, the rooms available in our building. We have 3 types available ranging through communal kitchen floors to private studio flats."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "rooms-type",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 725
+          lineNumber: 736
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row align-items-center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 726
+          lineNumber: 737
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "col-md-6 room-part-name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 727
+          lineNumber: 738
         }
       }, "classic Bedrooms"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "col-md-6 book-btn-wrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 730
+          lineNumber: 741
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn-dark-orange-border",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 731
+          lineNumber: 742
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 732
+          lineNumber: 743
         }
       }, "Book"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "btn btn-border",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 733
+          lineNumber: 744
         }
       })))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "hero-image",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 737
+          lineNumber: 748
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/FG_UI01_assets_location_bedroom hero.jpg",
@@ -2985,37 +2218,37 @@ function (_React$Component) {
         className: "img-fluid",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 738
+          lineNumber: 749
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 739
+          lineNumber: 750
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 740
+          lineNumber: 751
         }
       }, "Pan around what could be your bedroom, come multi-million business origin story"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "horizontal-line",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 743
+          lineNumber: 754
         }
       }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row additional-info",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 746
+          lineNumber: 757
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "col-md-6 images",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 747
+          lineNumber: 758
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/FG_UI01_assets_location_bedroom thumbnail 1.jpg",
@@ -3023,7 +2256,7 @@ function (_React$Component) {
         className: "img-fluid",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 748
+          lineNumber: 759
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/FG_UI01_assets_location_bedroom thumbnail 2.jpg",
@@ -3031,37 +2264,37 @@ function (_React$Component) {
         className: "img-fluid",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 749
+          lineNumber: 760
         }
       })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "col-md-4 offset-md-1 text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 751
+          lineNumber: 762
         }
       }, "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row align-items-center",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 756
+          lineNumber: 767
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "col-md-6 room-part-name",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 757
+          lineNumber: 768
         }
       }, "classic Kitchen"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "col-md-6 book-btn-wrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 760
+          lineNumber: 771
         }
       })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "hero-image",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 763
+          lineNumber: 774
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/FG_UI01_assets_location_kitchen hero.jpg",
@@ -3069,37 +2302,37 @@ function (_React$Component) {
         className: "img-fluid",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 764
+          lineNumber: 775
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 765
+          lineNumber: 776
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 766
+          lineNumber: 777
         }
       }, "Look around a space where you\u2019ll revise, drink, regret drinking, and have deep conversations over pizza"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "horizontal-line",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 769
+          lineNumber: 780
         }
       }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "row additional-info",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 772
+          lineNumber: 783
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "col-md-6 images",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 773
+          lineNumber: 784
         }
       }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/FG_UI01_assets_location_bedroom thumbnail 1.jpg",
@@ -3107,7 +2340,7 @@ function (_React$Component) {
         className: "img-fluid",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 774
+          lineNumber: 785
         }
       }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
         src: "/static/images/FG_UI01_assets_location_bedroom thumbnail 2.jpg",
@@ -3115,20 +2348,25 @@ function (_React$Component) {
         className: "img-fluid",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 775
+          lineNumber: 786
         }
       })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
         className: "col-md-4 offset-md-1 text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 777
+          lineNumber: 788
         }
       }, "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__components_Footer__["a" /* default */], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 784
+          lineNumber: 795
         }
       }));
+    }
+  }, {
+    key: "__reactstandin__regenerateByEval",
+    value: function __reactstandin__regenerateByEval(key, code) {
+      this[key] = eval(code);
     }
   }], [{
     key: "getInitialProps",
@@ -3176,266 +2414,52 @@ var mapStateToProps = function mapStateToProps(state) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_6_react_redux__["connect"])(mapStateToProps, null)(LocationPage));
+var _default = Object(__WEBPACK_IMPORTED_MODULE_6_react_redux__["b" /* connect */])(mapStateToProps, null)(LocationPage);
 
-/***/ }),
+/* harmony default export */ __webpack_exports__["default"] = (_default);
+;
 
-/***/ "./reducers/index.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+(function () {
+  var reactHotLoader = __webpack_require__("./node_modules/react-hot-loader/index.js").default;
 
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__("redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_redux__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actions__ = __webpack_require__("./actions/index.js");
+  var leaveModule = __webpack_require__("./node_modules/react-hot-loader/index.js").leaveModule;
 
-
-
-function currentLocation() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
-    isFetching: false,
-    item: null
-  };
-  var action = arguments.length > 1 ? arguments[1] : undefined;
-
-  switch (action.type) {
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["f" /* REQUEST_CURRENT_LOCATION */]:
-      return Object.assign({}, state, {
-        isFetching: true
-      });
-
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["d" /* RECEIVE_CURRENT_LOCATION */]:
-      return Object.assign({}, state, {
-        isFetching: false,
-        item: action.location,
-        lastUpdated: action.receivedAt
-      });
-
-    default:
-      return state;
+  if (!reactHotLoader) {
+    return;
   }
-}
 
-function locations() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
-    isFetching: false,
-    items: []
-  };
-  var action = arguments.length > 1 ? arguments[1] : undefined;
+  reactHotLoader.register(whenSoberBlock, "whenSoberBlock", "C:\\Users\\venom\\Desktop\\future_generation\\front\\pages\\location.jsx");
+  reactHotLoader.register(roomTypeSelectorTrigger, "roomTypeSelectorTrigger", "C:\\Users\\venom\\Desktop\\future_generation\\front\\pages\\location.jsx");
+  reactHotLoader.register(roomTypeSelectorTriggerHeight, "roomTypeSelectorTriggerHeight", "C:\\Users\\venom\\Desktop\\future_generation\\front\\pages\\location.jsx");
+  reactHotLoader.register(whenSoberBottomOffset, "whenSoberBottomOffset", "C:\\Users\\venom\\Desktop\\future_generation\\front\\pages\\location.jsx");
+  reactHotLoader.register(LocationPage, "LocationPage", "C:\\Users\\venom\\Desktop\\future_generation\\front\\pages\\location.jsx");
+  reactHotLoader.register(mapStateToProps, "mapStateToProps", "C:\\Users\\venom\\Desktop\\future_generation\\front\\pages\\location.jsx");
+  reactHotLoader.register(_default, "default", "C:\\Users\\venom\\Desktop\\future_generation\\front\\pages\\location.jsx");
+  leaveModule(module);
+})();
 
-  switch (action.type) {
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["g" /* REQUEST_LOCATIONS */]:
-      return Object.assign({}, state, {
-        isFetching: true
-      });
+;
+    (function (Component, route) {
+      if(!Component) return
+      if (false) return
+      module.hot.accept()
+      Component.__route = route
 
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["e" /* RECEIVE_LOCATIONS */]:
-      return Object.assign({}, state, {
-        isFetching: false,
-        items: action.locations,
-        lastUpdated: action.receivedAt
-      });
+      if (module.hot.status() === 'idle') return
 
-    default:
-      return state;
-  }
-}
+      var components = next.router.components
+      for (var r in components) {
+        if (!components.hasOwnProperty(r)) continue
 
-function authDialog() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
-    isVisible: false,
-    isSubmitting: false,
-    identifier: null,
-    password: null,
-    auth: null,
-    error: null
-  };
-  var action = arguments.length > 1 ? arguments[1] : undefined;
-
-  switch (action.type) {
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["h" /* SHOW_AUTH_DIALOG */]:
-      return Object.assign({}, state, {
-        isVisible: true
-      });
-
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["a" /* HIDE_AUTH_DIALOG */]:
-      return Object.assign({}, state, {
-        isVisible: false
-      });
-
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["j" /* SUBMIT_AUTH_DIALOG */]:
-      return Object.assign({}, state, {
-        isSubmitting: true,
-        identifier: action.identifier,
-        password: action.password
-      });
-
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["c" /* PROCESS_AUTH_DIALOG */]:
-      return Object.assign({}, state, {
-        isSubmitting: false,
-        isVisible: false,
-        auth: action.auth
-      });
-
-    default:
-      return state;
-  }
-}
-
-function mainMenu() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
-    isVisible: false
-  };
-  var action = arguments.length > 1 ? arguments[1] : undefined;
-
-  switch (action.type) {
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["i" /* SHOW_MAIN_MENU */]:
-      return Object.assign({}, state, {
-        isVisible: true
-      });
-
-    case __WEBPACK_IMPORTED_MODULE_1__actions__["b" /* HIDE_MAIN_MENU */]:
-      return Object.assign({}, state, {
-        isVisible: false
-      });
-
-    default:
-      return state;
-  }
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_0_redux__["combineReducers"])({
-  currentLocation: currentLocation,
-  locations: locations,
-  authDialog: authDialog,
-  mainMenu: mainMenu
-}));
-
-/***/ }),
-
-/***/ "./store.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return initStore; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__("redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_redux__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_redux_devtools_extension__ = __webpack_require__("redux-devtools-extension");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_redux_devtools_extension___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_redux_devtools_extension__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_redux_thunk__ = __webpack_require__("redux-thunk");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_redux_thunk___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_redux_thunk__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__actions__ = __webpack_require__("./actions/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__reducers__ = __webpack_require__("./reducers/index.js");
-
-
-
-
-
-var appInitialState = {
-  locations: [],
-  currentLocation: null,
-  mainMenu: {
-    isVisible: false
-  },
-  authDialog: {
-    isVisible: false,
-    isSubmitting: false,
-    identifier: '',
-    password: '',
-    auth: null,
-    error: null
-  }
-};
-var initStore = function initStore() {
-  var initialState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : appInitialState;
-  return Object(__WEBPACK_IMPORTED_MODULE_0_redux__["createStore"])(__WEBPACK_IMPORTED_MODULE_4__reducers__["a" /* default */], initialState, Object(__WEBPACK_IMPORTED_MODULE_1_redux_devtools_extension__["composeWithDevTools"])(Object(__WEBPACK_IMPORTED_MODULE_0_redux__["applyMiddleware"])(__WEBPACK_IMPORTED_MODULE_2_redux_thunk___default.a)));
-};
-
-/***/ }),
-
-/***/ 5:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__("./pages/location.jsx");
-
-
-/***/ }),
-
-/***/ "@babel/runtime/regenerator":
-/***/ (function(module, exports) {
-
-module.exports = require("@babel/runtime/regenerator");
-
-/***/ }),
-
-/***/ "isomorphic-unfetch":
-/***/ (function(module, exports) {
-
-module.exports = require("isomorphic-unfetch");
-
-/***/ }),
-
-/***/ "next/head":
-/***/ (function(module, exports) {
-
-module.exports = require("next/head");
-
-/***/ }),
-
-/***/ "next/link":
-/***/ (function(module, exports) {
-
-module.exports = require("next/link");
-
-/***/ }),
-
-/***/ "prop-types":
-/***/ (function(module, exports) {
-
-module.exports = require("prop-types");
-
-/***/ }),
-
-/***/ "react":
-/***/ (function(module, exports) {
-
-module.exports = require("react");
-
-/***/ }),
-
-/***/ "react-bootstrap":
-/***/ (function(module, exports) {
-
-module.exports = require("react-bootstrap");
-
-/***/ }),
-
-/***/ "react-redux":
-/***/ (function(module, exports) {
-
-module.exports = require("react-redux");
-
-/***/ }),
-
-/***/ "redux":
-/***/ (function(module, exports) {
-
-module.exports = require("redux");
-
-/***/ }),
-
-/***/ "redux-devtools-extension":
-/***/ (function(module, exports) {
-
-module.exports = require("redux-devtools-extension");
-
-/***/ }),
-
-/***/ "redux-thunk":
-/***/ (function(module, exports) {
-
-module.exports = require("redux-thunk");
+        if (components[r].Component.__route === route) {
+          next.router.update(r, Component)
+        }
+      }
+    })(typeof __webpack_exports__ !== 'undefined' ? __webpack_exports__.default : (module.exports.default || module.exports), "/location")
+  
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__("./node_modules/webpack/buildin/harmony-module.js")(module)))
 
 /***/ })
 
-/******/ });
-//# sourceMappingURL=location.js.map
+})
+//# sourceMappingURL=6.1b4169f6461cba3a888c.hot-update.js.map

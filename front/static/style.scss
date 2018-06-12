@@ -91,6 +91,11 @@ a:hover {
 		.row {
 			margin: 0;
 		}
+		.image-wrapper {
+			.image {
+				display: none;
+			}
+		}
 		.description {
 			position: relative;
 			padding-left: 15px;
@@ -155,18 +160,18 @@ a:hover {
 					overflow: hidden;
 					position: relative;
 					.image {
+						display: block;
 						position: absolute;
 						top: 0;
 						left: 0;
 						width: 100%;
 						height: 100%;
-						display: flex;
-					    align-items: center;
-					    justify-content: center;
-						img {
-							max-width: none;
-							width: 100%;
-						}
+						background-repeat: no-repeat;
+						background-size: cover;
+						background-position: center;
+					}
+					img {
+						display: none;
 					}
 				}
 				.description {
