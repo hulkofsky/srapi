@@ -91,7 +91,7 @@ class Header extends React.Component {
         <nav className={navClasses.join(' ')}>
           <Link href={{ pathname: '/' }}>
             <a className="main-menu-item">
-              <img className="logo" src="/static/svg/logo.svg" alt="logo" onClick={this.toggleMainMenu.bind(this)} />
+              <img className="logo" src="/static/svg/logo.svg" alt="logo" onClick={this.props.hideMainMenu.bind(this)} />
             </a>
           </Link>
           <div className="burger" onClick={this.toggleMainMenu.bind(this)}></div>

@@ -129,6 +129,19 @@ class HomePage extends React.Component {
 
   handleJustLivingScroll(e) {
     let justLivingSlidingBlock = this.state.justLivingSlidingBlock
+    let bounds = justLivingSlidingBlock.getBoundingClientRect()
+
+    if (e.deltaY > 0) {
+      if (bounds.y > 90) {
+        return
+      }
+    }
+
+    if (e.deltaY < 0) {
+      if ((bounds.height + bounds.y) <= window.innerHeight) {
+        return
+      }
+    }
 
     justLivingSlidingBlock.scrollLeft += e.deltaY
 
@@ -316,11 +329,10 @@ class HomePage extends React.Component {
         <div className="line line3"></div>
 
         <div className="just-living-block">
-          <div className="football">
-            We put a football pitch on your roof and a cinema in your basement.
-          </div>
-
           <div className="sliding-block">
+            <div className="football">
+              We put a football pitch on your roof and a cinema in your basement.
+            </div>
             <div className="quote">
               THIS ISN’T <br/>
               STUDENT LIVING. <br/>

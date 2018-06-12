@@ -583,7 +583,7 @@ function (_React$Component) {
         className: "logo",
         src: "/static/svg/logo.svg",
         alt: "logo",
-        onClick: this.toggleMainMenu.bind(this),
+        onClick: this.props.hideMainMenu.bind(this),
         __source: {
           fileName: _jsxFileName,
           lineNumber: 94
