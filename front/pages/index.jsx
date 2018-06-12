@@ -434,69 +434,69 @@ class HomePage extends React.Component {
           </div>
 
           <div className="locations-list">
-            <div className="location-item d-flex align-items-center justify-content-center type-1">
-              <div className="left">
-                <div className="image">
-                  <img src="/static/images/FG_UI01_assets_home_location 1 main.jpg" className="img-fluid" alt="" />
+            <Link href={{ pathname: '/location', query: { id: 1 } }}>
+              <a className="location-item d-flex align-items-center justify-content-center type-1">
+                <div className="left">
+                  <div className="image">
+                    <img src="/static/images/FG_UI01_assets_home_location 1 main.jpg" className="img-fluid" alt="" />
+                  </div>
+                  <div className="caption">featuring the UKs first LED cinema on site</div>
                 </div>
-                <div className="caption">featuring the UKs first LED cinema on site</div>
-              </div>
-              <div className="right">
-                <div className="image">
-                  <img src="/static/images/FG_UI01_assets_home_location 1 detail.jpg" className="img-fluid" alt="" />
+                <div className="right">
+                  <div className="image">
+                    <img src="/static/images/FG_UI01_assets_home_location 1 detail.jpg" className="img-fluid" alt="" />
+                  </div>
                 </div>
-              </div>
-              <div className="center-block">
-                <Link href={{ pathname: '/location', query: { id: 1 } }}>
-                  <a className="location-name">
+                <div className="center-block">
+                  <span className="location-name">
                     Guildford
-                  </a>
-                </Link>
-                <div className="caption">featuring the UKs first LED cinema on site</div>
-              </div>
-            </div>
-            <div className="location-item d-flex align-items-center justify-content-center type-2">
-              <div className="left">
-                <div className="image">
-                  <img src="/static/images/FG_UI01_assets_home_location 2 detail.jpg" className="img-fluid" alt="" />
+                  </span>
+                  <div className="caption">featuring the UKs first LED cinema on site</div>
                 </div>
-              </div>
-              <div className="right">
-                <div className="image">
-                  <img src="/static/images/FG_UI01_assets_home_location 2 main.jpg" className="img-fluid" alt="" />
+              </a>
+            </Link>
+            <Link href={{ pathname: '/location', query: { id: 1 } }}>
+              <a className="location-item d-flex align-items-center justify-content-center type-2">
+                <div className="left">
+                  <div className="image">
+                    <img src="/static/images/FG_UI01_assets_home_location 2 detail.jpg" className="img-fluid" alt="" />
+                  </div>
                 </div>
-                <div className="caption">featuring the UKs first LED cinema on site</div>
-              </div>
-              <div className="center-block">
-                <Link href={{ pathname: '/location', query: { id: 1 } }}>
-                  <a className="location-name">
+                <div className="right">
+                  <div className="image">
+                    <img src="/static/images/FG_UI01_assets_home_location 2 main.jpg" className="img-fluid" alt="" />
+                  </div>
+                  <div className="caption">featuring the UKs first LED cinema on site</div>
+                </div>
+                <div className="center-block">
+                  <span className="location-name">
                     colechester
-                  </a>
-                </Link>
-                <div className="caption">featuring the UKs first LED cinema on site</div>
-              </div>
-            </div>
-            <div className="location-item d-flex align-items-center justify-content-center type-1">
-              <div className="left">
-                <div className="image">
-                  <img src="/static/images/FG_UI01_assets_home_location 1 main.jpg" className="img-fluid" alt="" />
+                  </span>
+                  <div className="caption">featuring the UKs first LED cinema on site</div>
                 </div>
-                <div className="caption">featuring the UKs first LED cinema on site</div>
-              </div>
-              <div className="right">
-                <div className="image">
-                  <img src="/static/images/FG_UI01_assets_home_location 1 detail.jpg" className="img-fluid" alt="" />
+              </a>
+            </Link>
+            <Link href={{ pathname: '/location', query: { id: 1 } }}>
+              <a className="location-item d-flex align-items-center justify-content-center type-1">
+                <div className="left">
+                  <div className="image">
+                    <img src="/static/images/FG_UI01_assets_home_location 1 main.jpg" className="img-fluid" alt="" />
+                  </div>
+                  <div className="caption">featuring the UKs first LED cinema on site</div>
                 </div>
-              </div>
-              <div className="center-block">
-                <Link href={{ pathname: '/location', query: { id: 1 } }}>
-                  <a className="location-name">
+                <div className="right">
+                  <div className="image">
+                    <img src="/static/images/FG_UI01_assets_home_location 1 detail.jpg" className="img-fluid" alt="" />
+                  </div>
+                </div>
+                <div className="center-block">
+                  <span className="location-name">
                     Guildford
-                  </a>
-                </Link>
-                <div className="caption">featuring the UKs first LED cinema on site</div>
-              </div>
-            </div>
+                  </span>
+                  <div className="caption">featuring the UKs first LED cinema on site</div>
+                </div>
+              </a>
+            </Link>
           </div>
         </div>
 
