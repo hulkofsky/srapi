@@ -11,6 +11,14 @@
 @font-face {
     font-family: ProximaNova;
     font-style: normal;
+    font-weight: 600;
+    src: url(/static/fonts/MarkSimonsonProximaNovaSemibold.eot);
+    src: local("ProximaNova Semibold"),local("ProximaNova Semibold"),url(/static/fonts/MarkSimonsonProximaNovaSemibold.eot?#iefix) format("embedded-opentype"),url(/static/fonts/MarkSimonsonProximaNovaSemibold.woff) format("woff"),url(/static/fonts/MarkSimonsonProximaNovaSemibold.ttf) format("truetype"),url(/static/fonts/MarkSimonsonProximaNovaSemibold.svg#ProximaNova) format("svg")
+}
+
+@font-face {
+    font-family: ProximaNova;
+    font-style: normal;
     font-weight: 900;
     src: url(/static/fonts/ProximaNovaBlack.eot);
     src: local("ProximaNova Black"),local("ProximaNovaBlack"),url(/static/fonts/ProximaNovaBlack.eot?#iefix) format("embedded-opentype"),url(/static/fonts/ProximaNovaBlack.woff) format("woff"),url(/static/fonts/ProximaNovaBlack.ttf) format("truetype"),url(/static/fonts/ProximaNovaBlack.svg#ProximaNova) format("svg")
@@ -178,7 +186,7 @@ a:hover {
 					width: 100%;
 					padding-left: 0;
 					.line-1 {
-						font-size: 3vw;
+						font-size: 21px;
 						margin-top: 10px;
 					}
 					&:after {
@@ -963,15 +971,13 @@ a:hover {
 .just-living-block {
     padding: 140px 0 0;
 	.football {
-	    letter-spacing: -.6px;
 	    color: #191714;
-	    margin-bottom: 25px
+	    margin-bottom: 25px;
+	    padding-left: 9.75%;
+	    font-weight: bold;
 	}
 	.row {
 	    margin: 0
-	}
-	.football {
-	    padding-left: 9.75%
 	}
 	.roof {
 	    background: url(/static/images/football.png);
@@ -1668,7 +1674,7 @@ a:hover {
 
 .location-page {
 	.hero-block {
-		padding-bottom: 10vw;
+		padding-bottom: 20vw;
 		.main-image {
 			background: url('/static/images/FG_UI01_assets_location_hero.jpg') center no-repeat;
 			background-size: cover;
@@ -1707,7 +1713,7 @@ a:hover {
 				padding-top: 3%;
 				.content-container {
 					.caption {
-						font-size: 3vw;
+						font-size: 21px;
 					}
 					.city-name {
 						font-size: 21vw;
@@ -1729,6 +1735,7 @@ a:hover {
 			padding-bottom: 5px;
 			text-transform: uppercase;
 			font-size: 20px;
+			font-weight: 600;
 			display: inline-block;
 		}
 		.sections-and-slogan {
@@ -2199,6 +2206,7 @@ a:hover {
 			}
 			.intro {
 				width: 100%;
+				font-size: 21px;
 			}
 			.room-part-name {
 				font-size: 4vw;
@@ -2212,7 +2220,7 @@ a:hover {
 					.text {
 						text-align: center;
 						padding: 0 10%;
-						font-size: 3vw;
+						font-size: 21px;
 					}
 					.horizontal-line {
 						display: none;
@@ -2231,7 +2239,7 @@ a:hover {
 				}
 				.text {
 					margin-top: 25px;
-					font-size: 3vw;
+					font-size: 21px;
 				}
 			}
 		}
