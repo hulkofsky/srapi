@@ -7386,10 +7386,11 @@ a:hover {
     margin-bottom: 90px;
     letter-spacing: -.5px; }
   .tour-block .animated-image {
-    transition: 0.5s; }
+    transition: 0.5s;
+    transform: scale(0.9); }
     .tour-block .animated-image.scrolled-into-view {
       opacity: 1;
-      transform: scale(1.05); }
+      transform: scale(1); }
   .tour-block .bedroom {
     opacity: .9; }
   .tour-block .kitchen {
@@ -7426,6 +7427,7 @@ a:hover {
   .tour-block .quote {
     line-height: 1.81;
     color: #191714;
+    text-align: justify;
     margin-top: 80px;
     margin-bottom: 40px; }
   .tour-block .btn.tour {
@@ -7450,7 +7452,9 @@ a:hover {
     .tour-block .bathroom-block {
       margin-top: 0; }
     .tour-block .quote-block .btn {
-      width: 100%; } }
+      width: 100%; }
+    .tour-block .quote-block .quote {
+      font-size: 21px; } }
 
 @media screen and (max-width: 740px) {
   .tour-block {
@@ -7659,7 +7663,11 @@ a:hover {
         margin-left: 0; }
       .just-living-block .sliding-block .roof-block .available {
         width: 80%;
-        margin: 20px 10% 0 10%; }
+        margin: 20px 10% 0 10%;
+        font-size: 21px;
+        text-align: justify; }
+        .just-living-block .sliding-block .roof-block .available .available-title {
+          text-align: left; }
       .just-living-block .sliding-block .roof-block .background-quote {
         display: none; }
       .just-living-block .sliding-block .roof-block .advantage-image {

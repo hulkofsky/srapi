@@ -801,9 +801,10 @@ a:hover {
 	}
 	.animated-image {
 		transition: 0.5s;
+		transform: scale(0.9);
 		&.scrolled-into-view {
 			opacity: 1;
-			transform: scale(1.05);
+			transform: scale(1.00);
 		}
 	}
 	.bedroom {
@@ -851,6 +852,7 @@ a:hover {
 	.quote {
 	    line-height: 1.81;
 	    color: #191714;
+	    text-align: justify;
 	    margin-top: 80px;
 	    margin-bottom: 40px
 	}
@@ -890,6 +892,9 @@ a:hover {
 		.quote-block {
 			.btn {
 				width: 100%;
+			}
+			.quote {
+				font-size: 21px;
 			}
 		}
 	}
@@ -1175,6 +1180,11 @@ a:hover {
 				.available {
 					width: 80%;
 					margin: 20px 10% 0 10%;
+					font-size: 21px;
+					text-align: justify;
+					.available-title {
+						text-align: left;
+					}
 				}
 				.background-quote {
 					display: none;
