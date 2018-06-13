@@ -90,14 +90,14 @@ module.exports =
 /* unused harmony export requestLocations */
 /* unused harmony export receiveCurrentLocation */
 /* unused harmony export receiveLocations */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return fetchCurrentLocation; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return fetchLocations; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return showAuthDialog; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return hideAuthDialog; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return showMainMenu; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return hideMainMenu; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return submitAuthDialog; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return processAuthDialog; });
+/* unused harmony export fetchCurrentLocation */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return fetchLocations; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return showAuthDialog; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return hideAuthDialog; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return showMainMenu; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return hideMainMenu; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return submitAuthDialog; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return processAuthDialog; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch__ = __webpack_require__("isomorphic-unfetch");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch__);
 
@@ -712,12 +712,12 @@ var mapStateToProps = function mapStateToProps(state) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    showAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["p" /* showAuthDialog */], dispatch),
-    hideAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["m" /* hideAuthDialog */], dispatch),
-    submitAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["r" /* submitAuthDialog */], dispatch),
-    processAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["o" /* processAuthDialog */], dispatch),
-    showMainMenu: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["q" /* showMainMenu */], dispatch),
-    hideMainMenu: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["n" /* hideMainMenu */], dispatch)
+    showAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["o" /* showAuthDialog */], dispatch),
+    hideAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["l" /* hideAuthDialog */], dispatch),
+    submitAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["q" /* submitAuthDialog */], dispatch),
+    processAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["n" /* processAuthDialog */], dispatch),
+    showMainMenu: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["p" /* showMainMenu */], dispatch),
+    hideMainMenu: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["m" /* hideMainMenu */], dispatch)
   };
 };
 
@@ -725,29 +725,26 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 
 /***/ }),
 
-/***/ "./pages/index.jsx":
+/***/ "./components/LocationsList.jsx":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__ = __webpack_require__("@babel/runtime/regenerator");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__("prop-types");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_redux__ = __webpack_require__("redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_redux__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__actions__ = __webpack_require__("./actions/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store__ = __webpack_require__("./store.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_redux__ = __webpack_require__("react-redux");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react_redux__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_next_link__ = __webpack_require__("next/link");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_next_link__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Header__ = __webpack_require__("./components/Header.jsx");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Footer__ = __webpack_require__("./components/Footer.jsx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_redux__ = __webpack_require__("react-redux");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_redux__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__("prop-types");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_redux__ = __webpack_require__("redux");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_redux__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__actions__ = __webpack_require__("./actions/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_next_link__ = __webpack_require__("next/link");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_next_link__);
 
-var _jsxFileName = "C:\\Users\\venom\\Desktop\\future_generation\\front\\pages\\index.jsx";
+var _jsxFileName = "C:\\Users\\venom\\Desktop\\future_generation\\front\\components\\LocationsList.jsx";
+
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -765,6 +762,578 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
+
+
+
+
+
+
+var LocationsList =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(LocationsList, _React$Component);
+
+  function LocationsList() {
+    var _ref;
+
+    var _temp, _this;
+
+    _classCallCheck(this, LocationsList);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _possibleConstructorReturn(_this, (_temp = _this = _possibleConstructorReturn(this, (_ref = LocationsList.__proto__ || Object.getPrototypeOf(LocationsList)).call.apply(_ref, [this].concat(args))), Object.defineProperty(_assertThisInitialized(_this), "state", {
+      configurable: true,
+      enumerable: true,
+      writable: true,
+      value: {
+        regionSelectorOpened: false,
+        selectedRegion: 'All of'
+      }
+    }), _temp));
+  }
+
+  _createClass(LocationsList, [{
+    key: "toggleRegionSelector",
+    value: function toggleRegionSelector() {
+      this.setState({
+        regionSelectorOpened: !this.state.regionSelectorOpened
+      });
+    }
+  }, {
+    key: "setSelectedRegion",
+    value: function setSelectedRegion(region) {
+      this.setState({
+        selectedRegion: region
+      });
+      this.toggleRegionSelector();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this2 = this;
+
+      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "locations-block",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 30
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "caption-region-selector",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 31
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 32
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "paragraph col-md-6 col-lg-4",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 33
+        }
+      }, "With over 30 locations across the country, we want there to be a location especially for you. Once you\u2019ve found the best fit, view it\u2019s bespoke page full of local trivia, recommendations and flat details to get you going in your new city."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "region-selector-container col-md-6 col-lg-4 offset-lg-4 justify-content-md-end justify-content-center d-flex",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 36
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "region-selector-prefix",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 37
+        }
+      }, "Region:"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: ['region-selector', this.state.regionSelectorOpened ? 'opened' : ''].join(' '),
+        onClick: function onClick() {
+          return _this2.toggleRegionSelector();
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 38
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "selected-region",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 39
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("span", {
+        className: "region-name",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 39
+        }
+      }, this.state.selectedRegion)), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "other-regions",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 40
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "region-item",
+        onClick: function onClick() {
+          return _this2.setSelectedRegion('Northern');
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 41
+        }
+      }, "Northern"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "region-item",
+        onClick: function onClick() {
+          return _this2.setSelectedRegion('Middle');
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 42
+        }
+      }, "Middle"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "region-item",
+        onClick: function onClick() {
+          return _this2.setSelectedRegion('Southern');
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 43
+        }
+      }, "Southern"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "region-item",
+        onClick: function onClick() {
+          return _this2.setSelectedRegion('South West');
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 44
+        }
+      }, "South West"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "region-item",
+        onClick: function onClick() {
+          return _this2.setSelectedRegion('South East');
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 45
+        }
+      }, "South East"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "region-item",
+        onClick: function onClick() {
+          return _this2.setSelectedRegion('All of');
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 46
+        }
+      }, "All of")))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "locations-list",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 53
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_next_link___default.a, {
+        href: {
+          pathname: '/location',
+          query: {
+            id: 1
+          }
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("a", {
+        className: "location-item d-flex align-items-center justify-content-center type-1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 55
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "left",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 57
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
+        src: "/static/images/FG_UI01_assets_home_location 1 main.jpg",
+        className: "img-fluid",
+        alt: "",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 58
+        }
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "caption",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 60
+        }
+      }, "featuring the UKs first LED cinema on site")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "right",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 62
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 63
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
+        src: "/static/images/FG_UI01_assets_home_location 1 detail.jpg",
+        className: "img-fluid",
+        alt: "",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 64
+        }
+      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "center-block",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 67
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("span", {
+        className: "location-name",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 68
+        }
+      }, "Guildford"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "caption",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 71
+        }
+      }, "featuring the UKs first LED cinema on site")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_next_link___default.a, {
+        href: {
+          pathname: '/location',
+          query: {
+            id: 1
+          }
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 75
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("a", {
+        className: "location-item d-flex align-items-center justify-content-center type-2",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 76
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "left",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 77
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 78
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
+        src: "/static/images/FG_UI01_assets_home_location 2 detail.jpg",
+        className: "img-fluid",
+        alt: "",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 79
+        }
+      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "right",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 82
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 83
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
+        src: "/static/images/FG_UI01_assets_home_location 2 main.jpg",
+        className: "img-fluid",
+        alt: "",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 84
+        }
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "caption",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 86
+        }
+      }, "featuring the UKs first LED cinema on site")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "center-block",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 88
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("span", {
+        className: "location-name",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 89
+        }
+      }, "colechester"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "caption",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 92
+        }
+      }, "featuring the UKs first LED cinema on site")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6_next_link___default.a, {
+        href: {
+          pathname: '/location',
+          query: {
+            id: 1
+          }
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 96
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("a", {
+        className: "location-item d-flex align-items-center justify-content-center type-1",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 97
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "left",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 98
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 99
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
+        src: "/static/images/FG_UI01_assets_home_location 1 main.jpg",
+        className: "img-fluid",
+        alt: "",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 100
+        }
+      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "caption",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 102
+        }
+      }, "featuring the UKs first LED cinema on site")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "right",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 104
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 105
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
+        src: "/static/images/FG_UI01_assets_home_location 1 detail.jpg",
+        className: "img-fluid",
+        alt: "",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 106
+        }
+      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "center-block",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 109
+        }
+      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("span", {
+        className: "location-name",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 110
+        }
+      }, "Guildford"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+        className: "caption",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 113
+        }
+      }, "featuring the UKs first LED cinema on site"))))));
+    }
+  }], [{
+    key: "getInitialProps",
+    value: function () {
+      var _getInitialProps = _asyncToGenerator(
+      /*#__PURE__*/
+      __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee(_ref2) {
+        var store, pathname, query;
+        return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                store = _ref2.store, pathname = _ref2.pathname, query = _ref2.query;
+                _context.next = 3;
+                return store.dispatch(Object(__WEBPACK_IMPORTED_MODULE_5__actions__["k" /* fetchLocations */])());
+
+              case 3:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      return function getInitialProps(_x) {
+        return _getInitialProps.apply(this, arguments);
+      };
+    }()
+  }]);
+
+  return LocationsList;
+}(__WEBPACK_IMPORTED_MODULE_1_react___default.a.Component);
+
+LocationsList.propTypes = {
+  locations: __WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.arrayOf(__WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.shape({
+    id: __WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.number,
+    name: __WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.string,
+    url: __WEBPACK_IMPORTED_MODULE_3_prop_types___default.a.string
+  }))
+};
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    locations: state.locations.items
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    fetchLocations: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["k" /* fetchLocations */], dispatch)
+  };
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_2_react_redux__["connect"])(mapStateToProps, mapDispatchToProps)(LocationsList));
+
+/***/ }),
+
+/***/ "./components/MailingBlock.jsx":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux__ = __webpack_require__("react-redux");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_redux__);
+var _jsxFileName = "C:\\Users\\venom\\Desktop\\future_generation\\front\\components\\MailingBlock.jsx";
+
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+var MailingBlock =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(MailingBlock, _React$Component);
+
+  function MailingBlock() {
+    _classCallCheck(this, MailingBlock);
+
+    return _possibleConstructorReturn(this, (MailingBlock.__proto__ || Object.getPrototypeOf(MailingBlock)).apply(this, arguments));
+  }
+
+  _createClass(MailingBlock, [{
+    key: "render",
+    value: function render() {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "mailing-block text-center",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 6
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "caption",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 7
+        }
+      }, "sign up to our mailing"));
+    }
+  }]);
+
+  return MailingBlock;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["connect"])(null, null)(MailingBlock));
+
+/***/ }),
+
+/***/ "./pages/index.jsx":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__store__ = __webpack_require__("./store.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_redux__ = __webpack_require__("react-redux");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_redux__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_link__ = __webpack_require__("next/link");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_next_link___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_next_link__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Header__ = __webpack_require__("./components/Header.jsx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_MailingBlock__ = __webpack_require__("./components/MailingBlock.jsx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_LocationsList__ = __webpack_require__("./components/LocationsList.jsx");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Footer__ = __webpack_require__("./components/Footer.jsx");
+var _jsxFileName = "C:\\Users\\venom\\Desktop\\future_generation\\front\\pages\\index.jsx";
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 
 
@@ -819,9 +1388,7 @@ function (_React$Component) {
         advantageItemSvgTextAnchor: 'end',
         activeAdvantageItem: null,
         justLivingSlidingBlock: null,
-        justLivingSlidingBlockTouchLastY: 0,
-        regionSelectorOpened: false,
-        selectedRegion: 'All of'
+        justLivingSlidingBlockTouchLastY: 0
       }
     }), _temp));
   }
@@ -967,45 +1534,30 @@ function (_React$Component) {
       }
     }
   }, {
-    key: "toggleRegionSelector",
-    value: function toggleRegionSelector() {
-      this.setState({
-        regionSelectorOpened: !this.state.regionSelectorOpened
-      });
-    }
-  }, {
-    key: "setSelectedRegion",
-    value: function setSelectedRegion(region) {
-      this.setState({
-        selectedRegion: region
-      });
-      this.toggleRegionSelector();
-    }
-  }, {
     key: "render",
     value: function render() {
       var _this4 = this;
 
       var locations = this.props.locations;
-      return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "homepage",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 186
+          lineNumber: 168
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__components_Header__["a" /* default */], {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Header__["a" /* default */], {
         title: "home page",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 187
+          lineNumber: 169
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "skateboard-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 189
+          lineNumber: 171
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("video", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("video", {
         autoPlay: true,
         muted: true,
         loop: true,
@@ -1013,140 +1565,140 @@ function (_React$Component) {
         className: "heroVideo",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 190
+          lineNumber: 172
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("source", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("source", {
         src: "/static/siska.mp4",
         type: "video/mp4",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 191
+          lineNumber: 173
         }
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "btn-container",
         onClick: function onClick() {
           return _this4.scrollToBlock('.status-quo-block');
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 194
+          lineNumber: 176
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "btn",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 195
+          lineNumber: 177
         }
-      }, "future generation"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, "future generation"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "btn btn-border",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 196
+          lineNumber: 178
         }
-      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "status-quo-block",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 182
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "caption",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 183
+        }
+      }, "The status quo doesn't make great leaders ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 184
+        }
+      }), " or change ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 184
+        }
+      }), " the world.")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "give-a-fuck-block",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 188
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 189
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "col-md-4 p0 image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 190
+        }
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "col-md-8 p0 quote",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 192
+        }
+      }, "we don\u2019t give a fuck about the status quo"))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "keep-talking-block",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 198
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 199
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "col-md-4 p0",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 200
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "caption",
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
+        className: "paragraph",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 201
         }
-      }, "The status quo doesn't make great leaders ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 202
-        }
-      }), " or change ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 202
-        }
-      }), " the world.")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "give-a-fuck-block",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 206
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "row",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 207
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "col-md-4 p0 image",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 208
-        }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "col-md-8 p0 quote",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 210
-        }
-      }, "we don\u2019t give a fuck about the status quo"))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "keep-talking-block",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 216
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "row",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 217
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "col-md-4 p0",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 218
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
+      }, "We do things differently. We help you become who you want to be, not just through university but by providing a place which respects you. Encourages you to network, collaborate and relax for your hard work."), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
         className: "paragraph",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 219
+          lineNumber: 205
         }
-      }, "We do things differently. We help you become who you want to be, not just through university but by providing a place which respects you. Encourages you to network, collaborate and relax for your hard work."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
-        className: "paragraph",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 223
-        }
-      }, "This is more than your first, second or third year of Uni, this is the beginning of your success story and adult life. So reject the status quo, and rebuild it."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, "This is more than your first, second or third year of Uni, this is the beginning of your success story and adult life. So reject the status quo, and rebuild it."), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "btn-container",
         onClick: function onClick() {
           return _this4.scrollToBlock('.escalator-block');
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 228
+          lineNumber: 210
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "btn",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 229
+          lineNumber: 211
         }
-      }, "Keep talking"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, "Keep talking"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "btn btn-border",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 230
+          lineNumber: 212
         }
-      }))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }))))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: ['escalator-block', this.state.escalatorHiddenContentClass].join(' '),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 237
+          lineNumber: 219
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "row position-relative",
         onMouseOut: function onMouseOut() {
           return _this4.escalatorMouseOut();
@@ -1156,323 +1708,375 @@ function (_React$Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 238
+          lineNumber: 220
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "escalator-image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 222
+        }
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "lines-wrapper",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 224
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "lines",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 225
+        }
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "lines-mask-wrapper",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 226
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "lines-mask",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 227
+        }
+      }))))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "rising-standarts-block",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 234
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "quote",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 235
+        }
+      }, "RAISING THE STANDARDS OF STUDENT LIVING"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "text",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 239
+        }
+      }, "Every standard starts with a problem that needs solving. ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 240
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "lines-wrapper",
+      }), "Ours was that student housing is exactly that. ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 242
+          lineNumber: 241
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "lines",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 243
-        }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "lines-mask-wrapper",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 244
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "lines-mask",
+      }), "Housing. Nothing more. We\u2019re creating the more."), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "dashes first",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 245
         }
-      }))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "rising-standarts-block",
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "dashes second",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 246
+        }
+      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "tour-block",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 249
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "row",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 250
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "col-md-6",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 251
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "bedroom-block",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 252
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "quote",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 253
-        }
-      }, "RAISING THE STANDARDS OF STUDENT LIVING"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "text",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 257
-        }
-      }, "Every standard starts with a problem that needs solving. ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 258
-        }
-      }), "Ours was that student housing is exactly that. ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 259
-        }
-      }), "Housing. Nothing more. We\u2019re creating the more."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "dashes first",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 263
-        }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "dashes second",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 264
-        }
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "tour-block",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 267
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "row",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 268
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "col-md-6",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 269
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "bedroom-block",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 270
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
         src: "/static/images/FG_UI01_assets_home_bedroom.jpg",
         alt: "bedroom",
         className: "img-fluid animated-image bedroom",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 271
+          lineNumber: 253
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "text-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 273
+          lineNumber: 255
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 274
+          lineNumber: 256
         }
-      }, "Refined personal bedrooms for whatever you get up to"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, "Refined personal bedrooms for whatever you get up to"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "horizontal-line",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 277
+          lineNumber: 259
         }
-      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "kitchen-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 283
+          lineNumber: 265
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
         src: "/static/images/FG_UI01_assets_home_kitchen.jpg",
         alt: "kitchen",
         className: "img-fluid animated-image kitchen",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 284
+          lineNumber: 266
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "text-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 286
+          lineNumber: 268
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 287
+          lineNumber: 269
         }
-      }, "Takeaway slaying, sleek looking, party space kitchens"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, "Takeaway slaying, sleek looking, party space kitchens"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "horizontal-line",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 290
+          lineNumber: 272
         }
-      })))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      })))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "col-md-6",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 297
+          lineNumber: 279
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "bathroom-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 298
+          lineNumber: 280
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
         src: "/static/images/FG_UI01_assets_home_bathroom.jpg",
         alt: "bathroom",
         className: "img-fluid animated-image bathroom",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 299
+          lineNumber: 281
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "text-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 301
+          lineNumber: 283
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 302
+          lineNumber: 284
         }
-      }, "A home from home, right down to the bathrooms"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, "A home from home, right down to the bathrooms"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "horizontal-line",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 305
+          lineNumber: 287
         }
-      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "divider",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 311
+          lineNumber: 293
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "quote-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 313
+          lineNumber: 295
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "quote",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 314
+          lineNumber: 296
         }
-      }, "This is more than your first, second or third year of Uni, this is the beginning of your success story and adult life. So reject the status quo, and rebuild it. With us."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, "This is more than your first, second or third year of Uni, this is the beginning of your success story and adult life. So reject the status quo, and rebuild it. With us."), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "btn-container",
         onClick: function onClick() {
           return _this4.scrollToBlock('.just-living-block');
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 320
+          lineNumber: 302
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "btn tour",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 321
+          lineNumber: 303
         }
-      }, "Take a tour"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, "Take a tour"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "btn btn-border",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 322
+          lineNumber: 304
         }
-      })))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      })))))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "line line3",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 329
+          lineNumber: 311
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "just-living-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 331
+          lineNumber: 313
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "sliding-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 332
+          lineNumber: 314
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "football",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 333
+          lineNumber: 315
         }
-      }, "We put a football pitch on your roof and a cinema in your basement."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, "We put a football pitch on your roof and a cinema in your basement."), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "quote",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 336
+          lineNumber: 318
         }
-      }, "THIS ISN\u2019T ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+      }, "THIS ISN\u2019T ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 337
+          lineNumber: 319
         }
-      }), "STUDENT LIVING. ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+      }), "STUDENT LIVING. ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 338
+          lineNumber: 320
         }
-      }), "IT\u2019S JUST LIVING."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }), "IT\u2019S JUST LIVING."), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "roof-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 341
+          lineNumber: 323
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "row advantages-list",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 342
+          lineNumber: 324
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "horizontal-line",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 343
+          lineNumber: 325
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "col-md-6 left",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 344
+          lineNumber: 326
         }
-      }, this.state.activeAdvantageItem ? __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
+      }, this.state.activeAdvantageItem ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
         src: this.state.activeAdvantageItem.image,
         className: "advantage-image",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 346
+          lineNumber: 328
         }
-      }) : ''), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }) : ''), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "right",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 349
+          lineNumber: 331
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "advantages-names",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 332
+        }
+      }, this.state.advantagesItems && this.state.advantagesItems.map(function (advantageItem, index) {
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+          className: ['advantage-name', _this4.state.activeAdvantageItem && advantageItem.id === _this4.state.activeAdvantageItem.id ? 'active' : ''].join(' '),
+          key: index,
+          onClick: function onClick() {
+            return _this4.setActiveAdvantage(index);
+          },
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 334
+          }
+        }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("svg", {
+          viewBox: "0 0 100 12",
+          className: "advantage-name-svg",
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 335
+          }
+        }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("text", {
+          className: "advantage-name-text",
+          x: _this4.state.advantageItemSvgX,
+          y: "11",
+          textAnchor: _this4.state.advantageItemSvgTextAnchor,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 336
+          }
+        }, advantageItem.name)));
+      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "line",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 342
+        }
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "available",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 344
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "available-title",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 345
+        }
+      }, "Available at Loughborough, Bristol and Manchester"), "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cum dolore nulla quidem repellat tenetur. Cumque distinctio dolor dolorum expedita fugiat."), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "slider-controls",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 350
         }
       }, this.state.advantagesItems && this.state.advantagesItems.map(function (advantageItem, index) {
-        return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-          className: ['advantage-name', _this4.state.activeAdvantageItem && advantageItem.id === _this4.state.activeAdvantageItem.id ? 'active' : ''].join(' '),
+        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+          className: ['slider-control', _this4.state.activeAdvantageItem && advantageItem.id === _this4.state.activeAdvantageItem.id ? 'active' : ''].join(' '),
           key: index,
           onClick: function onClick() {
             return _this4.setActiveAdvantage(index);
@@ -1481,613 +2085,146 @@ function (_React$Component) {
             fileName: _jsxFileName,
             lineNumber: 352
           }
-        }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("svg", {
-          viewBox: "0 0 100 12",
-          className: "advantage-name-svg",
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 353
-          }
-        }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("text", {
-          className: "advantage-name-text",
-          x: _this4.state.advantageItemSvgX,
-          y: "11",
-          textAnchor: _this4.state.advantageItemSvgTextAnchor,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 354
-          }
-        }, advantageItem.name)));
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "line",
+        });
+      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "lines",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 360
+          lineNumber: 356
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "available",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 362
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "available-title",
+      })))))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "partner-block",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 363
         }
-      }, "Available at Loughborough, Bristol and Manchester"), "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias cum dolore nulla quidem repellat tenetur. Cumque distinctio dolor dolorum expedita fugiat."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "slider-controls",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 368
-        }
-      }, this.state.advantagesItems && this.state.advantagesItems.map(function (advantageItem, index) {
-        return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-          className: ['slider-control', _this4.state.activeAdvantageItem && advantageItem.id === _this4.state.activeAdvantageItem.id ? 'active' : ''].join(' '),
-          key: index,
-          onClick: function onClick() {
-            return _this4.setActiveAdvantage(index);
-          },
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 370
-          }
-        });
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "lines",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 374
-        }
-      })))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "partner-block",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 381
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "ellipse-bg",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 382
+          lineNumber: 364
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "title",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 385
+          lineNumber: 367
         }
-      }, "YOU\u2019LL GET 25% OFF OUR PARTNER\u2019S TECH"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, "YOU\u2019LL GET 25% OFF OUR PARTNER\u2019S TECH"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "wrapper",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 389
+          lineNumber: 371
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
         src: "/static/svg/samsung-logo.svg",
         alt: "Samsung logo",
         className: "img-fluid samsung-logo",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 390
+          lineNumber: 372
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("p", {
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("p", {
         className: "paragraph",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 392
+          lineNumber: 374
         }
-      }, "This is more than your \uFB01rst, second or third year of Uni, ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+      }, "This is more than your \uFB01rst, second or third year of Uni, ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 393
+          lineNumber: 375
         }
-      }), "this is the beginning of your success story and adult life. ", __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("br", {
+      }), "this is the beginning of your success story and adult life. ", __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 394
+          lineNumber: 376
         }
-      }), "So reject the status quo, and rebuild it. With us."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }), "So reject the status quo, and rebuild it. With us."), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "btn-orange-transparent",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 398
+          lineNumber: 380
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "btn discount",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 399
+          lineNumber: 381
         }
-      }, "Get 25% off"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, "Get 25% off"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "btn btn-border",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 400
+          lineNumber: 382
         }
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
+      })), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
         src: "/static/images/small-bedroom.jpg",
         alt: "bedroom",
         className: "partner-block-image",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 403
+          lineNumber: 385
         }
-      }), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "text-block",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 405
+          lineNumber: 387
         }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 406
+          lineNumber: 388
         }
-      }, "Pixel perfect TVs and other tech integration in your spaces"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
+      }, "Pixel perfect TVs and other tech integration in your spaces"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "horizontal-line",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 391
+        }
+      })))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "leap-block",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 398
+        }
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "quote-line quote-line-one",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 399
+        }
+      }, "TAKE THIS STEP"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "quote-line quote-line-two",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 402
+        }
+      }, "TO MAKE YOUR LEAP")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_6__components_LocationsList__["a" /* default */], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 407
+        }
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_MailingBlock__["a" /* default */], {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 409
         }
-      })))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "leap-block",
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__components_Footer__["a" /* default */], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 416
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "quote-line quote-line-one",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 417
-        }
-      }, "TAKE THIS STEP"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "quote-line quote-line-two",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 420
-        }
-      }, "TO MAKE YOUR LEAP")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "locations-block",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 425
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "caption-region-selector",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 426
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "row",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 427
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "paragraph col-md-6 col-lg-4",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 428
-        }
-      }, "With over 30 locations across the country, we want there to be a location especially for you. Once you\u2019ve found the best fit, view it\u2019s bespoke page full of local trivia, recommendations and flat details to get you going in your new city."), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "region-selector-container col-md-6 col-lg-4 offset-lg-4 justify-content-md-end justify-content-center d-flex",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 431
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "region-selector-prefix",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 432
-        }
-      }, "Region:"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: ['region-selector', this.state.regionSelectorOpened ? 'opened' : ''].join(' '),
-        onClick: function onClick() {
-          return _this4.toggleRegionSelector();
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 433
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "selected-region",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 434
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("span", {
-        className: "region-name",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 434
-        }
-      }, this.state.selectedRegion)), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "other-regions",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 435
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "region-item",
-        onClick: function onClick() {
-          return _this4.setSelectedRegion('Northern');
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 436
-        }
-      }, "Northern"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "region-item",
-        onClick: function onClick() {
-          return _this4.setSelectedRegion('Middle');
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 437
-        }
-      }, "Middle"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "region-item",
-        onClick: function onClick() {
-          return _this4.setSelectedRegion('Southern');
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 438
-        }
-      }, "Southern"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "region-item",
-        onClick: function onClick() {
-          return _this4.setSelectedRegion('South West');
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 439
-        }
-      }, "South West"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "region-item",
-        onClick: function onClick() {
-          return _this4.setSelectedRegion('South East');
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 440
-        }
-      }, "South East"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "region-item",
-        onClick: function onClick() {
-          return _this4.setSelectedRegion('All of');
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 441
-        }
-      }, "All of")))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "locations-list",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 448
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7_next_link___default.a, {
-        href: {
-          pathname: '/location',
-          query: {
-            id: 1
-          }
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 449
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("a", {
-        className: "location-item d-flex align-items-center justify-content-center type-1",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 450
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "left",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 451
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 452
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
-        src: "/static/images/FG_UI01_assets_home_location 1 main.jpg",
-        className: "img-fluid",
-        alt: "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 453
-        }
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "caption",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 455
-        }
-      }, "featuring the UKs first LED cinema on site")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "right",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 457
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 458
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
-        src: "/static/images/FG_UI01_assets_home_location 1 detail.jpg",
-        className: "img-fluid",
-        alt: "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 459
-        }
-      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "center-block",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 462
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("span", {
-        className: "location-name",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 463
-        }
-      }, "Guildford"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "caption",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 466
-        }
-      }, "featuring the UKs first LED cinema on site")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7_next_link___default.a, {
-        href: {
-          pathname: '/location',
-          query: {
-            id: 1
-          }
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 470
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("a", {
-        className: "location-item d-flex align-items-center justify-content-center type-2",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 471
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "left",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 472
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 473
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
-        src: "/static/images/FG_UI01_assets_home_location 2 detail.jpg",
-        className: "img-fluid",
-        alt: "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 474
-        }
-      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "right",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 477
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 478
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
-        src: "/static/images/FG_UI01_assets_home_location 2 main.jpg",
-        className: "img-fluid",
-        alt: "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 479
-        }
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "caption",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 481
-        }
-      }, "featuring the UKs first LED cinema on site")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "center-block",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 483
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("span", {
-        className: "location-name",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 484
-        }
-      }, "colechester"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "caption",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 487
-        }
-      }, "featuring the UKs first LED cinema on site")))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7_next_link___default.a, {
-        href: {
-          pathname: '/location',
-          query: {
-            id: 1
-          }
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 491
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("a", {
-        className: "location-item d-flex align-items-center justify-content-center type-1",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 492
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "left",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 493
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 494
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
-        src: "/static/images/FG_UI01_assets_home_location 1 main.jpg",
-        className: "img-fluid",
-        alt: "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 495
-        }
-      })), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "caption",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 497
-        }
-      }, "featuring the UKs first LED cinema on site")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "right",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 499
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "image",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 500
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("img", {
-        src: "/static/images/FG_UI01_assets_home_location 1 detail.jpg",
-        className: "img-fluid",
-        alt: "",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 501
-        }
-      }))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "center-block",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 504
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("span", {
-        className: "location-name",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 505
-        }
-      }, "Guildford"), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "caption",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 508
-        }
-      }, "featuring the UKs first LED cinema on site")))))), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "mailing-block text-center",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 515
-        }
-      }, __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement("div", {
-        className: "caption",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 516
-        }
-      }, "sign up to our mailing")), __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_9__components_Footer__["a" /* default */], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 519
+          lineNumber: 411
         }
       }));
     }
-  }], [{
-    key: "getInitialProps",
-    value: function () {
-      var _getInitialProps = _asyncToGenerator(
-      /*#__PURE__*/
-      __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.mark(function _callee(_ref2) {
-        var store, pathname, query;
-        return __WEBPACK_IMPORTED_MODULE_0__babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                store = _ref2.store, pathname = _ref2.pathname, query = _ref2.query;
-                _context.next = 3;
-                return store.dispatch(Object(__WEBPACK_IMPORTED_MODULE_4__actions__["l" /* fetchLocations */])());
-
-              case 3:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee, this);
-      }));
-
-      return function getInitialProps(_x) {
-        return _getInitialProps.apply(this, arguments);
-      };
-    }()
   }]);
 
   return HomePage;
-}(__WEBPACK_IMPORTED_MODULE_1_react___default.a.Component);
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
-HomePage.propTypes = {
-  locations: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.arrayOf(__WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.shape({
-    id: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.number,
-    name: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string,
-    url: __WEBPACK_IMPORTED_MODULE_2_prop_types___default.a.string
-  }))
-};
-
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    locations: state.locations.items
-  };
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    fetchLocations: Object(__WEBPACK_IMPORTED_MODULE_3_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_4__actions__["l" /* fetchLocations */], dispatch)
-  };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_6_react_redux__["connect"])(mapStateToProps, mapDispatchToProps)(HomePage));
+/* harmony default export */ __webpack_exports__["default"] = (Object(__WEBPACK_IMPORTED_MODULE_2_react_redux__["connect"])(null, null)(HomePage));
 
 /***/ }),
 

@@ -1413,9 +1413,6 @@ a:hover {
 .locations-block {
     padding: 0 7%;
     padding-top: 50px;
-    .paragraph {
-    	text-align: justify;
-    }
     .region-selector-container {
     	.region-selector-prefix {
 			font-size: 25px;
@@ -2381,7 +2378,7 @@ footer {
 		    display: block;
 		    border-bottom: 2px solid #9E9D8F;
 		    transform: rotate(9deg);
-		    width: 80%;
+		    width: 100%;
 		    bottom: 0;
 		    margin-top: 10vw;
 		    z-index: 1;
@@ -2552,6 +2549,40 @@ footer {
 					width: 41%;
 					float: left;
 				}
+			}
+		}
+	}
+}
+
+.locations-page {
+	.main-caption {
+		padding: 10%;
+		.text-wrapper {
+			padding-right: 30%;
+			font-size: 12vw;
+			line-height: 0.83;
+			font-family: SixCaps, sans-serif;
+		}
+		&:after {
+			content: "";
+		    display: block;
+		    border-bottom: 2px solid #9E9D8F;
+		    transform: rotate(9deg);
+		    width: 100%;
+		    bottom: 0;
+		    margin-top: 10vw;
+		    z-index: 1;
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.locations-page {
+		.main-caption {
+			padding: 100px 10% 10% 10%;
+			.text-wrapper {
+				padding-right: 20%;
+				font-size: 16vw;
 			}
 		}
 	}
