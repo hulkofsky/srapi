@@ -12,7 +12,7 @@ import Footer from '../components/Footer'
 
 let whenSoberBlock = null
 let roomTypeSelectorTrigger = null
-let roomTypeSelectorTriggerHeight = 0
+let roomTypeSelector = null
 let whenSoberBottomOffset = 0
 
 class LocationPage extends React.Component {
@@ -27,25 +27,32 @@ class LocationPage extends React.Component {
   componentDidMount() {
     whenSoberBlock = document.querySelector(".when-sober")
     roomTypeSelectorTrigger = document.querySelector(".rooms-type-selector-trigger")
-    whenSoberBottomOffset = whenSoberBlock.offsetTop + whenSoberBlock.getBoundingClientRect().height
-    roomTypeSelectorTriggerHeight = roomTypeSelectorTrigger.clientHeight
+    roomTypeSelector = document.querySelector(".rooms-type-selector")
 
-    window.addEventListener('scroll', this.updateRoomTypeSelectorTriggerStyle.bind(this), { passive: true })
+    window.addEventListener('scroll', this.updateRoomTypeSelectorStyle.bind(this), { passive: true })
+    window.addEventListener('resize', this.updateWhenSoberBottomOffset.bind(this))
 
     this.setupItemsSliders()
+    this.updateWhenSoberBottomOffset()
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.updateRoomTypeSelectorTriggerStyle)
+    window.removeEventListener('scroll', this.updateRoomTypeSelectorStyle)
+    window.removeEventListener('resize', this.updateWhenSoberBottomOffset)
   }
 
-  updateRoomTypeSelectorTriggerStyle() {
-    let roomTypeWidgetMinY = (window.scrollY + window.innerHeight / 2 + roomTypeSelectorTriggerHeight)
+  updateWhenSoberBottomOffset() {
+    whenSoberBottomOffset = whenSoberBlock.offsetTop + whenSoberBlock.getBoundingClientRect().height
+  }
+
+  updateRoomTypeSelectorStyle() {
+    let elementToCheck = (this.state.roomsTypeSelectorVisible ? roomTypeSelector : roomTypeSelectorTrigger)
+    let roomTypeWidgetMinY = (window.scrollY + window.innerHeight / 2 + elementToCheck.clientHeight)
 
     if (roomTypeWidgetMinY > whenSoberBottomOffset) {
-      roomTypeSelectorTrigger.style.top = (whenSoberBottomOffset - roomTypeWidgetMinY) + window.innerHeight/2 + 'px'
+      elementToCheck.style.top = (whenSoberBottomOffset - roomTypeWidgetMinY) + window.innerHeight/2 + 'px'
     } else {
-      roomTypeSelectorTrigger.style.top = '50%'
+      elementToCheck.style.top = '50%'
     }
   }
 
