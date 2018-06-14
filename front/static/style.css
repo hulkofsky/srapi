@@ -8190,7 +8190,7 @@ a:hover {
     .location-page .did-you-know .intro:after {
       content: "";
       width: 100%;
-      margin: 5px 0;
+      margin: 10px 0 5px 0;
       height: 6vw;
       display: block;
       border-left: 2px dashed #BABAB0;
