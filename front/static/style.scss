@@ -148,6 +148,9 @@ a:hover {
 				padding-left: 0;
 			}
 		}
+		&:last-child {
+			padding-right: 10%;
+		}
 	}
 	&.with-next-visible {
 		margin-right: -12.5%;
@@ -199,6 +202,9 @@ a:hover {
 			}
 			.info {
 				font-size: 21px;
+			}
+			&:last-child {
+				padding-right: 0;
 			}
 		}
 		&.with-next-visible {
@@ -1890,6 +1896,19 @@ a:hover {
 			font-weight: bold;
 			padding: 20px 0;
 		}
+		.intro {
+			width: 40%;
+			&:after {
+				content: "";
+				width: 100%;
+				margin: 5px 0;
+				height: 6vw;
+				display: block;
+				border-left: 2px dashed #BABAB0;
+				border-right: 2px dashed #BABAB0;
+				opacity: 0.25;
+			}
+		}
 		.facts {
 			.fact {
 				display: flex;
@@ -1904,16 +1923,6 @@ a:hover {
 							margin-top: 15px;
 							font-weight: bold;
 							margin: 15px 0 5px 0;
-							&:before {
-								content: "";
-								width: 100%;
-								margin-bottom: 5px;
-								height: 6vw;
-								display: block;
-								border-left: 2px dashed #BABAB0;
-								border-right: 2px dashed #BABAB0;
-								opacity: 0.25;
-							}
 						}
 					}
 				}
@@ -1962,6 +1971,9 @@ a:hover {
 		.did-you-know {
 			>.title {
 				font-size: 7vw;
+			}
+			.intro {
+				width: 100%;
 			}
 			.facts {
 				.fact {

@@ -366,12 +366,12 @@ class LocationPage extends React.Component {
 
         <div className="did-you-know">
           <div className="title">Did you know</div>
+          <div className="intro">
+            From the niché sayings to the interresting details, Sheffield has a lot to offer. So before you move there and become a Sheffieldian, lets get you up to speed.
+          </div>
           <div className="items-slider facts">
             <div className="item fact">
               <div className="left">
-                <div className="text-1">
-                  From the niché sayings to the interresting details, Sheffield has a lot to offer. So before you move there and become a Sheffieldian, lets get you up to speed.
-                </div>
                 <div className="quote">
                   “ey up chap”
                 </div>
@@ -390,9 +390,6 @@ class LocationPage extends React.Component {
             </div>
             <div className="item fact">
               <div className="left">
-                <div className="text-1">
-                  From the niché sayings to the interresting details, Sheffield has a lot to offer. So before you move there and become a Sheffieldian, lets get you up to speed. 1
-                </div>
                 <div className="quote">
                   “ey up chap 1”
                 </div>
@@ -411,9 +408,6 @@ class LocationPage extends React.Component {
             </div>
             <div className="item fact">
               <div className="left">
-                <div className="text-1">
-                  From the niché sayings to the interresting details, Sheffield has a lot to offer. So before you move there and become a Sheffieldian, lets get you up to speed. 2
-                </div>
                 <div className="quote">
                   “ey up chap 2”
                 </div>
@@ -432,9 +426,6 @@ class LocationPage extends React.Component {
             </div>
             <div className="item fact">
               <div className="left">
-                <div className="text-1">
-                  From the niché sayings to the interresting details, Sheffield has a lot to offer. So before you move there and become a Sheffieldian, lets get you up to speed. 3
-                </div>
                 <div className="quote">
                   “ey up chap 3”
                 </div>
