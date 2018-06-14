@@ -155,6 +155,12 @@ class LocationPage extends React.Component {
     })
   }
 
+  scrollToRooms(selector) {
+    document.querySelector(selector).scrollIntoView({
+      behavior: 'smooth' 
+    })
+  }
+
   render() {
     return (
       <div className="location-page">
@@ -162,13 +168,16 @@ class LocationPage extends React.Component {
 
         <div className={['rooms-type-selector-trigger', (this.state.roomsTypeSelectorVisible ? 'd-none' : '')].join(' ')} onClick={() => this.toggleRoomsTypeSelector()}>
           <img className="arrow" src="/static/svg/FG_UI01_assets_arrow icon.svg" alt="" />
+          <div className="key">
+            <img src="/static/svg/FG_UI01_assets_key icon.svg" />
+          </div>
           <div className="caption">the rooms</div>
         </div>
         <div className={['rooms-type-selector', (this.state.roomsTypeSelectorVisible ? '' : 'd-none')].join(' ')}>
           <div className="title">Jump to:</div>
-          <div className="type-name">Classic</div>
-          <div className="type-name">en suite</div>
-          <div className="type-name">studio</div>
+          <div className="type-name" onClick={() => this.scrollToRooms("#rooms-list-classic")}>Classic</div>
+          <div className="type-name" onClick={() => this.scrollToRooms("#rooms-list-classic")}>en suite</div>
+          <div className="type-name" onClick={() => this.scrollToRooms("#rooms-list-classic")}>studio</div>
           <img className="arrow" src="/static/svg/FG_UI01_assets_arrow icon.svg" alt="" onClick={() => this.toggleRoomsTypeSelector()} />
         </div>
 
@@ -724,7 +733,7 @@ class LocationPage extends React.Component {
           </div>
           <div className="rooms-type">
             <div className="row align-items-center">
-              <div className="col-md-6 room-part-name">
+              <div className="col-md-6 room-part-name" id="rooms-list-classic">
                 classic Bedrooms
               </div>
               <div className="col-md-6 book-btn-wrapper">
@@ -734,14 +743,14 @@ class LocationPage extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="hero-image">
+            <div className="hero-image bedroom">
               <img src="/static/images/FG_UI01_assets_location_bedroom hero.jpg" alt="" className="img-fluid" />
-              <div className="text-block">
-                <div className="text">
-                  Pan around what could be your bedroom, come multi-million business origin story
-                </div>
-                <div className="horizontal-line"></div>
+            </div>
+            <div className="text-block">
+              <div className="text">
+                Pan around what could be your bedroom, come multi-million business origin story
               </div>
+              <div className="horizontal-line"></div>
             </div>
             <div className="row additional-info">
               <div className="col-md-6 images">
@@ -760,14 +769,14 @@ class LocationPage extends React.Component {
               <div className="col-md-6 book-btn-wrapper">
               </div>
             </div>
-            <div className="hero-image">
+            <div className="hero-image kitchen">
               <img src="/static/images/FG_UI01_assets_location_kitchen hero.jpg" alt="" className="img-fluid" />
-              <div className="text-block">
-                <div className="text">
-                  Look around a space where you’ll revise, drink, regret drinking, and have deep conversations over pizza
-                </div>
-                <div className="horizontal-line"></div>
+            </div>
+            <div className="text-block">
+              <div className="text">
+                Look around a space where you’ll revise, drink, regret drinking, and have deep conversations over pizza
               </div>
+              <div className="horizontal-line"></div>
             </div>
             <div className="row additional-info">
               <div className="col-md-6 images">

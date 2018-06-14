@@ -2165,18 +2165,27 @@ a:hover {
 			}
 		}
 		.hero-image {
-			margin: 30px -12.5% 0 -12.5%;
-			.text-block {
-				margin: 10px 0;
-				color: #9e9d8f;
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				.horizontal-line {
-					border-bottom: solid 1px #9e9d8f;
-				    width: 70px;
-				    height: 1px;
-				}
+			margin-top: 30px;
+			img {
+				width: 100%;
+			}
+			&.bedroom {
+				margin: 15px -12.5%;
+			}
+			&.kitchen {
+				margin: 30px 0 15px 0;
+			}
+		}
+		.text-block {
+			margin-bottom: 30px;
+			color: #9e9d8f;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			.horizontal-line {
+				border-bottom: solid 1px #9e9d8f;
+			    width: 70px;
+			    height: 1px;
 			}
 		}
 		.additional-info {
@@ -2262,6 +2271,9 @@ a:hover {
 	    padding: 6px 11px;
 	    box-sizing: content-box;
 	}
+	.key {
+		display: none;
+	}
 	.caption {
 		text-transform: uppercase;
 		color: #FF9C5F;
@@ -2290,6 +2302,7 @@ a:hover {
 		text-align: center;
 		padding: 10px 35px;
 		border-top: 1px solid #D9D9D2;
+		cursor: pointer;
 		&:last-child {
 			border-bottom: 1px solid #D9D9D2;
 		}
@@ -2309,8 +2322,31 @@ a:hover {
 
 @media screen and (max-width: 767px) {
 	.rooms-type-selector-trigger {
-		transform: rotate(-90deg) scale(0.7);
-		right: -70px;
+		right: 0;
+		.arrow,
+		.caption {
+			display: none;
+		}
+		.key {
+			display: block;
+			padding: 10px;
+			cursor: pointer;
+			position: relative;
+			img {
+				width: 32px;
+				height: 32px;
+				transform: rotate(90deg);
+			}
+			&:after {
+				content: "";
+				border: 1px solid #CC8011;
+				position: absolute;
+				top: 4px;
+				right: 4px;
+				width: 52px;
+				height: 52px;
+			}
+		}
 	}
 	.rooms-type-selector {
 		transform: scale(0.7);
@@ -2558,8 +2594,8 @@ footer {
 	.main-caption {
 		padding: 10%;
 		.text-wrapper {
-			padding-right: 30%;
-			font-size: 12vw;
+			padding-right: 20%;
+			font-size: 16vw;
 			line-height: 0.83;
 			font-family: SixCaps, sans-serif;
 		}
@@ -2580,10 +2616,6 @@ footer {
 	.locations-page {
 		.main-caption {
 			padding: 100px 10% 10% 10%;
-			.text-wrapper {
-				padding-right: 20%;
-				font-size: 16vw;
-			}
 		}
 	}
 }
