@@ -7321,7 +7321,7 @@ a:hover {
   color: #d9d9d2;
   width: 54%;
   margin: 0 auto;
-  line-height: 1; }
+  line-height: 1.2; }
 
 .rising-standarts-block .text {
   color: #d9d9d2;
@@ -7352,11 +7352,13 @@ a:hover {
     padding-top: 36vw;
     padding-bottom: 70vw; }
     .rising-standarts-block .quote {
-      width: 70%; }
+      width: 86%;
+      font-size: 8vw; }
     .rising-standarts-block .text {
-      width: 70%;
-      margin-left: 15%;
-      padding-bottom: 4vw; }
+      width: 86%;
+      margin-left: 7%;
+      padding-bottom: 4vw;
+      text-align: justify; }
       .rising-standarts-block .text:before {
         position: static;
         margin-bottom: 70px;

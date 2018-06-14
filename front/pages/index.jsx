@@ -237,8 +237,8 @@ class HomePage extends React.Component {
           </div>
 
           <div className="text">
-            Every standard starts with a problem that needs solving. <br/>
-            Ours was that student housing is exactly that. <br/>
+            Every standard starts with a problem that needs solving.
+            Ours was that student housing is exactly that.
             Housing. Nothing more. We’re creating the more.
           </div>
 
