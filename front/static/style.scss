@@ -2368,7 +2368,17 @@ footer {
 	    padding-top: 15px;
 	    color: #d9d9d2;
 	}
+
+	.three-container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 565px;
+		z-index: 10;
+	}
 }
+
 
 .stance-page {
 	.main-caption {

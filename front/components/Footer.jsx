@@ -1,7 +1,7 @@
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import Three from './Three';
 
 class Footer extends React.Component {
-
   render () {
     return (
       <footer className="footer">
@@ -16,6 +16,7 @@ class Footer extends React.Component {
             designed and built by vitamin london
           </div>
         </div>
+        <Three />
       </footer>
     )
   }

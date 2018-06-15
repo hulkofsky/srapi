@@ -22,18 +22,18 @@ module.exports =
 /* unused harmony export requestLocations */
 /* unused harmony export receiveCurrentLocation */
 /* unused harmony export receiveLocations */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return fetchCurrentLocation; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return fetchLocations; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return showAuthDialog; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return hideAuthDialog; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return showMainMenu; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return hideMainMenu; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return submitAuthDialog; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return processAuthDialog; });
+/* unused harmony export fetchCurrentLocation */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return fetchLocations; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return showAuthDialog; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return hideAuthDialog; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return showMainMenu; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return hideMainMenu; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return submitAuthDialog; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return processAuthDialog; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch__ = __webpack_require__("./node_modules/isomorphic-unfetch/browser.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch__);
 (function () {
-  var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
+  var enterModule = __webpack_require__("./node_modules/next/node_modules/react-hot-loader/index.js").enterModule;
 
   enterModule && enterModule(module);
 })();
@@ -154,39 +154,39 @@ var processAuthDialog = function processAuthDialog(auth) {
 ;
 
 (function () {
-  var reactHotLoader = __webpack_require__("./node_modules/react-hot-loader/index.js").default;
+  var reactHotLoader = __webpack_require__("./node_modules/next/node_modules/react-hot-loader/index.js").default;
 
-  var leaveModule = __webpack_require__("./node_modules/react-hot-loader/index.js").leaveModule;
+  var leaveModule = __webpack_require__("./node_modules/next/node_modules/react-hot-loader/index.js").leaveModule;
 
   if (!reactHotLoader) {
     return;
   }
 
-  reactHotLoader.register(backendUrl, "backendUrl", "C:\\Users\\venom\\Desktop\\future_generation\\front\\actions\\index.js");
-  reactHotLoader.register(authUrl, "authUrl", "C:\\Users\\venom\\Desktop\\future_generation\\front\\actions\\index.js");
-  reactHotLoader.register(baseApiUrl, "baseApiUrl", "C:\\Users\\venom\\Desktop\\future_generation\\front\\actions\\index.js");
-  reactHotLoader.register(REQUEST_CURRENT_LOCATION, "REQUEST_CURRENT_LOCATION", "C:\\Users\\venom\\Desktop\\future_generation\\front\\actions\\index.js");
-  reactHotLoader.register(REQUEST_LOCATIONS, "REQUEST_LOCATIONS", "C:\\Users\\venom\\Desktop\\future_generation\\front\\actions\\index.js");
-  reactHotLoader.register(RECEIVE_CURRENT_LOCATION, "RECEIVE_CURRENT_LOCATION", "C:\\Users\\venom\\Desktop\\future_generation\\front\\actions\\index.js");
-  reactHotLoader.register(RECEIVE_LOCATIONS, "RECEIVE_LOCATIONS", "C:\\Users\\venom\\Desktop\\future_generation\\front\\actions\\index.js");
-  reactHotLoader.register(SHOW_AUTH_DIALOG, "SHOW_AUTH_DIALOG", "C:\\Users\\venom\\Desktop\\future_generation\\front\\actions\\index.js");
-  reactHotLoader.register(HIDE_AUTH_DIALOG, "HIDE_AUTH_DIALOG", "C:\\Users\\venom\\Desktop\\future_generation\\front\\actions\\index.js");
-  reactHotLoader.register(SUBMIT_AUTH_DIALOG, "SUBMIT_AUTH_DIALOG", "C:\\Users\\venom\\Desktop\\future_generation\\front\\actions\\index.js");
-  reactHotLoader.register(PROCESS_AUTH_DIALOG, "PROCESS_AUTH_DIALOG", "C:\\Users\\venom\\Desktop\\future_generation\\front\\actions\\index.js");
-  reactHotLoader.register(SHOW_MAIN_MENU, "SHOW_MAIN_MENU", "C:\\Users\\venom\\Desktop\\future_generation\\front\\actions\\index.js");
-  reactHotLoader.register(HIDE_MAIN_MENU, "HIDE_MAIN_MENU", "C:\\Users\\venom\\Desktop\\future_generation\\front\\actions\\index.js");
-  reactHotLoader.register(requestCurrentLocation, "requestCurrentLocation", "C:\\Users\\venom\\Desktop\\future_generation\\front\\actions\\index.js");
-  reactHotLoader.register(requestLocations, "requestLocations", "C:\\Users\\venom\\Desktop\\future_generation\\front\\actions\\index.js");
-  reactHotLoader.register(receiveCurrentLocation, "receiveCurrentLocation", "C:\\Users\\venom\\Desktop\\future_generation\\front\\actions\\index.js");
-  reactHotLoader.register(receiveLocations, "receiveLocations", "C:\\Users\\venom\\Desktop\\future_generation\\front\\actions\\index.js");
-  reactHotLoader.register(fetchCurrentLocation, "fetchCurrentLocation", "C:\\Users\\venom\\Desktop\\future_generation\\front\\actions\\index.js");
-  reactHotLoader.register(fetchLocations, "fetchLocations", "C:\\Users\\venom\\Desktop\\future_generation\\front\\actions\\index.js");
-  reactHotLoader.register(showAuthDialog, "showAuthDialog", "C:\\Users\\venom\\Desktop\\future_generation\\front\\actions\\index.js");
-  reactHotLoader.register(hideAuthDialog, "hideAuthDialog", "C:\\Users\\venom\\Desktop\\future_generation\\front\\actions\\index.js");
-  reactHotLoader.register(showMainMenu, "showMainMenu", "C:\\Users\\venom\\Desktop\\future_generation\\front\\actions\\index.js");
-  reactHotLoader.register(hideMainMenu, "hideMainMenu", "C:\\Users\\venom\\Desktop\\future_generation\\front\\actions\\index.js");
-  reactHotLoader.register(submitAuthDialog, "submitAuthDialog", "C:\\Users\\venom\\Desktop\\future_generation\\front\\actions\\index.js");
-  reactHotLoader.register(processAuthDialog, "processAuthDialog", "C:\\Users\\venom\\Desktop\\future_generation\\front\\actions\\index.js");
+  reactHotLoader.register(backendUrl, "backendUrl", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/actions/index.js");
+  reactHotLoader.register(authUrl, "authUrl", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/actions/index.js");
+  reactHotLoader.register(baseApiUrl, "baseApiUrl", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/actions/index.js");
+  reactHotLoader.register(REQUEST_CURRENT_LOCATION, "REQUEST_CURRENT_LOCATION", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/actions/index.js");
+  reactHotLoader.register(REQUEST_LOCATIONS, "REQUEST_LOCATIONS", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/actions/index.js");
+  reactHotLoader.register(RECEIVE_CURRENT_LOCATION, "RECEIVE_CURRENT_LOCATION", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/actions/index.js");
+  reactHotLoader.register(RECEIVE_LOCATIONS, "RECEIVE_LOCATIONS", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/actions/index.js");
+  reactHotLoader.register(SHOW_AUTH_DIALOG, "SHOW_AUTH_DIALOG", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/actions/index.js");
+  reactHotLoader.register(HIDE_AUTH_DIALOG, "HIDE_AUTH_DIALOG", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/actions/index.js");
+  reactHotLoader.register(SUBMIT_AUTH_DIALOG, "SUBMIT_AUTH_DIALOG", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/actions/index.js");
+  reactHotLoader.register(PROCESS_AUTH_DIALOG, "PROCESS_AUTH_DIALOG", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/actions/index.js");
+  reactHotLoader.register(SHOW_MAIN_MENU, "SHOW_MAIN_MENU", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/actions/index.js");
+  reactHotLoader.register(HIDE_MAIN_MENU, "HIDE_MAIN_MENU", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/actions/index.js");
+  reactHotLoader.register(requestCurrentLocation, "requestCurrentLocation", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/actions/index.js");
+  reactHotLoader.register(requestLocations, "requestLocations", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/actions/index.js");
+  reactHotLoader.register(receiveCurrentLocation, "receiveCurrentLocation", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/actions/index.js");
+  reactHotLoader.register(receiveLocations, "receiveLocations", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/actions/index.js");
+  reactHotLoader.register(fetchCurrentLocation, "fetchCurrentLocation", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/actions/index.js");
+  reactHotLoader.register(fetchLocations, "fetchLocations", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/actions/index.js");
+  reactHotLoader.register(showAuthDialog, "showAuthDialog", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/actions/index.js");
+  reactHotLoader.register(hideAuthDialog, "hideAuthDialog", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/actions/index.js");
+  reactHotLoader.register(showMainMenu, "showMainMenu", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/actions/index.js");
+  reactHotLoader.register(hideMainMenu, "hideMainMenu", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/actions/index.js");
+  reactHotLoader.register(submitAuthDialog, "submitAuthDialog", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/actions/index.js");
+  reactHotLoader.register(processAuthDialog, "processAuthDialog", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/actions/index.js");
   leaveModule(module);
 })();
 
@@ -1090,20 +1090,24 @@ var warnUrl = (0, _utils.execOnce)(function () {
 });
 
 function createUrl(router) {
+  // This is to make sure we don't references the router object at call time
+  var pathname = router.pathname,
+      asPath = router.asPath,
+      query = router.query;
   return {
     get query() {
       warnUrl();
-      return router.query;
+      return query;
     },
 
     get pathname() {
       warnUrl();
-      return router.pathname;
+      return pathname;
     },
 
     get asPath() {
       warnUrl();
-      return router.asPath;
+      return asPath;
     },
 
     back: function back() {
@@ -2979,10 +2983,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_next_redux_wrapper___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_next_redux_wrapper__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store__ = __webpack_require__("./store.js");
 
-var _jsxFileName = "C:\\Users\\venom\\Desktop\\future_generation\\front\\pages\\_app.jsx";
+var _jsxFileName = "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/pages/_app.jsx";
 
 (function () {
-  var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
+  var enterModule = __webpack_require__("./node_modules/next/node_modules/react-hot-loader/index.js").enterModule;
 
   enterModule && enterModule(module);
 })();
@@ -3049,7 +3053,9 @@ function (_App) {
     }
   }, {
     key: "__reactstandin__regenerateByEval",
+    // @ts-ignore
     value: function __reactstandin__regenerateByEval(key, code) {
+      // @ts-ignore
       this[key] = eval(code);
     }
   }], [{
@@ -3108,15 +3114,15 @@ function (_App) {
 ;
 
 (function () {
-  var reactHotLoader = __webpack_require__("./node_modules/react-hot-loader/index.js").default;
+  var reactHotLoader = __webpack_require__("./node_modules/next/node_modules/react-hot-loader/index.js").default;
 
-  var leaveModule = __webpack_require__("./node_modules/react-hot-loader/index.js").leaveModule;
+  var leaveModule = __webpack_require__("./node_modules/next/node_modules/react-hot-loader/index.js").leaveModule;
 
   if (!reactHotLoader) {
     return;
   }
 
-  reactHotLoader.register(_default, "default", "C:\\Users\\venom\\Desktop\\future_generation\\front\\pages\\_app.jsx");
+  reactHotLoader.register(_default, "default", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/pages/_app.jsx");
   leaveModule(module);
 })();
 
@@ -3150,7 +3156,7 @@ function (_App) {
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__("./node_modules/redux/es/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actions__ = __webpack_require__("./actions/index.js");
 (function () {
-  var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
+  var enterModule = __webpack_require__("./node_modules/next/node_modules/react-hot-loader/index.js").enterModule;
 
   enterModule && enterModule(module);
 })();
@@ -3282,19 +3288,19 @@ var _default = Object(__WEBPACK_IMPORTED_MODULE_0_redux__["combineReducers"])({
 ;
 
 (function () {
-  var reactHotLoader = __webpack_require__("./node_modules/react-hot-loader/index.js").default;
+  var reactHotLoader = __webpack_require__("./node_modules/next/node_modules/react-hot-loader/index.js").default;
 
-  var leaveModule = __webpack_require__("./node_modules/react-hot-loader/index.js").leaveModule;
+  var leaveModule = __webpack_require__("./node_modules/next/node_modules/react-hot-loader/index.js").leaveModule;
 
   if (!reactHotLoader) {
     return;
   }
 
-  reactHotLoader.register(currentLocation, "currentLocation", "C:\\Users\\venom\\Desktop\\future_generation\\front\\reducers\\index.js");
-  reactHotLoader.register(locations, "locations", "C:\\Users\\venom\\Desktop\\future_generation\\front\\reducers\\index.js");
-  reactHotLoader.register(authDialog, "authDialog", "C:\\Users\\venom\\Desktop\\future_generation\\front\\reducers\\index.js");
-  reactHotLoader.register(mainMenu, "mainMenu", "C:\\Users\\venom\\Desktop\\future_generation\\front\\reducers\\index.js");
-  reactHotLoader.register(_default, "default", "C:\\Users\\venom\\Desktop\\future_generation\\front\\reducers\\index.js");
+  reactHotLoader.register(currentLocation, "currentLocation", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/reducers/index.js");
+  reactHotLoader.register(locations, "locations", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/reducers/index.js");
+  reactHotLoader.register(authDialog, "authDialog", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/reducers/index.js");
+  reactHotLoader.register(mainMenu, "mainMenu", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/reducers/index.js");
+  reactHotLoader.register(_default, "default", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/reducers/index.js");
   leaveModule(module);
 })();
 
@@ -3316,7 +3322,7 @@ var _default = Object(__WEBPACK_IMPORTED_MODULE_0_redux__["combineReducers"])({
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__actions__ = __webpack_require__("./actions/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__reducers__ = __webpack_require__("./reducers/index.js");
 (function () {
-  var enterModule = __webpack_require__("./node_modules/react-hot-loader/index.js").enterModule;
+  var enterModule = __webpack_require__("./node_modules/next/node_modules/react-hot-loader/index.js").enterModule;
 
   enterModule && enterModule(module);
 })();
@@ -3348,16 +3354,16 @@ var initStore = function initStore() {
 ;
 
 (function () {
-  var reactHotLoader = __webpack_require__("./node_modules/react-hot-loader/index.js").default;
+  var reactHotLoader = __webpack_require__("./node_modules/next/node_modules/react-hot-loader/index.js").default;
 
-  var leaveModule = __webpack_require__("./node_modules/react-hot-loader/index.js").leaveModule;
+  var leaveModule = __webpack_require__("./node_modules/next/node_modules/react-hot-loader/index.js").leaveModule;
 
   if (!reactHotLoader) {
     return;
   }
 
-  reactHotLoader.register(appInitialState, "appInitialState", "C:\\Users\\venom\\Desktop\\future_generation\\front\\store.js");
-  reactHotLoader.register(initStore, "initStore", "C:\\Users\\venom\\Desktop\\future_generation\\front\\store.js");
+  reactHotLoader.register(appInitialState, "appInitialState", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/store.js");
+  reactHotLoader.register(initStore, "initStore", "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/store.js");
   leaveModule(module);
 })();
 

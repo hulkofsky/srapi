@@ -8471,6 +8471,7 @@ a:hover {
     right: -31px; } }
 
 footer {
+  position: relative;
   height: 565px;
   background: url(/static/images/footer-bg.png);
   background-size: cover;
@@ -8679,3 +8680,12 @@ footer {
         margin-top: 40px;
         font-size: 16px;
         color: #9E9D8F; } }
+
+.three-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 565px;
+  z-index: 10;
+}

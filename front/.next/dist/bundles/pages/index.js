@@ -90,14 +90,14 @@ module.exports =
 /* unused harmony export requestLocations */
 /* unused harmony export receiveCurrentLocation */
 /* unused harmony export receiveLocations */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return fetchCurrentLocation; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return fetchLocations; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return showAuthDialog; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return hideAuthDialog; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return showMainMenu; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return hideMainMenu; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "r", function() { return submitAuthDialog; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return processAuthDialog; });
+/* unused harmony export fetchCurrentLocation */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return fetchLocations; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return showAuthDialog; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return hideAuthDialog; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return showMainMenu; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return hideMainMenu; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "q", function() { return submitAuthDialog; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return processAuthDialog; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch__ = __webpack_require__("isomorphic-unfetch");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_isomorphic_unfetch__);
 
@@ -224,7 +224,8 @@ var processAuthDialog = function processAuthDialog(auth) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux__ = __webpack_require__("react-redux");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_redux__);
-var _jsxFileName = "C:\\Users\\venom\\Desktop\\future_generation\\front\\components\\Footer.jsx";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Three__ = __webpack_require__("./components/Three.jsx");
+var _jsxFileName = "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/components/Footer.jsx";
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -240,6 +241,7 @@ function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) ===
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -311,7 +313,12 @@ function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 15
         }
-      }, "designed and built by vitamin london")));
+      }, "designed and built by vitamin london")), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Three__["a" /* default */], {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 19
+        }
+      }));
     }
   }]);
 
@@ -339,7 +346,7 @@ function (_React$Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__actions__ = __webpack_require__("./actions/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_bootstrap__ = __webpack_require__("react-bootstrap");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_bootstrap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react_bootstrap__);
-var _jsxFileName = "C:\\Users\\venom\\Desktop\\future_generation\\front\\components\\Header.jsx";
+var _jsxFileName = "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/components/Header.jsx";
 
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -712,16 +719,86 @@ var mapStateToProps = function mapStateToProps(state) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    showAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["p" /* showAuthDialog */], dispatch),
-    hideAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["m" /* hideAuthDialog */], dispatch),
-    submitAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["r" /* submitAuthDialog */], dispatch),
-    processAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["o" /* processAuthDialog */], dispatch),
-    showMainMenu: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["q" /* showMainMenu */], dispatch),
-    hideMainMenu: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["n" /* hideMainMenu */], dispatch)
+    showAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["o" /* showAuthDialog */], dispatch),
+    hideAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["l" /* hideAuthDialog */], dispatch),
+    submitAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["q" /* submitAuthDialog */], dispatch),
+    processAuthDialog: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["n" /* processAuthDialog */], dispatch),
+    showMainMenu: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["p" /* showMainMenu */], dispatch),
+    hideMainMenu: Object(__WEBPACK_IMPORTED_MODULE_4_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_5__actions__["m" /* hideMainMenu */], dispatch)
   };
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_3_react_redux__["connect"])(mapStateToProps, mapDispatchToProps)(Header));
+
+/***/ }),
+
+/***/ "./components/Three.jsx":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux__ = __webpack_require__("react-redux");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_redux___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_redux__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_threejs_threeEntryPoint__ = __webpack_require__("./utils/threejs/threeEntryPoint.js");
+var _jsxFileName = "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/components/Three.jsx";
+
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var Three =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Three, _React$Component);
+
+  function Three() {
+    _classCallCheck(this, Three);
+
+    return _possibleConstructorReturn(this, (Three.__proto__ || Object.getPrototypeOf(Three)).apply(this, arguments));
+  }
+
+  _createClass(Three, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      Object(__WEBPACK_IMPORTED_MODULE_2__utils_threejs_threeEntryPoint__["a" /* default */])(this.threeRootElement);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this = this;
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
+        className: "three-container",
+        ref: function ref(element) {
+          return _this.threeRootElement = element;
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 10
+        }
+      });
+    }
+  }]);
+
+  return Three;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_1_react_redux__["connect"])(null, null)(Three));
 
 /***/ }),
 
@@ -747,7 +824,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_Header__ = __webpack_require__("./components/Header.jsx");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Footer__ = __webpack_require__("./components/Footer.jsx");
 
-var _jsxFileName = "C:\\Users\\venom\\Desktop\\future_generation\\front\\pages\\index.jsx";
+var _jsxFileName = "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/pages/index.jsx";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -2048,7 +2125,7 @@ function (_React$Component) {
               case 0:
                 store = _ref2.store, pathname = _ref2.pathname, query = _ref2.query;
                 _context.next = 3;
-                return store.dispatch(Object(__WEBPACK_IMPORTED_MODULE_4__actions__["l" /* fetchLocations */])());
+                return store.dispatch(Object(__WEBPACK_IMPORTED_MODULE_4__actions__["k" /* fetchLocations */])());
 
               case 3:
               case "end":
@@ -2083,7 +2160,7 @@ var mapStateToProps = function mapStateToProps(state) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
-    fetchLocations: Object(__WEBPACK_IMPORTED_MODULE_3_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_4__actions__["l" /* fetchLocations */], dispatch)
+    fetchLocations: Object(__WEBPACK_IMPORTED_MODULE_3_redux__["bindActionCreators"])(__WEBPACK_IMPORTED_MODULE_4__actions__["k" /* fetchLocations */], dispatch)
   };
 };
 
@@ -2263,6 +2340,201 @@ var initStore = function initStore() {
 
 /***/ }),
 
+/***/ "./utils/threejs/GeneralLights.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_three__ = __webpack_require__("three");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_three___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_three__);
+
+/* harmony default export */ __webpack_exports__["a"] = (function (scene) {
+  var lightIn = new __WEBPACK_IMPORTED_MODULE_0_three__["PointLight"]("#4CAF50", 30);
+  var lightOut = new __WEBPACK_IMPORTED_MODULE_0_three__["PointLight"]("#2196F3", 10);
+  lightOut.position.set(40, 20, 40);
+  scene.add(lightIn);
+  scene.add(lightOut);
+  var rad = 80;
+
+  function update(time) {
+    var x = rad * Math.sin(time * 0.2);
+    lightOut.position.x = x;
+  }
+
+  return {
+    update: update
+  };
+});
+
+/***/ }),
+
+/***/ "./utils/threejs/SceneManager.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_three__ = __webpack_require__("three");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_three___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_three__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SceneSubject__ = __webpack_require__("./utils/threejs/SceneSubject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__GeneralLights__ = __webpack_require__("./utils/threejs/GeneralLights.js");
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = (function (canvas) {
+  var clock = new __WEBPACK_IMPORTED_MODULE_0_three__["Clock"]();
+  var origin = new __WEBPACK_IMPORTED_MODULE_0_three__["Vector3"](0, 0, 0);
+  var screenDimensions = {
+    width: canvas.width,
+    height: canvas.height
+  };
+  var scene = buildScene();
+  var renderer = buildRender(screenDimensions);
+  var camera = buildCamera(screenDimensions);
+  var sceneSubjects = createSceneSubjects(scene);
+
+  function buildScene() {
+    var scene = new __WEBPACK_IMPORTED_MODULE_0_three__["Scene"]();
+    scene.background = new __WEBPACK_IMPORTED_MODULE_0_three__["Color"]("#FFF");
+    return scene;
+  }
+
+  function buildRender(_ref) {
+    var width = _ref.width,
+        height = _ref.height;
+    var renderer = new __WEBPACK_IMPORTED_MODULE_0_three__["WebGLRenderer"]({
+      canvas: canvas,
+      antialias: true,
+      alpha: true
+    });
+    var DPR = window.devicePixelRatio ? window.devicePixelRatio : 1;
+    renderer.setPixelRatio(DPR);
+    renderer.setSize(width, height);
+    renderer.gammaInput = true;
+    renderer.gammaOutput = true;
+    return renderer;
+  }
+
+  function buildCamera(_ref2) {
+    var width = _ref2.width,
+        height = _ref2.height;
+    var aspectRatio = width / height;
+    var fieldOfView = 60;
+    var nearPlane = 4;
+    var farPlane = 100;
+    var camera = new __WEBPACK_IMPORTED_MODULE_0_three__["PerspectiveCamera"](fieldOfView, aspectRatio, nearPlane, farPlane);
+    camera.position.z = 40;
+    return camera;
+  }
+
+  function createSceneSubjects(scene) {
+    var sceneSubjects = [new __WEBPACK_IMPORTED_MODULE_2__GeneralLights__["a" /* default */](scene), new __WEBPACK_IMPORTED_MODULE_1__SceneSubject__["a" /* default */](scene)];
+    return sceneSubjects;
+  }
+
+  function update() {
+    var elapsedTime = clock.getElapsedTime();
+
+    for (var i = 0; i < sceneSubjects.length; i++) {
+      sceneSubjects[i].update(elapsedTime);
+    }
+
+    renderer.render(scene, camera);
+  }
+
+  function onWindowResize() {
+    var width = canvas.width,
+        height = canvas.height;
+    screenDimensions.width = width;
+    screenDimensions.height = height;
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(width, height);
+  }
+
+  return {
+    update: update,
+    onWindowResize: onWindowResize
+  };
+});
+
+/***/ }),
+
+/***/ "./utils/threejs/SceneSubject.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_three__ = __webpack_require__("three");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_three___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_three__);
+
+/* harmony default export */ __webpack_exports__["a"] = (function (scene) {
+  var geometry = new __WEBPACK_IMPORTED_MODULE_0_three__["BoxGeometry"](10, 10, 10);
+  var material = new __WEBPACK_IMPORTED_MODULE_0_three__["MeshBasicMaterial"]({
+    color: 0x00ff00
+  });
+  var cube = new __WEBPACK_IMPORTED_MODULE_0_three__["Mesh"](geometry, material);
+  scene.add(cube);
+  var speed = 0.1;
+
+  function update(time) {
+    cube.rotation.y = time * speed;
+  }
+
+  return {
+    update: update
+  };
+});
+
+/***/ }),
+
+/***/ "./utils/threejs/threeEntryPoint.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SceneManager__ = __webpack_require__("./utils/threejs/SceneManager.js");
+
+/* harmony default export */ __webpack_exports__["a"] = (function (container) {
+  var canvas = createCanvas(document, container);
+  var sceneManager = new __WEBPACK_IMPORTED_MODULE_0__SceneManager__["a" /* default */](canvas);
+  var freeze = false;
+  var canvasHalfWidth;
+  var canvasHalfHeight;
+  bindEventListeners();
+  render();
+
+  function createCanvas(document, container) {
+    var canvas = document.createElement('canvas');
+    container.appendChild(canvas);
+    return canvas;
+  }
+
+  function bindEventListeners() {
+    window.onresize = resizeCanvas;
+    window.onmousemove = mouseMove;
+    resizeCanvas();
+  }
+
+  function resizeCanvas() {
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    canvasHalfWidth = Math.round(canvas.offsetWidth / 2);
+    canvasHalfHeight = Math.round(canvas.offsetHeight / 2);
+    sceneManager.onWindowResize();
+  }
+
+  function mouseMove(_ref) {
+    var screenX = _ref.screenX,
+        screenY = _ref.screenY;
+    sceneManager.onMouseMove(screenX - canvasHalfWidth, screenY - canvasHalfHeight);
+  }
+
+  function render(time) {
+    requestAnimationFrame(render);
+    freeze ? sceneManager.update() : false;
+  }
+});
+
+/***/ }),
+
 /***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2345,6 +2617,13 @@ module.exports = require("redux-devtools-extension");
 /***/ (function(module, exports) {
 
 module.exports = require("redux-thunk");
+
+/***/ }),
+
+/***/ "three":
+/***/ (function(module, exports) {
+
+module.exports = require("three");
 
 /***/ })
 
