@@ -8,6 +8,8 @@ import LocationsList from '../components/LocationsList'
 import Footer from '../components/Footer'
 import Three from '../components/Three'
 
+import './index.scss'
+
 class HomePage extends React.Component {
   state = {
     escalatorHiddenContentClass: '',
@@ -42,42 +44,63 @@ class HomePage extends React.Component {
     windowLastTouchY: 0
   }
 
+  horizontalScroll = React.createRef()
+  horizontalScrollOuter = React.createRef()
+
   componentDidMount() {
-    let justLivingSlidingBlock = document.querySelector(".sliding-block")
-    this.setState({justLivingSlidingBlock: justLivingSlidingBlock})
+    this.registerHorizontalScrollListener()
 
-    window.addEventListener('scroll', this.updateRoomTypesImagesClasses.bind(this), { passive: true })
-    window.addEventListener('scroll', this.handleJustLivingScroll.bind(this))
+    // let justLivingSlidingBlock = document.querySelector(".sliding-block")
+    // this.setState({justLivingSlidingBlock: justLivingSlidingBlock})
+    //
+    // window.addEventListener('scroll', this.updateRoomTypesImagesClasses.bind(this), { passive: true })
+    // window.addEventListener('scroll', this.handleJustLivingScroll.bind(this))
+    //
+    // window.addEventListener('touchstart', (e) => {
+    //   this.setState({windowTouchLastY: e.touches[0].clientY})
+    // })
+    // window.addEventListener('touchmove', (e) => {
+    //   e.deltaY = -1 / 10 * (e.changedTouches[0].clientY - this.state.windowTouchLastY)
+    //
+    //   this.handleJustLivingScroll(e)
+    // })
+    //
+    // this.setActiveAdvantage(0)
+    //
+    // if (window.innerWidth <= 767) {
+    //   this.setState({
+    //     advantageItemSvgX: 0,
+    //     advantageItemSvgTextAnchor: 'start'
+    //   })
+    // }
+  }
 
-    window.addEventListener('touchstart', (e) => {
-      this.setState({windowTouchLastY: e.touches[0].clientY})
+  registerHorizontalScrollListener () {
+
+    this.horizontalScrollOuter.current.style.height = `${this.horizontalScroll.current.clientWidth}px`
+
+    window.addEventListener('scroll', (e) => {
+      const distanceFromTop = parseInt(this.horizontalScrollOuter.current.getBoundingClientRect().top)
+      const containerHeight = parseInt(this.horizontalScrollOuter.current.clientHeight)
+      const scrollPosition = parseInt(window.pageYOffset)
+
+      if (distanceFromTop < 0) { // If the horizontal container is above the top of the page
+        this.horizontalScroll.current.style.left = `-${0 - distanceFromTop}px`;
+        this.horizontalScroll.current.style.position = 'fixed';
+      }
     })
-    window.addEventListener('touchmove', (e) => {
-      e.deltaY = -1 / 10 * (e.changedTouches[0].clientY - this.state.windowTouchLastY)
-
-      this.handleJustLivingScroll(e)
-    })
-
-    this.setActiveAdvantage(0)
-
-    if (window.innerWidth <= 767) {
-      this.setState({
-        advantageItemSvgX: 0,
-        advantageItemSvgTextAnchor: 'start'
-      })
-    }
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.updateRoomTypesImagesClasses)
-    window.removeEventListener('scroll', this.handleJustLivingScroll)
-    window.removeEventListener('touchstart', this.handleJustLivingScroll)
-    window.removeEventListener('touchmove', this.handleJustLivingScroll)
+    // window.removeEventListener('scroll', this.updateRoomTypesImagesClasses)
+    // window.removeEventListener('scroll', this.handleJustLivingScroll)
+    // window.removeEventListener('touchstart', this.handleJustLivingScroll)
+    // window.removeEventListener('touchmove', this.handleJustLivingScroll)
   }
 
   scrollToBlock(selector) {
     document.querySelector(selector).scrollIntoView({
-      behavior: 'smooth' 
+      behavior: 'smooth'
     })
   }
 
@@ -223,7 +246,7 @@ class HomePage extends React.Component {
 
         <div className={['escalator-block', this.state.escalatorHiddenContentClass].join(' ')}>
           <div className="row position-relative" onMouseOut={() => this.escalatorMouseOut()} onMouseOver={() => this.escalatorMouseOver()}>
-           
+
             <div className="escalator-image">
             </div>
             <div className="lines-wrapper">
@@ -232,7 +255,7 @@ class HomePage extends React.Component {
                 <div className="lines-mask"></div>
               </div>
             </div>
-            
+
           </div>
         </div>
 
@@ -317,8 +340,8 @@ class HomePage extends React.Component {
 
         <div className="line line3"></div>
 
-        <div className="just-living-block">
-          <div className="sliding-block">
+        <div className="just-living-block" ref={this.horizontalScrollOuter}>
+          <div className="sliding-block" ref={this.horizontalScroll}>
             <div className="football">
               We put a football pitch on your roof and a cinema in your basement.
             </div>
@@ -415,7 +438,7 @@ class HomePage extends React.Component {
 
         <MailingBlock></MailingBlock>
 
-        <Footer></Footer> 
+        <Footer></Footer>
       </div>
     )
   }
