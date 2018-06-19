@@ -1,23 +1,20 @@
 {
   "location": {
     "attributes": {
-      "Name": {
-        "appearance": ""
-      },
-      "order": {
-        "appearance": ""
-      },
-      "url": {
+      "slug": {
         "appearance": ""
       }
     }
   },
-  "page": {
+  "content": {
     "attributes": {
-      "name": {
+      "identifier": {
         "appearance": ""
       },
-      "url": {
+      "media_value": {
+        "appearance": ""
+      },
+      "text_value": {
         "appearance": ""
       }
     }

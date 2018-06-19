@@ -1,8 +1,0 @@
-{
-	"views": {
-		"map": {
-	  	"html": "ejs"
-		},
-		"default": "html"
-	}
-}

@@ -8,6 +8,10 @@ import LocationsList from '../components/LocationsList'
 import Footer from '../components/Footer'
 import Three from '../components/Three'
 
+import './index.scss'
+
+const easeInOutCubic = (t) => (t<.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1)
+
 class HomePage extends React.Component {
   state = {
     escalatorHiddenContentClass: '',
@@ -42,42 +46,76 @@ class HomePage extends React.Component {
     windowLastTouchY: 0
   }
 
+  horizontalScroll = React.createRef()
+  horizontalScrollOuter = React.createRef()
+
   componentDidMount() {
-    let justLivingSlidingBlock = document.querySelector(".sliding-block")
-    this.setState({justLivingSlidingBlock: justLivingSlidingBlock})
+    this.registerHorizontalScrollListener()
 
+    // let justLivingSlidingBlock = document.querySelector(".sliding-block")
+    // this.setState({justLivingSlidingBlock: justLivingSlidingBlock})
+    //
     window.addEventListener('scroll', this.updateRoomTypesImagesClasses.bind(this), { passive: true })
-    window.addEventListener('scroll', this.handleJustLivingScroll.bind(this))
+    // window.addEventListener('scroll', this.handleJustLivingScroll.bind(this))
+    //
+    // window.addEventListener('touchstart', (e) => {
+    //   this.setState({windowTouchLastY: e.touches[0].clientY})
+    // })
+    // window.addEventListener('touchmove', (e) => {
+    //   e.deltaY = -1 / 10 * (e.changedTouches[0].clientY - this.state.windowTouchLastY)
+    //
+    //   this.handleJustLivingScroll(e)
+    // })
+    //
+    // this.setActiveAdvantage(0)
+    //
+    // if (window.innerWidth <= 767) {
+    //   this.setState({
+    //     advantageItemSvgX: 0,
+    //     advantageItemSvgTextAnchor: 'start'
+    //   })
+    // }
+  }
 
-    window.addEventListener('touchstart', (e) => {
-      this.setState({windowTouchLastY: e.touches[0].clientY})
+  registerHorizontalScrollListener () {
+
+    const WIDTH_OF_CONTAINER = window.innerWidth
+    const HEIGHT_OF_CONTAINER = WIDTH_OF_CONTAINER * 2
+
+    this.horizontalScrollOuter.current.style.height = `${HEIGHT_OF_CONTAINER}px`
+
+    window.addEventListener('scroll', (e) => {
+      const distanceFromTop = parseInt(this.horizontalScrollOuter.current.getBoundingClientRect().top)
+      const containerHeight = parseInt(this.horizontalScrollOuter.current.clientHeight)
+      const scrollPosition = parseInt(window.pageYOffset)
+
+      if (distanceFromTop < 0 && distanceFromTop > -WIDTH_OF_CONTAINER) { // If the horizontal container is above the top of the page
+        const leftOffset = easeInOutCubic(-distanceFromTop / WIDTH_OF_CONTAINER) * WIDTH_OF_CONTAINER
+        this.horizontalScroll.current.style.left = `-${leftOffset}px`;
+        this.horizontalScroll.current.style.marginLeft = `auto`;
+        this.horizontalScroll.current.style.marginTop = `auto`;
+        this.horizontalScroll.current.style.position = 'fixed';
+      } else if (distanceFromTop >= 0) { //
+        this.horizontalScroll.current.style.position = 'relative';
+        this.horizontalScroll.current.style.marginLeft = `auto`;
+        this.horizontalScroll.current.style.marginTop = `auto`;
+      } else {
+        this.horizontalScroll.current.style.position = 'relative';
+        this.horizontalScroll.current.style.marginTop = `${WIDTH_OF_CONTAINER}px`;
+      }
     })
-    window.addEventListener('touchmove', (e) => {
-      e.deltaY = -1 / 10 * (e.changedTouches[0].clientY - this.state.windowTouchLastY)
-
-      this.handleJustLivingScroll(e)
-    })
-
-    this.setActiveAdvantage(0)
-
-    if (window.innerWidth <= 767) {
-      this.setState({
-        advantageItemSvgX: 0,
-        advantageItemSvgTextAnchor: 'start'
-      })
-    }
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.updateRoomTypesImagesClasses)
-    window.removeEventListener('scroll', this.handleJustLivingScroll)
-    window.removeEventListener('touchstart', this.handleJustLivingScroll)
-    window.removeEventListener('touchmove', this.handleJustLivingScroll)
+    // window.removeEventListener('scroll', this.handleJustLivingScroll)
+    // window.removeEventListener('touchstart', this.handleJustLivingScroll)
+    // window.removeEventListener('touchmove', this.handleJustLivingScroll)
   }
 
   scrollToBlock(selector) {
     document.querySelector(selector).scrollIntoView({
-      behavior: 'smooth' 
+      behavior: 'smooth'
     })
   }
 
@@ -223,7 +261,7 @@ class HomePage extends React.Component {
 
         <div className={['escalator-block', this.state.escalatorHiddenContentClass].join(' ')}>
           <div className="row position-relative" onMouseOut={() => this.escalatorMouseOut()} onMouseOver={() => this.escalatorMouseOver()}>
-           
+
             <div className="escalator-image">
             </div>
             <div className="lines-wrapper">
@@ -232,7 +270,7 @@ class HomePage extends React.Component {
                 <div className="lines-mask"></div>
               </div>
             </div>
-            
+
           </div>
         </div>
 
@@ -317,8 +355,8 @@ class HomePage extends React.Component {
 
         <div className="line line3"></div>
 
-        <div className="just-living-block">
-          <div className="sliding-block">
+        <div className="just-living-block" ref={this.horizontalScrollOuter}>
+          <div className="sliding-block" ref={this.horizontalScroll}>
             <div className="football">
               We put a football pitch on your roof and a cinema in your basement.
             </div>
@@ -415,7 +453,7 @@ class HomePage extends React.Component {
 
         <MailingBlock></MailingBlock>
 
-        <Footer></Footer> 
+        <Footer></Footer>
       </div>
     )
   }

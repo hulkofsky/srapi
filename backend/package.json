@@ -1,5 +1,5 @@
 {
-  "name": "future_generation",
+  "name": "fg",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application.",
@@ -19,31 +19,31 @@
     "eslint-plugin-react": "^6.8.0"
   },
   "dependencies": {
-    "lodash": "^4.17.10",
-    "mysql": "2.15.0",
-    "pg": "^7.4.1",
-    "strapi": "3.0.0-alpha.12.0.1",
-    "strapi-bookshelf": "3.0.0-alpha.12.0.1",
-    "styled-components": "^3.2.6"
+    "lodash": "4.x.x",
+    "strapi": "3.0.0-alpha.12.3",
+    "strapi-bookshelf": "3.0.0-alpha.12.3",
+    "strapi-knex": "3.0.0-alpha.12.3",
+    "knex": "latest",
+    "pg": "7.4.3"
   },
   "author": {
-    "name": "A Strapi developer",
+    "name": "louisknight-webbvitamin",
     "email": "",
     "url": ""
   },
   "maintainers": [
     {
-      "name": "A Strapi developer",
+      "name": "louisknight-webbvitamin",
       "email": "",
       "url": ""
     }
   ],
   "strapi": {
-    "uuid": "87d3c4f0-1256-4ef5-ba4c-3664b95680cf"
+    "uuid": "5aaa3279-a860-4980-858c-448ffef91b31"
   },
   "engines": {
-    "node": ">= 7.0.0",
-    "npm": ">= 3.0.0"
+    "node": ">= 9.0.0",
+    "npm": ">= 5.0.0"
   },
   "license": "MIT"
 }
