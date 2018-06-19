@@ -2156,15 +2156,6 @@ footer {
 	    padding-top: 15px;
 	    color: #d9d9d2;
 	}
-
-	.three-container {
-		position: absolute;
-		top: -212px;
-		left: 0;
-		width: 100vw;
-		height: 900px;
-		z-index: 0;
-	}
 }
 
 
@@ -2414,3 +2405,30 @@ footer {
 	    }
 	}
 }
+
+
+#cube_rising {
+	position: absolute;
+	top: -212px;
+	left: 0;
+	width: 100vw;
+	height: 900px;
+	z-index: 0;
+}
+#cube_footer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100%;
+	z-index: 0;
+}
+
+//.three-container {
+//	position: absolute;
+//	top: -212px;
+//	left: 0;
+//	width: 100vw;
+//	height: 900px;
+//	z-index: 0;
+//}
