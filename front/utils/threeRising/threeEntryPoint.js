@@ -17,6 +17,9 @@ export default container  => {
   }, 3000);
   sceneManager.update();
 
+  window.addEventListener('scroll', scrollCanvas);
+
+
   function createCanvas(document, container) {
     const canvas = document.createElement('canvas');
     container.appendChild(canvas);
@@ -26,8 +29,6 @@ export default container  => {
 
   function bindEventListeners() {
     window.onresize = resizeCanvas;
-    window.onscroll = scrollCanvas;
-
     resizeCanvas();
   }
 
@@ -45,7 +46,8 @@ export default container  => {
   }
 
 
-  function getCanvasPosition(element) {
+  function getCanvasPosition() {
+    let element = document.getElementById('cube_rising');
     let yPosition = 0;
     while(element) {
       yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
@@ -61,7 +63,6 @@ export default container  => {
     if (delt < (canvas.offsetHeight)) {
       const r = ((delt * 100) / canvas.offsetHeight) / 100;
       window.cubeRisingAnim.progress(1-r);
-      console.log('rising:', r);
     }
 
     sceneManager.update();

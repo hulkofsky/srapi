@@ -4,6 +4,7 @@ import { TimelineMax, Linear } from 'gsap';
 export default container => {
   const canvas = createCanvas(document, container);
   const sceneManager = new SceneManager(canvas);
+  const body = document.getElementsByTagName('body')[0];
   const freeze = true;
   const deg = Math.PI / 180;
   let canvasHalfWidth;
@@ -17,6 +18,9 @@ export default container => {
   }, 3000);
   sceneManager.update();
 
+  window.addEventListener('scroll', scrollCanvas);
+
+
   function createCanvas(document, container) {
     const canvas = document.createElement('canvas');
     container.appendChild(canvas);
@@ -26,8 +30,6 @@ export default container => {
 
   function bindEventListeners() {
     window.onresize = resizeCanvas;
-    window.onscroll = scrollCanvas;
-
     resizeCanvas();
   }
 
@@ -45,7 +47,8 @@ export default container => {
   }
 
 
-  function getCanvasPosition(element) {
+  function getCanvasPosition() {
+    let element = document.getElementById('cube_footer');
     let yPosition = 0;
     while(element) {
       yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
@@ -56,12 +59,11 @@ export default container => {
 
 
   function scrollCanvas() {
-    const delt = canvasOffsetTop - window.scrollY + 150;
+    const delt = (body.offsetHeight - window.scrollY - window.innerHeight) * 2;
 
     if (delt < (canvas.offsetHeight)) {
       const r = ((delt * 100) / canvas.offsetHeight) / 100;
-      window.cubeFooterAnim.progress(1-r);
-      console.log('footer:', r);
+      window.cubeFooterAnim.progress(1 - r);
     }
 
     sceneManager.update();

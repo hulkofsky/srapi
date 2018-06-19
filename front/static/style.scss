@@ -2110,6 +2110,7 @@ a:hover {
 }
 
 footer {
+	position: relative;
     height: 565px;
     background: url(/static/images/footer-bg.png);
     background-size: cover;
@@ -2134,6 +2135,7 @@ footer {
 	    padding-top: 25px;
 	    text-align: right;
 	    padding-bottom: 125px;
+		z-index: 2;
 	}
 	.menu-item {
 	    color: #d9d9d2;

@@ -69,7 +69,8 @@ export default scene => {
       cubeGroup.add(item);
     });
 
-    pivot.position.set(0, -0.1, 0);
+    pivot.position.set(-0.2, -0.1, 0);
+    window.pivot = pivot;
     pivot.add( cubeGroup );
     scene.add( pivot );
   };
