@@ -10,6 +10,8 @@ import Three from '../components/Three'
 
 import './index.scss'
 
+const easeInOutCubic = (t) => (t<.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1)
+
 class HomePage extends React.Component {
   state = {
     escalatorHiddenContentClass: '',
@@ -53,7 +55,7 @@ class HomePage extends React.Component {
     // let justLivingSlidingBlock = document.querySelector(".sliding-block")
     // this.setState({justLivingSlidingBlock: justLivingSlidingBlock})
     //
-    // window.addEventListener('scroll', this.updateRoomTypesImagesClasses.bind(this), { passive: true })
+    window.addEventListener('scroll', this.updateRoomTypesImagesClasses.bind(this), { passive: true })
     // window.addEventListener('scroll', this.handleJustLivingScroll.bind(this))
     //
     // window.addEventListener('touchstart', (e) => {
@@ -77,22 +79,35 @@ class HomePage extends React.Component {
 
   registerHorizontalScrollListener () {
 
-    this.horizontalScrollOuter.current.style.height = `${this.horizontalScroll.current.clientWidth}px`
+    const WIDTH_OF_CONTAINER = window.innerWidth
+    const HEIGHT_OF_CONTAINER = WIDTH_OF_CONTAINER * 2
+
+    this.horizontalScrollOuter.current.style.height = `${HEIGHT_OF_CONTAINER}px`
 
     window.addEventListener('scroll', (e) => {
       const distanceFromTop = parseInt(this.horizontalScrollOuter.current.getBoundingClientRect().top)
       const containerHeight = parseInt(this.horizontalScrollOuter.current.clientHeight)
       const scrollPosition = parseInt(window.pageYOffset)
 
-      if (distanceFromTop < 0) { // If the horizontal container is above the top of the page
-        this.horizontalScroll.current.style.left = `-${0 - distanceFromTop}px`;
+      if (distanceFromTop < 0 && distanceFromTop > -WIDTH_OF_CONTAINER) { // If the horizontal container is above the top of the page
+        const leftOffset = easeInOutCubic(-distanceFromTop / WIDTH_OF_CONTAINER) * WIDTH_OF_CONTAINER
+        this.horizontalScroll.current.style.left = `-${leftOffset}px`;
+        this.horizontalScroll.current.style.marginLeft = `auto`;
+        this.horizontalScroll.current.style.marginTop = `auto`;
         this.horizontalScroll.current.style.position = 'fixed';
+      } else if (distanceFromTop >= 0) { //
+        this.horizontalScroll.current.style.position = 'relative';
+        this.horizontalScroll.current.style.marginLeft = `auto`;
+        this.horizontalScroll.current.style.marginTop = `auto`;
+      } else {
+        this.horizontalScroll.current.style.position = 'relative';
+        this.horizontalScroll.current.style.marginTop = `${WIDTH_OF_CONTAINER}px`;
       }
     })
   }
 
   componentWillUnmount() {
-    // window.removeEventListener('scroll', this.updateRoomTypesImagesClasses)
+    window.removeEventListener('scroll', this.updateRoomTypesImagesClasses)
     // window.removeEventListener('scroll', this.handleJustLivingScroll)
     // window.removeEventListener('touchstart', this.handleJustLivingScroll)
     // window.removeEventListener('touchmove', this.handleJustLivingScroll)

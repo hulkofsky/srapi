@@ -1,409 +1,248 @@
-// .just-living-block {
-//   min-height: 100vh;
-//   overflow: hidden;
-//
-//   .sliding-block {
-//     min-height: 100vh;
-//     padding-top: 150px;
-//     padding-bottom: 150px;
-//     box-sizing: border-box;
-//     top: 0px;
-//     white-space: nowrap;
-//
-// 		.quote {
-// 			display: inline-block;
-// 			width: 75%;
-// 			padding-left: 10%;
-// 			vertical-align: top;
-//       float: left;
-// 		}
-//
-// 		.roof-block {
-// 			display: inline-block;
-// 			width: 100%;
-// 			.advantages-list {
-// 				position: relative;
-// 			}
-// 			.row {
-// 			    margin: 0;
-// 			    position: relative
-// 			}
-// 			.background-quote {
-// 			    margin-left: -120px;
-// 			    position: absolute
-// 			}
-// 			.left {
-// 				opacity: 0.3;
-// 			}
-// 			.col-md-6 {
-// 			    padding: 0;
-// 			    margin-left: 10%
-// 			}
-// 			.quote {
-// 			    opacity: .05
-// 			}
-// 			.advantage-image {
-// 			    width: 100%;
-// 			    margin-bottom: 130px;
-// 			    opacity: .9
-// 			}
-// 			.right {
-// 			    position: absolute;
-// 			    right: 3.7%;
-// 			    width: 50%;
-// 			    .advantages-names {
-// 			    	text-align: right;
-// 			    	line-height: 1.1;
-// 				    font-weight: 900;
-// 				    color: #191714;
-// 				    text-transform: uppercase;
-// 				    margin-bottom: 30px;
-// 				    .advantage-name {
-// 				    	cursor: pointer;
-// 					    .advantage-name-svg {
-// 					    	display: inline-block;
-// 					    	width: 45vw;
-// 					    	.advantage-name-text {
-// 								stroke: #9E9D8F;
-// 								stroke-width: 0.3;
-// 								fill: none;
-// 								font-size: 11px;
-// 								letter-spacing: 0.1px;
-// 					    	}
-// 					    }
-// 					    &.active {
-// 					    	.advantage-name-svg {
-// 						    	.advantage-name-text {
-// 						    		stroke: #191714;
-// 						    		fill: #191714;
-// 						    	}
-// 						    }
-// 					    }
-// 				    }
-// 			    }
-// 			}
-// 			.line {
-// 			    height: 95px;
-// 			    position: static;
-// 			    -webkit-transform: none;
-// 			    transform: none;
-// 			    background: linear-gradient(to top right,transparent calc(50% - 1px),#babab0,transparent calc(50% + 1px));
-// 			    margin: 0 0 0 36%;
-// 			    width: 53%
-// 			}
-// 		 	.available {
-// 			    font-size: 16px;
-// 			    font-weight: 400;
-// 			    margin-top: 30px;
-// 			    text-align: left;
-// 			    width: 53%;
-// 			    margin-left: 36%;
-// 			    line-height: 1.81;
-// 			    white-space: normal;
-// 			}
-// 			.available .available-title {
-// 			    position: relative;
-// 			    font-style: italic;
-// 			    margin-bottom: 15px;
-// 			    padding-left: 20px;
-// 			    &:before {
-// 			    	content: "";
-// 			    	display: inline-block;
-// 			    	width: 10px;
-// 			    	height: 4px;
-// 			    	background: #FF9C5F;
-// 			    	position: absolute;
-// 			    	top: 12px;
-// 			    	left: 5px;
-// 			    }
-// 			}
-// 			.slider-controls {
-// 				@extend .slider-controls;
-// 				display: none;
-// 			}
-// 			.lines {
-// 			    width: 53%;
-// 			    margin-left: 36%;
-// 			    height: 140px;
-// 			    background: url(/static/images/lines.png);
-// 			    background-size: cover;
-// 			}
-// 		}
-// 		&.fully-scrolled {
-// 			.roof-block {
-// 				.horizontal-line {
-// 					display: none;
-// 				}
-// 				.left {
-// 					opacity: 1;
-// 				}
-// 			}
-// 		}
-// 		&.partially-scrolled {
-// 			.roof-block {
-// 				.horizontal-line {
-// 					display: none;
-// 				}
-// 			}
-// 		}
-// 	}
-// }
-//
-// .just-living-block {
-//   .football {
-// 	    color: #191714;
-// 	    margin-bottom: 25px;
-// 	    padding-left: 9.75%;
-// 	    font-weight: bold;
-//       width: 100%;
-//       float: left;
-// 	}
-// 	.row {
-// 	    margin: 0
-// 	}
-// 	.roof {
-// 	    background: url(/static/images/football.png);
-// 	    width: 290px;
-// 	    height: 650px;
-// 	    background-size: cover;
-// 	    opacity: .2
-// 	}
-// 	.horizontal-line {
-// 	    height: 12px;
-// 	    width: 100%;
-// 	    background-color: #9e9d8f;
-// 	    position: absolute;
-// 	    bottom: 250px;
-// 	}
-// 	.sliding-block {
-// 		white-space: nowrap;
-// 		overflow: hidden;
-// 		.quote {
-// 			display: inline-block;
-// 			width: 75%;
-// 			padding-left: 10%;
-// 			vertical-align: top;
-// 		}
-// 		.roof-block {
-// 			display: inline-block;
-// 			width: 100%;
-// 			.advantages-list {
-// 				position: relative;
-// 			}
-// 			.row {
-// 			    margin: 0;
-// 			    position: relative
-// 			}
-// 			.background-quote {
-// 			    margin-left: -120px;
-// 			    position: absolute
-// 			}
-// 			.left {
-// 				opacity: 0.3;
-// 			}
-// 			.col-md-6 {
-// 			    padding: 0;
-// 			    margin-left: 10%
-// 			}
-// 			.quote {
-// 			    opacity: .05
-// 			}
-// 			.advantage-image {
-// 			    width: 100%;
-// 			    margin-bottom: 130px;
-// 			    opacity: .9
-// 			}
-// 			.right {
-// 			    position: absolute;
-// 			    right: 3.7%;
-// 			    width: 50%;
-// 			    .advantages-names {
-// 			    	text-align: right;
-// 			    	line-height: 1.1;
-// 				    font-weight: 900;
-// 				    color: #191714;
-// 				    text-transform: uppercase;
-// 				    margin-bottom: 30px;
-// 				    .advantage-name {
-// 				    	cursor: pointer;
-// 					    .advantage-name-svg {
-// 					    	display: inline-block;
-// 					    	width: 45vw;
-// 					    	.advantage-name-text {
-// 								stroke: #9E9D8F;
-// 								stroke-width: 0.3;
-// 								fill: none;
-// 								font-size: 11px;
-// 								letter-spacing: 0.1px;
-// 					    	}
-// 					    }
-// 					    &.active {
-// 					    	.advantage-name-svg {
-// 						    	.advantage-name-text {
-// 						    		stroke: #191714;
-// 						    		fill: #191714;
-// 						    	}
-// 						    }
-// 					    }
-// 				    }
-// 			    }
-// 			}
-// 			.line {
-// 			    height: 95px;
-// 			    position: static;
-// 			    -webkit-transform: none;
-// 			    transform: none;
-// 			    background: linear-gradient(to top right,transparent calc(50% - 1px),#babab0,transparent calc(50% + 1px));
-// 			    margin: 0 0 0 36%;
-// 			    width: 53%
-// 			}
-// 		 	.available {
-// 			    font-size: 16px;
-// 			    font-weight: 400;
-// 			    margin-top: 30px;
-// 			    text-align: left;
-// 			    width: 53%;
-// 			    margin-left: 36%;
-// 			    line-height: 1.81;
-// 			    white-space: normal;
-// 			}
-// 			.available .available-title {
-// 			    position: relative;
-// 			    font-style: italic;
-// 			    margin-bottom: 15px;
-// 			    padding-left: 20px;
-// 			    &:before {
-// 			    	content: "";
-// 			    	display: inline-block;
-// 			    	width: 10px;
-// 			    	height: 4px;
-// 			    	background: #FF9C5F;
-// 			    	position: absolute;
-// 			    	top: 12px;
-// 			    	left: 5px;
-// 			    }
-// 			}
-// 			.slider-controls {
-// 				@extend .slider-controls;
-// 				display: none;
-// 			}
-// 			.lines {
-// 			    width: 53%;
-// 			    margin-left: 36%;
-// 			    height: 140px;
-// 			    background: url(/static/images/lines.png);
-// 			    background-size: cover;
-// 			}
-// 		}
-// 		&.fully-scrolled {
-// 			.roof-block {
-// 				.horizontal-line {
-// 					display: none;
-// 				}
-// 				.left {
-// 					opacity: 1;
-// 				}
-// 			}
-// 		}
-// 		&.partially-scrolled {
-// 			.roof-block {
-// 				.horizontal-line {
-// 					display: none;
-// 				}
-// 			}
-// 		}
-// 	}
-// }
-//
-// @media screen and (max-width: 767px) {
-// 	.just-living-block {
-// 		.football {
-// 			font-size: 21px;
-// 		}
-// 		.quote {
-// 			line-height: 1;
-// 		}
-// 		.row {
-// 			position: relative;
-// 		}
-// 		.roof {
-// 			height: 100vw;
-// 			left: 70%;
-// 		}
-// 		.col-md-3 {
-// 			position: absolute;
-// 			top: 0;
-// 			left: 30%;
-// 		}
-// 		.sliding-block {
-// 			.roof-block {
-// 				padding-top: 0;
-// 				.horizontal-line {
-// 					position: absolute;
-// 					top: 70vw;
-// 					left: -10vw;
-// 				}
-// 				.right {
-// 					position: static;
-// 					right: 0;
-// 					width: 100%;
-// 					.advantages-names {
-// 						.advantage-name {
-// 							display: none;
-// 							.advantage-name-svg {
-// 								width: 100%;
-// 							}
-// 							&.active {
-// 								display: block;
-// 								width: 80%;
-// 								text-align: left;
-// 								margin-left: 10%;
-// 							}
-// 						}
-// 					}
-// 					.line {
-// 						display: none;
-// 					}
-// 				}
-// 				.col-md-6 {
-// 					margin-left: 0;
-// 				}
-// 				.available {
-// 					width: 80%;
-// 					margin: 20px 10% 0 10%;
-// 					font-size: 21px;
-// 					text-align: justify;
-// 					.available-title {
-// 						text-align: left;
-// 					}
-// 				}
-// 				.background-quote {
-// 					display: none;
-// 				}
-// 				.advantage-image {
-// 					margin-bottom: 30px;
-// 					height: auto;
-// 					max-width: 100%;
-// 				}
-// 				.slider-controls {
-// 					display: flex;
-// 				}
-// 				.lines {
-// 					margin: 10px 10% 0 10%;
-// 					width: 80%;
-// 				}
-// 			}
-// 			&.fully-scrolled {
-// 				padding-left: 0;
-// 			}
-// 		}
-// 	}
-// }
+.just-living-block {
+  min-height: 100vh;
+  overflow: hidden;
 
-// .just-living-block .quote,
-// .roof-block .quote {
-//     font-size: 18vw;
-//     line-height: .92;
-//     text-transform: uppercase;
-//     font-family: SixCaps,sans-serif
-// }
+  .sliding-block {
+    min-height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    box-sizing: border-box;
+    width: 200vw;
+    top: 0px;
+    white-space: nowrap;
+
+    .football {
+      margin-left: 5%;
+    }
+
+		.quote {
+      width: 100vw;
+			display: inline-block;
+			padding-left: 5%;
+			vertical-align: top;
+      float: left;
+		}
+
+		.roof-block {
+			display: inline-block;
+			width: 100vw;
+			.advantages-list {
+				position: relative;
+			}
+			.row {
+			    margin: 0;
+			    position: relative
+			}
+			.background-quote {
+			    margin-left: -120px;
+			    position: absolute
+			}
+			.left {
+				opacity: 0.3;
+			}
+			.col-md-6 {
+			    padding: 0;
+			    margin-left: 10%
+			}
+			.quote {
+			    opacity: .05
+			}
+			.advantage-image {
+			    width: 100%;
+			    margin-bottom: 130px;
+			    opacity: .9
+			}
+			.right {
+			    position: absolute;
+			    right: 5%;
+			    width: 50%;
+			    .advantages-names {
+			    	text-align: right;
+			    	line-height: 1.1;
+				    font-weight: 900;
+				    color: #191714;
+				    text-transform: uppercase;
+				    margin-bottom: 30px;
+				    .advantage-name {
+				    	cursor: pointer;
+					    .advantage-name-svg {
+					    	display: inline-block;
+					    	width: 45vw;
+					    	.advantage-name-text {
+								stroke: #9E9D8F;
+								stroke-width: 0.3;
+								fill: none;
+								font-size: 11px;
+								letter-spacing: 0.1px;
+					    	}
+					    }
+					    &.active {
+					    	.advantage-name-svg {
+						    	.advantage-name-text {
+						    		stroke: #191714;
+						    		fill: #191714;
+						    	}
+						    }
+					    }
+				    }
+			    }
+			}
+			.line {
+			    height: 95px;
+			    position: static;
+			    -webkit-transform: none;
+			    transform: none;
+			    background: linear-gradient(to top right,transparent calc(50% - 1px),#babab0,transparent calc(50% + 1px));
+			    margin: 0 0 0 36%;
+			    width: 53%
+			}
+		 	.available {
+			    font-size: 16px;
+			    font-weight: 400;
+			    margin-top: 30px;
+			    text-align: left;
+			    width: 53%;
+			    margin-left: 36%;
+			    line-height: 1.81;
+			    white-space: normal;
+			}
+			.available .available-title {
+			    position: relative;
+			    font-style: italic;
+			    margin-bottom: 15px;
+			    padding-left: 20px;
+			    &:before {
+			    	content: "";
+			    	display: inline-block;
+			    	width: 10px;
+			    	height: 4px;
+			    	background: #FF9C5F;
+			    	position: absolute;
+			    	top: 12px;
+			    	left: 5px;
+			    }
+			}
+			.slider-controls {
+				@extend .slider-controls;
+				display: none;
+			}
+			.lines {
+			    width: 53%;
+			    margin-left: 36%;
+			    height: 140px;
+			    background: url(/static/images/lines.png);
+			    background-size: cover;
+			}
+		}
+		&.fully-scrolled {
+			.roof-block {
+				.horizontal-line {
+					display: none;
+				}
+				.left {
+					opacity: 1;
+				}
+			}
+		}
+		&.partially-scrolled {
+			.roof-block {
+				.horizontal-line {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.just-living-block {
+		.football {
+			font-size: 21px;
+		}
+		.quote {
+			line-height: 1;
+		}
+		.row {
+			position: relative;
+		}
+		.roof {
+			height: 100vw;
+			left: 70%;
+		}
+		.col-md-3 {
+			position: absolute;
+			top: 0;
+			left: 30%;
+		}
+		.sliding-block {
+			.roof-block {
+				padding-top: 0;
+				.horizontal-line {
+					position: absolute;
+					top: 70vw;
+					left: -10vw;
+				}
+				.right {
+					position: static;
+					right: 0;
+					width: 100%;
+					.advantages-names {
+						.advantage-name {
+							display: none;
+							.advantage-name-svg {
+								width: 100%;
+							}
+							&.active {
+								display: block;
+								width: 80%;
+								text-align: left;
+								margin-left: 10%;
+							}
+						}
+					}
+					.line {
+						display: none;
+					}
+				}
+				.col-md-6 {
+					margin-left: 0;
+				}
+				.available {
+					width: 80%;
+					margin: 20px 10% 0 10%;
+					font-size: 21px;
+					text-align: justify;
+					.available-title {
+						text-align: left;
+					}
+				}
+				.background-quote {
+					display: none;
+				}
+				.advantage-image {
+					margin-bottom: 30px;
+					height: auto;
+					max-width: 100%;
+				}
+				.slider-controls {
+					display: flex;
+				}
+				.lines {
+					margin: 10px 10% 0 10%;
+					width: 80%;
+				}
+			}
+			&.fully-scrolled {
+				padding-left: 0;
+			}
+		}
+	}
+}
+
+.just-living-block .quote,
+.roof-block .quote {
+    font-size: calc(33vh - 47px);
+    line-height: .92;
+    text-transform: uppercase;
+    font-family: SixCaps,sans-serif
+}
