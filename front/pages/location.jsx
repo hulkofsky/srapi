@@ -12,7 +12,7 @@ import Footer from '../components/Footer'
 
 let whenSoberBlock = null
 let roomTypeSelectorTrigger = null
-let roomTypeSelectorTriggerHeight = 0
+let roomTypeSelector = null
 let whenSoberBottomOffset = 0
 
 class LocationPage extends React.Component {
@@ -27,25 +27,32 @@ class LocationPage extends React.Component {
   componentDidMount() {
     whenSoberBlock = document.querySelector(".when-sober")
     roomTypeSelectorTrigger = document.querySelector(".rooms-type-selector-trigger")
-    whenSoberBottomOffset = whenSoberBlock.offsetTop + whenSoberBlock.getBoundingClientRect().height
-    roomTypeSelectorTriggerHeight = roomTypeSelectorTrigger.clientHeight
+    roomTypeSelector = document.querySelector(".rooms-type-selector")
 
-    window.addEventListener('scroll', this.updateRoomTypeSelectorTriggerStyle.bind(this), { passive: true })
+    window.addEventListener('scroll', this.updateRoomTypeSelectorStyle.bind(this), { passive: true })
+    window.addEventListener('resize', this.updateWhenSoberBottomOffset.bind(this))
 
     this.setupItemsSliders()
+    this.updateWhenSoberBottomOffset()
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.updateRoomTypeSelectorTriggerStyle)
+    window.removeEventListener('scroll', this.updateRoomTypeSelectorStyle)
+    window.removeEventListener('resize', this.updateWhenSoberBottomOffset)
   }
 
-  updateRoomTypeSelectorTriggerStyle() {
-    let roomTypeWidgetMinY = (window.scrollY + window.innerHeight / 2 + roomTypeSelectorTriggerHeight)
+  updateWhenSoberBottomOffset() {
+    whenSoberBottomOffset = whenSoberBlock.offsetTop + whenSoberBlock.getBoundingClientRect().height
+  }
+
+  updateRoomTypeSelectorStyle() {
+    let elementToCheck = (this.state.roomsTypeSelectorVisible ? roomTypeSelector : roomTypeSelectorTrigger)
+    let roomTypeWidgetMinY = (window.scrollY + window.innerHeight / 2 + elementToCheck.clientHeight)
 
     if (roomTypeWidgetMinY > whenSoberBottomOffset) {
-      roomTypeSelectorTrigger.style.top = (whenSoberBottomOffset - roomTypeWidgetMinY) + window.innerHeight/2 + 'px'
+      elementToCheck.style.top = (whenSoberBottomOffset - roomTypeWidgetMinY) + window.innerHeight/2 + 'px'
     } else {
-      roomTypeSelectorTrigger.style.top = '50%'
+      elementToCheck.style.top = '50%'
     }
   }
 
@@ -155,6 +162,12 @@ class LocationPage extends React.Component {
     })
   }
 
+  scrollToRooms(selector) {
+    document.querySelector(selector).scrollIntoView({
+      behavior: 'smooth' 
+    })
+  }
+
   render() {
     return (
       <div className="location-page">
@@ -162,13 +175,16 @@ class LocationPage extends React.Component {
 
         <div className={['rooms-type-selector-trigger', (this.state.roomsTypeSelectorVisible ? 'd-none' : '')].join(' ')} onClick={() => this.toggleRoomsTypeSelector()}>
           <img className="arrow" src="/static/svg/FG_UI01_assets_arrow icon.svg" alt="" />
+          <div className="key">
+            <img src="/static/svg/FG_UI01_assets_key icon.svg" />
+          </div>
           <div className="caption">the rooms</div>
         </div>
         <div className={['rooms-type-selector', (this.state.roomsTypeSelectorVisible ? '' : 'd-none')].join(' ')}>
           <div className="title">Jump to:</div>
-          <div className="type-name">Classic</div>
-          <div className="type-name">en suite</div>
-          <div className="type-name">studio</div>
+          <div className="type-name" onClick={() => this.scrollToRooms("#rooms-list-classic")}>Classic</div>
+          <div className="type-name" onClick={() => this.scrollToRooms("#rooms-list-classic")}>en suite</div>
+          <div className="type-name" onClick={() => this.scrollToRooms("#rooms-list-classic")}>studio</div>
           <img className="arrow" src="/static/svg/FG_UI01_assets_arrow icon.svg" alt="" onClick={() => this.toggleRoomsTypeSelector()} />
         </div>
 
@@ -350,12 +366,12 @@ class LocationPage extends React.Component {
 
         <div className="did-you-know">
           <div className="title">Did you know</div>
+          <div className="intro">
+            From the niché sayings to the interresting details, Sheffield has a lot to offer. So before you move there and become a Sheffieldian, lets get you up to speed.
+          </div>
           <div className="items-slider facts">
             <div className="item fact">
               <div className="left">
-                <div className="text-1">
-                  From the niché sayings to the interresting details, Sheffield has a lot to offer. So before you move there and become a Sheffieldian, lets get you up to speed.
-                </div>
                 <div className="quote">
                   “ey up chap”
                 </div>
@@ -374,9 +390,6 @@ class LocationPage extends React.Component {
             </div>
             <div className="item fact">
               <div className="left">
-                <div className="text-1">
-                  From the niché sayings to the interresting details, Sheffield has a lot to offer. So before you move there and become a Sheffieldian, lets get you up to speed. 1
-                </div>
                 <div className="quote">
                   “ey up chap 1”
                 </div>
@@ -395,9 +408,6 @@ class LocationPage extends React.Component {
             </div>
             <div className="item fact">
               <div className="left">
-                <div className="text-1">
-                  From the niché sayings to the interresting details, Sheffield has a lot to offer. So before you move there and become a Sheffieldian, lets get you up to speed. 2
-                </div>
                 <div className="quote">
                   “ey up chap 2”
                 </div>
@@ -416,9 +426,6 @@ class LocationPage extends React.Component {
             </div>
             <div className="item fact">
               <div className="left">
-                <div className="text-1">
-                  From the niché sayings to the interresting details, Sheffield has a lot to offer. So before you move there and become a Sheffieldian, lets get you up to speed. 3
-                </div>
                 <div className="quote">
                   “ey up chap 3”
                 </div>
@@ -724,7 +731,7 @@ class LocationPage extends React.Component {
           </div>
           <div className="rooms-type">
             <div className="row align-items-center">
-              <div className="col-md-6 room-part-name">
+              <div className="col-md-6 room-part-name" id="rooms-list-classic">
                 classic Bedrooms
               </div>
               <div className="col-md-6 book-btn-wrapper">
@@ -734,14 +741,14 @@ class LocationPage extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="hero-image">
+            <div className="hero-image bedroom">
               <img src="/static/images/FG_UI01_assets_location_bedroom hero.jpg" alt="" className="img-fluid" />
-              <div className="text-block">
-                <div className="text">
-                  Pan around what could be your bedroom, come multi-million business origin story
-                </div>
-                <div className="horizontal-line"></div>
+            </div>
+            <div className="text-block">
+              <div className="text">
+                Pan around what could be your bedroom, come multi-million business origin story
               </div>
+              <div className="horizontal-line"></div>
             </div>
             <div className="row additional-info">
               <div className="col-md-6 images">
@@ -760,14 +767,14 @@ class LocationPage extends React.Component {
               <div className="col-md-6 book-btn-wrapper">
               </div>
             </div>
-            <div className="hero-image">
+            <div className="hero-image kitchen">
               <img src="/static/images/FG_UI01_assets_location_kitchen hero.jpg" alt="" className="img-fluid" />
-              <div className="text-block">
-                <div className="text">
-                  Look around a space where you’ll revise, drink, regret drinking, and have deep conversations over pizza
-                </div>
-                <div className="horizontal-line"></div>
+            </div>
+            <div className="text-block">
+              <div className="text">
+                Look around a space where you’ll revise, drink, regret drinking, and have deep conversations over pizza
               </div>
+              <div className="horizontal-line"></div>
             </div>
             <div className="row additional-info">
               <div className="col-md-6 images">

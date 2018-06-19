@@ -6867,6 +6867,8 @@ a:hover {
     .items-slider .item.type-2 .description {
       width: 100%;
       padding-left: 0; }
+    .items-slider .item:last-child {
+      padding-right: 10%; }
   .items-slider.with-next-visible {
     margin-right: -12.5%; }
     .items-slider.with-next-visible .item {
@@ -6902,6 +6904,8 @@ a:hover {
     display: block; }
   .items-slider .item .info {
     font-size: 21px; }
+  .items-slider .item:last-child {
+    padding-right: 0; }
   .items-slider.with-next-visible {
     width: 100%;
     margin-left: 0; }
@@ -7318,7 +7322,7 @@ a:hover {
   color: #d9d9d2;
   width: 54%;
   margin: 0 auto;
-  line-height: 1; }
+  line-height: 1.2; }
 
 .rising-standarts-block .text {
   color: #d9d9d2;
@@ -7349,11 +7353,13 @@ a:hover {
     padding-top: 36vw;
     padding-bottom: 70vw; }
     .rising-standarts-block .quote {
-      width: 70%; }
+      width: 86%;
+      font-size: 8vw; }
     .rising-standarts-block .text {
-      width: 70%;
-      margin-left: 15%;
-      padding-bottom: 4vw; }
+      width: 86%;
+      margin-left: 7%;
+      padding-bottom: 4vw;
+      text-align: justify; }
       .rising-standarts-block .text:before {
         position: static;
         margin-bottom: 70px;
@@ -7853,8 +7859,6 @@ a:hover {
 .locations-block {
   padding: 0 7%;
   padding-top: 50px; }
-  .locations-block .paragraph {
-    text-align: justify; }
   .locations-block .region-selector-container .region-selector-prefix {
     font-size: 25px;
     font-weight: 900;
@@ -8182,6 +8186,17 @@ a:hover {
     text-transform: uppercase;
     font-weight: bold;
     padding: 20px 0; }
+  .location-page .did-you-know .intro {
+    width: 40%; }
+    .location-page .did-you-know .intro:after {
+      content: "";
+      width: 100%;
+      margin: 10px 0 5px 0;
+      height: 6vw;
+      display: block;
+      border-left: 2px dashed #BABAB0;
+      border-right: 2px dashed #BABAB0;
+      opacity: 0.25; }
   .location-page .did-you-know .facts .fact {
     display: flex; }
     .location-page .did-you-know .facts .fact .left {
@@ -8193,15 +8208,6 @@ a:hover {
         margin-top: 15px;
         font-weight: bold;
         margin: 15px 0 5px 0; }
-        .location-page .did-you-know .facts .fact .left .translation .title:before {
-          content: "";
-          width: 100%;
-          margin-bottom: 5px;
-          height: 6vw;
-          display: block;
-          border-left: 2px dashed #BABAB0;
-          border-right: 2px dashed #BABAB0;
-          opacity: 0.25; }
     .location-page .did-you-know .facts .fact .right {
       width: 60%;
       padding-left: 10%;
@@ -8235,6 +8241,8 @@ a:hover {
 @media screen and (max-width: 767px) {
   .location-page .did-you-know > .title {
     font-size: 7vw; }
+  .location-page .did-you-know .intro {
+    width: 100%; }
   .location-page .did-you-know .facts .fact {
     flex-direction: column; }
     .location-page .did-you-know .facts .fact .left {
@@ -8361,17 +8369,23 @@ a:hover {
     .location-page .rooms-section .book-btn-wrapper .btn-dark-orange-border {
       display: inline-block; }
   .location-page .rooms-section .hero-image {
-    margin: 30px -12.5% 0 -12.5%; }
-    .location-page .rooms-section .hero-image .text-block {
-      margin: 10px 0;
-      color: #9e9d8f;
-      display: flex;
-      align-items: center;
-      justify-content: space-between; }
-      .location-page .rooms-section .hero-image .text-block .horizontal-line {
-        border-bottom: solid 1px #9e9d8f;
-        width: 70px;
-        height: 1px; }
+    margin-top: 30px; }
+    .location-page .rooms-section .hero-image img {
+      width: 100%; }
+    .location-page .rooms-section .hero-image.bedroom {
+      margin: 15px -12.5%; }
+    .location-page .rooms-section .hero-image.kitchen {
+      margin: 30px 0 15px 0; }
+  .location-page .rooms-section .text-block {
+    margin-bottom: 30px;
+    color: #9e9d8f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .location-page .rooms-section .text-block .horizontal-line {
+      border-bottom: solid 1px #9e9d8f;
+      width: 70px;
+      height: 1px; }
   .location-page .rooms-section .additional-info {
     margin: 50px -15px 80px -15px; }
     .location-page .rooms-section .additional-info .images img {
@@ -8425,6 +8439,8 @@ a:hover {
     border: 1px solid #CC8011;
     padding: 6px 11px;
     box-sizing: content-box; }
+  .rooms-type-selector-trigger .key {
+    display: none; }
   .rooms-type-selector-trigger .caption {
     text-transform: uppercase;
     color: #FF9C5F;
@@ -8449,7 +8465,8 @@ a:hover {
     color: #D9D9D2;
     text-align: center;
     padding: 10px 35px;
-    border-top: 1px solid #D9D9D2; }
+    border-top: 1px solid #D9D9D2;
+    cursor: pointer; }
     .rooms-type-selector .type-name:last-child {
       border-bottom: 1px solid #D9D9D2; }
   .rooms-type-selector .arrow {
@@ -8465,8 +8482,27 @@ a:hover {
 
 @media screen and (max-width: 767px) {
   .rooms-type-selector-trigger {
-    transform: rotate(-90deg) scale(0.7);
-    right: -70px; }
+    right: 0; }
+    .rooms-type-selector-trigger .arrow,
+    .rooms-type-selector-trigger .caption {
+      display: none; }
+    .rooms-type-selector-trigger .key {
+      display: block;
+      padding: 10px;
+      cursor: pointer;
+      position: relative; }
+      .rooms-type-selector-trigger .key img {
+        width: 32px;
+        height: 32px;
+        transform: rotate(90deg); }
+      .rooms-type-selector-trigger .key:after {
+        content: "";
+        border: 1px solid #CC8011;
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        width: 52px;
+        height: 52px; }
   .rooms-type-selector {
     transform: scale(0.7);
     right: -31px; } }
@@ -8524,7 +8560,7 @@ footer {
     display: block;
     border-bottom: 2px solid #9E9D8F;
     transform: rotate(9deg);
-    width: 80%;
+    width: 100%;
     bottom: 0;
     margin-top: 10vw;
     z-index: 1; }
@@ -8657,6 +8693,27 @@ footer {
         margin-left: 4%;
         width: 41%;
         float: left; } }
+
+.locations-page .main-caption {
+  padding: 10%; }
+  .locations-page .main-caption .text-wrapper {
+    padding-right: 20%;
+    font-size: 16vw;
+    line-height: 0.83;
+    font-family: SixCaps, sans-serif; }
+  .locations-page .main-caption:after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid #9E9D8F;
+    transform: rotate(9deg);
+    width: 100%;
+    bottom: 0;
+    margin-top: 10vw;
+    z-index: 1; }
+
+@media screen and (max-width: 767px) {
+  .locations-page .main-caption {
+    padding: 100px 10% 10% 10%; } }
 
 @media screen and (max-width: 767px) {
   footer {
