@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+
 class Footer extends React.Component {
   render () {
     return (

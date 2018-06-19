@@ -261,7 +261,7 @@ function (_React$Component) {
         className: "footer",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 5
+          lineNumber: 6
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
         src: "/static/svg/FG_UI01_assets_footer fg logo.svg",
@@ -269,47 +269,47 @@ function (_React$Component) {
         className: "footer-logo",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 6
+          lineNumber: 7
         }
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "footer-menu",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 7
+          lineNumber: 8
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         href: "#",
         className: "menu-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 8
+          lineNumber: 9
         }
       }, "Partners"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         href: "#",
         className: "menu-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 9
+          lineNumber: 10
         }
       }, "Brand Appearances"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         href: "#",
         className: "menu-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 10
+          lineNumber: 11
         }
       }, "Press Kit "), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("a", {
         href: "#",
         className: "menu-item",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 11
+          lineNumber: 12
         }
       }, "Legal & Policy"), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "dev",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 13
+          lineNumber: 14
         }
       }, "designed and built by vitamin london")));
     }
@@ -1309,7 +1309,8 @@ function (_React$Component) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__("react");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_threejs_threeEntryPoint__ = __webpack_require__("./utils/threejs/threeEntryPoint.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_threeFooter_threeEntryPoint__ = __webpack_require__("./utils/threeFooter/threeEntryPoint.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_threeRising_threeEntryPoint__ = __webpack_require__("./utils/threeRising/threeEntryPoint.js");
 var _jsxFileName = "/Users/Dima/Desktop/web/git/vitamin/future-generation/front/components/Three.jsx";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -1329,37 +1330,51 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
 var Three =
 /*#__PURE__*/
 function (_Component) {
   _inherits(Three, _Component);
 
-  function Three() {
+  function Three(props) {
+    var _this;
+
     _classCallCheck(this, Three);
 
-    return _possibleConstructorReturn(this, (Three.__proto__ || Object.getPrototypeOf(Three)).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, (Three.__proto__ || Object.getPrototypeOf(Three)).call(this, props));
+    _this.state = {};
+    return _this;
   }
 
   _createClass(Three, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        Object(__WEBPACK_IMPORTED_MODULE_1__utils_threejs_threeEntryPoint__["a" /* default */])(this.threeRootElement);
+        switch (this.props.objName) {
+          case 'cube_rising':
+            Object(__WEBPACK_IMPORTED_MODULE_2__utils_threeRising_threeEntryPoint__["a" /* default */])(this.threeRootElement);
+            break;
+
+          case 'cube_footer':
+            Object(__WEBPACK_IMPORTED_MODULE_1__utils_threeFooter_threeEntryPoint__["a" /* default */])(this.threeRootElement);
+            break;
+        }
       }
     }
   }, {
     key: "render",
     value: function render() {
-      var _this = this;
+      var _this2 = this;
 
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "three-container",
+        id: this.props.objName,
         ref: function ref(element) {
-          return _this.threeRootElement = element;
+          return _this2.threeRootElement = element;
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 12
+          lineNumber: 24
         }
       });
     }
@@ -1823,6 +1838,7 @@ function (_React$Component) {
           lineNumber: 239
         }
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__components_Three__["a" /* default */], {
+        objName: "cube_rising",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 241
@@ -2471,7 +2487,7 @@ var initStore = function initStore() {
 
 /***/ }),
 
-/***/ "./utils/threejs/GeneralLights.js":
+/***/ "./utils/threeFooter/GeneralLights.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2498,14 +2514,14 @@ var initStore = function initStore() {
 
 /***/ }),
 
-/***/ "./utils/threejs/SceneManager.js":
+/***/ "./utils/threeFooter/SceneManager.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_three_full__ = __webpack_require__("three-full");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_three_full___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_three_full__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SceneSubject__ = __webpack_require__("./utils/threejs/SceneSubject.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__GeneralLights__ = __webpack_require__("./utils/threejs/GeneralLights.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SceneSubject__ = __webpack_require__("./utils/threeFooter/SceneSubject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__GeneralLights__ = __webpack_require__("./utils/threeFooter/GeneralLights.js");
 
 
 
@@ -2593,7 +2609,7 @@ var initStore = function initStore() {
 
 /***/ }),
 
-/***/ "./utils/threejs/SceneSubject.js":
+/***/ "./utils/threeFooter/SceneSubject.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2623,24 +2639,23 @@ var initStore = function initStore() {
   })];
   var cubeGeometry = new __WEBPACK_IMPORTED_MODULE_0_three_full__["BoxGeometry"](3.999, 3.999, 3.999);
   var cubeBack = new __WEBPACK_IMPORTED_MODULE_0_three_full__["Mesh"](cubeGeometry, cubeBackMaterials);
-  cubeBack.position.set(-1, -1, 1); // cubeBack.rotation.set(36*deg, 45*deg, 0);
-
+  cubeBack.position.set(-1, -1, 1);
   var cubeGroup = new __WEBPACK_IMPORTED_MODULE_0_three_full__["Group"]();
   cubeGroup.rotation.set(36 * deg, 225.05 * deg, 0); //======ANIMATIONS=====//
 
-  var cubeAnimation = new __WEBPACK_IMPORTED_MODULE_1_gsap__["TimelineMax"]();
-  cubeAnimation.from(pivot.rotation, 1, {
+  var cubeFooterAnim = new __WEBPACK_IMPORTED_MODULE_1_gsap__["TimelineMax"]();
+  cubeFooterAnim.from(pivot.rotation, 1, {
     z: 40 * deg,
     x: -10 * deg
   }).pause();
-  cubeAnimation.from(cubeGroup.rotation, 1, {
+  cubeFooterAnim.from(cubeGroup.rotation, 1, {
     y: 245 * deg
   }, '-=1').pause();
-  cubeAnimation.from(cubeGroup.position, 1, {
+  cubeFooterAnim.from(cubeGroup.position, 1, {
     y: 0.5,
     z: -5
   }, '-=1').pause();
-  window.cubeAnimation = cubeAnimation; //======ANIMATIONS=====//
+  window.cubeFooterAnim = cubeFooterAnim; //======ANIMATIONS=====//
   //===== GLOBAL ==== ///
   // window.cubeGroup = cubeGroup;
   // window.cubeBack = cubeBack;
@@ -2652,10 +2667,10 @@ var initStore = function initStore() {
 
   var getCube = function getCube(modelName) {
     return new Promise(function (resolve) {
-      loaderMtl.load('/static/obj/cube.mtl', function (materials) {
+      loaderMtl.load('/static/obj/cube_footer.mtl', function (materials) {
         materials.preload();
         loaderObj.setMaterials(materials);
-        loaderObj.load('/static/obj/cube.obj', function (obj) {
+        loaderObj.load('/static/obj/cube_footer.obj', function (obj) {
           obj.traverse(function (child) {
             if (child instanceof __WEBPACK_IMPORTED_MODULE_0_three_full__["Mesh"]) {
               child.material.forEach(function (item) {
@@ -2713,11 +2728,11 @@ var initStore = function initStore() {
 
 /***/ }),
 
-/***/ "./utils/threejs/threeEntryPoint.js":
+/***/ "./utils/threeFooter/threeEntryPoint.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SceneManager__ = __webpack_require__("./utils/threejs/SceneManager.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SceneManager__ = __webpack_require__("./utils/threeFooter/SceneManager.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_gsap__ = __webpack_require__("gsap");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_gsap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_gsap__);
 
@@ -2771,12 +2786,332 @@ var initStore = function initStore() {
     canvasOffsetTop = yPosition;
   }
 
-  function scrollCanvas(e) {
+  function scrollCanvas() {
     var delt = canvasOffsetTop - window.scrollY + 150;
 
     if (delt < canvas.offsetHeight) {
       var r = delt * 100 / canvas.offsetHeight / 100;
-      window.cubeAnimation.progress(1 - r);
+      window.cubeFooterAnim.progress(1 - r);
+      console.log('footer:', r);
+    }
+
+    sceneManager.update();
+  }
+
+  function render(time) {
+    requestAnimationFrame(render);
+    !freeze ? sceneManager.update() : false;
+  }
+});
+
+/***/ }),
+
+/***/ "./utils/threeRising/GeneralLights.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_three_full__ = __webpack_require__("three-full");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_three_full___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_three_full__);
+
+/* harmony default export */ __webpack_exports__["a"] = (function (scene) {
+  var ambientLight = new __WEBPACK_IMPORTED_MODULE_0_three_full__["AmbientLight"](0xFFFFFF, 1);
+  var lightOut = new __WEBPACK_IMPORTED_MODULE_0_three_full__["PointLight"]("#FFFFFF", 1);
+  ambientLight.position.set(100, 100, 100);
+  lightOut.position.set(100, 100, 100);
+  scene.add(ambientLight); // scene.add(lightOut);
+
+  var rad = 80;
+
+  function update(time) {// const x = rad * Math.sin(time * 0.2);
+    // ambientLight.position.x = x;
+  }
+
+  return {
+    update: update
+  };
+});
+
+/***/ }),
+
+/***/ "./utils/threeRising/SceneManager.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_three_full__ = __webpack_require__("three-full");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_three_full___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_three_full__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__SceneSubject__ = __webpack_require__("./utils/threeRising/SceneSubject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__GeneralLights__ = __webpack_require__("./utils/threeRising/GeneralLights.js");
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = (function (canvas) {
+  var clock = new __WEBPACK_IMPORTED_MODULE_0_three_full__["Clock"]();
+  var deg = Math.PI / 180;
+  var origin = new __WEBPACK_IMPORTED_MODULE_0_three_full__["Vector3"](0, 0, 0);
+  var screenDimensions = {
+    width: canvas.width,
+    height: canvas.height
+  };
+  var scene = buildScene();
+  var renderer = buildRender(screenDimensions);
+  var camera = buildCamera(screenDimensions);
+  var sceneSubjects = createSceneSubjects(scene);
+
+  function buildScene() {
+    var scene = new __WEBPACK_IMPORTED_MODULE_0_three_full__["Scene"]();
+    scene.background = new __WEBPACK_IMPORTED_MODULE_0_three_full__["Color"]('#191715');
+    return scene;
+  }
+
+  function buildRender(_ref) {
+    var width = _ref.width,
+        height = _ref.height;
+    var renderer = new __WEBPACK_IMPORTED_MODULE_0_three_full__["WebGLRenderer"]({
+      canvas: canvas,
+      antialias: true,
+      alpha: false
+    });
+    var DPR = window.devicePixelRatio ? window.devicePixelRatio : 1;
+    renderer.setPixelRatio(DPR);
+    renderer.setSize(width, height);
+    renderer.setClearColor(0x191715); // renderer.gammaInput = false;
+    // renderer.gammaOutput = false;
+
+    return renderer;
+  }
+
+  function buildCamera(_ref2) {
+    var width = _ref2.width,
+        height = _ref2.height;
+    var aspectRatio = width / height;
+    var fieldOfView = 4; //5
+
+    var nearPlane = 4;
+    var farPlane = 100;
+    var camera = new __WEBPACK_IMPORTED_MODULE_0_three_full__["PerspectiveCamera"](fieldOfView, aspectRatio, nearPlane, farPlane);
+    camera.position.z = 11;
+    window.camera = camera;
+    camera.lookAt(0, 0.1, 0);
+    return camera;
+  }
+
+  function createSceneSubjects(scene) {
+    var sceneSubjects = [new __WEBPACK_IMPORTED_MODULE_2__GeneralLights__["a" /* default */](scene), new __WEBPACK_IMPORTED_MODULE_1__SceneSubject__["a" /* default */](scene)];
+    return sceneSubjects;
+  }
+
+  function update() {
+    var elapsedTime = clock.getElapsedTime();
+
+    for (var i = 0; i < sceneSubjects.length; i++) {
+      sceneSubjects[i].update(elapsedTime);
+    }
+
+    renderer.render(scene, camera);
+  }
+
+  function onWindowResize() {
+    var width = canvas.width,
+        height = canvas.height;
+    screenDimensions.width = width;
+    screenDimensions.height = height;
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(width, height);
+  }
+
+  return {
+    update: update,
+    onWindowResize: onWindowResize
+  };
+});
+
+/***/ }),
+
+/***/ "./utils/threeRising/SceneSubject.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_three_full__ = __webpack_require__("three-full");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_three_full___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_three_full__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_gsap__ = __webpack_require__("gsap");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_gsap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_gsap__);
+
+
+/* harmony default export */ __webpack_exports__["a"] = (function (scene) {
+  var deg = Math.PI / 180;
+  var pivot = new __WEBPACK_IMPORTED_MODULE_0_three_full__["Object3D"]();
+  var cubeBackMaterials = [new __WEBPACK_IMPORTED_MODULE_0_three_full__["LineBasicMaterial"]({
+    color: 0x302e2f
+  }), // left
+  new __WEBPACK_IMPORTED_MODULE_0_three_full__["LineBasicMaterial"]({
+    color: 0x363234
+  }), new __WEBPACK_IMPORTED_MODULE_0_three_full__["LineBasicMaterial"]({
+    color: 0x191715
+  }), // top
+  new __WEBPACK_IMPORTED_MODULE_0_three_full__["LineBasicMaterial"]({
+    color: 0x191715
+  }), new __WEBPACK_IMPORTED_MODULE_0_three_full__["LineBasicMaterial"]({
+    color: 0x231f20
+  }), new __WEBPACK_IMPORTED_MODULE_0_three_full__["LineBasicMaterial"]({
+    color: 0x231f20
+  })];
+  var cubeGeometry = new __WEBPACK_IMPORTED_MODULE_0_three_full__["BoxGeometry"](3.999, 3.999, 3.999);
+  var cubeBack = new __WEBPACK_IMPORTED_MODULE_0_three_full__["Mesh"](cubeGeometry, cubeBackMaterials);
+  cubeBack.position.set(-1, -1, 1);
+  var cubeGroup = new __WEBPACK_IMPORTED_MODULE_0_three_full__["Group"]();
+  cubeGroup.rotation.set(36 * deg, 225.05 * deg, 0); //======ANIMATIONS=====//
+
+  var cubeRisingAnim = new __WEBPACK_IMPORTED_MODULE_1_gsap__["TimelineMax"]();
+  cubeRisingAnim.from(pivot.rotation, 1, {
+    z: 40 * deg,
+    x: -10 * deg
+  }).pause();
+  cubeRisingAnim.from(cubeGroup.rotation, 1, {
+    y: 245 * deg
+  }, '-=1').pause();
+  cubeRisingAnim.from(cubeGroup.position, 1, {
+    y: 0.5,
+    z: -5
+  }, '-=1').pause();
+  window.cubeRisingAnim = cubeRisingAnim; //======ANIMATIONS=====//
+  //===== GLOBAL ==== ///
+  // window.cubeGroup = cubeGroup;
+  // window.cubeBack = cubeBack;
+  // window.pivot = pivot;
+  //===== GLOBAL ==== ///
+
+  var loaderObj = new __WEBPACK_IMPORTED_MODULE_0_three_full__["OBJLoader"]();
+  var loaderMtl = new __WEBPACK_IMPORTED_MODULE_0_three_full__["MTLLoader"]();
+
+  var getCube = function getCube(modelName) {
+    return new Promise(function (resolve) {
+      loaderMtl.load('/static/obj/cube_rising.mtl', function (materials) {
+        materials.preload();
+        loaderObj.setMaterials(materials);
+        loaderObj.load('/static/obj/cube_rising.obj', function (obj) {
+          obj.traverse(function (child) {
+            if (child instanceof __WEBPACK_IMPORTED_MODULE_0_three_full__["Mesh"]) {
+              child.material.forEach(function (item) {
+                item.color.set(0xFFFFFF);
+              });
+            }
+          });
+          resolve(obj);
+        });
+      });
+    });
+  };
+
+  var addObjectToScene = function addObjectToScene(objArr) {
+    cubeGroup.add(cubeBack);
+    objArr.forEach(function (item) {
+      cubeGroup.add(item);
+    });
+    pivot.position.set(0, -0.1, 0);
+    pivot.add(cubeGroup);
+    scene.add(pivot);
+  };
+
+  var whenTheAllModelsLoaded = function whenTheAllModelsLoaded() {
+    console.log('uploaded');
+    scene.background = new __WEBPACK_IMPORTED_MODULE_0_three_full__["Color"]('#231f20');
+  };
+
+  Promise.all([getCube().then(function (obj) {
+    // Do something after Player model loaded;
+    console.log(obj);
+    obj.traverse(function (child) {
+      if (child instanceof __WEBPACK_IMPORTED_MODULE_0_three_full__["Mesh"]) {
+        child.material.forEach(function (item) {
+          item.transparent = true;
+        });
+      }
+    });
+    addObjectToScene([obj]);
+  })]).then(whenTheAllModelsLoaded);
+  var speed = 0.001;
+
+  function update(time) {// if( cubeGroup ) {
+    //   cubeGroup.rotation.y += time * speed;
+    //   cubeGroup.rotation.z += time * speed;
+    // }
+  }
+
+  return {
+    update: update,
+    cubeGroup: cubeGroup,
+    pivot: pivot
+  };
+});
+
+/***/ }),
+
+/***/ "./utils/threeRising/threeEntryPoint.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SceneManager__ = __webpack_require__("./utils/threeRising/SceneManager.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_gsap__ = __webpack_require__("gsap");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_gsap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_gsap__);
+
+
+/* harmony default export */ __webpack_exports__["a"] = (function (container) {
+  var canvas = createCanvas(document, container);
+  var sceneManager = new __WEBPACK_IMPORTED_MODULE_0__SceneManager__["a" /* default */](canvas);
+  var freeze = true;
+  var deg = Math.PI / 180;
+  var canvasHalfWidth;
+  var canvasHalfHeight;
+  var canvasOffsetTop;
+  bindEventListeners();
+  render();
+  setTimeout(function () {
+    sceneManager.update();
+  }, 3000);
+  sceneManager.update();
+
+  function createCanvas(document, container) {
+    var canvas = document.createElement('canvas');
+    container.appendChild(canvas);
+    getCanvasPosition(canvas);
+    return canvas;
+  }
+
+  function bindEventListeners() {
+    window.onresize = resizeCanvas;
+    window.onscroll = scrollCanvas;
+    resizeCanvas();
+  }
+
+  function resizeCanvas() {
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    canvasHalfWidth = Math.round(canvas.offsetWidth / 2);
+    canvasHalfHeight = Math.round(canvas.offsetHeight / 2);
+    sceneManager.onWindowResize();
+  }
+
+  function getCanvasPosition(element) {
+    var yPosition = 0;
+
+    while (element) {
+      yPosition += element.offsetTop - element.scrollTop + element.clientTop;
+      element = element.offsetParent;
+    }
+
+    canvasOffsetTop = yPosition;
+  }
+
+  function scrollCanvas() {
+    var delt = canvasOffsetTop - window.scrollY + 150;
+
+    if (delt < canvas.offsetHeight) {
+      var r = delt * 100 / canvas.offsetHeight / 100;
+      window.cubeRisingAnim.progress(1 - r);
+      console.log('rising:', r);
     }
 
     sceneManager.update();
