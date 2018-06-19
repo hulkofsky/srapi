@@ -47,8 +47,8 @@ export default (Child) => {
 
 export const ContentFactory = (edit = false) => {
   if (edit) {
-    return (content) => <span><span className='content-edit-button'></span>{content.text_value}</span>
+    return (content) => content ? <span><span className='content-edit-button'></span>{content.text_value}</span> : null
   } else {
-    return (content) => content.text_value
+    return (content) => content ? content.text_value : null
   }
 }

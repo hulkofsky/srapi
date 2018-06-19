@@ -10,7 +10,7 @@ import {
   submitAuthDialog,
   processAuthDialog
 } from '../actions'
-import { Button, Modal } from 'react-bootstrap';
+import { Button, Modal } from 'react-bootstrap'
 
 class Header extends React.Component {
   state = {
@@ -18,16 +18,16 @@ class Header extends React.Component {
   }
 
   handleAuthDialogSubmit(event) {
-    event.preventDefault();
-    const data = new FormData(event.target);
+    event.preventDefault()
+    const data = new FormData(event.target)
     
-    this.props.submitAuthDialog(data.get("identifier"), data.get("password"));
+    this.props.submitAuthDialog(data.get("identifier"), data.get("password"))
   }
 
   componentDidMount() {
     window.addEventListener('scroll', this.updateMainMenuSticky.bind(this), { passive: true })
 
-    this.updateMainMenuSticky();
+    this.updateMainMenuSticky()
   }
 
   componentWillUnmount() {
@@ -35,21 +35,27 @@ class Header extends React.Component {
   }
 
   updateMainMenuSticky() {
-    this.setState({navIsSticky: (window.pageYOffset > 0)});
+    this.setState({navIsSticky: (window.pageYOffset > 0)})
   }
 
   toggleMainMenu() {
-    this.props.mainMenu.isVisible ? this.props.hideMainMenu() : this.props.showMainMenu();
+    this.props.mainMenu.isVisible ? this.props.hideMainMenu() : this.props.showMainMenu()
   }
 
   render () {
-    let { authDialog } = this.props;
+    let { authDialog } = this.props
     let navClasses = [
       'nav',
       (this.props.navClass ? this.props.navClass : ''),
-      (this.state.navIsSticky ? 'sticky ' : ''),
-      (this.props.mainMenu.isVisible ? 'menu-visible ' : '')
-    ];
+      (this.state.navIsSticky ? 'sticky' : ''),
+      (this.props.mainMenu.isVisible ? 'menu-visible' : '')
+    ]
+
+    let mainMenuClasses = [
+      'main-menu',
+      (this.props.mainMenu.isVisible ? 'visible' : ''),
+      (this.state.navIsSticky ? 'nav-sticky' : '')
+    ]
 
     return (
       <div>
@@ -57,6 +63,7 @@ class Header extends React.Component {
           <title>{this.props.title}</title>
           <link rel="shortcut icon" href="/static/favicon.ico" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="theme-color" content="#191714" />
           <meta charSet="utf-8" />
           <link rel="stylesheet" href="/static/style.css" />
         </Head>
@@ -85,13 +92,13 @@ class Header extends React.Component {
         <nav className={navClasses.join(' ')}>
           <Link href={{ pathname: '/' }}>
             <a className="main-menu-item">
-              <img className="logo" src="/static/svg/logo.svg" alt="logo" onClick={this.toggleMainMenu.bind(this)} />
+              <img className="logo" src="/static/svg/logo.svg" alt="logo" onClick={this.props.hideMainMenu.bind(this)} />
             </a>
           </Link>
           <div className="burger" onClick={this.toggleMainMenu.bind(this)}></div>
         </nav>
 
-        <div className={'main-menu ' + (this.props.mainMenu.isVisible ? 'visible' : '')}>
+        <div className={mainMenuClasses.join(' ')}>
           <Link href={{ pathname: '/' }}>
             <a className="main-menu-item">
               <div onClick={this.toggleMainMenu.bind(this)}>home</div>

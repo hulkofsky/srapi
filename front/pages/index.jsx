@@ -1,14 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { bindActionCreators } from 'redux'
-import {
-  fetchLocations,
-} from '../actions'
 import { initStore } from '../store'
 import { connect } from 'react-redux'
 import Link from 'next/link'
 import Header from '../components/Header'
+import MailingBlock from '../components/MailingBlock'
+import LocationsList from '../components/LocationsList'
 import Footer from '../components/Footer'
+import Three from '../components/Three'
 
 class HomePage extends React.Component {
   state = {
@@ -18,76 +16,100 @@ class HomePage extends React.Component {
       {
         id: 1,
         name: "ROOFTOP SPORT",
-        image: '/static/images/full-football.jpg'
+        image: '/static/images/FG_UI01_assets_home_features.jpg'
       },
       {
         id: 2,
         name: "coworking",
-        image: '/static/images/guy-with-scateboard.jpg'
+        image: '/static/images/FG_UI01_assets_home_features.jpg'
       },
       {
         id: 3,
         name: "skyline bars",
-        image: '/static/images/guy-with-scateboard.jpg'
+        image: '/static/images/FG_UI01_assets_home_features.jpg'
       },
       {
         id: 4,
         name: "on site cinema",
-        image: '/static/images/guy-with-scateboard.jpg'
+        image: '/static/images/FG_UI01_assets_home_features.jpg'
       }
     ],
-    activeAdvantageItem: null
-  }
-
-  static async getInitialProps ({store, pathname, query}) {
-    await store.dispatch(fetchLocations())
+    advantageItemSvgX: 100,
+    advantageItemSvgTextAnchor: 'end',
+    activeAdvantageItem: null,
+    justLivingSlidingBlock: null,
+    windowLastScrollY: 0,
+    windowLastTouchY: 0
   }
 
   componentDidMount() {
+    let justLivingSlidingBlock = document.querySelector(".sliding-block")
+    this.setState({justLivingSlidingBlock: justLivingSlidingBlock})
+
     window.addEventListener('scroll', this.updateRoomTypesImagesClasses.bind(this), { passive: true })
+    window.addEventListener('scroll', this.handleJustLivingScroll.bind(this))
+
+    window.addEventListener('touchstart', (e) => {
+      this.setState({windowTouchLastY: e.touches[0].clientY})
+    })
+    window.addEventListener('touchmove', (e) => {
+      e.deltaY = -1 / 10 * (e.changedTouches[0].clientY - this.state.windowTouchLastY)
+
+      this.handleJustLivingScroll(e)
+    })
 
     this.setActiveAdvantage(0)
+
+    if (window.innerWidth <= 767) {
+      this.setState({
+        advantageItemSvgX: 0,
+        advantageItemSvgTextAnchor: 'start'
+      })
+    }
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.updateRoomTypesImagesClasses)
+    window.removeEventListener('scroll', this.handleJustLivingScroll)
+    window.removeEventListener('touchstart', this.handleJustLivingScroll)
+    window.removeEventListener('touchmove', this.handleJustLivingScroll)
   }
 
   scrollToBlock(selector) {
     document.querySelector(selector).scrollIntoView({
       behavior: 'smooth' 
-    });
+    })
   }
 
   isElementInViewport(el) {
-    var rect = el.getBoundingClientRect();
+    var rect = el.getBoundingClientRect()
 
     return (
       rect.top < (window.innerHeight - 300) &&
       rect.bottom > 300
-    );
+    )
   }
 
   updateRoomTypesImagesClasses() {
-    var images = document.querySelectorAll('.animated-image'), i;
+    var images = document.querySelectorAll('.animated-image'), i
 
     for (i = 0; i < images.length; ++i) {
       if (this.isElementInViewport(images[i])) {
-        images[i].classList.add("scrolled-into-view");
+        images[i].classList.add("scrolled-into-view")
       } else {
-        images[i].classList.remove("scrolled-into-view");
+        images[i].classList.remove("scrolled-into-view")
       }
     }
   }
 
   setActiveAdvantage(index) {
-    this.setState({activeAdvantageItem: this.state.advantagesItems[index]});
+    this.setState({activeAdvantageItem: this.state.advantagesItems[index]})
   }
 
   escalatorMouseOver() {
     let timeout = setTimeout(() => {
       this.setState({escalatorHiddenContentClass: 'hidden-content-shown'})
-    }, 3000);
+    }, 3000)
 
     this.setState({escalatorHiddenContentTimer: timeout})
   }
@@ -96,6 +118,52 @@ class HomePage extends React.Component {
     clearTimeout(this.state.escalatorHiddenContentTimer)
 
     this.setState({escalatorHiddenContentClass: ''})
+  }
+
+  handleJustLivingScroll(e) {
+    let deltaY = window.scrollY - this.state.windowLastScrollY
+    let justLivingSlidingBlock = this.state.justLivingSlidingBlock
+    let bounds = justLivingSlidingBlock.getBoundingClientRect()
+
+    this.setState({windowLastScrollY: window.scrollY})
+
+    if (deltaY > 0) {
+      if (bounds.y > 90) {
+        return
+      }
+    }
+
+    if (deltaY < 0) {
+      if ((bounds.height + bounds.y) <= window.innerHeight) {
+        return
+      }
+    }
+
+    justLivingSlidingBlock.scrollLeft += deltaY
+
+    if (deltaY > 0) {
+      if (!justLivingSlidingBlock.classList.contains('fully-scrolled')) {
+        window.scrollTo(0, window.scrollY - deltaY)
+      }
+
+      if (justLivingSlidingBlock.scrollLeft < (justLivingSlidingBlock.scrollWidth - justLivingSlidingBlock.clientWidth)) {
+        justLivingSlidingBlock.classList.add('partially-scrolled')
+      } else {
+        justLivingSlidingBlock.classList.remove('partially-scrolled')
+        justLivingSlidingBlock.classList.add('fully-scrolled')
+      }
+    } else {
+      if (justLivingSlidingBlock.classList.contains('partially-scrolled') || justLivingSlidingBlock.classList.contains('fully-scrolled')) {
+        window.scrollTo(0, window.scrollY - deltaY)
+      }
+
+      if (justLivingSlidingBlock.scrollLeft > 0) {
+        justLivingSlidingBlock.classList.add('partially-scrolled')
+        justLivingSlidingBlock.classList.remove('fully-scrolled')
+      } else {
+        justLivingSlidingBlock.classList.remove('partially-scrolled')
+      }
+    }
   }
 
   render () {
@@ -153,8 +221,8 @@ class HomePage extends React.Component {
           </div>
         </div>
 
-        <div className={['escalator-block', this.state.escalatorHiddenContentClass].join(' ')} onMouseOut={() => this.escalatorMouseOut()} onMouseOver={() => this.escalatorMouseOver()}>
-          <div className="row position-relative">
+        <div className={['escalator-block', this.state.escalatorHiddenContentClass].join(' ')}>
+          <div className="row position-relative" onMouseOut={() => this.escalatorMouseOut()} onMouseOver={() => this.escalatorMouseOver()}>
            
             <div className="escalator-image">
             </div>
@@ -169,13 +237,15 @@ class HomePage extends React.Component {
         </div>
 
         <div className="rising-standarts-block">
+
+          <Three />
           <div className="quote">
             RAISING THE STANDARDS OF STUDENT LIVING
           </div>
 
           <div className="text">
-            Every standard starts with a problem that needs solving. <br/>
-            Ours was that student housing is exactly that. <br/>
+            Every standard starts with a problem that needs solving.
+            Ours was that student housing is exactly that.
             Housing. Nothing more. We’re creating the more.
           </div>
 
@@ -187,7 +257,7 @@ class HomePage extends React.Component {
           <div className="row">
             <div className="col-md-6">
               <div className="bedroom-block">
-                <img src="/static/images/bedroom.jpg" alt="bedroom" className="img-fluid animated-image bedroom" />
+                <img src="/static/images/FG_UI01_assets_home_bedroom.jpg" alt="bedroom" className="img-fluid animated-image bedroom" />
 
                 <div className="text-block">
                   <div className="text">
@@ -200,7 +270,7 @@ class HomePage extends React.Component {
               </div>
 
               <div className="kitchen-block">
-                <img src="/static/images/kitchen.jpg" alt="kitchen" className="img-fluid animated-image kitchen" />
+                <img src="/static/images/FG_UI01_assets_home_kitchen.jpg" alt="kitchen" className="img-fluid animated-image kitchen" />
 
                 <div className="text-block">
                   <div className="text">
@@ -215,7 +285,7 @@ class HomePage extends React.Component {
             </div>
             <div className="col-md-6">
               <div className="bathroom-block">
-                <img src="/static/images/bathroom.jpg" alt="bathroom" className="img-fluid animated-image bathroom" />
+                <img src="/static/images/FG_UI01_assets_home_bathroom.jpg" alt="bathroom" className="img-fluid animated-image bathroom" />
 
                 <div className="text-block">
                   <div className="text">
@@ -248,11 +318,10 @@ class HomePage extends React.Component {
         <div className="line line3"></div>
 
         <div className="just-living-block">
-          <div className="football">
-            We put a football pitch on your roof and a cinema in your basement.
-          </div>
-
           <div className="sliding-block">
+            <div className="football">
+              We put a football pitch on your roof and a cinema in your basement.
+            </div>
             <div className="quote">
               THIS ISN’T <br/>
               STUDENT LIVING. <br/>
@@ -271,7 +340,7 @@ class HomePage extends React.Component {
                     {this.state.advantagesItems && this.state.advantagesItems.map((advantageItem, index) => (
                       <div className={['advantage-name', ((this.state.activeAdvantageItem && (advantageItem.id === this.state.activeAdvantageItem.id)) ? 'active' : '')].join(' ')} key={index} onClick={() => this.setActiveAdvantage(index)}>
                         <svg viewBox="0 0 100 12" className="advantage-name-svg">
-                          <text className="advantage-name-text" x="0" y="11">{advantageItem.name}</text>
+                          <text className="advantage-name-text" x={this.state.advantageItemSvgX} y="11" textAnchor={this.state.advantageItemSvgTextAnchor}>{advantageItem.name}</text>
                         </svg>
                       </div>
                     ))}
@@ -286,10 +355,9 @@ class HomePage extends React.Component {
                   </div>
 
                   <div className="slider-controls">
-                    <div className="slider-control active" onClick={() => this.setActiveAdvantage(0)}></div>
-                    <div className="slider-control" onClick={() => this.setActiveAdvantage(1)}></div>
-                    <div className="slider-control" onClick={() => this.setActiveAdvantage(2)}></div>
-                    <div className="slider-control" onClick={() => this.setActiveAdvantage(3)}></div>
+                    {this.state.advantagesItems && this.state.advantagesItems.map((advantageItem, index) => (
+                      <div className={['slider-control', ((this.state.activeAdvantageItem && (advantageItem.id === this.state.activeAdvantageItem.id)) ? 'active' : '')].join(' ')} key={index} onClick={() => this.setActiveAdvantage(index)}></div>
+                    ))}
                   </div>
 
                   <div className="lines"></div>
@@ -343,99 +411,9 @@ class HomePage extends React.Component {
           </div>
         </div>
 
-        <div className="locations-block">
-          <div className="caption-region-selector">
-            <div className="row">
-              <div className="paragraph col-md-6 col-lg-4">
-                With over 30 locations across the country, we want there to be a location especially for you. Once you’ve found the best fit, view it’s bespoke page full of local trivia, recommendations and flat details to get you going in your new city.
-              </div>
-              <div className="region-selector-container col-md-6 col-lg-4 offset-lg-4 justify-content-md-end justify-content-center align-items-end d-flex">
-                <div className="region-selector-prefix">Region:</div>
-                <div className="region-selector">
-                  <div className="selected-region">Northern England</div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <LocationsList></LocationsList>
 
-          {/*locations && locations.map((location) => (
-            <div key={location.id}>
-              <Link href={{ pathname: '/location', query: { id: location.id } }}>
-                <a>{location.name}</a>
-              </Link>
-            </div>  
-          ))*/}
-
-          <div className="locations-list">
-            <div className="location-item d-flex align-items-center justify-content-center type-1">
-              <div className="left">
-                <div className="image">
-                  <img src="/static/images/FG_UI01_assets_home_location 1 main.jpg" className="img-fluid" alt="" />
-                </div>
-                <div className="caption">featuring the UKs first LED cinema on site</div>
-              </div>
-              <div className="right">
-                <div className="image">
-                  <img src="/static/images/FG_UI01_assets_home_location 1 detail.jpg" className="img-fluid" alt="" />
-                </div>
-              </div>
-              <div className="center-block">
-                <Link href={{ pathname: '/location', query: { id: 1 } }}>
-                  <a className="location-name">
-                    Guildford
-                  </a>
-                </Link>
-                <div className="caption">featuring the UKs first LED cinema on site</div>
-              </div>
-            </div>
-            <div className="location-item d-flex align-items-center justify-content-center type-2">
-              <div className="left">
-                <div className="image">
-                  <img src="/static/images/FG_UI01_assets_home_location 2 detail.jpg" className="img-fluid" alt="" />
-                </div>
-              </div>
-              <div className="right">
-                <div className="image">
-                  <img src="/static/images/FG_UI01_assets_home_location 2 main.jpg" className="img-fluid" alt="" />
-                </div>
-                <div className="caption">featuring the UKs first LED cinema on site</div>
-              </div>
-              <div className="center-block">
-                <Link href={{ pathname: '/location', query: { id: 1 } }}>
-                  <a className="location-name">
-                    colechester
-                  </a>
-                </Link>
-                <div className="caption">featuring the UKs first LED cinema on site</div>
-              </div>
-            </div>
-            <div className="location-item d-flex align-items-center justify-content-center type-1">
-              <div className="left">
-                <div className="image">
-                  <img src="/static/images/FG_UI01_assets_home_location 1 main.jpg" className="img-fluid" alt="" />
-                </div>
-                <div className="caption">featuring the UKs first LED cinema on site</div>
-              </div>
-              <div className="right">
-                <div className="image">
-                  <img src="/static/images/FG_UI01_assets_home_location 1 detail.jpg" className="img-fluid" alt="" />
-                </div>
-              </div>
-              <div className="center-block">
-                <Link href={{ pathname: '/location', query: { id: 1 } }}>
-                  <a className="location-name">
-                    Guildford
-                  </a>
-                </Link>
-                <div className="caption">featuring the UKs first LED cinema on site</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mailing-block text-center">
-          <div className="caption">sign up to our mailing</div>
-        </div>
+        <MailingBlock></MailingBlock>
 
         <Footer></Footer> 
       </div>
@@ -443,26 +421,4 @@ class HomePage extends React.Component {
   }
 }
 
-HomePage.propTypes = {
-  locations: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      name: PropTypes.string,
-      url: PropTypes.string,
-    })
-    )
-}
-
-const mapStateToProps = (state) => {
-  return {
-    locations: state.locations.items
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchLocations: bindActionCreators(fetchLocations, dispatch)
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage)
+export default connect(null, null)(HomePage)
