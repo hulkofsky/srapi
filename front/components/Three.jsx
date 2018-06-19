@@ -1,9 +1,11 @@
-import { connect } from 'react-redux';
+import React, { Component } from 'react';
 import threeEntryPoint from "../utils/threejs/threeEntryPoint"
 
-class Three extends React.Component {
+class Three extends Component {
   componentDidMount() {
-    threeEntryPoint(this.threeRootElement);
+    if( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      threeEntryPoint(this.threeRootElement);
+    }
   }
   render () {
     return (
@@ -12,4 +14,4 @@ class Three extends React.Component {
   }
 }
 
-export default  connect(null, null)(Three)
+export default Three

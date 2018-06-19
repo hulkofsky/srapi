@@ -702,7 +702,8 @@ a:hover {
 }
 
 .rising-standarts-block {
-    padding-top: 9vw;
+	position:relative;
+	padding-top: 9vw;
     padding-bottom: 5vw;
     background: url(/static/images/bg.png) center top no-repeat;
     background-size: cover;
@@ -2371,11 +2372,11 @@ footer {
 
 	.three-container {
 		position: absolute;
-		top: 0;
+		top: -212px;
 		left: 0;
 		width: 100vw;
-		height: 565px;
-		z-index: 10;
+		height: 900px;
+		z-index: 0;
 	}
 }
 

@@ -9,6 +9,7 @@ import { connect } from 'react-redux'
 import Link from 'next/link'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Three from '../components/Three'
 
 class HomePage extends React.Component {
   state = {
@@ -250,6 +251,8 @@ class HomePage extends React.Component {
         </div>
 
         <div className="rising-standarts-block">
+
+          <Three />
           <div className="quote">
             RAISING THE STANDARDS OF STUDENT LIVING
           </div>

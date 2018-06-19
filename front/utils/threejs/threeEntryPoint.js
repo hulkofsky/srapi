@@ -1,25 +1,33 @@
 import SceneManager from './SceneManager';
+import { TimelineMax, Linear } from 'gsap';
 
 export default container => {
   const canvas = createCanvas(document, container);
   const sceneManager = new SceneManager(canvas);
-  const freeze = false;
-
+  const freeze = true;
+  const deg = Math.PI / 180;
   let canvasHalfWidth;
   let canvasHalfHeight;
+  let canvasOffsetTop;
 
   bindEventListeners();
   render();
+  setTimeout(()=>{
+    sceneManager.update();
+  }, 3000);
+  sceneManager.update();
 
   function createCanvas(document, container) {
     const canvas = document.createElement('canvas');
     container.appendChild(canvas);
+    getCanvasPosition(canvas);
     return canvas;
   }
 
   function bindEventListeners() {
     window.onresize = resizeCanvas;
-    window.onmousemove = mouseMove;
+    window.onscroll = scrollCanvas;
+
     resizeCanvas();
   }
 
@@ -36,12 +44,30 @@ export default container => {
     sceneManager.onWindowResize();
   }
 
-  function mouseMove({screenX, screenY}) {
-    sceneManager.onMouseMove(screenX - canvasHalfWidth, screenY - canvasHalfHeight);
+
+  function getCanvasPosition(element) {
+    let yPosition = 0;
+    while(element) {
+      yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
+      element = element.offsetParent;
+    }
+    canvasOffsetTop = yPosition;
+  }
+
+
+  function scrollCanvas(e) {
+    const delt = canvasOffsetTop - window.scrollY + 150;
+
+    if (delt < (canvas.offsetHeight)) {
+      const r = ((delt * 100) / canvas.offsetHeight) / 100;
+      window.cubeAnimation.progress(1-r);
+    }
+
+    sceneManager.update();
   }
 
   function render(time) {
     requestAnimationFrame(render);
-    freeze ? sceneManager.update() : false;
+    !freeze ? sceneManager.update() : false;
   }
 }
