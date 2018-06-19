@@ -2110,6 +2110,7 @@ a:hover {
 }
 
 footer {
+	position: relative;
     height: 565px;
     background: url(/static/images/footer-bg.png);
     background-size: cover;
@@ -2134,6 +2135,7 @@ footer {
 	    padding-top: 25px;
 	    text-align: right;
 	    padding-bottom: 125px;
+		z-index: 2;
 	}
 	.menu-item {
 	    color: #d9d9d2;
@@ -2155,15 +2157,6 @@ footer {
 	.dev {
 	    padding-top: 15px;
 	    color: #d9d9d2;
-	}
-
-	.three-container {
-		position: absolute;
-		top: -212px;
-		left: 0;
-		width: 100vw;
-		height: 900px;
-		z-index: 0;
 	}
 }
 
@@ -2414,3 +2407,30 @@ footer {
 	    }
 	}
 }
+
+
+#cube_rising {
+	position: absolute;
+	top: -212px;
+	left: 0;
+	width: 100vw;
+	height: 900px;
+	z-index: 0;
+}
+#cube_footer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100%;
+	z-index: 0;
+}
+
+//.three-container {
+//	position: absolute;
+//	top: -212px;
+//	left: 0;
+//	width: 100vw;
+//	height: 900px;
+//	z-index: 0;
+//}

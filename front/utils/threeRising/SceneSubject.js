@@ -17,16 +17,15 @@ export default scene => {
   const cubeBack = new THREE.Mesh(cubeGeometry, cubeBackMaterials);
         cubeBack.position.set(-1, -1, 1);
 
-  // cubeBack.rotation.set(36*deg, 45*deg, 0);
   const cubeGroup = new THREE.Group();
         cubeGroup.rotation.set(36*deg, 225.05*deg, 0);
 
   //======ANIMATIONS=====//
-  const cubeAnimation = new TimelineMax();
-        cubeAnimation.from(pivot.rotation, 1, { z:(40 * deg), x: (-10 * deg) }).pause();
-        cubeAnimation.from(cubeGroup.rotation, 1, { y:(245 * deg) }, '-=1').pause();
-        cubeAnimation.from(cubeGroup.position, 1, { y: 0.5, z: -5 }, '-=1').pause();
-  window.cubeAnimation = cubeAnimation;
+  const cubeRisingAnim = new TimelineMax();
+        cubeRisingAnim.from(pivot.rotation, 1, { z:(40 * deg), x: (-10 * deg) }).pause();
+        cubeRisingAnim.from(cubeGroup.rotation, 1, { y:(245 * deg) }, '-=1').pause();
+        cubeRisingAnim.from(cubeGroup.position, 1, { y: 0.5, z: -5 }, '-=1').pause();
+        window.cubeRisingAnim = cubeRisingAnim;
   //======ANIMATIONS=====//
 
 
@@ -41,13 +40,12 @@ export default scene => {
 
 
   const getCube = (modelName) => {
-
     return new Promise((resolve) => {
-      loaderMtl.load('/static/obj/cube.mtl', materials => {
+      loaderMtl.load('/static/obj/cube_rising.mtl', materials => {
 
         materials.preload();
         loaderObj.setMaterials(materials);
-        loaderObj.load('/static/obj/cube.obj', (obj) => {
+        loaderObj.load('/static/obj/cube_rising.obj', (obj) => {
 
           obj.traverse(function (child) {
             if (child instanceof THREE.Mesh) {

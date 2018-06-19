@@ -276,7 +276,7 @@ class HomePage extends React.Component {
 
         <div className="rising-standarts-block">
 
-          <Three />
+          <Three objName="cube_rising"/>
           <div className="quote">
             RAISING THE STANDARDS OF STUDENT LIVING
           </div>
