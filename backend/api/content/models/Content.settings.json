@@ -1,0 +1,28 @@
+{
+  "connection": "default",
+  "collectionName": "contents",
+  "info": {
+    "name": "content",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "location": {
+      "model": "location",
+      "via": "contents"
+    },
+    "identifier": {
+      "type": "string"
+    },
+    "media_value": {
+      "type": "string"
+    },
+    "text_value": {
+      "type": "string"
+    }
+  }
+}
