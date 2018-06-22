@@ -10,6 +10,7 @@ import Link from 'next/link'
 import withContent, { ContentFactory } from '../utils/withContent'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import dot from 'dot-object'
 
 let whenSoberBlock = null
 let roomTypeSelectorTrigger = null
@@ -170,10 +171,36 @@ class LocationPage extends React.Component {
     })
   }
 
-  render() {
-    const {content} = this.props
-    const Content = ContentFactory(true)
+  fetchLocationData (){
+    return (dispatch) => {
+      fetch(`http://localhost:1337/dottable`)
+      .then((res) => {
+        if (!res.status || res.status !== 200) {
+          return Promise.reject(new Error('Unable to connect to the CMS'));
+        }
+        return res;
+      })
+      .then(res => res.json())
+      .then(data => {
+        let objectArray=[];
+        data.forEach((item, i)=>{
+          objectArray[i] = {
+            pagename: item.pagename  
+          };
+          dot.str(item.fieldname, item.content, objectArray[i]);
+        })
+        dispatch(getLocationData(objectArray));
+        console.log(objectArray);
+      });
+    }
+  };
 
+  render() {
+    const {content} = this.props;
+    const Content = ContentFactory(true);
+    this.fetchLocationData();
+
+    console.log(Content, 'props na hui suka bliat');
     return (
       <div className="location-page">
         <Header title="Location page" />
@@ -198,7 +225,8 @@ class LocationPage extends React.Component {
           <div className="main-info">
             <div className="row content-container">
               <div className="col-md-5 info">
-                <div className="caption">The Steel city itself. Welcome to</div>
+                <div className="caption">{this.props.locationdata}</div> 
+                {/* The Steel city itself. Welcome to */}
                 <div className="city-name">{Content(content.location_title)}</div>
               </div>
               <div className="col-md-5 offset-md-2 image">

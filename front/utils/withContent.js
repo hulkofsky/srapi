@@ -2,6 +2,29 @@ import React from 'react'
 
 const CMS_URL = 'http://localhost:1337/content';
 
+export function fetchLocationData (){
+  fetch(`http://localhost:1337/dottable`)
+  .then((res) => {
+    if (!res.status || res.status !== 200) {
+      return Promise.reject(new Error('Unable to connect to the CMS'));
+    }
+    return res;
+  })
+  .then(res => res.json())
+  .then(data => {
+    let objectArray=[];
+    data.forEach((item, i)=>{
+      objectArray[i] = {
+        pagename: item.pagename  
+      };
+      dot.str(item.fieldname, item.content, objectArray[i]);
+    })
+    dispatch(getLocationData(objectArray));
+    console.log(objectArray);
+  });
+};
+
+
 const fetchContent = (id) => fetch(id ? `${CMS_URL}?location=${id}` : CMS_URL)
   .then((res) => {
     if (!res.status || res.status !== 200) {
@@ -32,7 +55,7 @@ export default (Child) => {
 		static async getInitialProps(ctx) {
       const childInitialProps = Child.getInitialProps ? await Child.getInitialProps(ctx) : {}
       const content = await fetchContent(ctx.query.id || undefined)
-
+      console.log(content, 'exported content');
 			return {
         ...childInitialProps,
         content

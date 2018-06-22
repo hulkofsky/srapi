@@ -24,6 +24,17 @@ function currentLocation(
   }
 }
 
+function locationData(state = {locationData: []}, action) {
+  switch (action.type) {
+    case actions.GET_LOCATION_DATA:
+      return Object.assign({}, state, {
+        locationData: action.locationData,
+      })
+    default:
+      return state
+  }
+}
+
 function locations(
   state = {
     isFetching: false,

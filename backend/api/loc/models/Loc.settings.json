@@ -1,0 +1,21 @@
+{
+  "connection": "default",
+  "collectionName": "locs",
+  "info": {
+    "name": "loc",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "identifier": {
+      "type": "string"
+    },
+    "data": {
+      "type": "json"
+    }
+  }
+}

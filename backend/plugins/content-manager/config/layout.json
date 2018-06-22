@@ -3,6 +3,15 @@
     "attributes": {
       "slug": {
         "appearance": ""
+      },
+      "identifier": {
+        "appearance": ""
+      },
+      "content": {
+        "appearance": ""
+      },
+      "frdghf": {
+        "appearance": ""
       }
     }
   },
@@ -15,6 +24,36 @@
         "appearance": ""
       },
       "text_value": {
+        "appearance": ""
+      }
+    }
+  },
+  "loc": {
+    "attributes": {
+      "identifier": {
+        "appearance": ""
+      },
+      "data": {
+        "appearance": ""
+      }
+    }
+  },
+  "dotTable": {
+    "attributes": {
+      "pagename": {
+        "appearance": ""
+      },
+      "fieldname": {
+        "appearance": ""
+      },
+      "content": {
+        "appearance": ""
+      }
+    }
+  },
+  "dottable": {
+    "attributes": {
+      "content": {
         "appearance": ""
       }
     }

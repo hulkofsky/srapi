@@ -1,0 +1,76 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/dottable",
+      "handler": "Dottable.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/dottable/:id",
+      "handler": "Dottable.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/dottable/count",
+      "handler": "Dottable.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/dottable",
+      "handler": "Dottable.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/dottable/:id",
+      "handler": "Dottable.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/dottable/:id",
+      "handler": "Dottable.destroy",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/dottable/:id/relationships/:relation",
+      "handler": "Dottable.createRelation",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/dottable/:id/relationships/:relation",
+      "handler": "Dottable.updateRelation",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/dottable/:id/relationships/:relation",
+      "handler": "Dottable.destroyRelation",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

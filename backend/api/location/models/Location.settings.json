@@ -14,8 +14,8 @@
     "slug": {
       "type": "string"
     },
-    "contents": {
-      "collection": "content",
+    "content": {
+      "model": "content",
       "via": "location"
     }
   }

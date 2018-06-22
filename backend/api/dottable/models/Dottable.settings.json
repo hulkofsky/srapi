@@ -1,0 +1,24 @@
+{
+  "connection": "default",
+  "collectionName": "dottables",
+  "info": {
+    "name": "dottable",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "pagename": {
+      "type": "string"
+    },
+    "fieldname": {
+      "type": "string"
+    },
+    "content": {
+      "type": "text"
+    }
+  }
+}

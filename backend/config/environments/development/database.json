@@ -7,9 +7,9 @@
         "client": "postgres",
         "host": "127.0.0.1",
         "port": 5432,
-        "database": "fg-api",
-        "username": "",
-        "password": ""
+        "database": "fg_2",
+        "username": "postgres",
+        "password": "postgres"
       },
       "options": {
         "ssl": false

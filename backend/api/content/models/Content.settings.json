@@ -11,10 +11,6 @@
     "comment": ""
   },
   "attributes": {
-    "location": {
-      "model": "location",
-      "via": "contents"
-    },
     "identifier": {
       "type": "string"
     },
@@ -23,6 +19,10 @@
     },
     "text_value": {
       "type": "string"
+    },
+    "location": {
+      "model": "location",
+      "via": "content"
     }
   }
 }

@@ -4,6 +4,7 @@ const backendUrl = 'http://localhost:1337'
 const authUrl = backendUrl + '/auth'
 const baseApiUrl = backendUrl + '/api'
 
+export const GET_LOCATION_DATA = 'GET_LOCATION_DATA'
 export const REQUEST_CURRENT_LOCATION = 'REQUEST_CURRENT_LOCATION'
 export const REQUEST_LOCATIONS = 'REQUEST_LOCATIONS'
 export const RECEIVE_CURRENT_LOCATION = 'RECEIVE_CURRENT_LOCATION'
@@ -14,6 +15,14 @@ export const SUBMIT_AUTH_DIALOG = 'SUBMIT_AUTH_DIALOG'
 export const PROCESS_AUTH_DIALOG = 'PROCESS_AUTH_DIALOG'
 export const SHOW_MAIN_MENU = 'SHOW_MAIN_MENU'
 export const HIDE_MAIN_MENU = 'HIDE_MAIN_MENU'
+
+export const getLocationData = (json) => {
+  console.log('GET_LOCATION_DATA');
+  return {
+    type: GET_LOCATION_DATA,
+    locationData: json
+  }
+}
 
 export const requestCurrentLocation = (locationID) => {
   return {

@@ -1,0 +1,76 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/loc",
+      "handler": "Loc.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/loc/:id",
+      "handler": "Loc.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/loc/count",
+      "handler": "Loc.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/loc",
+      "handler": "Loc.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/loc/:id",
+      "handler": "Loc.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/loc/:id",
+      "handler": "Loc.destroy",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/loc/:id/relationships/:relation",
+      "handler": "Loc.createRelation",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/loc/:id/relationships/:relation",
+      "handler": "Loc.updateRelation",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/loc/:id/relationships/:relation",
+      "handler": "Loc.destroyRelation",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
