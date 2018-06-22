@@ -17,7 +17,6 @@ export const SHOW_MAIN_MENU = 'SHOW_MAIN_MENU'
 export const HIDE_MAIN_MENU = 'HIDE_MAIN_MENU'
 
 export const getLocationData = (json) => {
-  console.log('GET_LOCATION_DATA');
   return {
     type: GET_LOCATION_DATA,
     locationData: json

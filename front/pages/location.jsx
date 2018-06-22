@@ -6,6 +6,7 @@ import {
 } from '../actions'
 import { initStore } from '../store'
 import { connect } from 'react-redux'
+import {getLocationData} from '../actions'
 import Link from 'next/link'
 import withContent, { ContentFactory } from '../utils/withContent'
 import Header from '../components/Header'
@@ -171,28 +172,25 @@ class LocationPage extends React.Component {
     })
   }
 
-  fetchLocationData (){
-    return (dispatch) => {
-      fetch(`http://localhost:1337/dottable`)
-      .then((res) => {
-        if (!res.status || res.status !== 200) {
-          return Promise.reject(new Error('Unable to connect to the CMS'));
-        }
-        return res;
+  fetchLocationData () {  
+    fetch(`http://localhost:1337/dottable`)
+    .then((res) => {
+      if (!res.status || res.status !== 200) {
+        return Promise.reject(new Error('Unable to connect to the CMS'));
+      }
+      return res;
+    })
+    .then(res => res.json())
+    .then(data => {
+      let objectArray=[];
+      data.forEach((item, i)=>{
+        objectArray[i] = {
+          pagename: item.pagename  
+        };
+        dot.str(item.fieldname, item.content, objectArray[i]);
       })
-      .then(res => res.json())
-      .then(data => {
-        let objectArray=[];
-        data.forEach((item, i)=>{
-          objectArray[i] = {
-            pagename: item.pagename  
-          };
-          dot.str(item.fieldname, item.content, objectArray[i]);
-        })
-        dispatch(getLocationData(objectArray));
-        console.log(objectArray);
-      });
-    }
+      this.dispatch(this.props.getLocationData(objectArray));
+    });
   };
 
   render() {
@@ -200,7 +198,7 @@ class LocationPage extends React.Component {
     const Content = ContentFactory(true);
     this.fetchLocationData();
 
-    console.log(Content, 'props na hui suka bliat');
+    console.log(this.props, 'props na hui suka bliat');
     return (
       <div className="location-page">
         <Header title="Location page" />
@@ -225,7 +223,7 @@ class LocationPage extends React.Component {
           <div className="main-info">
             <div className="row content-container">
               <div className="col-md-5 info">
-                <div className="caption">{this.props.locationdata}</div> 
+                <div className="caption">{}</div> 
                 {/* The Steel city itself. Welcome to */}
                 <div className="city-name">{Content(content.location_title)}</div>
               </div>
@@ -837,9 +835,13 @@ LocationPage.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    location: state.currentLocation
+    location: state.currentLocation,
+    locationData: state.locationData
   }
 }
 
+const matchDispatchToProps =  (dispatch) => {
+  return bindActionCreators({getLocationData: getLocationData}, dispatch);
+}
 
-export default connect(mapStateToProps, null)(LocationPage)
+export default connect(mapStateToProps, matchDispatchToProps)(LocationPage);

@@ -24,7 +24,8 @@ function currentLocation(
   }
 }
 
-function locationData(state = {locationData: []}, action) {
+function locationData(state = {locationData: {}}, action) {
+  console.log(action, 'aktion blyat!!!');
   switch (action.type) {
     case actions.GET_LOCATION_DATA:
       return Object.assign({}, state, {
@@ -119,5 +120,6 @@ export default combineReducers({
   currentLocation,
   locations,
   authDialog,
-  mainMenu
+  mainMenu,
+  locationData
 });

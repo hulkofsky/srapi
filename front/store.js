@@ -21,5 +21,10 @@ const appInitialState = {
 }
 
 export const initStore = (initialState = appInitialState) => {
-  return createStore(reducers, initialState, composeWithDevTools(applyMiddleware(thunkMiddleware)))
-}
+  return createStore(
+    reducers, 
+    initialState, 
+    composeWithDevTools(
+      applyMiddleware(thunkMiddleware)
+    ))
+  }
